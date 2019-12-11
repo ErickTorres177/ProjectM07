@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ProjectM07</string>
+    <string name="proyecto">PROYECTO</string>
+    <string name="user">USER</string>
+    <string name="password">PASSWORD</string>
+    <string name="registrate">Regístrate</string>
+    <string name="iniSesion">Iniciar Sesión</string>
+    <string name="imgProyecto">TODO</string>
 </resources>
