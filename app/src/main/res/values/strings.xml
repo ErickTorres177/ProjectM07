@@ -5,5 +5,11 @@
     <string name="password">PASSWORD</string>
     <string name="registrate">Regístrate</string>
     <string name="iniSesion">Iniciar Sesión</string>
-    <string name="imgProyecto">TODO</string>
+    <string name="imgProyecto">btnImgLogo</string>
+    <string name="imgGoogleMaps">btnImgGoogle</string>
+    <string name="imgFacebook">btnImgFacebook</string>
+    <string name="imgInstagram">btnImgInstagram</string>
+    <string name="imgGmail">btnImgGmail</string>
+    <string name="recuperar_pass">Recuperar Contraseña</string>
+
 </resources>
