@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/tvMuestraUser"
-        android:layout_width="173dp"
-        android:layout_height="38dp"
+        android:layout_width="252dp"
+        android:layout_height="71dp"
         android:layout_marginTop="96dp"
         android:text="@string/muestra_usuario"
         android:textSize="20sp"
@@ -19,15 +19,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvMuestraPass"
-        android:layout_width="130dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/muestra_pass"
-        android:textSize="20sp"
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="137dp"
+        android:layout_height="40dp"
+        android:background="@drawable/botones"
+        android:onClick="cerrarSesion"
+        android:text="@string/Cerrar_Sesion"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.941"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMuestraUser" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMuestraUser"
+        app:layout_constraintVertical_bias="0.873" />
 </androidx.constraintlayout.widget.ConstraintLayout>

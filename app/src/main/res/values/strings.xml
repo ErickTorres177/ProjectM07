@@ -13,5 +13,6 @@
     <string name="recuperar_pass">Recuperar Contraseña</string>
     <string name="muestra_usuario">muestra_usuario</string>
     <string name="muestra_pass">muestra_pass</string>
+    <string name="Cerrar_Sesion">Cerrar Sesión</string>
 
 </resources>
