@@ -2,17 +2,15 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="126dp"
-        android:layout_height="102dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="172dp"
+        android:layout_height="138dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="@string/imgProyecto"
-        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,16 +22,16 @@
         android:layout_width="143dp"
         android:layout_height="45dp"
         android:layout_marginStart="92dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:text="@string/proyecto"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintHorizontal_bias="0.267"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/etUser"
         android:layout_width="325dp"
         android:layout_height="46dp"
         android:layout_marginTop="28dp"
@@ -43,10 +41,10 @@
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"/>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/etPass"
         android:layout_width="325dp"
         android:layout_height="46dp"
         android:layout_marginTop="32dp"
@@ -55,96 +53,82 @@
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/etUser"
         android:importantForAutofill="no"
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="198dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="24dp"
+        android:id="@+id/btnIniciarSesion"
+        android:layout_width="197dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/botones"
-        android:drawableBottom="@drawable/botones"
         android:gravity="center"
         android:text="@string/iniSesion"
+        android:onClick="inciarSesion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recuperacionPass" />
+        app:layout_constraintTop_toBottomOf="@+id/etPass" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="198dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/registrate"
+        android:id="@+id/btnRegistrar"
+        android:layout_width="197dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/botones"
         android:gravity="center"
+        android:onClick="abrirRegistro"
+        android:text="@string/registrate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imgGoogleMaps"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="28dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/imgGoogleMaps"
         android:saveEnabled="true"
         android:scaleType="centerCrop"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintEnd_toStartOf="@+id/imgFacebook"
+        app:layout_constraintHorizontal_bias="0.418"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageButton2"
+        app:layout_constraintTop_toTopOf="@+id/imgFacebook"
         app:srcCompat="@drawable/google_maps" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/imgFacebook"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="28dp"
         android:contentDescription="@string/imgFacebook"
         android:scaleType="centerCrop"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
-        app:layout_constraintTop_toTopOf="@+id/imageButton3"
+        app:layout_constraintEnd_toStartOf="@+id/imgInstagram"
+        app:layout_constraintTop_toTopOf="@+id/imgInstagram"
         app:srcCompat="@drawable/facebook" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/imgInstagram"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="28dp"
         android:contentDescription="@string/imgInstagram"
         android:scaleType="centerCrop"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton4"
-        app:layout_constraintTop_toTopOf="@+id/imageButton4"
+        app:layout_constraintEnd_toStartOf="@+id/imgGmail"
+        app:layout_constraintTop_toTopOf="@+id/imgGmail"
         app:srcCompat="@drawable/instagram" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/imgGmail"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="52dp"
         android:contentDescription="@string/imgGmail"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegistrar"
         app:srcCompat="@drawable/gmail" />
-
-    <TextView
-        android:id="@+id/recuperacionPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="84dp"
-        android:onClick="chancePAss"
-        android:text="@string/recuperar_pass"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
