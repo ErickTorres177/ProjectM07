@@ -1,15 +1,12 @@
 package cat.copernic.erick.projectm07;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ShareCompat;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -75,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
     public void inciarSesion(View view) {
 
         if (user.getText().toString().equals("") || pass.getText().toString().equals("")) {
-            Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT);
+            Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT).show();
         } else {
             if (preferencias.getString("NuevaEdad", "vacio").equals("vacio")) {
-                Toast.makeText(this, "Usuario no registrado", Toast.LENGTH_SHORT);
+                Toast.makeText(this, "Usuario no registrado", Toast.LENGTH_SHORT).show();
             } else {
                 Intent intent = new Intent(this, MainAplication.class);
                 startActivity(intent);
