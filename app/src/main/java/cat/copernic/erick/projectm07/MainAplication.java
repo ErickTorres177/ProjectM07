@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class MainAplication extends AppCompatActivity {
     private TextView tvMostrar;
     private SharedPreferences pPreferences;
-    private SharedPreferences.Editor pEditor;
+    //private SharedPreferences.Editor pEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class MainAplication extends AppCompatActivity {
         tvMostrar = findViewById(R.id.tvMuestraUser);
 
         pPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
-        pEditor = pPreferences.edit();
+        //pEditor = pPreferences.edit();
 
         mostrarDatos();
 
@@ -34,17 +34,17 @@ public class MainAplication extends AppCompatActivity {
     }
 
     public void mostrarDatos(){
-        String userP2 = pPreferences.getString("userP", "null");
-        String passP2= pPreferences.getString("passP", "null");
+        String userP2 = pPreferences.getString("NuevoUser", "vacio");
+        String passP2= pPreferences.getString("NuevaPasswd", "vacio");
+        String edadP2= pPreferences.getString("NuevaEdad", "vacio");
 
-        tvMostrar.setText("Usuario: " + userP2 + "\nPassword: " + passP2);
+        String datos = "Usuario: " + userP2 +
+                        "\nPassword: " + passP2 +
+                        "\nEdad: " + edadP2;
+        tvMostrar.setText(datos);
     }
 
-
     public void cerrarSesion(View view) {
-        pEditor.clear();
-        pEditor.commit();
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        this.finish();
     }
 }

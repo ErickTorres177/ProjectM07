@@ -11,13 +11,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private EditText user;
     private EditText pass;
-    //SHAREDPREFERENCES
+
     private SharedPreferences preferencias;
-    private SharedPreferences.Editor editor;
+    //private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,21 +27,25 @@ public class MainActivity extends AppCompatActivity {
 
         user = findViewById(R.id.etUser);
         pass = findViewById(R.id.etPass);
-        //final EditText pass = (EditText) findViewById(R.id.etPass);
-        Button btnIngresar = findViewById(R.id.btnIniciarSesion);
-        Button btnRegistrar = findViewById(R.id.btnRegistrar);
 
         preferencias = getSharedPreferences("Login", Context.MODE_PRIVATE);
-        editor = preferencias.edit();
+    }
+        // Parte del anterior onCreate
 
+        /*editor = preferencias.edit();
 
-        if (preferencias.contains("userP")){
-            Intent intent =  new Intent(this, MainAplication.class);
-            startActivity(intent);
-            finish();
+        if (user.getText().toString().equals("") || pass.getText().toString().equals("")) {
+            Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT);
+        } else {
+            if (preferencias.contains("NuevoUser")){
+                Intent intent =  new Intent(this, MainAplication.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Toast.makeText(this, "Usuario no registrado", Toast.LENGTH_SHORT);
+            }
         }
-
-
+        */
     /*
     btnIngresar.setOnClickListener(new View.OnClickListener() {
     @Override
@@ -63,12 +68,24 @@ public class MainActivity extends AppCompatActivity {
 
         }
         });
-        */
+
 
     }
-
+    */
     public void inciarSesion(View view) {
 
+        if (user.getText().toString().equals("") || pass.getText().toString().equals("")) {
+            Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT);
+        } else {
+            if (preferencias.getString("NuevaEdad", "vacio").equals("vacio")) {
+                Toast.makeText(this, "Usuario no registrado", Toast.LENGTH_SHORT);
+            } else {
+                Intent intent = new Intent(this, MainAplication.class);
+                startActivity(intent);
+            }
+        }
+    }
+        /*
          String usuario = user.getText().toString();
          String password = pass.getText().toString();
 
@@ -83,11 +100,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainAplication.class);
         startActivity(intent);
         finish();
+
     }
+    */
 
 
-
-    public void abrirRegistro(View view) {
+    public void iniciarRegistro(View view) {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }

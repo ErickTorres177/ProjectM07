@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorBotones">#5A5A5C</color>
+    <color name="colorCampos">#757575</color>
 </resources>

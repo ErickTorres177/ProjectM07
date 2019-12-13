@@ -2,6 +2,7 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -21,79 +22,76 @@
         android:id="@+id/textView2"
         android:layout_width="143dp"
         android:layout_height="45dp"
-        android:layout_marginStart="92dp"
         android:layout_marginTop="28dp"
         android:text="@string/proyecto"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.267"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/etUser"
-        android:layout_width="325dp"
+        android:layout_width="250dp"
         android:layout_height="46dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="25dp"
         android:ems="10"
         android:gravity="center"
         android:hint="@string/user"
+        android:importantForAutofill="no"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+        app:layout_constraintTop_toTopOf="@+id/PH25" />
 
     <EditText
         android:id="@+id/etPass"
-        android:layout_width="325dp"
+        android:layout_width="250dp"
         android:layout_height="46dp"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="@string/password"
         android:gravity="center"
+        android:hint="@string/password"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUser"
-        android:importantForAutofill="no"
-        android:inputType="textPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/etUser" />
 
     <Button
         android:id="@+id/btnIniciarSesion"
-        android:layout_width="197dp"
+        android:layout_width="150dp"
         android:layout_height="43dp"
-        android:layout_marginTop="28dp"
         android:background="@drawable/botones"
         android:gravity="center"
-        android:text="@string/iniSesion"
         android:onClick="inciarSesion"
+        android:text="@string/iniSesion"
+        app:layout_constraintBottom_toTopOf="@+id/PH25..50"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPass" />
+        app:layout_constraintTop_toTopOf="@+id/PH50" />
 
     <Button
         android:id="@+id/btnRegistrar"
-        android:layout_width="197dp"
+        android:layout_width="150dp"
         android:layout_height="43dp"
-        android:layout_marginTop="12dp"
         android:background="@drawable/botones"
         android:gravity="center"
-        android:onClick="abrirRegistro"
+        android:onClick="iniciarRegistro"
         android:text="@string/registrate"
+        app:layout_constraintBottom_toTopOf="@+id/PH75"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion" />
+        app:layout_constraintTop_toTopOf="@+id/PH25..50" />
 
     <ImageButton
         android:id="@+id/imgGoogleMaps"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginStart="28dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/imgGoogleMaps"
         android:saveEnabled="true"
         android:scaleType="centerCrop"
-        app:layout_constraintEnd_toStartOf="@+id/imgFacebook"
-        app:layout_constraintHorizontal_bias="0.418"
+        app:layout_constraintEnd_toStartOf="@+id/PV25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imgFacebook"
         app:srcCompat="@drawable/google_maps" />
@@ -102,10 +100,10 @@
         android:id="@+id/imgFacebook"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="28dp"
         android:contentDescription="@string/imgFacebook"
         android:scaleType="centerCrop"
-        app:layout_constraintEnd_toStartOf="@+id/imgInstagram"
+        app:layout_constraintEnd_toStartOf="@+id/PV50"
+        app:layout_constraintStart_toStartOf="@+id/PV25"
         app:layout_constraintTop_toTopOf="@+id/imgInstagram"
         app:srcCompat="@drawable/facebook" />
 
@@ -113,10 +111,10 @@
         android:id="@+id/imgInstagram"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="28dp"
         android:contentDescription="@string/imgInstagram"
         android:scaleType="centerCrop"
-        app:layout_constraintEnd_toStartOf="@+id/imgGmail"
+        app:layout_constraintEnd_toStartOf="@+id/PV75"
+        app:layout_constraintStart_toStartOf="@+id/PV50"
         app:layout_constraintTop_toTopOf="@+id/imgGmail"
         app:srcCompat="@drawable/instagram" />
 
@@ -124,11 +122,61 @@
         android:id="@+id/imgGmail"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="52dp"
         android:contentDescription="@string/imgGmail"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRegistrar"
+        app:layout_constraintStart_toStartOf="@+id/PV75"
+        app:layout_constraintTop_toTopOf="@+id/PH75"
         app:srcCompat="@drawable/gmail" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/PV25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/PV50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/PV75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/PH25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/PH25..50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.69" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/PH50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.585" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/PH75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.80" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,4 +15,17 @@
     <string name="muestra_pass">muestra_pass</string>
     <string name="Cerrar_Sesion">Cerrar Sesión</string>
 
+
+    // ACTIVITY REGISTRO
+    <string name="tituloRegistro">CREACIÓN CUENTA</string>
+    <string name="nombreUsuario">Nombre usuario:</string>
+    <string name="hintNombre">Nombre</string>
+    <string name="passwd">Contraseña:</string>
+    <string name="hintPasswd">Contraseña</string>
+    <string name="edad">Edad:</string>
+    <string name="hindEdad">Edad</string>
+    <string name="btnVolver">Volver</string>
+    <string name="btnRegistrar">Registrarse</string>
+
+
 </resources>
