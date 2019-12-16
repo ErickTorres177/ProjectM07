@@ -7,12 +7,36 @@
     tools:context=".RegisterActivity">
 
 
+    <ImageView
+        android:id="@+id/imgFondo"
+        android:layout_width="650dp"
+        android:layout_height="650dp"
+        app:layout_constraintBottom_toBottomOf="@+id/P50H"
+        app:layout_constraintEnd_toEndOf="@+id/P50V"
+        app:layout_constraintStart_toStartOf="@+id/P50V"
+        app:layout_constraintTop_toTopOf="@+id/P50H"
+        app:srcCompat="@drawable/logo_hd" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/P50V"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/P50H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/LayoutDatos"
@@ -24,11 +48,64 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/txt_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:text="@string/tituloRegistro"
+            android:textColor="@color/colorTitulos"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtTituloNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="@string/nombreUsuario"
+            android:textColor="@color/colorTitulos"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/txtNombre"
+            app:layout_constraintStart_toStartOf="@+id/txtNombre"
+            app:layout_constraintTop_toBottomOf="@+id/txt_titulo" />
+
+        <EditText
+            android:id="@+id/txtFondoNombre"
+            android:layout_width="240dp"
+            android:layout_height="0dp"
+            android:background="@drawable/campos"
+            android:editable="false"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/txtNombre"
+            app:layout_constraintEnd_toEndOf="@+id/txtNombre"
+            app:layout_constraintStart_toStartOf="@+id/txtNombre"
+            app:layout_constraintTop_toTopOf="@+id/txtNombre" />
+
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/hintNombre"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTituloNombre" />
+
+        <TextView
             android:id="@+id/txtTituloPasswd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/passwd"
+            android:textColor="@color/colorTitulos"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/txtPasswd"
             app:layout_constraintStart_toStartOf="@+id/txtPasswd"
@@ -62,60 +139,12 @@
             android:importantForAutofill="no" />
 
         <TextView
-            android:id="@+id/txt_titulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:text="@string/tituloRegistro"
-            android:textSize="28sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/txtTituloNombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/nombreUsuario"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@+id/txtNombre"
-            app:layout_constraintStart_toStartOf="@+id/txtNombre"
-            app:layout_constraintTop_toBottomOf="@+id/txt_titulo" />
-
-        <EditText
-            android:id="@+id/txtFondoNombre"
-            android:layout_width="240dp"
-            android:layout_height="0dp"
-            android:background="@drawable/campos"
-            android:editable="false"
-            android:ems="10"
-            android:importantForAutofill="no"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="@+id/txtNombre"
-            app:layout_constraintEnd_toEndOf="@+id/txtNombre"
-            app:layout_constraintStart_toStartOf="@+id/txtNombre"
-            app:layout_constraintTop_toTopOf="@+id/txtNombre" />
-
-        <EditText
-            android:id="@+id/txtNombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:hint="@string/hintNombre"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtTituloNombre"
-            android:importantForAutofill="no" />
-
-        <TextView
             android:id="@+id/txtTituloEdad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/edad"
+            android:textColor="@color/colorTitulos"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/txtEdad"
             app:layout_constraintStart_toStartOf="@+id/txtEdad"
@@ -158,13 +187,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline6">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
-
         <Button
             android:id="@+id/button2"
             android:layout_width="100dp"
@@ -172,11 +194,10 @@
             android:background="@drawable/botones"
             android:onClick="handleRegresar"
             android:text="@string/btnVolver"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintEnd_toStartOf="@+id/P50Vbotones"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.26999998" />
+            app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
         <Button
             android:id="@+id/button"
@@ -185,11 +206,24 @@
             android:background="@drawable/botones"
             android:onClick="handleRegistrar"
             android:text="@string/btnRegistrar"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline5"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.26" />
+            app:layout_constraintStart_toStartOf="@+id/P50Vbotones"
+            app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/P50Vbotones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
