@@ -24,14 +24,15 @@ public class RegisterActivity extends AppCompatActivity {
         edad = findViewById(R.id.txtEdad);
     }
 
-    public void handleRegresar(View view) {
-        this.finish();
-    }
+    public void handleRegresar(View view) { this.finish(); }
 
     public void handleRegistrar(View view) {
-        if (usuario.getText().toString().equals("") || passwd.getText().toString().equals("") ||
-                edad.getText().toString().equals("") ) {
-            Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT).show();
+        if (usuario.getText().toString().equals("")) {
+            Toast.makeText(this, "Introduzca nombre del usuario", Toast.LENGTH_SHORT).show();
+        } else if (passwd.getText().toString().equals("")) {
+            Toast.makeText(this, "Introduzca una contraseña", Toast.LENGTH_SHORT).show();
+        } else if (edad.getText().toString().equals("")) {
+            Toast.makeText(this, "Introduzca la edad", Toast.LENGTH_SHORT).show();
         } else {
             SharedPreferences sharedPrefs = getSharedPreferences("Login", MODE_PRIVATE);
             String nuevoUser = usuario.getText().toString();

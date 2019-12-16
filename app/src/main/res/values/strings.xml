@@ -1,19 +1,17 @@
 <resources>
     <string name="app_name">ProjectM07</string>
+
+    // ACTIVITY LOGIN
     <string name="proyecto">PROYECTO</string>
     <string name="user">USER</string>
     <string name="password">PASSWORD</string>
     <string name="registrate">Regístrate</string>
     <string name="iniSesion">Iniciar Sesión</string>
-    <string name="imgProyecto">btnImgLogo</string>
+    <string name="imgProyecto">ImgLogo</string>
     <string name="imgGoogleMaps">btnImgGoogle</string>
     <string name="imgFacebook">btnImgFacebook</string>
     <string name="imgInstagram">btnImgInstagram</string>
     <string name="imgGmail">btnImgGmail</string>
-    <string name="recuperar_pass">Recuperar Contraseña</string>
-    <string name="muestra_usuario">muestra_usuario</string>
-    <string name="muestra_pass">muestra_pass</string>
-    <string name="Cerrar_Sesion">Cerrar Sesión</string>
 
 
     // ACTIVITY REGISTRO
@@ -28,12 +26,10 @@
     <string name="btnRegistrar">Registrarse</string>
     <string name="ImagenFondo">Imagen de fondo de pantalla</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
 
+    // ACTIVITY PRINCIPAL
+    <string name="muestra_usuario">muestra_usuario</string>
+    <string name="muestra_pass">muestra_pass</string>
+    <string name="Cerrar_Sesion">Cerrar Sesión</string>
 
 </resources>
