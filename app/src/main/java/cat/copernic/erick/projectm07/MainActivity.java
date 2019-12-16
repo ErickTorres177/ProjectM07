@@ -10,11 +10,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    // Variables donde se almacenarán los datos de las SharedPreferences
     private EditText user;
     private EditText pass;
 
+    // Variable de la cual se obtendran los datos de las SharedPreferences
     private SharedPreferences preferencias;
-    //private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,84 +27,49 @@ public class MainActivity extends AppCompatActivity {
 
         preferencias = getSharedPreferences("Login", Context.MODE_PRIVATE);
     }
-        // Parte del anterior onCreate
 
-        /*editor = preferencias.edit();
-
-        if (user.getText().toString().equals("") || pass.getText().toString().equals("")) {
-            Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT);
-        } else {
-            if (preferencias.contains("NuevoUser")){
-                Intent intent =  new Intent(this, MainAplication.class);
-                startActivity(intent);
-                finish();
-            } else {
-                Toast.makeText(this, "Usuario no registrado", Toast.LENGTH_SHORT);
-            }
-        }
-        */
-    /*
-    btnIngresar.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-
-        String usuario = user.getText().toString();
-        String password = pass.getText().toString();
-
-
-        preferencias = getSharedPreferences("misPref",MODE_PRIVATE);
-
-        String usuarioDetail =  preferencias.getString(usuario + password + "data", "Usuario o Contraseña incorrectas.");
-        editor = preferencias.edit();
-        editor.putString("display" , usuarioDetail);
-
-        Intent diplayPantallas = new Intent (MainActivity.this, MainAplication.class);
-
-        startActivity(diplayPantallas);
-
-
-        }
-        });
-
-
-    }
-    */
+    /**
+     * Método que se encarga de lanzar la activity principal después de realizar la comprovación
+     * de los datos de usuario
+     *
+     * @param view
+     */
     public void inciarSesion(View view) {
+        String nombre = preferencias.getString("NuevoUser", "vacio");
+        String passwd = preferencias.getString("NuevaPasswd", "vacio");
 
-        if (user.getText().toString().equals("") || pass.getText().toString().equals("")) {
-            Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT).show();
+        // Comprovación de que en las SharedPreferences hay algun usuario dado de alta.
+        if (nombre.equals("vacio") || passwd.equals("vacio")) {
+            Toast.makeText(this, "No hay ningun usuario registrado", Toast.LENGTH_SHORT).show();
         } else {
-            if (preferencias.getString("NuevaEdad", "vacio").equals("vacio")) {
-                Toast.makeText(this, "Usuario no registrado", Toast.LENGTH_SHORT).show();
+            // Comprovación para ver si los campos usuario o contraseña se encuentran vacios.
+            if (user.getText().toString().equals("")) {
+                Toast.makeText(this, "Introduce el nombre de usuario", Toast.LENGTH_SHORT).show();
+            } else if (pass.getText().toString().equals("")) {
+                Toast.makeText(this, "Introduce la contraseña", Toast.LENGTH_SHORT).show();
             } else {
-                Intent intent = new Intent(this, MainAplication.class);
-                startActivity(intent);
+                // En caso de que no esten vacios, se pasa a comprovar que los datos introducidos sean
+                // los de las SharedPreferences.
+                if (!user.getText().toString().equals(nombre)) {
+                    Toast.makeText(this, "Usuario no encontrado", Toast.LENGTH_SHORT).show();
+                } else if (!pass.getText().toString().equals(passwd)) {
+                    Toast.makeText(this, "Contraseña erronea", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent intent = new Intent(this, MainAplication.class);
+                    startActivity(intent);
+                }
             }
         }
     }
-        /*
-         String usuario = user.getText().toString();
-         String password = pass.getText().toString();
 
-         //Guardamos los datos del usuario en el archivo de SHARED P.
-            editor.putString("userP", usuario);
-            editor.putString("passP", password);
-            //Confirmamos
-        editor.commit();
-        System.out.println("Tu usuario es: " + usuario + "\nTu contraseña es: " + password);
-
-        //Le mandamos a otra actividad
-        Intent intent = new Intent(this, MainAplication.class);
-        startActivity(intent);
-        finish();
-
-    }
-    */
-
-
+    /**
+     * Método encargado de iniciar la activity para Registrar un usuario, cuando el botón
+     * "Regístrate" es pulsado.
+     *
+     * @param view
+     */
     public void iniciarRegistro(View view) {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
-
 }
