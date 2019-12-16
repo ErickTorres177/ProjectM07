@@ -11,6 +11,7 @@
         android:id="@+id/imgFondo"
         android:layout_width="500dp"
         android:layout_height="500dp"
+        android:contentDescription="@string/ImagenFondo"
         app:layout_constraintBottom_toBottomOf="@+id/P50H"
         app:layout_constraintEnd_toEndOf="@+id/P50V"
         app:layout_constraintStart_toStartOf="@+id/P50V"
