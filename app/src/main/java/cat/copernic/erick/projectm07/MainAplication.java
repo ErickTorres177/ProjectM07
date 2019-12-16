@@ -1,6 +1,12 @@
 package cat.copernic.erick.projectm07;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,10 +14,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
+
 public class MainAplication extends AppCompatActivity {
     private TextView tvMostrar;
     private SharedPreferences pPreferences;
-    //private SharedPreferences.Editor pEditor;
+
+
+
+    // Menu Desplegable:
+    private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,15 +35,32 @@ public class MainAplication extends AppCompatActivity {
         tvMostrar = findViewById(R.id.tvMuestraUser);
 
         pPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
-        //pEditor = pPreferences.edit();
-
         mostrarDatos();
 
-        //SharedPreferences preferences= getSharedPreferences("misPreferencias", MODE_PRIVATE);
-        //String display = preferences.getString("display", "");
+        //MENU DESPLEGABLE
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
+                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
+                .setDrawerLayout(drawer)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(navigationView, navController);
 
-        //TextView displayInfo = findViewById(R.id.tvMuestraUser);
-        //displayInfo.setText(display);
     }
 
     public void mostrarDatos(){
