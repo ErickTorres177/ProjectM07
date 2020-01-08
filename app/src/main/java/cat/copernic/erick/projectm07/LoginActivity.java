@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     // Variables donde se almacenarán los datos de las SharedPreferences
     private EditText user;
     private EditText pass;
