@@ -35,7 +35,7 @@ public class MainAplication extends AppCompatActivity {
         tvMostrar = findViewById(R.id.tvMuestraUser);
 
         pPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
-        mostrarDatos();
+        recuperarDatos(); // Recuperamos datos de las SharedPreferences
 
         //MENU DESPLEGABLE
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -63,15 +63,19 @@ public class MainAplication extends AppCompatActivity {
 
     }
 
-    public void mostrarDatos(){
-        String userP2 = pPreferences.getString("NuevoUser", "vacio");
-        String passP2= pPreferences.getString("NuevaPasswd", "vacio");
-        String edadP2= pPreferences.getString("NuevaEdad", "vacio");
-
+    /**
+     * Método en el que podemos ver como recuperar los datos que se encuentran en las SharedPreferences
+     */
+    public void recuperarDatos(){
+        String userName = pPreferences.getString("NuevoUser", "vacio");
+        String userPass = pPreferences.getString("NuevaPasswd", "vacio");
+        String userAge = pPreferences.getString("NuevaEdad", "vacio");
+        /*
         String datos = "Usuario: " + userP2 +
                         "\nPassword: " + passP2 +
                         "\nEdad: " + edadP2;
         tvMostrar.setText(datos);
+        */
     }
 
     public void cerrarSesion(View view) {
