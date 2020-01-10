@@ -35,5 +35,55 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 
+    //------------------
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+
+
+<string name="title_placeholder">Hermosos Paisajes!</string>
+<string name="news_placeholder">Paisajes:</string>
+<string name="sports_info_placeholder">Here is some news</string>
+<string name="subtitle_detail_text">Hay lugares que nunca dejan de sorprender por
+        mucho que uno se acostumbre a mirarlos o que pase tiempo frente a ellos.
+        Hoy os  mostramos los catorce mejores paisajes del mundo, la más absoluta belleza.</string>
+
+<string-array name="sports_titles">
+    <item>Paisaje 1</item>
+    <item>Paisaje 2</item>
+    <item>Paisaje 3</item>
+    <item>Paisaje 4</item>
+    <item>Paisaje 5</item>
+</string-array>
+
+<string-array name="sports_info">
+        <item>Consiste en una masa de hielo de unos 60 metros de alto sobre el nivel del agua,
+            que se levanta imponente sobre un lago, y rodeada de naturaleza.</item>
+
+    <item>Desde la reserva Hualapai, es posible caminar desde el Skywalk, una pasarela con el
+            suelo de cristal suspendida sobre el vacío a 1.200 metros de altitud sobre el fondo del cañón.</item>
+
+    <item>Se encuentra en el «Valle de los 10 Picos» en el parque Nacional de Banff en Alberta (Canadá), tiene
+            una superficie de medio kilómetro cuadrado y se alimenta del deshielo de un glacial cercano,</item>
+
+    <item>Elegidas como una de las «Siete Maravillas Naturales del Mundo», se encuentran situadas entre la provincia
+            argentina de Misiones y el estado brasileño de Paraná dentro del Parque Natural de Iguazú.</item>
+
+    <item>El Mundo Perdido, es una fortaleza inexpugnable en mitad del mar, no tiene puertos naturales ni playas
+            sólo altos acantilados y fuertes corrientes en el que solo se puede acceder en barco o en helicóptero. </item>
+</string-array>
+
+<array name="sports_images">
+    <item>@drawable/p1</item>
+    <item>@drawable/p2</item>
+    <item>@drawable/p3</item>
+    <item>@drawable/p4</item>
+    <item>@drawable/p5</item>
+</array>
+
 </resources>
 
