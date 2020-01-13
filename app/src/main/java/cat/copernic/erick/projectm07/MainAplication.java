@@ -1,30 +1,30 @@
 package cat.copernic.erick.projectm07;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
+import android.view.View;
+
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
+
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import android.view.Menu;
 
 public class MainAplication extends AppCompatActivity {
-    private TextView tvMostrar;
     private SharedPreferences pPreferences;
 
-
-
-    // Menu Desplegable:
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -32,16 +32,13 @@ public class MainAplication extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_aplication);
 
-        //tvMostrar = findViewById(R.id.tvMuestraUser);
-
         pPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
         recuperarDatos(); // Recuperamos datos de las SharedPreferences
 
-        //MENU DESPLEGABLE
+        //APPBAR
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab); // Boton flotante
-        // Clicker de F.A.B
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,8 +48,6 @@ public class MainAplication extends AppCompatActivity {
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
                 R.id.nav_tools, R.id.nav_share, R.id.nav_send)
@@ -61,7 +56,20 @@ public class MainAplication extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+    }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+                || super.onSupportNavigateUp();
     }
 
     /**
@@ -71,15 +79,10 @@ public class MainAplication extends AppCompatActivity {
         String userName = pPreferences.getString("NuevoUser", "vacio");
         String userPass = pPreferences.getString("NuevaPasswd", "vacio");
         String userAge = pPreferences.getString("NuevaEdad", "vacio");
-        /*
-        String datos = "Usuario: " + userP2 +
-                        "\nPassword: " + passP2 +
-                        "\nEdad: " + edadP2;
-        tvMostrar.setText(datos);
-        */
     }
 
     public void cerrarSesion(View view) {
         this.finish();
     }
 }
+
