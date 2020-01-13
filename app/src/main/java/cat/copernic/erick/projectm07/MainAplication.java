@@ -41,7 +41,8 @@ public class MainAplication extends AppCompatActivity {
         //APPBAR
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab); // Boton flotante
+        // Clicker de F.A.B
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
