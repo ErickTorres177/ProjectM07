@@ -32,7 +32,7 @@ public class MainAplication extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_aplication);
 
-        tvMostrar = findViewById(R.id.tvMuestraUser);
+        //tvMostrar = findViewById(R.id.tvMuestraUser);
 
         pPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
         recuperarDatos(); // Recuperamos datos de las SharedPreferences
@@ -40,7 +40,8 @@ public class MainAplication extends AppCompatActivity {
         //MENU DESPLEGABLE
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab); // Boton flotante
+        // Clicker de F.A.B
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

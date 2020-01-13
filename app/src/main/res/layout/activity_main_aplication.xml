@@ -25,37 +25,37 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/tvMuestraUsuario"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainAplication">
+        android:id="@+id/tvMuestraUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainAplication">
 
-    <TextView
-        android:id="@+id/tvMuestraUser"
-        android:layout_width="252dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="96dp"
-        android:text="@string/muestra_usuario"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btnCerrarSesion"
+            android:layout_width="137dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/botones"
+            android:onClick="cerrarSesion"
+            android:text="@string/Cerrar_Sesion"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.941"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/btnCerrarSesion"
-        android:layout_width="137dp"
-        android:layout_height="40dp"
-        android:background="@drawable/botones"
-        android:onClick="cerrarSesion"
-        android:text="@string/Cerrar_Sesion"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.941"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMuestraUser"
-        app:layout_constraintVertical_bias="0.873" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/BarraHerramientas"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
