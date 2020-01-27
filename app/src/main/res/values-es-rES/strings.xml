@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FindYourWay</string>
+    <string name="Cerrar_Sesion">Cerrar sesión</string>
+    <string name="ImagenFondo">Imagen de fondo de pantallaç</string>
+    <string name="action_settings">Configuración</string>
+    <string name="btnRegistrar">Registrarse</string>
+    <string name="btnVolver">Volver</string>
+    <string name="edad">Edad:</string>
+    <string name="hindEdad">Edad</string>
+    <string name="proyecto">FindYourWay</string>
+    <string name="user">USUARIO</string>
+    <string name="tituloRegistro">CREACIÓN CUENTA</string>
+    <string name="registrate">Regítrate</string>
+    <string name="recuperar_pass">Recuperar contraseña</string>
+    <string name="password">CONTRASEÑA</string>
+    <string name="passwd">Contraseña:</string>
+    <string name="nombreUsuario">Nombre usuario:</string>
+    <string name="menu_tools">Herramientas</string>
+    <string name="menu_slideshow">Diapositivas</string>
+    <string name="menu_share">Compartir</string>
+    <string name="menu_send">Enviar</string>
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Galeria</string>
+    <string name="iniSesion">Iniciar sesión</string>
+    <string name="hintNombre">Nombre</string>
+    <string name="hintPasswd">Contraseña</string>
+</resources>

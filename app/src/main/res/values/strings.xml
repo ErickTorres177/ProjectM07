@@ -1,48 +1,48 @@
 <resources>
-    <string name="app_name">ProjectM07</string>
-    <string name="proyecto">PROYECTO</string>
-    <string name="user">USER</string>
-    <string name="password">PASSWORD</string>
-    <string name="registrate">Regístrate</string>
-    <string name="iniSesion">Iniciar Sesión</string>
-    <string name="imgProyecto">btnImgLogo</string>
-    <string name="imgGoogleMaps">btnImgGoogle</string>
-    <string name="imgFacebook">btnImgFacebook</string>
-    <string name="imgInstagram">btnImgInstagram</string>
-    <string name="imgGmail">btnImgGmail</string>
-    <string name="recuperar_pass">Recuperar Contraseña</string>
-    <string name="muestra_usuario">muestra_usuario</string>
-    <string name="muestra_pass">muestra_pass</string>
-    <string name="Cerrar_Sesion">Cerrar Sesión</string>
+    <string name="app_name">FindYourWay</string>
+    <string name="proyecto">FindYourWay</string>
+    <string name="user">USUARI</string>
+    <string name="password">CONTRASENYA</string>
+    <string name="registrate">Registrat</string>
+    <string name="iniSesion">Iniciar Sesió</string>
+    <string name="imgProyecto" translatable="false">btnImgLogo</string>
+    <string name="imgGoogleMaps" translatable="false">btnImgGoogle</string>
+    <string name="imgFacebook" translatable="false">btnImgFacebook</string>
+    <string name="imgInstagram" translatable="false">btnImgInstagram</string>
+    <string name="imgGmail" translatable="false">btnImgGmail</string>
+    <string name="recuperar_pass">Recuperar Contrasenya</string>
+    <string name="muestra_usuario" translatable="false">muestra_usuario</string>
+    <string name="muestra_pass" translatable="false">muestra_pass</string>
+    <string name="Cerrar_Sesion">Tancar sessió</string>
 
 
     // ACTIVITY REGISTRO
-    <string name="tituloRegistro">CREACIÓN CUENTA</string>
-    <string name="nombreUsuario">Nombre usuario:</string>
-    <string name="hintNombre">Nombre</string>
-    <string name="passwd">Contraseña:</string>
-    <string name="hintPasswd">Contraseña</string>
-    <string name="edad">Edad:</string>
-    <string name="hindEdad">Edad</string>
-    <string name="btnVolver">Volver</string>
-    <string name="btnRegistrar">Registrarse</string>
-    <string name="ImagenFondo">Imagen de fondo de pantalla</string>
+    <string name="tituloRegistro">CREACIÓ COMPTE</string>
+    <string name="nombreUsuario">Nom usuari:</string>
+    <string name="hintNombre">Nom</string>
+    <string name="passwd">Contrasenya:</string>
+    <string name="hintPasswd">Contrasenya</string>
+    <string name="edad">Edat:</string>
+    <string name="hindEdad">Edat</string>
+    <string name="btnVolver">Tornar</string>
+    <string name="btnRegistrar">Registrar-se</string>
+    <string name="ImagenFondo">Imatge de fons de pantalla</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
+    <string name="menu_home">Inici</string>
+    <string name="menu_gallery">Galeria</string>
+    <string name="menu_slideshow">Diapositives</string>
+    <string name="menu_tools">Eines</string>
+    <string name="menu_share">Compartir</string>
+    <string name="menu_send">Enviar</string>
 
     // NAVIGATION DRAWER
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-    <string name="rv">RV</string>
+    <string name="navigation_drawer_open" translatable="false">Obrir navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Tancar navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings">Configuració</string>
+    <string name="rv" translatable="false">RV</string>
 
 </resources>
 
