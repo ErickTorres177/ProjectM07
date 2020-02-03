@@ -1,5 +1,7 @@
 package cat.copernic.erick.projectm07;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -23,12 +25,17 @@ import android.view.Menu;
 
 public class NavegationDrawer extends AppCompatActivity {
 
+    private SharedPreferences pPreferences;
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navegation_drawer);
+
+        pPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
+        recuperarDatos(); // Recuperamos datos de las SharedPreferences
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -65,5 +72,18 @@ public class NavegationDrawer extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    /**
+     * Método en el que podemos ver como recuperar los datos que se encuentran en las SharedPreferences
+     */
+    public void recuperarDatos() {
+        String userName = pPreferences.getString("NuevoUser", "vacio");
+        String userPass = pPreferences.getString("NuevaPasswd", "vacio");
+        String userAge = pPreferences.getString("NuevaEdad", "vacio");
+    }
+
+    public void cerrarSesion(View view) {
+        this.finish();
     }
 }
