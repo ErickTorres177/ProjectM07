@@ -1,7 +1,5 @@
 package cat.copernic.erick.projectm07;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,22 +18,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.Menu;
 
-public class MainAplication extends AppCompatActivity {
-    private SharedPreferences pPreferences;
+public class NavegationDrawer extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_aplication);
-
-        pPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
-        recuperarDatos(); // Recuperamos datos de las SharedPreferences
-
-        //APPBAR
+        setContentView(R.layout.activity_navegation_drawer);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -48,6 +41,8 @@ public class MainAplication extends AppCompatActivity {
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
                 R.id.nav_tools, R.id.nav_share, R.id.nav_send)
@@ -58,10 +53,10 @@ public class MainAplication extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.navegation_drawer, menu);
         return true;
     }
 
@@ -71,19 +66,4 @@ public class MainAplication extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
-    /**
-     * Método en el que podemos ver como recuperar los datos que se encuentran en las SharedPreferences
-     */
-    public void recuperarDatos(){
-        String userName = pPreferences.getString("NuevoUser", "vacio");
-        String userPass = pPreferences.getString("NuevaPasswd", "vacio");
-        String userAge = pPreferences.getString("NuevaEdad", "vacio");
-    }
-
-    public void cerrarSesion(View view) {
-        this.finish();
-    }
 }
-
-//

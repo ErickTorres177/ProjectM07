@@ -4,7 +4,7 @@
     <string name="user">USUARI</string>
     <string name="password">CONTRASENYA</string>
     <string name="registrate">Registrat</string>
-    <string name="iniSesion">Iniciar Sesió</string>
+    <string name="iniSesion">Iniciar Sessió</string>
     <string name="imgProyecto" translatable="false">btnImgLogo</string>
     <string name="imgGoogleMaps" translatable="false">btnImgGoogle</string>
     <string name="imgFacebook" translatable="false">btnImgFacebook</string>

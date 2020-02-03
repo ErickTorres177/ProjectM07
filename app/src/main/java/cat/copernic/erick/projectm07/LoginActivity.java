@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                 } else if (!pass.getText().toString().equals(passwd)) {
                     Toast.makeText(this, "Contraseña erronea", Toast.LENGTH_SHORT).show();
                 } else {
-                    Intent intent = new Intent(this, MainAplication.class);
+                    Intent intent = new Intent(getApplicationContext(), NavegationDrawer.class);
                     startActivity(intent);
                 }
             }
