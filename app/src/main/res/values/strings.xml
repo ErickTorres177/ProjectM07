@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">FindYourWay</string>
-    <string name="proyecto">FindYourWay</string>
+    <string name="app_name">Find Your Way</string>
+    <string name="nombreProyecto">Find Your Way</string>
     <string name="user">USUARI</string>
     <string name="password">CONTRASENYA</string>
     <string name="registrate">Registrat</string>
     <string name="iniSesion">Iniciar Sessió</string>
-    <string name="imgProyecto" translatable="false">btnImgLogo</string>
-    <string name="imgGoogleMaps" translatable="false">btnImgGoogle</string>
-    <string name="imgFacebook" translatable="false">btnImgFacebook</string>
-    <string name="imgInstagram" translatable="false">btnImgInstagram</string>
-    <string name="imgGmail" translatable="false">btnImgGmail</string>
+    <string name="imgProyecto" translatable="true">Logo Find Your Way</string>
+    <string name="imgGoogleMaps" translatable="false">Google Maps</string>
+    <string name="imgFacebook" translatable="false">Facebook</string>
+    <string name="imgInstagram" translatable="false">Instagram</string>
+    <string name="imgGmail" translatable="false">Gmail</string>
     <string name="recuperar_pass">Recuperar Contrasenya</string>
     <string name="muestra_usuario" translatable="false">muestra_usuario</string>
     <string name="muestra_pass" translatable="false">muestra_pass</string>

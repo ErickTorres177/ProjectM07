@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">FindYourWay</string>
+    <string name="app_name">Find Your Way</string>
     <string name="Cerrar_Sesion">Cerrar sesión</string>
     <string name="ImagenFondo">Imagen de fondo de pantallaç</string>
+    <string name="imgProyecto">Logo Find Your Way</string>
     <string name="action_settings">Configuración</string>
     <string name="btnRegistrar">Registrarse</string>
     <string name="btnVolver">Volver</string>
     <string name="edad">Edad:</string>
     <string name="hindEdad">Edad</string>
-    <string name="proyecto">FindYourWay</string>
+    <string name="nombreProyecto">Find Your Way</string>
     <string name="user">USUARIO</string>
     <string name="tituloRegistro">CREACIÓN CUENTA</string>
-    <string name="registrate">Regítrate</string>
+    <string name="registrate">Regístrate</string>
     <string name="recuperar_pass">Recuperar contraseña</string>
     <string name="password">CONTRASEÑA</string>
     <string name="passwd">Contraseña:</string>
