@@ -35,4 +35,10 @@
     <string name="user">USER</string>
     <string name="btnRegistrarseContent">Create account</string>
     <string name="btnVolverContent">cancel account creation</string>
+
+    <string name="nav_header_desc" >USER PHOTO</string>
+    <string name="correoContent">User email</string>
+    <string name="nomUsuarioContentNavegationDrawer">Username</string>
+
+    <string name="Communicate">Communication</string>
 </resources>
