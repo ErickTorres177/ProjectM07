@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Find Your Way</string>
     <string name="nombreProyecto">Find Your Way</string>
     <string name="user">USUARI</string>
@@ -18,15 +18,24 @@
 
     // ACTIVITY REGISTRO
     <string name="tituloRegistro">CREACIÓ COMPTE</string>
-    <string name="nombreUsuario">Nom usuari:</string>
+    <string name="tituloRegistroContent">CREACIÓ DEL COMPTE</string>
+    <string name="txtTituloNombre">Nom d usuari:</string>
+    <string name="nombreUsuario">Nom d usuari:</string>
+    <string name="txtNombre">Ingressa el teu nom d usuari</string>
     <string name="hintNombre">Nom</string>
+    <string name="txtTituloPasswd">Contrasenya</string>
+    <string name="txtPasswd">Ingressa la teva contrasenya</string>
     <string name="passwd">Contrasenya:</string>
+    <string name="txtTituloEdad">Edat</string>
+    <string name="txtEdadContent">Ingressa la teva edat</string>
     <string name="hintPasswd">Contrasenya</string>
     <string name="edad">Edat:</string>
     <string name="hindEdad">Edat</string>
     <string name="btnVolver">Tornar</string>
     <string name="btnRegistrar">Registrar-se</string>
     <string name="ImagenFondo">Imatge de fons de pantalla</string>
+    <string name="btnRegistrarseContent">Crear compte</string>
+    <string name="btnVolverContent">cancel·lar creació del compte</string>
 
     <string name="menu_home">Inici</string>
     <string name="menu_gallery">Galeria</string>

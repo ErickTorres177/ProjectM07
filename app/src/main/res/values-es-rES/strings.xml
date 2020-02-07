@@ -12,11 +12,18 @@
     <string name="nombreProyecto">Find Your Way</string>
     <string name="user">USUARIO</string>
     <string name="tituloRegistro">CREACIÓN CUENTA</string>
+    <string name="tituloRegistroContent">CREACIÓN DE  LA CUENTA</string>
     <string name="registrate">Regístrate</string>
     <string name="recuperar_pass">Recuperar contraseña</string>
+    <string name="txtPasswd">Ingresa tu contraseña</string>
     <string name="password">CONTRASEÑA</string>
     <string name="passwd">Contraseña:</string>
-    <string name="nombreUsuario">Nombre usuario:</string>
+    <string name="txtTituloNombre">Nombre de usuario</string>
+    <string name="nombreUsuario">Nombre de usuario:</string>
+    <string name="txtNombre">Ingresa tu nombre de usuario</string>
+    <string name="txtTituloEdad">Edad</string>
+    <string name="txtEdadContent">Ingresa tu edad</string>
+    <string name="txtTituloPasswd">Contraseña</string>
     <string name="menu_tools">Herramientas</string>
     <string name="menu_slideshow">Diapositivas</string>
     <string name="menu_share">Compartir</string>
@@ -26,4 +33,7 @@
     <string name="iniSesion">Iniciar sesión</string>
     <string name="hintNombre">Nombre</string>
     <string name="hintPasswd">Contraseña</string>
+    <string name="btnRegistrarseContent">Crear cuenta</string>
+    <string name="btnVolverContent">cancelar creación de la cuenta</string>
+
 </resources>

@@ -7,7 +7,9 @@
     <string name="action_settings">Settings</string>
     <string name="btnRegistrar">Sing in</string>
     <string name="btnVolver">Return</string>
+    <string name="txtTituloEdad">Age</string>
     <string name="edad">Age:</string>
+    <string name="txtEdadContent">Enter your age</string>
     <string name="hindEdad">Age</string>
     <string name="hintNombre">Name</string>
     <string name="hintPasswd">Password</string>
@@ -18,12 +20,19 @@
     <string name="menu_send">Send</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">Tools</string>
+    <string name="txtTituloNombre">Username</string>
     <string name="nombreUsuario">Username:</string>
+    <string name="txtNombre">Enter your username</string>
+    <string name="txtTituloPasswd">Password</string>
+    <string name="txtPasswd">Enter your password</string>
     <string name="passwd">Password:</string>
     <string name="password">PASSWORD</string>
     <string name="nombreProyecto">Find Your Way</string>
     <string name="recuperar_pass">Recover Password</string>
     <string name="registrate">Sing up</string>
-    <string name="tituloRegistro">Account creation</string>
+    <string name="tituloRegistro">Account Creation</string>
+    <string name="tituloRegistroContent">ACCOUNT CREATION</string>
     <string name="user">USER</string>
+    <string name="btnRegistrarseContent">Create account</string>
+    <string name="btnVolverContent">cancel account creation</string>
 </resources>
