@@ -263,7 +263,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
+            app:layout_constraintGuide_percent="0.65" />
+
+        <ImageView
+            android:id="@+id/singup2"
+            android:layout_width="98dp"
+            android:layout_height="67dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/btnRegistrar"
+            app:layout_constraintHorizontal_bias="0.476"
+            app:layout_constraintStart_toStartOf="@+id/P50Vbotones"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/singup" />
+
+        <ImageView
+            android:id="@+id/cancelar"
+            android:layout_width="152dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/imgCancelar"
+            app:layout_constraintEnd_toStartOf="@+id/P50Vbotones"
+            app:layout_constraintHorizontal_bias="0.481"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/cancelar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

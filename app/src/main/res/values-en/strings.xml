@@ -39,6 +39,6 @@
     <string name="nav_header_desc" >USER PHOTO</string>
     <string name="correoContent">User email</string>
     <string name="nomUsuarioContentNavegationDrawer">Username</string>
-
+    <string name="imgCancelar">cancel</string>
     <string name="Communicate">Communication</string>
 </resources>

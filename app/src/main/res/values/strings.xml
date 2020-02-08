@@ -55,6 +55,7 @@
     <string name="correoContent">Correu electronic del usuari</string>
     <string name="nomUsuarioContentNavegationDrawer">Nom de usuari</string>
     <string name="rv" translatable="false">RV</string>
+    <string name="imgCancelar">cancelar</string>
 
     <string name="Communicate">comunicació</string>
 

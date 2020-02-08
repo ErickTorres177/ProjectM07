@@ -39,7 +39,7 @@
     <string name="nav_header_desc" >FOTO DE USUARIO</string>
     <string name="correoContent">Correo electronico del usuario</string>
     <string name="nomUsuarioContentNavegationDrawer">Nombre de usuario</string>
-
+    <string name="imgCancelar">cancelar</string>
     <string name="Communicate">comunicación</string>
 
 </resources>
