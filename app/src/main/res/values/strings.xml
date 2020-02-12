@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">Find Your Way</string>
     <string name="nombreProyecto">Find Your Way</string>
     <string name="user">USUARI</string>
@@ -61,7 +61,7 @@
 
     //Activity Añadir Rutas
     <string name="tvTituloFragmentRuta">AFEGIR RUTA</string>
-    <string name="tvNombreRuta">Ingressa el nom de la ruta:</string>
+    <string name="tvNombreRuta">Introdueix el nom de la ruta:</string>
     <string name="etNombreRuta">Introdueix el nom de la ruta:</string>
     <string name="etDireccionRuta">Ingressa a la ubicació:</string>
 
