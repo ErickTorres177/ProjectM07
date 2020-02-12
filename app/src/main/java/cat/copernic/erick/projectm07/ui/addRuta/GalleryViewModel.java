@@ -1,4 +1,4 @@
-package cat.copernic.erick.projectm07.ui.gallery;
+package cat.copernic.erick.projectm07.ui.addRuta;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -10,7 +10,7 @@ public class GalleryViewModel extends ViewModel {
 
     public GalleryViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("AÑADIR RUTA");
     }
 
     public LiveData<String> getText() {

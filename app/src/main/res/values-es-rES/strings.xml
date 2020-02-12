@@ -42,4 +42,11 @@
     <string name="imgCancelar">cancelar</string>
     <string name="Communicate">comunicación</string>
 
+    //Activity Añadir Rutas
+    <string name="tvTituloFragmentRuta">AÑADIR RUTA</string>
+    <string name="tvNombreRuta">Ingresa el nombre de la ruta:</string>
+    <string name="etNombreRuta">Ingresa el nombre de la ruta:</string>
+    <string name="etDireccionRuta">Ingresa la ubicación:</string>
+
+
 </resources>

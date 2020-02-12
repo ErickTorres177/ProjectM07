@@ -41,4 +41,12 @@
     <string name="nomUsuarioContentNavegationDrawer">Username</string>
     <string name="imgCancelar">cancel</string>
     <string name="Communicate">Communication</string>
+
+    //Activity Añadir Rutas
+    <string name="tvTituloFragmentRuta">ADD ROUTE</string>
+    <string name="tvNombreRuta">Enter the name of the route:</string>
+    <string name="etNombreRuta">Enter the name of the route:</string>
+    <string name="etDireccionRuta">Enter the location:</string>
+
+
 </resources>

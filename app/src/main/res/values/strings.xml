@@ -51,13 +51,19 @@
     <string name="nav_header_subtitle" translatable="false">user@findyourway.com</string>
     <string name="action_settings">Configuració</string>
 
-    <string name="nav_header_desc" >FOTO D USUARI</string>
+    <string name="nav_header_desc">FOTO D USUARI</string>
     <string name="correoContent">Correu electronic del usuari</string>
     <string name="nomUsuarioContentNavegationDrawer">Nom de usuari</string>
     <string name="rv" translatable="false">RV</string>
     <string name="imgCancelar">cancelar</string>
 
     <string name="Communicate">comunicació</string>
+
+    //Activity Añadir Rutas
+    <string name="tvTituloFragmentRuta">AFEGIR RUTA</string>
+    <string name="tvNombreRuta">Ingressa el nom de la ruta:</string>
+    <string name="etNombreRuta">Introdueix el nom de la ruta:</string>
+    <string name="etDireccionRuta">Ingressa a la ubicació:</string>
 
 
 </resources>

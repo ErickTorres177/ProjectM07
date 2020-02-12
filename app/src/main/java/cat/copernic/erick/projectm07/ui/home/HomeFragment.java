@@ -13,6 +13,9 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 
 import cat.copernic.erick.projectm07.R;
@@ -49,6 +52,18 @@ public class HomeFragment extends Fragment {
                 //textView.setText(s);
             }
         });
+
+        //BOTON PARA AÑADIR UN NUEVO CARDVIEW
+        /*
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });*/
+
 
 
        return root;
@@ -94,6 +109,5 @@ public class HomeFragment extends Fragment {
 
         return models;
     }
-
 
 }
