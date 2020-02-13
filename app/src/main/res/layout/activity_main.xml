@@ -95,7 +95,7 @@
 
     <Button
         android:id="@+id/btnIniciarSesion"
-        android:layout_width="197dp"
+        android:layout_width="150dp"
         android:layout_height="43dp"
         android:background="@drawable/botones"
         android:contentDescription="@string/iniSesion"
@@ -112,24 +112,24 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/PH25..50"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imgLogIn"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/PH50"
         app:layout_constraintVertical_bias="0.461" />
 
     <ImageView
-        android:id="@+id/imgLogIn"
-        android:layout_width="96dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="40dp"
+        android:id="@+id/imgLogin"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
         android:contentDescription="@string/iniSesion"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/PH25..50"
+        app:layout_constraintEnd_toStartOf="@+id/btnIniciarSesion"
         app:layout_constraintTop_toTopOf="@+id/PH50"
-        app:srcCompat="@drawable/login" />
+        app:srcCompat="@drawable/log_in" />
 
     <Button
         android:id="@+id/btnRegistrar"
-        android:layout_width="197dp"
+        android:layout_width="150dp"
         android:layout_height="43dp"
         android:background="@drawable/botones"
         android:contentDescription="@string/btnRegistrar"
@@ -146,92 +146,19 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/PH75"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
-        app:layout_constraintStart_toEndOf="@+id/singUp"
-        app:layout_constraintTop_toTopOf="@+id/PH25..50"
-        app:layout_constraintVertical_bias="0.916" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/PH25..50" />
 
     <ImageView
-        android:id="@+id/singUp"
-        android:layout_width="73dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/imgRegistro"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
         android:contentDescription="@string/btnRegistrar"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/PH75"
+        app:layout_constraintEnd_toStartOf="@+id/btnRegistrar"
         app:layout_constraintTop_toTopOf="@+id/PH25..50"
-        app:srcCompat="@drawable/singup" />
-
-    <ImageButton
-        android:id="@+id/imgGoogleMaps"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:adjustViewBounds="true"
-        android:saveEnabled="true"
-        android:scaleType="centerCrop"
-        android:paddingLeft="4dp"
-        android:minWidth="55dp"
-        android:minHeight="55dp"
-        android:paddingRight="4dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:contentDescription="@string/imgGoogleMaps"
-        app:layout_constraintEnd_toStartOf="@+id/PV25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgFacebook"
-        app:srcCompat="@drawable/google_maps" />
-
-    <ImageButton
-        android:id="@+id/imgFacebook"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:contentDescription="@string/imgFacebook"
-        android:paddingLeft="4dp"
-        android:minWidth="55dp"
-        android:paddingRight="4dp"
-        android:paddingTop="8dp"
-        android:minHeight="55dp"
-        android:paddingBottom="8dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toStartOf="@+id/PV50"
-        app:layout_constraintStart_toStartOf="@+id/PV25"
-        app:layout_constraintTop_toTopOf="@+id/imgInstagram"
-        app:srcCompat="@drawable/facebook" />
-
-    <ImageButton
-        android:id="@+id/imgInstagram"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:contentDescription="@string/imgInstagram"
-        android:scaleType="centerCrop"
-        android:paddingLeft="4dp"
-        android:minWidth="40dp"
-        android:paddingRight="4dp"
-        android:paddingTop="8dp"
-        android:minHeight="32dp"
-        android:paddingBottom="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/PV75"
-        app:layout_constraintStart_toStartOf="@+id/PV50"
-        app:layout_constraintTop_toTopOf="@+id/imgGmail"
-        app:srcCompat="@drawable/instagram" />
-
-    <ImageButton
-        android:id="@+id/imgGmail"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:contentDescription="@string/imgGmail"
-        android:scaleType="centerCrop"
-        android:paddingLeft="4dp"
-        android:minWidth="40dp"
-        android:paddingRight="4dp"
-        android:paddingTop="8dp"
-        android:minHeight="32dp"
-        android:paddingBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/PV75"
-        app:layout_constraintTop_toTopOf="@+id/PH75"
-        app:srcCompat="@drawable/gmail" />
+        app:srcCompat="@drawable/sing_up" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/PV25"
@@ -266,14 +193,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.69" />
+        app:layout_constraintGuide_percent="0.7" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/PH50"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.585" />
+        app:layout_constraintGuide_percent="0.6" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/PH75"
@@ -281,5 +208,57 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.81" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_Gmaps"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        android:onClick="mostrarUbicacion"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/PV25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/PH75"
+        app:srcCompat="@drawable/maps" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_instagram"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        android:onClick="abrirInstagram"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/PV75"
+        app:layout_constraintStart_toStartOf="@+id/PV50"
+        app:layout_constraintTop_toTopOf="@+id/PH75"
+        app:srcCompat="@drawable/instagram" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_gmail"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        android:onClick="abrirGmail"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/PV75"
+        app:layout_constraintTop_toTopOf="@+id/PH75"
+        app:srcCompat="@drawable/gmail" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_web"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        android:onClick="abrirPagina"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/PV50"
+        app:layout_constraintStart_toStartOf="@+id/PV25"
+        app:layout_constraintTop_toTopOf="@+id/PH75"
+        app:srcCompat="@drawable/web" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
