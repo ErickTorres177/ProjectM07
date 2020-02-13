@@ -29,7 +29,7 @@
     <string name="menu_share">Compartir</string>
     <string name="menu_send">Enviar</string>
     <string name="menu_home">Inicio</string>
-    <string name="menu_gallery">Galeria</string>
+    <string name="menu_nuevaRuta">Rutas</string>
     <string name="iniSesion">Iniciar sesión</string>
     <string name="hintNombre">Nombre</string>
     <string name="hintPasswd">Contraseña</string>
@@ -43,10 +43,19 @@
     <string name="Communicate">comunicación</string>
 
     //Activity Añadir Rutas
-    <string name="tvTituloFragmentRuta">AÑADIR RUTA</string>
+    <string name="tvTituloFragmentRuta">CONFIGURACION DE RUTAS</string>
     <string name="tvNombreRuta">Ingresa el nombre de la ruta:</string>
     <string name="etNombreRuta">Ingresa el nombre de la ruta:</string>
     <string name="etDireccionRuta">Ingresa la ubicación:</string>
+    <string name="btnCancelarRuta">Cancelar</string>
+    <string name="btnAnadirRuta">Agregar Ruta</string>
 
+    <string name="tvSubTitulo">Elige Una opción</string>
+    <string name="tvNuevaRuta">Crear Una Ruta</string>
+    <string name="btnNuevaRuta">Nueva</string>
+    <string name="tvEliminarRuta">Eliminar Una Ruta</string>
+    <string name="btnEliminarRuta">Eliminar</string>
+    <string name="tvConfiguracionRuta">Configuración De Una Ruta</string>
+    <string name="btnConfiguracionRuta">Configuración</string>
 
 </resources>

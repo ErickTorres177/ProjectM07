@@ -1,9 +1,11 @@
 package cat.copernic.erick.projectm07.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,12 +15,10 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import java.util.ArrayList;
 
 import cat.copernic.erick.projectm07.R;
+import cat.copernic.erick.projectm07.ui.Rutas.RutasFragment;
 
 public class HomeFragment extends Fragment {
 
@@ -63,7 +63,7 @@ public class HomeFragment extends Fragment {
                         .setAction("Action", null).show();
             }
         });*/
-
+        //.----
 
 
        return root;

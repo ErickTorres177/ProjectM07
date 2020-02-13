@@ -38,7 +38,7 @@
     <string name="btnVolverContent">cancel·lar creació del compte</string>
 
     <string name="menu_home">Inici</string>
-    <string name="menu_gallery">Galeria</string>
+    <string name="menu_nuevaRuta">Rutes</string>
     <string name="menu_slideshow">Diapositives</string>
     <string name="menu_tools">Eines</string>
     <string name="menu_share">Compartir</string>
@@ -60,10 +60,20 @@
     <string name="Communicate">comunicació</string>
 
     //Activity Añadir Rutas
-    <string name="tvTituloFragmentRuta">AFEGIR RUTA</string>
+    <string name="tvTituloFragmentRuta">CONFIGURACIÓ DE RUTAS</string>
     <string name="tvNombreRuta">Introdueix el nom de la ruta:</string>
     <string name="etNombreRuta">Introdueix el nom de la ruta:</string>
     <string name="etDireccionRuta">Ingressa a la ubicació:</string>
+    <string name="btnCancelarRuta">Cancel·lar</string>
+    <string name="btnAnadirRuta">Afegir Ruta</string>
+
+    <string name="tvSubTitulo">Tria Una Opció</string>
+    <string name="tvNuevaRuta">Crear Una Ruta</string>
+    <string name="btnNuevaRuta">Nova</string>
+    <string name="tvEliminarRuta">Eliminar Una Ruta</string>
+    <string name="btnEliminarRuta">Eliminar</string>
+    <string name="tvConfiguracionRuta">Configuració De Una Ruta</string>
+    <string name="btnConfiguracionRuta">Configuració Ruta</string>
 
 
 </resources>

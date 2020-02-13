@@ -14,7 +14,7 @@
     <string name="hintNombre">Name</string>
     <string name="hintPasswd">Password</string>
     <string name="iniSesion">Log in</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_nuevaRuta">Routes</string>
     <string name="menu_home">Home</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
@@ -43,10 +43,20 @@
     <string name="Communicate">Communication</string>
 
     //Activity Añadir Rutas
-    <string name="tvTituloFragmentRuta">ADD ROUTE</string>
+    <string name="tvTituloFragmentRuta">ROUTE CONFIGURATION</string>
     <string name="tvNombreRuta">Enter the name of the route:</string>
     <string name="etNombreRuta">Enter the name of the route:</string>
     <string name="etDireccionRuta">Enter the location:</string>
+    <string name="btnCancelarRuta">Cancel</string>
+    <string name="btnAnadirRuta">Add Route</string>
+
+    <string name="tvSubTitulo">Choose An option</string>
+    <string name="tvNuevaRuta">Create A Route</string>
+    <string name="btnNuevaRuta">New</string>
+    <string name="tvEliminarRuta">Delete A Route</string>
+    <string name="btnEliminarRuta">Eliminar Ruta</string>
+    <string name="tvConfiguracionRuta">Configuration Of A Route</string>
+    <string name="btnConfiguracionRuta">Configuration</string>
 
 
 </resources>
