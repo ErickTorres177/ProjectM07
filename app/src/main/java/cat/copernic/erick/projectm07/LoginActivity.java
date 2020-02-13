@@ -6,13 +6,18 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
+
+import java.nio.file.Files;
 
 public class LoginActivity extends AppCompatActivity {
     // Variables donde se almacenarán los datos de las SharedPreferences
     private EditText user;
     private EditText pass;
+    private ImageButton btn_maps, btn_web, btn_insta, btn_gmail;
 
     // Variable de la cual se obtendran los datos de las SharedPreferences
     private SharedPreferences preferencias;
@@ -26,6 +31,11 @@ public class LoginActivity extends AppCompatActivity {
         pass = findViewById(R.id.etPass);
 
         preferencias = getSharedPreferences("Login", Context.MODE_PRIVATE);
+
+        btn_maps = findViewById(R.id.imgBtn_Gmaps);
+        btn_web = findViewById(R.id.imgBtn_web);
+        btn_insta = findViewById(R.id.imgBtn_instagram);
+        btn_gmail = findViewById(R.id.imgBtn_instagram);
     }
 
     /**
@@ -72,4 +82,21 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
+
+    public void mostrarUbicacion(View view) {
+        // TO DO
+    }
+
+    public void abrirPagina(View view) {
+        // TO DO
+    }
+
+    public void abrirInstagram(View view) {
+        // TO DO
+    }
+
+    public void abrirGmail(View view) {
+        // TO DO
+    }
+
 }

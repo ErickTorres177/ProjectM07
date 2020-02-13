@@ -214,6 +214,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@android:color/transparent"
+        android:onClick="mostrarUbicacion"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/PV25"
@@ -226,6 +227,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@android:color/transparent"
+        android:onClick="abrirInstagram"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/PV75"
@@ -238,6 +240,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@android:color/transparent"
+        android:onClick="abrirGmail"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -246,15 +249,16 @@
         app:srcCompat="@drawable/gmail" />
 
     <ImageButton
-        android:id="@+id/imgBtn_facebook"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:id="@+id/imgBtn_web"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:background="@android:color/transparent"
+        android:onClick="abrirPagina"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/PV50"
         app:layout_constraintStart_toStartOf="@+id/PV25"
         app:layout_constraintTop_toTopOf="@+id/PH75"
-        app:srcCompat="@drawable/facebook" />
+        app:srcCompat="@drawable/web" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
