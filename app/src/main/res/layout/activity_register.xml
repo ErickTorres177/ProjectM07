@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="@+id/P50V"
         app:layout_constraintStart_toStartOf="@+id/P50V"
         app:layout_constraintTop_toTopOf="@+id/P50H"
-        app:srcCompat="@drawable/logo_hd" />
+        app:srcCompat="@drawable/logo" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -275,7 +275,7 @@
             app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="@+id/P50Vbotones"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/singup" />
+            app:srcCompat="@drawable/sing_up" />
 
         <ImageView
             android:id="@+id/cancelar"
@@ -287,7 +287,7 @@
             app:layout_constraintHorizontal_bias="0.481"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/cancelar" />
+            app:srcCompat="@drawable/cerrar_ses" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

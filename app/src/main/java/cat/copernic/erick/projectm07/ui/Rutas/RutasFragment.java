@@ -77,7 +77,7 @@ public class RutasFragment extends Fragment {
         btnCancela.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
             }
         });
 
