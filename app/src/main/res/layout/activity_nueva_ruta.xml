@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,10 +7,89 @@
     tools:context=".NavegationDrawer"
     android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerView"/>
+    <TextView
+        android:id="@+id/tvNuevaRutaF"
+        android:layout_width="342dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/tvNuevaRutaF"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tvNombreNuevaRuta"
+        android:layout_width="289dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/tvNombreNuevaRuta"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/white"
+        android:textSize="18sp"
+        android:gravity="center_horizontal|center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNuevaRutaF" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <EditText
+        android:id="@+id/etNombreNuevaRuta"
+        android:layout_width="326dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="36dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:inputType="textPersonName"
+        android:text="@string/etNombreNuevaRuta"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreNuevaRuta" />
+
+    <TextView
+        android:id="@+id/tvDireccionRuta"
+        android:layout_width="290dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/tvDireccionRuta"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/white"
+        android:textSize="18sp"
+        android:gravity="center_horizontal|center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNombreNuevaRuta" />
+
+    <EditText
+        android:id="@+id/etDireccionRuta"
+        android:layout_width="326dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:gravity="center_horizontal|center_vertical"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:text="@string/etDireccionRuta"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDireccionRuta" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

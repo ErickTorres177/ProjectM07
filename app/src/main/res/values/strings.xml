@@ -74,6 +74,10 @@
     <string name="btnEliminarRuta">Eliminar</string>
     <string name="tvConfiguracionRuta">Configuració De Una Ruta</string>
     <string name="btnConfiguracionRuta">Configuració Ruta</string>
+    <string name="tvNuevaRutaF">Nova Ruta</string>
+    <string name="tvNombreNuevaRuta">Ingressa el nom de la ruta</string>
+    <string name="etNombreNuevaRuta">Nom Ruta</string>
+    <string name="tvDireccionRuta">Ingressa la direcció de la ruta</string>
 
 
 </resources>

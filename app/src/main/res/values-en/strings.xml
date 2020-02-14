@@ -58,5 +58,10 @@
     <string name="tvConfiguracionRuta">Configuration Of A Route</string>
     <string name="btnConfiguracionRuta">Configuration</string>
 
+    <string name="tvNuevaRutaF">New Route</string>
+    <string name="tvNombreNuevaRuta">Enter the path name</string>
+    <string name="etNombreNuevaRuta">Name Route</string>
+    <string name="tvDireccionRuta">Enter the direction of the route</string>
+
 
 </resources>

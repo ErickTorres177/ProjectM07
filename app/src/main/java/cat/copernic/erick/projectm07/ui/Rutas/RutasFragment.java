@@ -19,12 +19,13 @@ import cat.copernic.erick.projectm07.ConfiguracionRuta;
 import cat.copernic.erick.projectm07.EliminarRuta;
 import cat.copernic.erick.projectm07.NuevaRuta;
 import cat.copernic.erick.projectm07.R;
+import cat.copernic.erick.projectm07.ui.home.HomeFragment;
 
 public class RutasFragment extends Fragment {
 
     private RutasViewModel rutasViewModel;
 
-    Button btnNuevaR, btnEliminarR, btnConfiguracioR, btnCancela;
+    Button btnNuevaR, btnEliminarR, btnConfiguracioR, btnCancelar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class RutasFragment extends Fragment {
         btnNuevaR = view.findViewById(R.id.btnNuevaRuta);
         btnConfiguracioR = view.findViewById(R.id.btnConfiguracionRuta);
         btnEliminarR = view.findViewById(R.id.btnEliminarRuta);
-        btnCancela = view.findViewById(R.id.btnCancelarRuta);
+        btnCancelar = view.findViewById(R.id.btnCancelarRuta);
 
         btnNuevaR.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,10 +75,12 @@ public class RutasFragment extends Fragment {
             }
         });
 
-        btnCancela.setOnClickListener(new View.OnClickListener() {
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getActivity(), HomeFragment.class);
+                intent.putExtra("some", "some data");
+                startActivity(intent);
             }
         });
 
