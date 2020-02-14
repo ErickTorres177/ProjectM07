@@ -1,9 +1,12 @@
 package cat.copernic.erick.projectm07;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.nio.file.Files;
+import java.util.Locale;
 
 public class LoginActivity extends AppCompatActivity {
     // Variables donde se almacenarán los datos de las SharedPreferences
@@ -83,20 +87,61 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Abre la aplicación de google maps mostrando las coordenadas del Nicolau
+     *
+     * @param view
+     */
     public void mostrarUbicacion(View view) {
-        // TO DO
+        Double latitud = 41.569940;
+        Double longitud = 1.996553;
+
+        String uri = String.format(Locale.ENGLISH, "geo:%f,%f", latitud, longitud);
+        Intent maps = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+        startActivity(maps);
     }
 
+    /**
+     * Abre la pagina web de Dinahosting en el navegador
+     *
+     * @param view
+     */
     public void abrirPagina(View view) {
-        // TO DO
+        String url = "http://www.findyourway.cat/";
+        Intent web = new Intent(Intent.ACTION_VIEW);
+        web.setData(Uri.parse(url));
+        startActivity(web);
     }
 
+    /**
+     * Comprueba si se tiene la aplicación isntagram instalada
+     *
+     * SI --> Abre el perfil de usuaruio en la app
+     * NO --> Abre el perfil de usuario en el navegador
+     * @param view
+     */
     public void abrirInstagram(View view) {
-        // TO DO
+        Uri uri = Uri.parse("https://www.instagram.com/findyourway_fow/?hl=es");
+        Intent insta = new Intent(Intent.ACTION_VIEW, uri);
+
+        insta.setPackage("com.instagram.android");
+
+        try {
+            startActivity(insta);
+        } catch (ActivityNotFoundException e) {
+            startActivity(new Intent(Intent.ACTION_VIEW, uri));
+        }
     }
 
+    /**
+     * Se encarga de abrir la aplicación del gmail especificando ya el correo de atención
+     *
+     * @param view
+     */
     public void abrirGmail(View view) {
-        // TO DO
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO,
+                Uri.fromParts("mailto","findyourwayFOW@gmail.com", null));
+        startActivity(emailIntent);
     }
 
 }
