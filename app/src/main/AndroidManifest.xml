@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-
+        <activity android:name=".ConfiguracionRuta"></activity>
+        <activity android:name=".EliminarRuta" />
+        <activity android:name=".NuevaRuta" />
         <activity
             android:name=".NavegationDrawer"
             android:theme="@style/NoActionBar" />
