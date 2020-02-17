@@ -224,7 +224,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline6">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnVolver"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:background="@drawable/botones"
@@ -238,12 +238,11 @@
             app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnRegistrarUsuario"
             android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:background="@drawable/botones"
             android:contentDescription="@string/btnRegistrarseContent"
-            android:onClick="handleRegistrar"
             android:text="@string/btnRegistrar"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/guideline4"

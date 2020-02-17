@@ -102,7 +102,6 @@
         android:gravity="center"
         android:minWidth="160dp"
         android:minHeight="50dp"
-        android:onClick="inciarSesion"
         android:paddingLeft="4dp"
         android:paddingTop="8dp"
         android:paddingRight="4dp"
