@@ -172,12 +172,12 @@ public class LoginActivity extends AppCompatActivity {
      * @param view
      */
     public void mostrarUbicacion(View view) {
-        Double latitud = 41.569940;
-        Double longitud = 1.996553;
+        Uri intentUri = Uri.parse("geo:41.569940,1.996553?z=16&q=41.569940,1.996553(INS+Nicolau+Copernic)");
+        Intent gMaps = new Intent(Intent.ACTION_VIEW, intentUri);
 
-        String uri = String.format(Locale.ENGLISH, "geo:%f,%f", latitud, longitud);
-        Intent maps = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-        startActivity(maps);
+        //String uri = String.format(Locale.ENGLISH, "geo:%f,%f", latitud, longitud);
+        //Intent maps = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+        startActivity(gMaps);
     }
 
     /**
