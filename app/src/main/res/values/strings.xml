@@ -57,7 +57,7 @@
     <string name="rv" translatable="false">RV</string>
     <string name="imgCancelar">cancelar</string>
 
-    <string name="Communicate">comunicació</string>
+    <string name="Communicate">Comunicació</string>
 
     //Activity Añadir Rutas
     <string name="tvTituloFragmentRuta">CONFIGURACIÓ DE RUTAS</string>
@@ -78,6 +78,10 @@
     <string name="tvNombreNuevaRuta">Ingressa el nom de la ruta</string>
     <string name="etNombreNuevaRuta">Nom Ruta</string>
     <string name="tvDireccionRuta">Ingressa la direcció de la ruta</string>
+
+    //Lista navegation drawer
+    <string name="sesion">Sessió</string>
+    <string name="bntLogOut">Tancar sessió</string>
 
 
 </resources>

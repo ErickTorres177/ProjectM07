@@ -20,7 +20,6 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
 public class RegisterActivity extends AppCompatActivity {
     EditText etUsuario;
     EditText etPasswd;
@@ -43,28 +42,27 @@ public class RegisterActivity extends AppCompatActivity {
         etPasswd = findViewById(R.id.txtPasswd);
         etEdad = findViewById(R.id.txtEdad);
 
+
         //currentUser = mAuth.getCurrentUser();
         //updateUI(currentUser);
-
         //FIRE BASE IMPLEMENTACION
         // Initialize Firebase Auth
         //mAuth = FirebaseAuth.getInstance();
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
-        final int edadUsuario = Integer.parseInt(etEdad.getText().toString());
+        //final int edadUsuario = Integer.parseInt(etEdad.getText().toString());
         btnRegistrarU = findViewById(R.id.btnRegistrarUsuario);
 
         btnRegistrarU.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                crearUsuario(etUsuario.getText().toString(), etPasswd.getText().toString(), edadUsuario);
+                crearUsuario(etUsuario.getText().toString(), etPasswd.getText().toString());
                 //Con esto el usuario solo podra clickar una vez
             }
         });
 
     }
-
     @Override
     public void onStart() {
         super.onStart();
@@ -72,17 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
         currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
     }
-
-    private void updateUI(FirebaseUser currentUser) {
-        if (currentUser != null) {
-        btnRegistrarU.setEnabled(false);
-
-        } else {
-            btnRegistrarU.setEnabled(true);
-        }
-    }
-
-    public void crearUsuario(final String email, String password, final int edad) {
+    public void crearUsuario(final String email, String password) {
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -90,35 +78,41 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (compEmail(email) == true) {
-                            if (edad <= 9 && edad >= 110) {
-                                Toast.makeText(RegisterActivity.this, "Ingresa Una Edad Valida.",
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d(TAG, "createUserWithEmail:success");
+                                Toast.makeText(RegisterActivity.this, "Autentificación valida.",
                                         Toast.LENGTH_SHORT).show();
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                updateUI(user);
+                                //btnLogin.setEnabled(true);
+                                //btnNuevo.setEnabled(false);
                             } else {
-                                if (task.isSuccessful()) {
-                                    Log.d(TAG, "createUserWithEmail:success");
-                                    Toast.makeText(RegisterActivity.this, "Genial ya eres parte de Find Your Way",
-                                            Toast.LENGTH_SHORT).show();
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    updateUI(user);
-                                    //btnLogin.setEnabled(true);
-                                    //btnNuevo.setEnabled(false);
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(RegisterActivity.this, "Registro no valido.",
-                                            Toast.LENGTH_SHORT).show();
-                                    updateUI(null);
-                                    //btnLogin.setEnabled(true);
-                                    //btnNuevo.setEnabled(true);
-                                }
+                                // If sign in fails, display a message to the user.
+                                Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                Toast.makeText(RegisterActivity.this, "Autentificación invalida.",
+                                        Toast.LENGTH_SHORT).show();
+                                updateUI(null);
+                                //btnLogin.setEnabled(true);
+                                //btnNuevo.setEnabled(true);
                             }
                         } else {
-                            Toast.makeText(RegisterActivity.this, "Usuario Incorrecto(Email).",
+                            Toast.makeText(RegisterActivity.this, "Usuario incorrecto(email).",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
+    private void updateUI(FirebaseUser currentUser) {
+        if (currentUser != null) {
+            btnRegistrarU.setEnabled(false);
+
+        } else {
+            btnRegistrarU.setEnabled(true);
+        }
+    }
+
+
 
     public boolean compEmail(String email) {
 
@@ -145,6 +139,7 @@ public class RegisterActivity extends AppCompatActivity {
         return comp;
     }
 
+
 /*
     public void handleRegistrar(View view) {
         if (usuario.getText().toString().equals("")) {
@@ -158,14 +153,11 @@ public class RegisterActivity extends AppCompatActivity {
             String nuevoUser = usuario.getText().toString();
             String nuevaPasswd = passwd.getText().toString();
             String nuevaEdad = edad.getText().toString();
-
             SharedPreferences.Editor editor = sharedPrefs.edit();
-
             editor.putString("NuevoUser", nuevoUser);
             editor.putString("NuevaPasswd", nuevaPasswd);
             editor.putString("NuevaEdad", nuevaEdad);
             editor.apply();
-
             this.finish();
         }
     }*/

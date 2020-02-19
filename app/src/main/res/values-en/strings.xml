@@ -63,5 +63,8 @@
     <string name="etNombreNuevaRuta">Name Route</string>
     <string name="tvDireccionRuta">Enter the direction of the route</string>
 
+    //Lista navegation drawer
+    <string name="sesion">Session</string>
+    <string name="bntLogOut">Sign off</string>
 
 </resources>

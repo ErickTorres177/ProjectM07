@@ -13,6 +13,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -20,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.Toast;
 
 import cat.copernic.erick.projectm07.ui.Rutas.RutasFragment;
 
@@ -27,6 +30,10 @@ public class NavegationDrawer extends AppCompatActivity {
 
     private SharedPreferences pPreferences;
     private AppBarConfiguration mAppBarConfiguration;
+    private AppBarConfiguration mAppBarConfiguration2;
+
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +45,10 @@ public class NavegationDrawer extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
+
         /*
         ESTE FAB (BOTON), NOS PODRIA SERVIR EN UN FUTURO -> NO BORRAR
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -54,12 +65,16 @@ public class NavegationDrawer extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
+                R.id.nav_tools, R.id.nav_share, R.id.nav_send, R.id.nav_logOut)
                 .setDrawerLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
+
     }
 
     @Override
@@ -89,6 +104,19 @@ public class NavegationDrawer extends AppCompatActivity {
         this.finish();
     }
 
+    public void cerrarSesionEntera(View view) {
+
+        /*mAuth.signOut();
+        //updateUI(mAuth.getCurrentUser());
+        Toast.makeText(NavegationDrawer.this, "Adios",
+                Toast.LENGTH_SHORT).show();*/
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(getApplicationContext(), NavegationDrawer.class);
+
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+
+    }
 
     public void anadirRuta(View view) {
         Intent intent = new Intent(this, RutasFragment.class);

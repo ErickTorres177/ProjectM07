@@ -40,4 +40,5 @@
         android:name="cat.copernic.erick.projectm07.ui.send.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
+
 </navigation>

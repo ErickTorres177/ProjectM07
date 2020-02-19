@@ -76,6 +76,14 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+  /*  @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+    }*/
+
     public void loginUser(final String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -123,7 +131,6 @@ public class LoginActivity extends AppCompatActivity {
     public void inciarSesion(View view) {
         String nombre = preferencias.getString("NuevoUser", "vacio");
         String passwd = preferencias.getString("NuevaPasswd", "vacio");
-
         // Comprovación de que en las SharedPreferences hay algun usuario dado de alta.
         if (nombre.equals("vacio") || passwd.equals("vacio")) {
             Toast.makeText(this, "No hay ningun usuario registrado", Toast.LENGTH_SHORT).show();
