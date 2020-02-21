@@ -11,7 +11,7 @@
     <string name="edad">Age:</string>
     <string name="txtEdadContent">Enter your age</string>
     <string name="hindEdad">Age</string>
-    <string name="hintNombre">Name</string>
+    <string name="hintNombre">Mail</string>
     <string name="hintPasswd">Password</string>
     <string name="iniSesion">Log in</string>
     <string name="menu_nuevaRuta">Routes</string>
@@ -21,7 +21,7 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">Tools</string>
     <string name="txtTituloNombre">Username</string>
-    <string name="nombreUsuario">Username:</string>
+    <string name="nombreUsuario">Email:</string>
     <string name="txtNombre">Enter your username</string>
     <string name="txtTituloPasswd">Password</string>
     <string name="txtPasswd">Enter your password</string>

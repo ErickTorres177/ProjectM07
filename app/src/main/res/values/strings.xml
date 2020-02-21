@@ -19,10 +19,10 @@
     // ACTIVITY REGISTRO
     <string name="tituloRegistro">CREACIÓ COMPTE</string>
     <string name="tituloRegistroContent">CREACIÓ DEL COMPTE</string>
-    <string name="txtTituloNombre">Nom d usuari:</string>
-    <string name="nombreUsuario">Nom d usuari:</string>
+    <string name="txtTituloNombre">Nom d\'usuari:</string>
+    <string name="nombreUsuario">Correu electrònic:</string>
     <string name="txtNombre">Ingressa el teu nom d usuari</string>
-    <string name="hintNombre">Nom</string>
+    <string name="hintNombre">Correu</string>
     <string name="txtTituloPasswd">Contrasenya</string>
     <string name="txtPasswd">Ingressa la teva contrasenya</string>
     <string name="passwd">Contrasenya:</string>
@@ -53,7 +53,7 @@
 
     <string name="nav_header_desc">FOTO D USUARI</string>
     <string name="correoContent">Correu electronic del usuari</string>
-    <string name="nomUsuarioContentNavegationDrawer">Nom de usuari</string>
+    <string name="nomUsuarioContentNavegationDrawer">Nom d\'usuari</string>
     <string name="rv" translatable="false">RV</string>
     <string name="imgCancelar">cancelar</string>
 
