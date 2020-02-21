@@ -30,9 +30,7 @@ import cat.copernic.erick.projectm07.ui.Rutas.RutasFragment;
 
 public class NavegationDrawer extends AppCompatActivity {
 
-    private SharedPreferences pPreferences;
     private AppBarConfiguration mAppBarConfiguration;
-    private AppBarConfiguration mAppBarConfiguration2;
 
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
@@ -44,13 +42,8 @@ public class NavegationDrawer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navegation_drawer);
 
-       /* pPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
-        recuperarDatos(); // Recuperamos datos de las SharedPreferences*/
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
 
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
@@ -67,8 +60,7 @@ public class NavegationDrawer extends AppCompatActivity {
         });*/
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
                 R.id.nav_tools, R.id.nav_share, R.id.nav_send)
@@ -78,9 +70,6 @@ public class NavegationDrawer extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-        //btnLogOut = findViewById(R.id.bntLogOut);
-
     }
 
     @Override
@@ -97,19 +86,6 @@ public class NavegationDrawer extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    /**
-     * Método en el que podemos ver como recuperar los datos que se encuentran en las SharedPreferences
-     */
-    public void recuperarDatos() {
-        String userName = pPreferences.getString("NuevoUser", "vacio");
-        String userPass = pPreferences.getString("NuevaPasswd", "vacio");
-        String userAge = pPreferences.getString("NuevaEdad", "vacio");
-    }
-
-    //public void cerrarSesion(View view) {
-      //  this.finish();
-    //}
-
     public void anadirRuta(View view) {
         Intent intent = new Intent(this, RutasFragment.class);
         startActivity(intent);
@@ -119,7 +95,7 @@ public class NavegationDrawer extends AppCompatActivity {
         Toast.makeText(NavegationDrawer.this, "Adeu usuari: " + currentUser.getEmail(),
                 Toast.LENGTH_SHORT).show();
         mAuth = FirebaseAuth.getInstance();
-        currentUser=mAuth.getCurrentUser();
+        currentUser = mAuth.getCurrentUser();
         mAuth.signOut();
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
