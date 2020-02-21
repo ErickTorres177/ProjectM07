@@ -67,8 +67,11 @@ public class RegisterActivity extends AppCompatActivity {
     public void crearUsuario(final String email, String password) {
 
     if (email.isEmpty() || password.isEmpty()) {
-        Toast.makeText(RegisterActivity.this, "Credencials incorrectes",
+
+        String toastCredencialesIncorrectas= RegisterActivity.this.getResources().getString(R.string.credencialesIcorrectas);
+        Toast.makeText(RegisterActivity.this, toastCredencialesIncorrectas,
                 Toast.LENGTH_SHORT).show();
+
     }else{
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -80,7 +83,9 @@ public class RegisterActivity extends AppCompatActivity {
                                 Log.d(TAG, "createUserWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 updateUI(user);
-                                Toast.makeText(RegisterActivity.this, "Compte registrada: " + email,
+
+                                String toastCuentaCreada= RegisterActivity.this.getResources().getString(R.string.cuentaCreada);
+                                Toast.makeText(RegisterActivity.this, toastCuentaCreada + ": " + email,
                                         Toast.LENGTH_SHORT).show();
 
                                 etUsuario.getText().clear();
@@ -89,12 +94,17 @@ public class RegisterActivity extends AppCompatActivity {
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(RegisterActivity.this, "Registre fallit: " + email,
+
+
+                                String toastRegistroFallido= RegisterActivity.this.getResources().getString(R.string.registroFallido);
+                                Toast.makeText(RegisterActivity.this, toastRegistroFallido + ": " + email,
                                         Toast.LENGTH_SHORT).show();
+
                                 updateUI(null);
                             }
                         } else {
-                            Toast.makeText(RegisterActivity.this, "Ingressa un e-mail vàlid." + email,
+                            String toastEmailInvalido= RegisterActivity.this.getResources().getString(R.string.emailInvalido);
+                            Toast.makeText(RegisterActivity.this, toastEmailInvalido + ": " + email,
                                     Toast.LENGTH_SHORT).show();
                         }
                         // ...

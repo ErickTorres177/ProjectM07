@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //FIRE BASE
         mAuth = FirebaseAuth.getInstance();
-        currentUser=mAuth.getCurrentUser();
+        currentUser = mAuth.getCurrentUser();
         mAuth.signOut();
 
         btnLogin = findViewById(R.id.btnIniciarSesion);
@@ -73,38 +73,53 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         //if (currentUser != null){
-          //  mAuth.signOut();
+        //  mAuth.signOut();
         //}
         updateUI(currentUser);
     }
 
-    public void loginUser(final String email, String password) {
+    public void loginUser(final String email, final String password) {
 
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                            Intent intent = new Intent (LoginActivity.this, NavegationDrawer.class);
-                            //intent.putExtra("some", "some data");
-                            startActivity(intent);
-                            Toast.makeText(LoginActivity.this, "Hola usuari: " + email,
+                        if (email.isEmpty() || password.isEmpty()) {
+
+                            String toastCredenciales = LoginActivity.this.getResources().getString(R.string.credencialesFallidas);
+                            Toast.makeText(LoginActivity.this, toastCredenciales,
                                     Toast.LENGTH_SHORT).show();
                         } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Inici de sessió fallit",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
+
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d(TAG, "signInWithEmail:success");
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                updateUI(user);
+                                Intent intent = new Intent(LoginActivity.this, NavegationDrawer.class);
+                                //intent.putExtra("some", "some data");
+                                startActivity(intent);
+
+                                String toastHola = LoginActivity.this.getResources().getString(R.string.holaUsuario);
+                                Toast.makeText(LoginActivity.this, toastHola + ": " + currentUser.getEmail(),
+                                        Toast.LENGTH_SHORT).show();
+
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w(TAG, "signInWithEmail:failure", task.getException());
+
+                                String toastIniSFallida = LoginActivity.this.getResources().getString(R.string.inisioSFallido);
+                                Toast.makeText(LoginActivity.this, toastIniSFallida,
+                                        Toast.LENGTH_SHORT).show();
+
+                                updateUI(null);
+                            }
                         }
-                        // ...
-                    }
-                });
-    }
+                    // ...
+                }
+
+    });
+}
 
     private void updateUI(FirebaseUser currentUser) {
         if (currentUser != null) {
