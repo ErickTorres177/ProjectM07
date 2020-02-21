@@ -27,6 +27,8 @@ public class RegisterActivity extends AppCompatActivity {
 
     Button btnRegistrarU;
 
+    //public static String usuarioEmail = "nulo";
+
     //FIRE BASE
     private static final String TAG = "LoginActivity";
     private FirebaseAuth mAuth;
@@ -58,60 +60,65 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public void onStart() {
         super.onStart();
         currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
     }
+
     public void crearUsuario(final String email, String password) {
 
-    if (email.isEmpty() || password.isEmpty()) {
+        if (email.isEmpty() || password.isEmpty()) {
 
-        String toastCredencialesIncorrectas= RegisterActivity.this.getResources().getString(R.string.credencialesIcorrectas);
-        Toast.makeText(RegisterActivity.this, toastCredencialesIncorrectas,
-                Toast.LENGTH_SHORT).show();
+            String toastCredencialesIncorrectas = RegisterActivity.this.getResources().getString(R.string.credencialesIcorrectas);
+            Toast.makeText(RegisterActivity.this, toastCredencialesIncorrectas,
+                    Toast.LENGTH_SHORT).show();
 
-    }else{
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (compEmail(email) == true) {
-                            if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
-                                Log.d(TAG, "createUserWithEmail:success");
-                                FirebaseUser user = mAuth.getCurrentUser();
-                                updateUI(user);
+        } else {
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (compEmail(email) == true) {
+                                if (task.isSuccessful()) {
+                                    // Sign in success, update UI with the signed-in user's information
+                                    Log.d(TAG, "createUserWithEmail:success");
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    updateUI(user);
 
-                                String toastCuentaCreada= RegisterActivity.this.getResources().getString(R.string.cuentaCreada);
-                                Toast.makeText(RegisterActivity.this, toastCuentaCreada + ": " + email,
-                                        Toast.LENGTH_SHORT).show();
+                                    String toastCuentaCreada = RegisterActivity.this.getResources().getString(R.string.cuentaCreada);
+                                    Toast.makeText(RegisterActivity.this, toastCuentaCreada + ": " + email,
+                                            Toast.LENGTH_SHORT).show();
 
-                                etUsuario.getText().clear();
-                                etPasswd.getText().clear();
-                                etEdad.getText().clear();
+                                    etUsuario.getText().clear();
+                                    etPasswd.getText().clear();
+                                    etEdad.getText().clear();
+
+                                    //usuarioEmail = email;
+
+                                } else {
+                                    // If sign in fails, display a message to the user.
+                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
+
+                                    String toastRegistroFallido = RegisterActivity.this.getResources().getString(R.string.registroFallido);
+                                    Toast.makeText(RegisterActivity.this, toastRegistroFallido + ": " + email,
+                                            Toast.LENGTH_SHORT).show();
+
+                                    updateUI(null);
+                                }
                             } else {
-                                // If sign in fails, display a message to the user.
-                                Log.w(TAG, "createUserWithEmail:failure", task.getException());
-
-
-                                String toastRegistroFallido= RegisterActivity.this.getResources().getString(R.string.registroFallido);
-                                Toast.makeText(RegisterActivity.this, toastRegistroFallido + ": " + email,
+                                String toastEmailInvalido = RegisterActivity.this.getResources().getString(R.string.emailInvalido);
+                                Toast.makeText(RegisterActivity.this, toastEmailInvalido + ": " + email,
                                         Toast.LENGTH_SHORT).show();
-
-                                updateUI(null);
                             }
-                        } else {
-                            String toastEmailInvalido= RegisterActivity.this.getResources().getString(R.string.emailInvalido);
-                            Toast.makeText(RegisterActivity.this, toastEmailInvalido + ": " + email,
-                                    Toast.LENGTH_SHORT).show();
+                            // ...
                         }
-                        // ...
-                    }
-                });
+                    });
+        }
     }
-    }
+
     private void updateUI(FirebaseUser currentUser) {
 
     }
@@ -135,6 +142,13 @@ public class RegisterActivity extends AppCompatActivity {
     public void handleRegresar(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
-        //this.finish();
+
+        /*
+        Bundle bundle = new Bundle();
+        Intent intent = new Intent(DatosCliente.this, AnadirHamburguesa.class)
+        bundle.putString("nombre",nombre);
+        intent.putExtras(bundle);
+        startActivity(intent);
+        * */
     }
 }

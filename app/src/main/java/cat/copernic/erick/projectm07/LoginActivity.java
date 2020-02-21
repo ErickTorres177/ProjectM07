@@ -2,13 +2,18 @@ package cat.copernic.erick.projectm07;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText user, pass;
     private ImageButton btn_maps, btn_web, btn_insta, btn_gmail;
+    String str;
 
     //FIRE BASE
     Button btnLogin;
@@ -41,29 +47,53 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //FIRE BASE
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
+        mAuth.signOut();
+
         user = findViewById(R.id.etUser);
         pass = findViewById(R.id.etPass);
 
-        user.getText().clear();
-        pass.getText().clear();
+        /*
+            NO BORRAR -> PREGUNTAR A ESTER
+
+        Bundle extras = getIntent().getExtras();
+        String nom = extras.getString("nombre");
+
+        System.out.println("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+nom);
+
+        user.setText(nom);
+        //str = getIntent().getExtras().getString("Value");
+         */
+
 
         //BOTONES DE REDIRECCION (SIN MAS)
         btn_maps = findViewById(R.id.imgBtn_Gmaps);
         btn_web = findViewById(R.id.imgBtn_web);
         btn_insta = findViewById(R.id.imgBtn_instagram);
         btn_gmail = findViewById(R.id.imgBtn_instagram);
-
-        //FIRE BASE
-        mAuth = FirebaseAuth.getInstance();
-        currentUser = mAuth.getCurrentUser();
-        mAuth.signOut();
-
         btnLogin = findViewById(R.id.btnIniciarSesion);
+        btnLogin.setEnabled(false);
+
+        user.addTextChangedListener(loginTW);
+        pass.addTextChangedListener(loginTW);
+
+        //controlDeCampos(currentUser);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginUser(user.getText().toString(), pass.getText().toString());
+                if (user.getText().toString().isEmpty() || pass.getText().toString().isEmpty()) {
+                    String toastCredenciales = LoginActivity.this.getResources().getString(R.string.credencialesIcorrectas);
+                    Toast.makeText(LoginActivity.this, toastCredenciales,
+                            Toast.LENGTH_SHORT).show();
+                    //System.out.println("Campos vacios");
+
+                } else {
+                    //System.out.println("Usuario : " +user.getText().toString()  + " pas: " + pass.getText().toString());
+                    loginUser(user.getText().toString(), pass.getText().toString());
+                }
             }
         });
     }
@@ -84,47 +114,40 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (email.isEmpty() || password.isEmpty()) {
+                        if (task.isSuccessful()) {
 
-                            String toastCredenciales = LoginActivity.this.getResources().getString(R.string.credencialesFallidas);
-                            Toast.makeText(LoginActivity.this, toastCredenciales,
+                            String toastHola = LoginActivity.this.getResources().getString(R.string.holaUsuario);
+                            Toast.makeText(LoginActivity.this, toastHola + ": " + email,
                                     Toast.LENGTH_SHORT).show();
+
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            updateUI(user);
+                            Intent intent = new Intent(LoginActivity.this, NavegationDrawer.class);
+                            startActivity(intent);
                         } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
 
-                            if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
-                                Log.d(TAG, "signInWithEmail:success");
-                                FirebaseUser user = mAuth.getCurrentUser();
-                                updateUI(user);
-                                Intent intent = new Intent(LoginActivity.this, NavegationDrawer.class);
-                                //intent.putExtra("some", "some data");
-                                startActivity(intent);
-
-                                String toastHola = LoginActivity.this.getResources().getString(R.string.holaUsuario);
-                                Toast.makeText(LoginActivity.this, toastHola + ": " + currentUser.getEmail(),
-                                        Toast.LENGTH_SHORT).show();
-
-                            } else {
-                                // If sign in fails, display a message to the user.
-                                Log.w(TAG, "signInWithEmail:failure", task.getException());
-
-                                String toastIniSFallida = LoginActivity.this.getResources().getString(R.string.inisioSFallido);
-                                Toast.makeText(LoginActivity.this, toastIniSFallida,
-                                        Toast.LENGTH_SHORT).show();
-
-                                updateUI(null);
-                            }
+                            String toastIniSFallida = LoginActivity.this.getResources().getString(R.string.credencialesIcorrectas);
+                            Toast.makeText(LoginActivity.this, toastIniSFallida,
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(null);
                         }
-                    // ...
-                }
-
-    });
-}
+                        // ...
+                    }
+                });
+    }
 
     private void updateUI(FirebaseUser currentUser) {
         if (currentUser != null) {
         } else {
         }
+    }
+
+    public void autofillDeCampos(String email) {
+        user.setText(email);
     }
 
     public void iniciarRegistro(View view) {
@@ -188,5 +211,38 @@ public class LoginActivity extends AppCompatActivity {
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO,
                 Uri.fromParts("mailto", "findyourwayFOW@gmail.com", null));
         startActivity(emailIntent);
+    }
+
+    private TextWatcher loginTW  = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            String userNameInput = user.getText().toString().trim();
+            String passNameInput = user.getText().toString().trim();
+
+            /*if (btnLogin.isEnabled())
+                btnLogin.getBackground().setColorFilter(Color.WHITE), PorterDuff.Mode.MULTIPLY);
+            else
+                btnLogin.getBackground().setColorFilter(null);*/
+            btnLogin.setEnabled(!userNameInput.isEmpty() && !passNameInput.isEmpty());
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+    private void controlDeCampos(FirebaseUser currentUser) {
+        if (currentUser != null){
+            user.getText().clear();
+            //pass.getText().clear();
+        } else {
+            user.getText().clear();
+            pass.getText().clear();
+        }
     }
 }

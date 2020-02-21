@@ -107,6 +107,8 @@
         android:paddingRight="4dp"
         android:paddingBottom="8dp"
         android:text="@string/iniSesion"
+        android:textOn="Disable TextView"
+        android:textOff="Enable TextView"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/PH25..50"
