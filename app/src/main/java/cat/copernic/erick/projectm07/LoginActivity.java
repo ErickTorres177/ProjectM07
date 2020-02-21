@@ -44,8 +44,13 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //onStart();
+
         user = findViewById(R.id.etUser);
         pass = findViewById(R.id.etPass);
+
+        user.getText().clear();
+        pass.getText().clear();
 
         // preferencias = getSharedPreferences("Login", Context.MODE_PRIVATE);
 
@@ -59,6 +64,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         currentUser=mAuth.getCurrentUser();
+        mAuth.signOut();
 
 
         btnLogin = findViewById(R.id.btnIniciarSesion);
@@ -76,15 +82,20 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-  /*  @Override
+    @Override
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        //if (currentUser != null){
+          //  mAuth.signOut();
+        //}
         updateUI(currentUser);
-    }*/
+    }
 
     public void loginUser(final String email, String password) {
+
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -94,20 +105,20 @@ public class LoginActivity extends AppCompatActivity {
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
-                            Toast.makeText(LoginActivity.this, "Hola usuario: " + email,
-                                    Toast.LENGTH_SHORT).show();
-                            //Start intent
-                            Intent intent = new Intent(getApplicationContext(), NavegationDrawer.class);
+                            Intent intent = new Intent (LoginActivity.this, NavegationDrawer.class);
+                            //intent.putExtra("some", "some data");
                             startActivity(intent);
+                            Toast.makeText(LoginActivity.this, "Hola usuari: " + email,
+                                    Toast.LENGTH_SHORT).show();
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                            Toast.makeText(LoginActivity.this, "Inici de sessió fallit",
                                     Toast.LENGTH_SHORT).show();
                             updateUI(null);
-                            //btnLogin.setEnabled(true);
-                            //btnNuevo.setEnabled(true);
                         }
+                        // ...
                     }
                 });
     }

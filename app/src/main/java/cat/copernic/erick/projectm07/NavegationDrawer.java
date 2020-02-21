@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -22,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.Toast;
 
 import cat.copernic.erick.projectm07.ui.Rutas.RutasFragment;
@@ -35,16 +37,20 @@ public class NavegationDrawer extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
 
+    private Button btnLogOut;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navegation_drawer);
 
-        pPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
-        recuperarDatos(); // Recuperamos datos de las SharedPreferences
+       /* pPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
+        recuperarDatos(); // Recuperamos datos de las SharedPreferences*/
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
@@ -65,7 +71,7 @@ public class NavegationDrawer extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send, R.id.nav_logOut)
+                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -73,7 +79,7 @@ public class NavegationDrawer extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-
+        //btnLogOut = findViewById(R.id.bntLogOut);
 
     }
 
@@ -100,26 +106,22 @@ public class NavegationDrawer extends AppCompatActivity {
         String userAge = pPreferences.getString("NuevaEdad", "vacio");
     }
 
-    public void cerrarSesion(View view) {
-        this.finish();
-    }
-
-    public void cerrarSesionEntera(View view) {
-
-        /*mAuth.signOut();
-        //updateUI(mAuth.getCurrentUser());
-        Toast.makeText(NavegationDrawer.this, "Adios",
-                Toast.LENGTH_SHORT).show();*/
-        FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(getApplicationContext(), NavegationDrawer.class);
-
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-
-    }
+    //public void cerrarSesion(View view) {
+      //  this.finish();
+    //}
 
     public void anadirRuta(View view) {
         Intent intent = new Intent(this, RutasFragment.class);
+        startActivity(intent);
+    }
+
+    public void cerrarSesion(MenuItem item) {
+        Toast.makeText(NavegationDrawer.this, "Adeu usuari: " + currentUser.getEmail(),
+                Toast.LENGTH_SHORT).show();
+        mAuth = FirebaseAuth.getInstance();
+        currentUser=mAuth.getCurrentUser();
+        mAuth.signOut();
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 }

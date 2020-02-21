@@ -66,50 +66,50 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
         currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
+        /*if(currentUser != null){
+            Toast.makeText(RegisterActivity.this, "Per crear un usuari has de tancar la sessió iniciada",
+                    Toast.LENGTH_SHORT).show();
+        }*/
     }
     public void crearUsuario(final String email, String password) {
+
+
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-
-                        if (compEmail(email) == true) {
+                        if(compEmail(email) == true) {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d(TAG, "createUserWithEmail:success");
-                                Toast.makeText(RegisterActivity.this, "Autentificación valida.",
-                                        Toast.LENGTH_SHORT).show();
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 updateUI(user);
-                                //btnLogin.setEnabled(true);
-                                //btnNuevo.setEnabled(false);
+                                Toast.makeText(RegisterActivity.this, "Compte registrada: " + email,
+                                        Toast.LENGTH_SHORT).show();
+
+                                etUsuario.getText().clear();
+                                etPasswd.getText().clear();
+                                etEdad.getText().clear();
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(RegisterActivity.this, "Autentificación invalida.",
+                                Toast.makeText(RegisterActivity.this, "Registre fallit: " + email,
                                         Toast.LENGTH_SHORT).show();
                                 updateUI(null);
-                                //btnLogin.setEnabled(true);
-                                //btnNuevo.setEnabled(true);
                             }
-                        } else {
-                            Toast.makeText(RegisterActivity.this, "Usuario incorrecto(email).",
+                        }else {
+                            Toast.makeText(RegisterActivity.this, "Ingressa un e-mail vàlid." + email,
                                     Toast.LENGTH_SHORT).show();
                         }
+                        // ...
                     }
                 });
     }
     private void updateUI(FirebaseUser currentUser) {
-        if (currentUser != null) {
-            btnRegistrarU.setEnabled(false);
 
-        } else {
-            btnRegistrarU.setEnabled(true);
-        }
     }
 
 
