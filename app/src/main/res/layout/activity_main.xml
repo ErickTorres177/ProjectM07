@@ -5,6 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:scaleType="fitStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/imagen_fondo_login2" />
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:scaleType="fitEnd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/imagen_fondo_login1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ImageView
         android:id="@+id/imgUsuarui"
         android:layout_width="172dp"
@@ -97,7 +126,7 @@
         android:id="@+id/btnIniciarSesion"
         android:layout_width="150dp"
         android:layout_height="43dp"
-        android:background="@drawable/botones"
+        android:background="@drawable/botones_azules"
         android:contentDescription="@string/iniSesion"
         android:gravity="center"
         android:minWidth="160dp"
@@ -107,9 +136,9 @@
         android:paddingRight="4dp"
         android:paddingBottom="8dp"
         android:text="@string/iniSesion"
-        android:textOn="Disable TextView"
-        android:textOff="Enable TextView"
         android:textColor="@android:color/white"
+        android:textOff="Enable TextView"
+        android:textOn="Disable TextView"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/PH25..50"
         app:layout_constraintEnd_toEndOf="parent"
