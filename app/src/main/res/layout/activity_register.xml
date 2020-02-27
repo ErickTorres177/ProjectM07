@@ -125,7 +125,7 @@
                 android:ems="10"
                 android:hint="@string/hintNombre"
                 android:importantForAutofill="no"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:textColor="@color/white"
                 android:textColorHighlight="@color/white"
                 android:textColorHint="@color/white"
@@ -139,7 +139,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="132dp"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="47dp"
                 android:contentDescription="@string/txtTituloPasswd"
                 android:text="@string/passwd"
@@ -183,17 +183,62 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtTituloPasswd" />
 
             <TextView
+                android:id="@+id/txtTituloNombreReal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/txtTituloNombreReal"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.507"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtFondoPasswd" />
+
+            <EditText
+                android:id="@+id/txtFondoNombreReal"
+                android:layout_width="250dp"
+                android:layout_height="0dp"
+                android:background="@drawable/campos"
+                android:contentDescription="@string/txtPasswd"
+                android:ems="10"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/txtNombreReal"
+                app:layout_constraintEnd_toEndOf="@+id/txtNombreReal"
+                app:layout_constraintStart_toStartOf="@+id/txtNombreReal"
+                app:layout_constraintTop_toTopOf="@+id/txtNombreReal" />
+
+            <EditText
+                android:id="@+id/txtNombreReal"
+                android:layout_width="225dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="@string/txtPasswd"
+                android:ems="10"
+                android:hint="@string/hintNombreReal"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+                app:layout_constraintHorizontal_bias="0.453"
+                app:layout_constraintStart_toEndOf="@id/P50VCampos"
+                app:layout_constraintTop_toBottomOf="@+id/txtTituloNombreReal" />
+
+            <TextView
                 android:id="@+id/txtTituloEdad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="10dp"
                 android:contentDescription="@string/edad"
                 android:text="@string/edad"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toStartOf="@+id/P50VCampos"
                 app:layout_constraintStart_toStartOf="@+id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/txtFondoPasswd" />
+                app:layout_constraintTop_toBottomOf="@+id/txtFondoNombreReal" />
 
             <EditText
                 android:id="@+id/txtFondoEdad"
@@ -217,7 +262,8 @@
                 android:ems="10"
                 android:hint="@string/hindEdad"
                 android:importantForAutofill="no"
-                android:inputType="textPassword"
+                android:inputType="number"
+                android:textAlignment="viewStart"
                 android:textColor="@color/white"
                 android:textColorHighlight="@color/white"
                 android:textColorHint="@color/white"
@@ -275,6 +321,7 @@
                 android:layout_height="60dp"
                 android:layout_marginEnd="5dp"
                 android:contentDescription="@string/imgCancelar"
+                android:onClick="handleRegresar"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/btnVolver"
                 app:layout_constraintTop_toTopOf="parent"
@@ -296,7 +343,6 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/botones"
                 android:contentDescription="@string/btnRegistrarseContent"
-                android:onClick="handleRegresar"
                 android:text="@string/btnRegistrar"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
