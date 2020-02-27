@@ -22,7 +22,7 @@
     <string name="txtTituloNombre">Nom d usuari:</string>
     <string name="nombreUsuario">Nom d usuari:</string>
     <string name="txtNombre">Ingressa el teu nom d usuari</string>
-    <string name="hintNombre">Nom</string>
+    <string name="hintNombre">Usuari</string>
     <string name="txtTituloPasswd">Contrasenya</string>
     <string name="txtPasswd">Ingressa la teva contrasenya</string>
     <string name="passwd">Contrasenya:</string>
@@ -43,6 +43,8 @@
     <string name="menu_tools">Eines</string>
     <string name="menu_share">Compartir</string>
     <string name="menu_send">Enviar</string>
+    <string name="txtNombreReal">Nom:</string>
+    <string name="txtNombreRealTitulo">Nom</string>
 
     // NAVIGATION DRAWER
     <string name="navigation_drawer_open" translatable="false">Obrir navigation drawer</string>

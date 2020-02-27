@@ -24,6 +24,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import cat.copernic.erick.projectm07.ui.Rutas.RutasFragment;
@@ -36,6 +37,7 @@ public class NavegationDrawer extends AppCompatActivity {
     private FirebaseUser currentUser;
 
     private Button btnLogOut;
+    private TextView tvNombreUsuario, tvUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,12 @@ public class NavegationDrawer extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        tvNombreUsuario = findViewById(R.id.tvNombreUsuario);
+        tvUsuario = findViewById(R.id.tvUsuario);
+
+
+
+        //FIRE BASE
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 

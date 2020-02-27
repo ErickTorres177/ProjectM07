@@ -19,7 +19,7 @@
     <string name="password">CONTRASEÑA</string>
     <string name="passwd">Contraseña:</string>
     <string name="txtTituloNombre">Nombre de usuario</string>
-    <string name="nombreUsuario">Nombre de usuario:</string>
+    <string name="nombreUsuario">Usuario:</string>
     <string name="txtNombre">Ingresa tu nombre de usuario</string>
     <string name="txtTituloEdad">Edad</string>
     <string name="txtEdadContent">Ingresa tu edad</string>
@@ -35,6 +35,9 @@
     <string name="hintPasswd">Contraseña</string>
     <string name="btnRegistrarseContent">Crear cuenta</string>
     <string name="btnVolverContent">cancelar creación de la cuenta</string>
+
+    <string name="txtNombreReal">Nombre</string>
+    <string name="txtNombreRealTitulo">Nombre:</string>
 
     <string name="nav_header_desc" >FOTO DE USUARIO</string>
     <string name="correoContent">Correo electronico del usuario</string>
