@@ -35,6 +35,37 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/imagen_fondo_registro1" />
+
+        <ImageView
+            android:id="@+id/imgCirculo1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="200dp"
+            app:layout_constraintStart_toStartOf="@+id/img1"
+            app:layout_constraintTop_toTopOf="@+id/img1"
+            app:srcCompat="@drawable/layout_circulo3" />
+
+        <ImageView
+            android:id="@+id/imgCirculo2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="290dp"
+            android:layout_marginBottom="230dp"
+            app:layout_constraintBottom_toBottomOf="@+id/img2"
+            app:layout_constraintEnd_toEndOf="@+id/img2"
+            app:srcCompat="@drawable/layout_circulo1" />
+
+        <ImageView
+            android:id="@+id/imgCirculo3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="105dp"
+            app:layout_constraintBottom_toBottomOf="@+id/img2"
+            app:layout_constraintEnd_toEndOf="@+id/img2"
+            app:srcCompat="@drawable/layout_circulo2" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
