@@ -76,5 +76,8 @@
     <string name="cuentaCreada">Cuenta registrada</string>
     <string name="registroFallido">Registro de cuenta fallido</string>
     <string name="emailInvalido">Email inválido</string>
+    <string name="txtTituloNombreReal">Nombre:</string>
+    <string name="hintNombreReal">Nombre</string>
+    <string name="txtNombreReal">Nombre real del usuario</string>
 
 </resources>

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,7 +25,7 @@ import java.util.regex.Pattern;
 public class RegisterActivity extends AppCompatActivity {
 
     EditText etUsuario, etPasswd, etEdad;
-
+    ImageView iconoRegitrar;
     Button btnRegistrarU;
 
     //public static String usuarioEmail = "nulo";
@@ -42,6 +43,15 @@ public class RegisterActivity extends AppCompatActivity {
         etUsuario = findViewById(R.id.txtNombre);
         etPasswd = findViewById(R.id.txtPasswd);
         etEdad = findViewById(R.id.txtEdad);
+
+        // Inicializamos y establecemos el click del icono de login
+        iconoRegitrar = findViewById(R.id.singup2);
+        iconoRegitrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crearUsuario(etUsuario.getText().toString(), etPasswd.getText().toString());
+            }
+        });
 
         //currentUser = mAuth.getCurrentUser();
         //updateUI(currentUser);

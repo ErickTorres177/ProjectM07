@@ -21,11 +21,14 @@
     <string name="tituloRegistroContent">CREACIÓ DEL COMPTE</string>
     <string name="txtTituloNombre">Nom d\'usuari:</string>
     <string name="nombreUsuario">Correu electrònic:</string>
-    <string name="txtNombre">Ingressa el teu nom d usuari</string>
+    <string name="txtNombre">Ingressa el teu correu electronic</string>
     <string name="hintNombre">Correu</string>
     <string name="txtTituloPasswd">Contrasenya</string>
     <string name="txtPasswd">Ingressa la teva contrasenya</string>
     <string name="passwd">Contrasenya:</string>
+    <string name="txtTituloNombreReal">Nom:</string>
+    <string name="txtNombreReal">Nom real de l\'usuari</string>
+    <string name="hintNombreReal">Nom</string>
     <string name="txtTituloEdad">Edat</string>
     <string name="txtEdadContent">Ingressa la teva edat</string>
     <string name="hintPasswd">Contrasenya</string>
