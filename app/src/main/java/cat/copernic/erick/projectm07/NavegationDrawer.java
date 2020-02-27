@@ -92,8 +92,11 @@ public class NavegationDrawer extends AppCompatActivity {
     }
 
     public void cerrarSesion(MenuItem item) {
-        Toast.makeText(NavegationDrawer.this, "Adeu usuari: " + currentUser.getEmail(),
+
+        String toastMessage = NavegationDrawer.this.getResources().getString(R.string.adiosUsuario);
+        Toast.makeText(NavegationDrawer.this, toastMessage  + ": " + currentUser.getEmail(),
                 Toast.LENGTH_SHORT).show();
+
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
         mAuth.signOut();

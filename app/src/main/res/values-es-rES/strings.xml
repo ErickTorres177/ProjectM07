@@ -67,4 +67,14 @@
     <string name="sesion">Sesión</string>
     <string name="bntLogOut">Cerrar sesión</string>
 
+    // Toast variantes
+    <string name="adiosUsuario">Hasta pronto</string>
+    <string name="holaUsuario">Bienvenido</string>
+    <string name="inisioSFallido">Inicio de sesión fallida</string>
+    <string name="credencialesFallidas">Credenciales incorrectas, por favor rellena todos los campos</string>
+    <string name="credencialesIcorrectas">Credencials incorrectes</string>
+    <string name="cuentaCreada">Cuenta registrada</string>
+    <string name="registroFallido">Registro de cuenta fallido</string>
+    <string name="emailInvalido">Email inválido</string>
+
 </resources>

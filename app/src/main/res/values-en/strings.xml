@@ -67,6 +67,14 @@
     <string name="sesion">Session</string>
     <string name="bntLogOut">Sign off</string>
 
-
+    // Toast variantes
+    <string name="adiosUsuario">See you soon</string>
+    <string name="holaUsuario">Welcome</string>
+    <string name="inisioSFallido">Login failed</string>
+    <string name="credencialesFallidas">Incorrect credentials, please fill in all fields</string>
+    <string name="credencialesIcorrectas">Credencials incorrectes</string>
+    <string name="cuentaCreada">Registered account</string>
+    <string name="registroFallido">Dailed account registration</string>
+    <string name="emailInvalido">Invalid email</string>
 
 </resources>

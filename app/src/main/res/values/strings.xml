@@ -83,6 +83,16 @@
     <string name="sesion">Sessió</string>
     <string name="bntLogOut">Tancar sessió</string>
 
+    // Toast variantes
+    <string name="adiosUsuario">Fins aviat</string>
+    <string name="holaUsuario">Benvingut</string>
+    <string name="inisioSFallido">Inici de sessió fallida</string>
+    <string name="credencialesFallidas">Credencials incorrectes, si us plau ompli tots els camps</string>
+    <string name="credencialesIcorrectas">Credencials incorrectes</string>
+    <string name="cuentaCreada">Compte registrada</string>
+    <string name="registroFallido">Registre de compte fallit</string>
+    <string name="emailInvalido">Email invàlid</string>
+
 
 </resources>
 
