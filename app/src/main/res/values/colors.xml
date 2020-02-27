@@ -4,12 +4,22 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="colorBackground">#BF0B173F</color>
+
     <color name="colorBotones">#5A5A5C</color>
+    <color name="colorBotonesRosado">#DD326F</color>
+    <color name="colorBotonesAzul">#00C4A7</color>
+
     <color name="colorCampos">#757575</color>
+
     <color name="colorTitulos">#D8D8D8</color>
-    <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
     <color name="textColorHind">#e6e6e6</color>
 
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="translucentWhite">#33FFFFFF</color>
+    <color name="translucentBlue">#BF7082D6</color>
 
 </resources>
