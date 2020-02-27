@@ -24,12 +24,14 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import cat.copernic.erick.projectm07.ui.Rutas.RutasFragment;
 
 public class NavegationDrawer extends AppCompatActivity {
+
+    private static final int CAMERA_REQUEST = 1888;
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -37,6 +39,7 @@ public class NavegationDrawer extends AppCompatActivity {
     private FirebaseUser currentUser;
 
     private Button btnLogOut;
+    private ImageView imgUsuario;
     private TextView tvNombreUsuario, tvUsuario;
 
     @Override
@@ -49,6 +52,25 @@ public class NavegationDrawer extends AppCompatActivity {
 
         tvNombreUsuario = findViewById(R.id.tvNombreUsuario);
         tvUsuario = findViewById(R.id.tvUsuario);
+
+        //
+        imgUsuario = findViewById(R.id.imgUsuario);
+        tvNombreUsuario = findViewById(R.id.tvNombreUsuario);
+        tvUsuario = findViewById(R.id.tvUsuario);
+
+        /*imgUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                if(intent.resolveActivity(getPackageManager()) != null){
+                        startActivityForResult(Intent.createChooser(intent, "Selecciona una imagen de perfil."),
+                                CAMERA_REQUEST);
+                }
+            }
+        });*/
+
 
 
 
@@ -95,7 +117,7 @@ public class NavegationDrawer extends AppCompatActivity {
     }
 
     public void anadirRuta(View view) {
-        Intent intent = new Intent(this, RutasFragment.class);
+        Intent intent = new Intent(this, NuevaRuta.class);
         startActivity(intent);
     }
 
