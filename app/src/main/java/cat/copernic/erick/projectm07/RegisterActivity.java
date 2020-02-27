@@ -17,7 +17,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.sql.DatabaseMetaData;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -96,7 +99,13 @@ public class RegisterActivity extends AppCompatActivity {
                                     etPasswd.getText().clear();
                                     etEdad.getText().clear();
 
-                                    //usuarioEmail = email;
+                                    //ANAÑDIR DATOS DEL USUARIO A FIRE BASE:
+                                    DatabaseReference mDatabaseR = FirebaseDatabase.getInstance().getReference().child("usuarios");
+                                    DatabaseReference currentUserDB = mDatabaseR.child(mAuth.getCurrentUser().getUid());
+
+                                    //currentUserDB.child("nombre").setValue();
+                                    currentUserDB.child("edad").setValue(etEdad);
+                                    currentUserDB.child("imgUsuario").setValue("default");
 
                                 } else {
                                     // If sign in fails, display a message to the user.
