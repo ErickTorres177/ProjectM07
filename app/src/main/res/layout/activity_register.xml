@@ -7,253 +7,313 @@
     tools:context=".RegisterActivity">
 
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.75" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/P50V"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/P50H"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/LayoutDatos"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        android:id="@+id/LayoutImagenesFondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/P10H"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.15" />
+        <ImageView
+            android:id="@+id/img2"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:scaleType="fitEnd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/imagen_fondo_registro2" />
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:scaleType="fitStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/imagen_fondo_registro1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LayoutTitulo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/P15H"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/txt_titulo"
-            android:layout_width="354dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:contentDescription="@string/tituloRegistroContent"
-            android:gravity="center|top"
+            android:gravity="center"
             android:minWidth="46dp"
             android:minHeight="289dp"
             android:paddingLeft="4dp"
             android:paddingTop="8dp"
             android:paddingRight="4dp"
             android:paddingBottom="8dp"
+            android:shadowRadius="1"
             android:text="@string/tituloRegistro"
             android:textColor="@color/white"
             android:textSize="32sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.615"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/txtTituloNombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
-            android:contentDescription="@string/txtTituloNombre"
-            android:text="@string/nombreUsuario"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="@+id/txtNombre"
-            app:layout_constraintStart_toStartOf="@+id/txtNombre"
-            app:layout_constraintTop_toBottomOf="@+id/txt_titulo" />
-
-        <EditText
-            android:id="@+id/txtFondoNombre"
-            android:layout_width="247dp"
-            android:layout_height="44dp"
-            android:background="@drawable/campos"
-            android:contentDescription="@string/txtNombre"
-            android:editable="false"
-            android:ems="10"
-            android:importantForAutofill="no"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="@+id/txtNombre"
-            app:layout_constraintEnd_toEndOf="@+id/txtNombre"
-            app:layout_constraintStart_toStartOf="@+id/txtNombre"
-            app:layout_constraintTop_toTopOf="@+id/txtNombre" />
-
-        <EditText
-            android:id="@+id/txtNombre"
-            android:layout_width="235dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="10dp"
-            android:contentDescription="@string/txtNombre"
-            android:ems="10"
-            android:hint="@string/hintNombre"
-            android:importantForAutofill="no"
-            android:inputType="textPassword"
-            android:textColor="@color/white"
-            android:textColorHighlight="@color/white"
-            android:textColorHint="@color/white"
-            android:textColorLink="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtTituloNombre" />
-
-        <TextView
-            android:id="@+id/txtTituloPasswd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/passwd"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:contentDescription="@string/txtTituloPasswd"
-            app:layout_constraintEnd_toEndOf="@+id/txtPasswd"
-            app:layout_constraintStart_toStartOf="@+id/txtPasswd"
-            app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
-
-        <EditText
-            android:id="@+id/txtFondoPasswd"
-            android:layout_width="240dp"
-            android:layout_height="0dp"
-            android:background="@drawable/campos"
-            android:editable="false"
-            android:ems="10"
-            android:importantForAutofill="no"
-            android:inputType="textPersonName"
-            android:contentDescription="@string/txtPasswd"
-            app:layout_constraintBottom_toBottomOf="@+id/txtPasswd"
-            app:layout_constraintEnd_toEndOf="@+id/txtPasswd"
-            app:layout_constraintStart_toStartOf="@+id/txtPasswd"
-            app:layout_constraintTop_toTopOf="@+id/txtPasswd" />
-
-        <EditText
-            android:id="@+id/txtPasswd"
-            android:layout_width="225dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:contentDescription="@string/txtPasswd"
-            android:ems="10"
-            android:hint="@string/hintPasswd"
-            android:importantForAutofill="no"
-            android:inputType="textPassword"
-            android:textColor="@color/white"
-            android:textColorHighlight="@color/white"
-            android:textColorHint="@color/white"
-            android:textColorLink="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtTituloPasswd" />
-
-        <TextView
-            android:id="@+id/txtTituloEdad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/edad"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:contentDescription="@string/edad"
-            app:layout_constraintEnd_toEndOf="@+id/txtEdad"
-            app:layout_constraintStart_toStartOf="@+id/txtEdad"
-            app:layout_constraintTop_toBottomOf="@+id/txtPasswd" />
-
-        <EditText
-            android:id="@+id/txtFondoEdad"
-            android:layout_width="120dp"
-            android:layout_height="37dp"
-            android:background="@drawable/campos"
-            android:editable="false"
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="@+id/txtEdad"
-            app:layout_constraintEnd_toEndOf="@+id/txtEdad"
-            app:layout_constraintStart_toStartOf="@+id/txtEdad"
-            app:layout_constraintTop_toTopOf="@+id/txtEdad" />
-
-        <EditText
-            android:id="@+id/txtEdad"
-            android:layout_width="106dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="10dp"
-            android:contentDescription="@string/txtEdadContent"
-            android:ems="10"
-            android:hint="@string/hindEdad"
-            android:importantForAutofill="no"
-            android:inputType="textPassword"
-            android:textColor="@color/white"
-            android:textColorHighlight="@color/white"
-            android:textColorHint="@color/white"
-            android:textColorLink="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtTituloEdad" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputNombre"
-            android:layout_width="314dp"
-            android:layout_height="38dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtEdad">
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LayoutDatos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/P80H"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/P15H">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/contenedorCampos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txtTituloNombre"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="hint" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:contentDescription="@string/txtTituloNombre"
+                android:text="@string/nombreUsuario"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+                app:layout_constraintStart_toStartOf="@id/P50VCampos"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/txtFondoNombre"
+                android:layout_width="250dp"
+                android:layout_height="0dp"
+                android:background="@drawable/campos"
+                android:contentDescription="@string/txtNombre"
+                android:editable="false"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/txtNombre"
+                app:layout_constraintEnd_toEndOf="@+id/txtNombre"
+                app:layout_constraintStart_toStartOf="@+id/txtNombre"
+                app:layout_constraintTop_toTopOf="@+id/txtNombre" />
+
+            <EditText
+                android:id="@+id/txtNombre"
+                android:layout_width="225dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="@string/txtNombre"
+                android:ems="10"
+                android:hint="@string/hintNombre"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+                app:layout_constraintStart_toEndOf="@id/P50VCampos"
+                app:layout_constraintTop_toBottomOf="@id/txtTituloNombre" />
+
+            <TextView
+                android:id="@+id/txtTituloPasswd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="132dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="47dp"
+                android:contentDescription="@string/txtTituloPasswd"
+                android:text="@string/passwd"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+                app:layout_constraintStart_toStartOf="@id/P50VCampos"
+                app:layout_constraintTop_toBottomOf="@id/txtFondoNombre" />
+
+            <EditText
+                android:id="@+id/txtFondoPasswd"
+                android:layout_width="250dp"
+                android:layout_height="0dp"
+                android:background="@drawable/campos"
+                android:contentDescription="@string/txtPasswd"
+                android:editable="false"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/txtPasswd"
+                app:layout_constraintEnd_toEndOf="@+id/txtPasswd"
+                app:layout_constraintStart_toStartOf="@+id/txtPasswd"
+                app:layout_constraintTop_toTopOf="@+id/txtPasswd" />
+
+            <EditText
+                android:id="@+id/txtPasswd"
+                android:layout_width="225dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="@string/txtPasswd"
+                android:ems="10"
+                android:hint="@string/hintPasswd"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+                app:layout_constraintStart_toEndOf="@id/P50VCampos"
+                app:layout_constraintTop_toBottomOf="@+id/txtTituloPasswd" />
+
+            <TextView
+                android:id="@+id/txtTituloEdad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:contentDescription="@string/edad"
+                android:text="@string/edad"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/P50VCampos"
+                app:layout_constraintStart_toStartOf="@+id/P50VCampos"
+                app:layout_constraintTop_toBottomOf="@+id/txtFondoPasswd" />
+
+            <EditText
+                android:id="@+id/txtFondoEdad"
+                android:layout_width="96dp"
+                android:layout_height="0dp"
+                android:background="@drawable/campos"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/txtEdad"
+                app:layout_constraintEnd_toEndOf="@+id/txtEdad"
+                app:layout_constraintStart_toStartOf="@+id/txtEdad"
+                app:layout_constraintTop_toTopOf="@+id/txtEdad" />
+
+            <EditText
+                android:id="@+id/txtEdad"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="@string/txtEdadContent"
+                android:ems="10"
+                android:hint="@string/hindEdad"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/P50VCampos"
+                app:layout_constraintStart_toStartOf="@+id/P50VCampos"
+                app:layout_constraintTop_toBottomOf="@+id/txtTituloEdad" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/P50VCampos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/LayoutBotones"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline6">
+        app:layout_constraintTop_toTopOf="@+id/P80H">
 
-        <Button
-            android:id="@+id/btnVolver"
-            android:layout_width="100dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutBotonAtras"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/botones"
-            android:onClick="handleRegresar"
-            android:text="@string/btnVolver"
-            android:textColor="@color/white"
-            android:contentDescription="@string/btnVolverContent"
-            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/P50Vbotones"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline4" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/btnRegistrarUsuario"
-            android:layout_width="125dp"
+            <Button
+                android:id="@+id/btnVolver"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/botones"
+                android:contentDescription="@string/btnVolverContent"
+                android:onClick="handleRegresar"
+                android:text="@string/btnVolver"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/cancelar"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="5dp"
+                android:contentDescription="@string/imgCancelar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnVolver"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/tornar" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutBotonRegistrar"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/botones"
-            android:contentDescription="@string/btnRegistrarseContent"
-            android:text="@string/btnRegistrar"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/P50Vbotones"
-            app:layout_constraintTop_toTopOf="@+id/guideline4" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/btnRegistrarUsuario"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/botones"
+                android:contentDescription="@string/btnRegistrarseContent"
+                android:onClick="handleRegresar"
+                android:text="@string/btnRegistrar"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/singup2"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="5dp"
+                android:contentDescription="@string/imgCancelar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnRegistrarUsuario"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/sing_up" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/P50Vbotones"
@@ -263,38 +323,26 @@
             app:layout_constraintGuide_percent="0.5" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline4"
+            android:id="@+id/P50Hbotones"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.65" />
-
-        <ImageView
-            android:id="@+id/singup2"
-            android:layout_width="98dp"
-            android:layout_height="67dp"
-            android:layout_marginTop="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:contentDescription="@string/btnRegistrar"
-            app:layout_constraintHorizontal_bias="0.476"
-            app:layout_constraintStart_toStartOf="@+id/P50Vbotones"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/sing_up" />
-
-        <ImageView
-            android:id="@+id/cancelar"
-            android:layout_width="152dp"
-            android:layout_height="64dp"
-            android:layout_marginTop="16dp"
-            android:contentDescription="@string/imgCancelar"
-            app:layout_constraintEnd_toStartOf="@+id/P50Vbotones"
-            app:layout_constraintHorizontal_bias="0.481"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/cerrar_ses" />
-
-
+            app:layout_constraintGuide_percent="0.5" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/P15H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/P80H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
 </androidx.constraintlayout.widget.ConstraintLayout>
