@@ -28,6 +28,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import cat.copernic.erick.projectm07.ui.home.HomeFragment;
+
 
 public class NavegationDrawer extends AppCompatActivity {
 
@@ -116,11 +118,6 @@ public class NavegationDrawer extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    public void anadirRuta(View view) {
-        Intent intent = new Intent(this, NuevaRuta.class);
-        startActivity(intent);
-    }
-
     public void cerrarSesion(MenuItem item) {
 
         String toastMessage = NavegationDrawer.this.getResources().getString(R.string.adiosUsuario);
@@ -131,6 +128,11 @@ public class NavegationDrawer extends AppCompatActivity {
         currentUser = mAuth.getCurrentUser();
         mAuth.signOut();
         Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void anadirRuta(View view) {
+        Intent intent = new Intent(this, NuevaRuta.class);
         startActivity(intent);
     }
 }

@@ -3,6 +3,8 @@ package cat.copernic.erick.projectm07.ui.home;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -15,7 +17,10 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import cat.copernic.erick.projectm07.R;
 import cat.copernic.erick.projectm07.ui.Rutas.RutasFragment;
@@ -26,16 +31,22 @@ public class HomeFragment extends Fragment {
     Adapter mAdapter;
 
     private HomeViewModel homeViewModel;
+    //----
+    private final LinkedList<String> mListaRutas = new LinkedList<>();
+
+    //private RecyclerView mRecyclerView;
+    //private Adapter mAdapter;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        //final TextView textView = root.findViewById(R.id.text_home);
 
 
         //RECYCLERVIEW
+
         mRecyclerView = root.findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         //mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -66,12 +77,14 @@ public class HomeFragment extends Fragment {
         //.----
 
 
-       return root;
+        return root;
     }
 
     //RecyclerView ARRAYLIST
+
     private ArrayList<Model> getMyList(){
         ArrayList<Model> models = new ArrayList<>();
+
 
         Model m = new Model();
         m.setTitle("Ubicación 1");

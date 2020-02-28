@@ -48,7 +48,7 @@
         android:ems="10"
         android:gravity="center_horizontal|center_vertical"
         android:inputType="textPersonName"
-        android:text="@string/etNombreNuevaRuta"
+        android:hint="@string/etNombreNuevaRuta"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
         android:textColorHint="@color/white"
@@ -58,11 +58,11 @@
         app:layout_constraintTop_toBottomOf="@+id/tvNombreNuevaRuta" />
 
     <TextView
-        android:id="@+id/tvDireccionRuta"
+        android:id="@+id/tvDescripcionRuta"
         android:layout_width="290dp"
         android:layout_height="39dp"
         android:layout_marginTop="28dp"
-        android:text="@string/tvDireccionRuta"
+        android:hint="@string/tvDireccionRuta"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
         android:textColorHint="@color/white"
@@ -74,7 +74,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etNombreNuevaRuta" />
 
     <EditText
-        android:id="@+id/etDireccionRuta"
+        android:id="@+id/etDescripcionRuta"
         android:layout_width="326dp"
         android:layout_height="53dp"
         android:layout_marginTop="36dp"
@@ -90,6 +90,16 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDireccionRuta" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDescripcionRuta" />
+
+    <Button
+        android:id="@+id/btnAñadirNuevaRuta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDescripcionRuta" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
