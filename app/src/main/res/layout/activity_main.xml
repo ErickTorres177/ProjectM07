@@ -35,22 +35,22 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/imgUsuarui"
+        android:id="@+id/imgLogo"
         android:layout_width="172dp"
         android:layout_height="138dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/imgProyecto"
-        android:paddingLeft="4dp"
         android:minWidth="40dp"
-        android:paddingRight="4dp"
-        android:paddingTop="8dp"
         android:minHeight="32dp"
+        android:paddingLeft="4dp"
+        android:paddingTop="8dp"
+        android:paddingRight="4dp"
         android:paddingBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/ic_logo" />
 
     <TextView
         android:layout_width="264dp"
@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgUsuarui" />
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
 
     <EditText
         android:id="@+id/etUser"
@@ -126,7 +126,7 @@
         android:id="@+id/btnIniciarSesion"
         android:layout_width="150dp"
         android:layout_height="43dp"
-        android:background="@drawable/botones_azules"
+        android:background="@drawable/botones"
         android:contentDescription="@string/iniSesion"
         android:gravity="center"
         android:minWidth="160dp"
@@ -162,7 +162,7 @@
         android:id="@+id/btnRegistrar"
         android:layout_width="150dp"
         android:layout_height="43dp"
-        android:background="@drawable/botones"
+        android:background="@drawable/botones_azules"
         android:contentDescription="@string/btnRegistrar"
         android:gravity="center"
         android:minWidth="160dp"
