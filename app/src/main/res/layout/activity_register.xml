@@ -21,23 +21,21 @@
             android:id="@+id/img2"
             android:layout_width="0dp"
             android:layout_height="250dp"
-            android:alpha="0.5"
             android:scaleType="fitEnd"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/imagen_fondo_registro2" />
+            app:srcCompat="@drawable/imagen_fondo_login1" />
 
         <ImageView
             android:id="@+id/img1"
             android:layout_width="0dp"
             android:layout_height="250dp"
-            android:alpha="0.5"
             android:scaleType="fitStart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/imagen_fondo_registro1" />
+            app:srcCompat="@drawable/imagen_fondo_login2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
