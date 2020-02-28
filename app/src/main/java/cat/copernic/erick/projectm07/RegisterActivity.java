@@ -113,7 +113,6 @@ public class RegisterActivity extends AppCompatActivity {
                                     String toastCuentaCreada = RegisterActivity.this.getResources().getString(R.string.cuentaCreada);
                                     Toast.makeText(RegisterActivity.this, toastCuentaCreada + ": " + email,
                                             Toast.LENGTH_SHORT).show();
-
                                     guardatUsuarioFB();
                                     limpiarCampo();
                                 } else {
@@ -146,6 +145,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void limpiarCampo() {
         etUsuario.getText().clear();
+        etNombreUsuario.getText().clear();
         etPasswd.getText().clear();
         etEdad.getText().clear();
     }
@@ -173,13 +173,5 @@ public class RegisterActivity extends AppCompatActivity {
     public void handleRegresar(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
-
-        /*
-        Bundle bundle = new Bundle();
-        Intent intent = new Intent(DatosCliente.this, AnadirHamburguesa.class)
-        bundle.putString("nombre",nombre);
-        intent.putExtras(bundle);
-        startActivity(intent);
-        * */
     }
 }

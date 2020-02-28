@@ -26,7 +26,7 @@
         app:srcCompat="@mipmap/user" />
 
     <TextView
-        android:id="@+id/tvNombreUsuario"
+        android:id="@+id/tvNombreUsuarioRealTime"
         android:layout_width="168dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/nomUsuarioContentNavegationDrawer"
@@ -40,7 +40,7 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/tvUsuario"
+        android:id="@+id/tvUsuarioRealTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/nav_header_subtitle"
