@@ -20,8 +20,8 @@
         <ImageView
             android:id="@+id/img2"
             android:layout_width="0dp"
-            android:layout_height="250dp"
-            android:scaleType="fitEnd"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,8 +30,8 @@
         <ImageView
             android:id="@+id/img1"
             android:layout_width="0dp"
-            android:layout_height="250dp"
-            android:scaleType="fitStart"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
