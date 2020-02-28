@@ -97,5 +97,17 @@
     <string name="emailInvalido">Email invàlid</string>
 
 
+    //PERFIL USUARIO
+    <string name="titulo_perfil_usuario">EL MEU PERFIL</string>
+    <string name="nombreUsuario_perfil">Nom:</string>
+    <string name="etNombreUsuario_perfil">El meu nom...</string>
+    <string name="titulo_edad_perfil">Edat:</string>
+    <string name="hintEdad_perfil">La meva edat es..</string>
+    <string name="txtTituloDireccion">Direcció:</string>
+    <string name="hintDireccion_perfil">La meva direcció es...</string>
+    <string name="btnRegistrar_pefil">Guardar</string>
+
+
+
 </resources>
 

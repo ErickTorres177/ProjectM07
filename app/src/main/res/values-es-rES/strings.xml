@@ -80,4 +80,14 @@
     <string name="hintNombreReal">Nombre</string>
     <string name="txtNombreReal">Nombre real del usuario</string>
 
+    //PERFIL USUARIO
+    <string name="titulo_perfil_usuario">MI PERFIL</string>
+    <string name="nombreUsuario_perfil">Nombre:</string>
+    <string name="etNombreUsuario_perfil">Mi nombre es...</string>
+    <string name="titulo_edad_perfil">Edad:</string>
+    <string name="hintEdad_perfil">Mi edad es..</string>
+    <string name="txtTituloDireccion">Dirección:</string>
+    <string name="hintDireccion_perfil">Mi dirección es...</string>
+    <string name="btnRegistrar_pefil">Guardar</string>
+
 </resources>

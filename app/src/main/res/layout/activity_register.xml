@@ -50,7 +50,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/txt_titulo"
+            android:id="@+id/txt_titulo_pefil"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/tituloRegistroContent"
@@ -92,7 +92,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/txtTituloNombre"
+                android:id="@+id/txtTituloNombre_perfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/txtTituloNombre"
@@ -104,7 +104,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/txtFondoNombre"
+                android:id="@+id/txtFondoNombre_perfil"
                 android:layout_width="250dp"
                 android:layout_height="0dp"
                 android:background="@drawable/campos"
@@ -113,13 +113,13 @@
                 android:ems="10"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
-                app:layout_constraintBottom_toBottomOf="@+id/txtUsuario"
-                app:layout_constraintEnd_toEndOf="@+id/txtUsuario"
-                app:layout_constraintStart_toStartOf="@+id/txtUsuario"
-                app:layout_constraintTop_toTopOf="@+id/txtUsuario" />
+                app:layout_constraintBottom_toBottomOf="@+id/txtNombreUsuario_perfil"
+                app:layout_constraintEnd_toEndOf="@+id/txtNombreUsuario_perfil"
+                app:layout_constraintStart_toStartOf="@+id/txtNombreUsuario_perfil"
+                app:layout_constraintTop_toTopOf="@+id/txtNombreUsuario_perfil" />
 
             <EditText
-                android:id="@+id/txtUsuario"
+                android:id="@+id/txtNombreUsuario_perfil"
                 android:layout_width="225dp"
                 android:layout_height="39dp"
                 android:layout_marginTop="10dp"
@@ -134,10 +134,10 @@
                 android:textColorLink="@color/white"
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
                 app:layout_constraintStart_toEndOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@id/txtTituloNombre" />
+                app:layout_constraintTop_toBottomOf="@id/txtTituloNombre_perfil" />
 
             <TextView
-                android:id="@+id/txtTituloPasswd"
+                android:id="@+id/txtTitulo_edad_perfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="132dp"
@@ -149,10 +149,10 @@
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
                 app:layout_constraintStart_toStartOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@id/txtFondoNombre" />
+                app:layout_constraintTop_toBottomOf="@id/txtFondoNombre_perfil" />
 
             <EditText
-                android:id="@+id/txtFondoPasswd"
+                android:id="@+id/txtFondo_edad_perfil"
                 android:layout_width="250dp"
                 android:layout_height="0dp"
                 android:background="@drawable/campos"
@@ -161,13 +161,13 @@
                 android:ems="10"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
-                app:layout_constraintBottom_toBottomOf="@+id/txtPasswd"
-                app:layout_constraintEnd_toEndOf="@+id/txtPasswd"
-                app:layout_constraintStart_toStartOf="@+id/txtPasswd"
-                app:layout_constraintTop_toTopOf="@+id/txtPasswd" />
+                app:layout_constraintBottom_toBottomOf="@+id/txtEdad_perfil"
+                app:layout_constraintEnd_toEndOf="@+id/txtEdad_perfil"
+                app:layout_constraintStart_toStartOf="@+id/txtEdad_perfil"
+                app:layout_constraintTop_toTopOf="@+id/txtEdad_perfil" />
 
             <EditText
-                android:id="@+id/txtPasswd"
+                android:id="@+id/txtEdad_perfil"
                 android:layout_width="225dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
@@ -182,10 +182,10 @@
                 android:textColorLink="@color/white"
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
                 app:layout_constraintStart_toEndOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/txtTituloPasswd" />
+                app:layout_constraintTop_toBottomOf="@+id/txtTitulo_edad_perfil" />
 
             <TextView
-                android:id="@+id/txtTituloNombreReal"
+                android:id="@+id/txtTituloDireccion_perfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -195,23 +195,23 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.507"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtFondoPasswd" />
+                app:layout_constraintTop_toBottomOf="@+id/txtFondo_edad_perfil" />
 
             <EditText
-                android:id="@+id/txtFondoNombreReal"
+                android:id="@+id/txtFondoDireccion_perfil"
                 android:layout_width="250dp"
                 android:layout_height="0dp"
                 android:background="@drawable/campos"
                 android:contentDescription="@string/txtPasswd"
                 android:ems="10"
                 android:inputType="textPersonName"
-                app:layout_constraintBottom_toBottomOf="@+id/txtNombreReal"
-                app:layout_constraintEnd_toEndOf="@+id/txtNombreReal"
-                app:layout_constraintStart_toStartOf="@+id/txtNombreReal"
-                app:layout_constraintTop_toTopOf="@+id/txtNombreReal" />
+                app:layout_constraintBottom_toBottomOf="@+id/txtDireccion_pefil"
+                app:layout_constraintEnd_toEndOf="@+id/txtDireccion_pefil"
+                app:layout_constraintStart_toStartOf="@+id/txtDireccion_pefil"
+                app:layout_constraintTop_toTopOf="@+id/txtDireccion_pefil" />
 
             <EditText
-                android:id="@+id/txtNombreReal"
+                android:id="@+id/txtDireccion_pefil"
                 android:layout_width="225dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
@@ -227,7 +227,7 @@
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
                 app:layout_constraintHorizontal_bias="0.453"
                 app:layout_constraintStart_toEndOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/txtTituloNombreReal" />
+                app:layout_constraintTop_toBottomOf="@+id/txtTituloDireccion_perfil" />
 
             <TextView
                 android:id="@+id/txtTituloEdad"
@@ -240,7 +240,7 @@
                 android:textSize="25sp"
                 app:layout_constraintEnd_toStartOf="@+id/P50VCampos"
                 app:layout_constraintStart_toStartOf="@+id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/txtFondoNombreReal" />
+                app:layout_constraintTop_toBottomOf="@+id/txtFondoDireccion_perfil" />
 
             <EditText
                 android:id="@+id/txtFondoEdad"
@@ -305,7 +305,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/btnVolver"
+                android:id="@+id/btnVolver_perfil"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/botones"
@@ -318,14 +318,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/cancelar"
+                android:id="@+id/cancelar_perfil"
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_marginEnd="5dp"
                 android:contentDescription="@string/imgCancelar"
                 android:onClick="handleRegresar"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btnVolver"
+                app:layout_constraintEnd_toStartOf="@+id/btnVolver_perfil"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/tornar" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -340,7 +340,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/btnRegistrarUsuario"
+                android:id="@+id/btnGuardar_perfil"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/botones_azules"
@@ -352,13 +352,13 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/singup2"
+                android:id="@+id/imgGuardar_perfil"
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_marginEnd="5dp"
                 android:contentDescription="@string/imgCancelar"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btnRegistrarUsuario"
+                app:layout_constraintEnd_toStartOf="@id/btnGuardar_perfil"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/sing_up" />
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -45,9 +45,9 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        etUsuario = findViewById(R.id.txtUsuario);
-        etPasswd = findViewById(R.id.txtPasswd);
-        etNombreUsuario = findViewById(R.id.txtNombreReal);
+        etUsuario = findViewById(R.id.txtNombreUsuario_perfil);
+        etPasswd = findViewById(R.id.txtEdad_perfil);
+        etNombreUsuario = findViewById(R.id.txtDireccion_pefil);
         etEdad = findViewById(R.id.txtEdad);
 
 
@@ -57,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         // Inicializamos y establecemos el click del icono de login
-        iconoRegitrar = findViewById(R.id.singup2);
+        iconoRegitrar = findViewById(R.id.imgGuardar_perfil);
         iconoRegitrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
-        btnRegistrarU = findViewById(R.id.btnRegistrarUsuario);
+        btnRegistrarU = findViewById(R.id.btnGuardar_perfil);
 
         btnRegistrarU.setOnClickListener(new View.OnClickListener() {
             @Override

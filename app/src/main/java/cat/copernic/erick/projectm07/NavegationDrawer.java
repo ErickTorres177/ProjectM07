@@ -60,7 +60,7 @@ public class NavegationDrawer extends AppCompatActivity {
     private DatabaseReference myRef;
     String userID;
 
-    String valor = "";
+    private Usuario mUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,18 +92,21 @@ public class NavegationDrawer extends AppCompatActivity {
 
 
         //FIRE BASE inicializaciones
-        mAuth = FirebaseAuth.getInstance();
+        /*mAuth = FirebaseAuth.getInstance();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference();
+        //DatabaseReference myRef = mFirebaseDatabase.getReference();
         FirebaseUser user = mAuth.getCurrentUser();
         userID = user.getUid();
 
-        currentUser = mAuth.getCurrentUser();
+        currentUser = mAuth.getCurrentUser();*/
 
         //REAL TIME
 
-        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference myRefGeneral = myRef.child("Usuarios");
+
+
+
+        //DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
+        //DatabaseReference myRefGeneral = myRef.child("Usuarios");
         //DatabaseReference myRefObtencion = myRefGeneral.child("nombre");
 
 
@@ -131,7 +134,13 @@ public class NavegationDrawer extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         //REAL TIME
-        myRefGeneral.addValueEventListener(new ValueEventListener() {
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("Usuarios");
+
+
+
+        myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
@@ -139,15 +148,35 @@ public class NavegationDrawer extends AppCompatActivity {
                /* String nombre = dataSnapshot.child("").getValue(String.class);
 
                 tvNombreUsuarioRT.setText(nombre);
-                Log.d(TAG, "Value is: " + nombre);*/
+                Log.d(TAG, "Value is: " + nombre);
+
+
+                //valor = dataSnapshot.getValue(String.class);
+                Log.d(TAG, "Value is: " + valor);
+                etDatos.setText(valor);
+
+                String = dataSnapshot.getValue(String.class);
+
+                tvNombreUsuarioRT.setText(usuarioInformacion.getUser());
 
                 showDatabaseSnapshot(dataSnapshot);
 
-                /*valor = dataSnapshot.getValue(String.class);
+                valor = dataSnapshot.getValue(String.class);
                 Log.d(TAG, "Value is: " + valor);
                 Log.d(TAG, "Value 2 is: " + valor2);
                 tvNombreUsuarioRT.setText(valor);
-                tvUsuarioRT.setText(valor2);*/
+                tvUsuarioRT.setText(valor2);
+
+                Usuario usuarioInformacion = new Usuario();*/
+                //showDatabaseSnapshot(dataSnapshot);
+                /*valor = dataSnapshot.child("usuario").getValue(String.class);
+                //dataSnapshot.child("")
+                Log.d(TAG, "Value is: " + valor);
+                tvNombreUsuarioRT.setText(valor);*/
+                mUsuario = dataSnapshot.getValue(Usuario.class);
+                showDatabaseSnapshot(mUsuario);
+
+
             }
 
             @Override
@@ -158,10 +187,12 @@ public class NavegationDrawer extends AppCompatActivity {
         });
     }
 
-    public void showDatabaseSnapshot(DataSnapshot dataSnapshot) {
-        for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-            Usuario usuarioInformacion = new Usuario();
+
+    public void showDatabaseSnapshot(Usuario dataSnapshot) {
+        //for (DataSnapshot ds : dataSnapshot.getChildren()) {
+
+           /* Usuario usuarioInformacion = new Usuario();
             usuarioInformacion.setUser(ds.child(userID).getValue(Usuario.class).getUser());
             usuarioInformacion.setNombreUsuario(ds.child(userID).getValue(Usuario.class).getNombreUsuario());
             usuarioInformacion.setEdad(ds.child(userID).getValue(Usuario.class).getEdad());
@@ -173,11 +204,12 @@ public class NavegationDrawer extends AppCompatActivity {
             ArrayList<String> listaU = new ArrayList<>();
             listaU.add(usuarioInformacion.getUser());
             listaU.add(usuarioInformacion.getNombreUsuario());
-            listaU.add(String.valueOf(usuarioInformacion.getEdad()));
+            listaU.add(String.valueOf(usuarioInformacion.getEdad()));*/
 
-            tvNombreUsuarioRT.setText(usuarioInformacion.getUser());
+            //String z = dataSnapshot.getValue(String.class);
+            //tvNombreUsuarioRT.setText(dataSnapshot.getNombreUsuario());
 
-        }
+        //}
     }
 
     @Override
