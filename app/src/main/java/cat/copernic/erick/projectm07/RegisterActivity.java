@@ -45,16 +45,15 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        etUsuario = findViewById(R.id.txtNombre);
+        etUsuario = findViewById(R.id.txtUsuario);
         etPasswd = findViewById(R.id.txtPasswd);
         etNombreUsuario = findViewById(R.id.txtNombreReal);
         etEdad = findViewById(R.id.txtEdad);
 
 
         //Data fase
-        database  = FirebaseDatabase.getInstance();
-        myReference = database.getReference("usuario");
-
+        database = FirebaseDatabase.getInstance();
+        myReference = database.getReference("Usuarios");
 
 
         // Inicializamos y establecemos el click del icono de login
@@ -115,27 +114,8 @@ public class RegisterActivity extends AppCompatActivity {
                                     Toast.makeText(RegisterActivity.this, toastCuentaCreada + ": " + email,
                                             Toast.LENGTH_SHORT).show();
 
-                                    etUsuario.getText().clear();
-                                    etPasswd.getText().clear();
-                                    etEdad.getText().clear();
-
-                                   /* //ANAÑDIR DATOS DEL USUARIO A FIRE BASE:
-                                    DatabaseReference mDatabaseR = FirebaseDatabase.getInstance().getReference().child("usuarios");
-                                    DatabaseReference currentUserDB = mDatabaseR.child(mAuth.getCurrentUser().getUid());
-
-                                    //currentUserDB.child("nombre").setValue();
-                                    currentUserDB.child("edad").setValue(etEdad);
-                                    currentUserDB.child("imgUsuario").setValue("default");*/
-
-                                    myReference.child("Usuarios");
-                                    DatabaseReference currentUserDB = myReference.child(mAuth.getCurrentUser().getUid());
-                                    currentUserDB.child("usuario").setValue(etUsuario.getText().toString());
-                                    currentUserDB.child("nombre").setValue(etNombreUsuario.getText().toString());
-                                    currentUserDB.child("edad").setValue(etEdad.getText().toString());
-
-
-                                    //guardatUsuarioFB(email,password);
-
+                                    guardatUsuarioFB();
+                                    limpiarCampo();
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -156,20 +136,20 @@ public class RegisterActivity extends AppCompatActivity {
                     });
         }
     }
-    private void guardatUsuarioFB(String email, String pass) {
 
-        String nombreU = etNombreUsuario.getText().toString();
-        String edadU = etEdad.getText().toString();
-
-        String id = myReference.push().getKey();
-
-        Usuario user = new Usuario(email, pass, nombreU,Integer.valueOf(edadU));
-        myReference.child("usuario").child(id).setValue(nombreU);
-        Toast.makeText(RegisterActivity.this, "Todo bien registrar en fire base" + ": " + email,
-                Toast.LENGTH_SHORT).show();
-
-
+    private void guardatUsuarioFB() {
+        DatabaseReference currentUserDB = myReference.child(mAuth.getCurrentUser().getUid());
+        currentUserDB.child("usuario").setValue(etUsuario.getText().toString());
+        currentUserDB.child("nombre").setValue(etNombreUsuario.getText().toString());
+        currentUserDB.child("edad").setValue(etEdad.getText().toString());
     }
+
+    private void limpiarCampo() {
+        etUsuario.getText().clear();
+        etPasswd.getText().clear();
+        etEdad.getText().clear();
+    }
+
     private void updateUI(FirebaseUser currentUser) {
 
     }
