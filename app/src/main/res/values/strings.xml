@@ -44,7 +44,7 @@
     <string name="menu_nuevaRuta">Rutes</string>
     <string name="menu_slideshow">Diapositives</string>
     <string name="menu_tools">Eines</string>
-    <string name="menu_share">Compartir</string>
+    <string name="menu_perfil">El meu perfil</string>
     <string name="menu_send">Enviar</string>
 
     // NAVIGATION DRAWER
@@ -60,7 +60,7 @@
     <string name="rv" translatable="false">RV</string>
     <string name="imgCancelar">cancelar</string>
 
-    <string name="Communicate">Comunicació</string>
+    <string name="perfil">Perfi</string>
 
     //Activity Añadir Rutas
     <string name="tvTituloFragmentRuta">CONFIGURACIÓ DE RUTAS</string>

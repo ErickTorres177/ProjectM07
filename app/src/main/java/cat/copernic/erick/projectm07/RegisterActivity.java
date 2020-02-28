@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,15 +20,15 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.sql.DatabaseMetaData;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText etUsuario, etPasswd, etEdad;
+    EditText etUsuario, etPasswd, etNombreUsuario, etEdad;
     ImageView iconoRegitrar;
     Button btnRegistrarU;
+
 
     //public static String usuarioEmail = "nulo";
 
@@ -37,6 +36,9 @@ public class RegisterActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
+    //---
+    DatabaseReference myReference;
+    FirebaseDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,15 @@ public class RegisterActivity extends AppCompatActivity {
 
         etUsuario = findViewById(R.id.txtNombre);
         etPasswd = findViewById(R.id.txtPasswd);
+        etNombreUsuario = findViewById(R.id.txtNombreReal);
         etEdad = findViewById(R.id.txtEdad);
+
+
+        //Data fase
+        database  = FirebaseDatabase.getInstance();
+        myReference = database.getReference("usuario");
+
+
 
         // Inicializamos y establecemos el click del icono de login
         iconoRegitrar = findViewById(R.id.singup2);
@@ -81,7 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
         updateUI(currentUser);
     }
 
-    public void crearUsuario(final String email, String password) {
+    public void crearUsuario(final String email, final String password) {
 
         if (email.isEmpty() || password.isEmpty()) {
 
@@ -109,13 +119,22 @@ public class RegisterActivity extends AppCompatActivity {
                                     etPasswd.getText().clear();
                                     etEdad.getText().clear();
 
-                                    //ANAÑDIR DATOS DEL USUARIO A FIRE BASE:
+                                   /* //ANAÑDIR DATOS DEL USUARIO A FIRE BASE:
                                     DatabaseReference mDatabaseR = FirebaseDatabase.getInstance().getReference().child("usuarios");
                                     DatabaseReference currentUserDB = mDatabaseR.child(mAuth.getCurrentUser().getUid());
 
                                     //currentUserDB.child("nombre").setValue();
                                     currentUserDB.child("edad").setValue(etEdad);
-                                    currentUserDB.child("imgUsuario").setValue("default");
+                                    currentUserDB.child("imgUsuario").setValue("default");*/
+
+                                    myReference.child("Usuarios");
+                                    DatabaseReference currentUserDB = myReference.child(mAuth.getCurrentUser().getUid());
+                                    currentUserDB.child("usuario").setValue(etUsuario.getText().toString());
+                                    currentUserDB.child("nombre").setValue(etNombreUsuario.getText().toString());
+                                    currentUserDB.child("edad").setValue(etEdad.getText().toString());
+
+
+                                    //guardatUsuarioFB(email,password);
 
                                 } else {
                                     // If sign in fails, display a message to the user.
@@ -137,7 +156,20 @@ public class RegisterActivity extends AppCompatActivity {
                     });
         }
     }
+    private void guardatUsuarioFB(String email, String pass) {
 
+        String nombreU = etNombreUsuario.getText().toString();
+        String edadU = etEdad.getText().toString();
+
+        String id = myReference.push().getKey();
+
+        Usuario user = new Usuario(email, pass, nombreU,Integer.valueOf(edadU));
+        myReference.child("usuario").child(id).setValue(nombreU);
+        Toast.makeText(RegisterActivity.this, "Todo bien registrar en fire base" + ": " + email,
+                Toast.LENGTH_SHORT).show();
+
+
+    }
     private void updateUI(FirebaseUser currentUser) {
 
     }

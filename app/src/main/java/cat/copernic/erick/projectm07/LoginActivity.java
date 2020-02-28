@@ -26,13 +26,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.nio.file.Files;
 import java.util.Locale;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText user, pass;
+    private EditText user, pass, nombreUsuariu, edat;
     private ImageButton btn_maps, btn_web, btn_insta, btn_gmail;
     String str;
 
@@ -41,6 +43,9 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
+
+    //DatabaseReference myReference;
+    //FirebaseDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +59,10 @@ public class LoginActivity extends AppCompatActivity {
 
         user = findViewById(R.id.etUser);
         pass = findViewById(R.id.etPass);
+
+        //---
+        //database = FirebaseDatabase.getInstance();
+        //database.getReference();
 
         /*
             NO BORRAR -> PREGUNTAR A ESTER

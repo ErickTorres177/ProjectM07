@@ -22,26 +22,26 @@
             android:title="@string/menu_tools" />
     </group>
 
-    <item android:title="@string/Communicate">
+    <item android:title="@string/perfil">
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
-            <item
+                android:icon="@drawable/ic_perfil"
+                android:title="@string/menu_perfil" />
+           <!-- <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
+                android:title="@string/menu_send" /> -->
 
         </menu>
     </item>
-    <item android:title="@string/sesion">
+    <!--<item android:title="@string/sesion">
         <menu>
             <item
                 android:id="@+id/nav_logOut"
                 android:icon="@drawable/ic_exit_to_app_black_24dp"
                 android:title="@string/bntLogOut" />
         </menu>
-    </item>
+    </item>-->
 
 </menu>

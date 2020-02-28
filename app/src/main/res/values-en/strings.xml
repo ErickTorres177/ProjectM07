@@ -16,7 +16,7 @@
     <string name="iniSesion">Log in</string>
     <string name="menu_nuevaRuta">Routes</string>
     <string name="menu_home">Home</string>
-    <string name="menu_share">Share</string>
+    <string name="menu_perfil">My profile</string>
     <string name="menu_send">Send</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">Tools</string>
@@ -40,7 +40,7 @@
     <string name="correoContent">User email</string>
     <string name="nomUsuarioContentNavegationDrawer">Username</string>
     <string name="imgCancelar">cancel</string>
-    <string name="Communicate">Communication</string>
+    <string name="perfil">Profile</string>
 
     //Activity Añadir Rutas
     <string name="tvTituloFragmentRuta">ROUTE CONFIGURATION</string>
