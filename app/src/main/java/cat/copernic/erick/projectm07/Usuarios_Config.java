@@ -45,11 +45,11 @@ public class Usuarios_Config {
         }
 
         public void bindU(Usuarios usuarios, String key) {
-            mUsuario_id.setText(usuarios.getUserId());
+            /*mUsuario_id.setText(usuarios.getUserId());
             mUsuario_user.setText(usuarios.getUser());
             mUsuario_nombre.setText(usuarios.getNombreUsuario());
             mUsuario_edad.setText(usuarios.getEdad());
-            mUsuario_direccion.setText(usuarios.getDireccion());
+            mUsuario_direccion.setText(usuarios.getDireccion());*/
             this.key = key;
         }
     }

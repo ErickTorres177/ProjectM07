@@ -1,61 +1,41 @@
 package cat.copernic.erick.projectm07;
 
 public class Usuarios {
-    private String userId;
-    private String user;
-    private String nombreUsuario;
-    private int edad;
-    private String direccion;
+    private String nombre;
+    private String edad;
+    private String usuario;
 
     public Usuarios() {
     }
 
-    public Usuarios(String userId, String user, String nombreUsuario, int edad, String direccion) {
-        this.userId = userId;
-        this.user = user;
-        this.nombreUsuario = nombreUsuario;
+    public Usuarios(String nombre, String edad, String usuario) {
+        this.nombre = nombre;
         this.edad = edad;
-        this.direccion = direccion;
+        this.usuario = usuario;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getNombreUsuario() {
-        return nombreUsuario;
-    }
-
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
-    }
-
-    public int getEdad() {
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 }
 
