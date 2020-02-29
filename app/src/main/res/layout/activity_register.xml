@@ -1,396 +1,396 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".RegisterActivity">
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/LayoutImagenesFondo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    android:visibility="visible"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/LayoutImagenesFondo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="visible"
+    <ImageView
+        android:id="@+id/imgTop"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:srcCompat="@drawable/imagen_fondo_login1" />
 
-        <ImageView
-            android:id="@+id/imgTop"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:scaleType="fitXY"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/imagen_fondo_login1" />
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/imagen_fondo_login2" />
 
-        <ImageView
-            android:id="@+id/img1"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/imagen_fondo_login2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/LayoutTitulo"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:visibility="visible"
+    app:layout_constraintBottom_toTopOf="@id/P15H"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/LayoutTitulo"
+    <TextView
+        android:id="@+id/tvNombreRutaCompleta"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@id/P15H"
+        android:contentDescription="@string/tituloRegistroContent"
+        android:gravity="center"
+        android:minWidth="46dp"
+        android:minHeight="289dp"
+        android:paddingLeft="4dp"
+        android:paddingTop="8dp"
+        android:paddingRight="4dp"
+        android:paddingBottom="8dp"
+        android:shadowRadius="1"
+        android:text="@string/tituloRegistro"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/LayoutDatos"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:visibility="visible"
+    app:layout_constraintBottom_toTopOf="@+id/P80H"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@id/P15H">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contenedorCampos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tvNombreRutaCompleta"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:contentDescription="@string/tituloRegistroContent"
-            android:gravity="center"
-            android:minWidth="46dp"
-            android:minHeight="289dp"
-            android:paddingLeft="4dp"
-            android:paddingTop="8dp"
-            android:paddingRight="4dp"
-            android:paddingBottom="8dp"
-            android:shadowRadius="1"
-            android:text="@string/tituloRegistro"
+            android:id="@+id/tvDescRutaCompleta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/txtTituloNombre"
+            android:text="@string/nombreUsuario"
             android:textColor="@color/white"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+            app:layout_constraintStart_toStartOf="@id/P50VCampos"
             app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/LayoutDatos"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/P80H"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/P15H">
+        <EditText
+            android:id="@+id/txtFondoNombre_perfil"
+            android:layout_width="250dp"
+            android:layout_height="0dp"
+            android:background="@drawable/campos"
+            android:contentDescription="@string/txtNombre"
+            android:editable="false"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/txtNombreUsuario_perfil"
+            app:layout_constraintEnd_toEndOf="@+id/txtNombreUsuario_perfil"
+            app:layout_constraintStart_toStartOf="@+id/txtNombreUsuario_perfil"
+            app:layout_constraintTop_toTopOf="@+id/txtNombreUsuario_perfil" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/contenedorCampos"
+        <EditText
+            android:id="@+id/txtNombreUsuario_perfil"
+            android:layout_width="225dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/txtNombre"
+            android:ems="10"
+            android:hint="@string/hintNombre"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+            app:layout_constraintStart_toEndOf="@id/P50VCampos"
+            app:layout_constraintTop_toBottomOf="@id/tvDescRutaCompleta" />
+
+        <TextView
+            android:id="@+id/tvTituloRutaCompleta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="132dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="47dp"
+            android:contentDescription="@string/txtTituloPasswd"
+            android:text="@string/passwd"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+            app:layout_constraintStart_toStartOf="@id/P50VCampos"
+            app:layout_constraintTop_toBottomOf="@id/txtFondoNombre_perfil" />
+
+        <EditText
+            android:id="@+id/txtFondo_edad_perfil"
+            android:layout_width="250dp"
+            android:layout_height="0dp"
+            android:background="@drawable/campos"
+            android:contentDescription="@string/txtPasswd"
+            android:editable="false"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/txtEdad_perfil"
+            app:layout_constraintEnd_toEndOf="@+id/txtEdad_perfil"
+            app:layout_constraintStart_toStartOf="@+id/txtEdad_perfil"
+            app:layout_constraintTop_toTopOf="@+id/txtEdad_perfil" />
+
+        <EditText
+            android:id="@+id/txtEdad_perfil"
+            android:layout_width="225dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/txtPasswd"
+            android:ems="10"
+            android:hint="@string/hintPasswd"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+            app:layout_constraintStart_toEndOf="@id/P50VCampos"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloRutaCompleta" />
+
+        <TextView
+            android:id="@+id/tvTituloCiudadRutaCompleta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/txtTituloNombreReal"
+            android:textColor="@color/white"
+            android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/txtFondo_edad_perfil" />
 
-            <TextView
-                android:id="@+id/tvDescRutaCompleta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/txtTituloNombre"
-                android:text="@string/nombreUsuario"
-                android:textColor="@color/white"
-                android:textSize="25sp"
-                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
-                app:layout_constraintStart_toStartOf="@id/P50VCampos"
-                app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/txtFondoDireccion_perfil"
+            android:layout_width="250dp"
+            android:layout_height="0dp"
+            android:background="@drawable/campos"
+            android:contentDescription="@string/txtPasswd"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDireccion_pefil"
+            app:layout_constraintEnd_toEndOf="@+id/txtDireccion_pefil"
+            app:layout_constraintStart_toStartOf="@+id/txtDireccion_pefil"
+            app:layout_constraintTop_toTopOf="@+id/txtDireccion_pefil" />
 
-            <EditText
-                android:id="@+id/txtFondoNombre_perfil"
-                android:layout_width="250dp"
-                android:layout_height="0dp"
-                android:background="@drawable/campos"
-                android:contentDescription="@string/txtNombre"
-                android:editable="false"
-                android:ems="10"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                app:layout_constraintBottom_toBottomOf="@+id/txtNombreUsuario_perfil"
-                app:layout_constraintEnd_toEndOf="@+id/txtNombreUsuario_perfil"
-                app:layout_constraintStart_toStartOf="@+id/txtNombreUsuario_perfil"
-                app:layout_constraintTop_toTopOf="@+id/txtNombreUsuario_perfil" />
+        <EditText
+            android:id="@+id/txtDireccion_pefil"
+            android:layout_width="225dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/txtPasswd"
+            android:ems="10"
+            android:hint="@string/hintNombreReal"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toEndOf="@id/P50VCampos"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloCiudadRutaCompleta" />
 
-            <EditText
-                android:id="@+id/txtNombreUsuario_perfil"
-                android:layout_width="225dp"
-                android:layout_height="39dp"
-                android:layout_marginTop="10dp"
-                android:contentDescription="@string/txtNombre"
-                android:ems="10"
-                android:hint="@string/hintNombre"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:textColor="@color/white"
-                android:textColorHighlight="@color/white"
-                android:textColorHint="@color/white"
-                android:textColorLink="@color/white"
-                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
-                app:layout_constraintStart_toEndOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@id/tvDescRutaCompleta" />
-
-            <TextView
-                android:id="@+id/tvTituloRutaCompleta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="132dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="47dp"
-                android:contentDescription="@string/txtTituloPasswd"
-                android:text="@string/passwd"
-                android:textColor="@color/white"
-                android:textSize="25sp"
-                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
-                app:layout_constraintStart_toStartOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@id/txtFondoNombre_perfil" />
-
-            <EditText
-                android:id="@+id/txtFondo_edad_perfil"
-                android:layout_width="250dp"
-                android:layout_height="0dp"
-                android:background="@drawable/campos"
-                android:contentDescription="@string/txtPasswd"
-                android:editable="false"
-                android:ems="10"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                app:layout_constraintBottom_toBottomOf="@+id/txtEdad_perfil"
-                app:layout_constraintEnd_toEndOf="@+id/txtEdad_perfil"
-                app:layout_constraintStart_toStartOf="@+id/txtEdad_perfil"
-                app:layout_constraintTop_toTopOf="@+id/txtEdad_perfil" />
-
-            <EditText
-                android:id="@+id/txtEdad_perfil"
-                android:layout_width="225dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:contentDescription="@string/txtPasswd"
-                android:ems="10"
-                android:hint="@string/hintPasswd"
-                android:importantForAutofill="no"
-                android:inputType="textPassword"
-                android:textColor="@color/white"
-                android:textColorHighlight="@color/white"
-                android:textColorHint="@color/white"
-                android:textColorLink="@color/white"
-                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
-                app:layout_constraintStart_toEndOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/tvTituloRutaCompleta" />
-
-            <TextView
-                android:id="@+id/tvTituloCiudadRutaCompleta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/txtTituloNombreReal"
-                android:textColor="@color/white"
-                android:textSize="25sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.507"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtFondo_edad_perfil" />
-
-            <EditText
-                android:id="@+id/txtFondoDireccion_perfil"
-                android:layout_width="250dp"
-                android:layout_height="0dp"
-                android:background="@drawable/campos"
-                android:contentDescription="@string/txtPasswd"
-                android:ems="10"
-                android:inputType="textPersonName"
-                app:layout_constraintBottom_toBottomOf="@+id/txtDireccion_pefil"
-                app:layout_constraintEnd_toEndOf="@+id/txtDireccion_pefil"
-                app:layout_constraintStart_toStartOf="@+id/txtDireccion_pefil"
-                app:layout_constraintTop_toTopOf="@+id/txtDireccion_pefil" />
-
-            <EditText
-                android:id="@+id/txtDireccion_pefil"
-                android:layout_width="225dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:contentDescription="@string/txtPasswd"
-                android:ems="10"
-                android:hint="@string/hintNombreReal"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:textColor="@color/white"
-                android:textColorHighlight="@color/white"
-                android:textColorHint="@color/white"
-                android:textColorLink="@color/white"
-                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
-                app:layout_constraintHorizontal_bias="0.453"
-                app:layout_constraintStart_toEndOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/tvTituloCiudadRutaCompleta" />
-
-            <TextView
-                android:id="@+id/txtTituloEdad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:contentDescription="@string/edad"
-                android:text="@string/edad"
-                android:textColor="@color/white"
-                android:textSize="25sp"
-                app:layout_constraintEnd_toStartOf="@+id/P50VCampos"
-                app:layout_constraintStart_toStartOf="@+id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/txtFondoDireccion_perfil" />
-
-            <EditText
-                android:id="@+id/txtFondoEdad"
-                android:layout_width="96dp"
-                android:layout_height="0dp"
-                android:background="@drawable/campos"
-                android:editable="false"
-                android:ems="10"
-                android:inputType="textPersonName"
-                app:layout_constraintBottom_toBottomOf="@+id/txtEdad"
-                app:layout_constraintEnd_toEndOf="@+id/txtEdad"
-                app:layout_constraintStart_toStartOf="@+id/txtEdad"
-                app:layout_constraintTop_toTopOf="@+id/txtEdad" />
-
-            <EditText
-                android:id="@+id/txtEdad"
-                android:layout_width="70dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:contentDescription="@string/txtEdadContent"
-                android:ems="10"
-                android:hint="@string/hindEdad"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:textAlignment="viewStart"
-                android:textColor="@color/white"
-                android:textColorHighlight="@color/white"
-                android:textColorHint="@color/white"
-                android:textColorLink="@color/white"
-                app:layout_constraintEnd_toStartOf="@+id/P50VCampos"
-                app:layout_constraintStart_toStartOf="@+id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/txtTituloEdad" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/P50VCampos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.5" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/LayoutBotones"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/P80H">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layoutBotonAtras"
+        <TextView
+            android:id="@+id/txtTituloEdad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/P50Vbotones"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/edad"
+            android:text="@string/edad"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@+id/P50VCampos"
+            app:layout_constraintStart_toStartOf="@+id/P50VCampos"
+            app:layout_constraintTop_toBottomOf="@+id/txtFondoDireccion_perfil" />
 
-            <Button
-                android:id="@+id/btnVolver_rutaCompleta"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/botones"
-                android:contentDescription="@string/btnVolverContent"
-                android:onClick="handleRegresar"
-                android:text="@string/btnVolver"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/txtFondoEdad"
+            android:layout_width="96dp"
+            android:layout_height="0dp"
+            android:background="@drawable/campos"
+            android:editable="false"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/txtEdad"
+            app:layout_constraintEnd_toEndOf="@+id/txtEdad"
+            app:layout_constraintStart_toStartOf="@+id/txtEdad"
+            app:layout_constraintTop_toTopOf="@+id/txtEdad" />
 
-            <ImageView
-                android:id="@+id/cancelar_perfil"
-                android:layout_width="50dp"
-                android:layout_height="60dp"
-                android:layout_marginEnd="5dp"
-                android:contentDescription="@string/imgCancelar"
-                android:onClick="handleRegresar"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btnVolver_rutaCompleta"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/tornar" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layoutBotonRegistrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/P50Vbotones"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <Button
-                android:id="@+id/btnGuardar_perfil"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/botones_azules"
-                android:contentDescription="@string/btnRegistrarseContent"
-                android:text="@string/btnRegistrar"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imgGuardar_perfil"
-                android:layout_width="50dp"
-                android:layout_height="60dp"
-                android:layout_marginEnd="5dp"
-                android:contentDescription="@string/imgCancelar"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btnGuardar_perfil"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/sing_up" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/txtEdad"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/txtEdadContent"
+            android:ems="10"
+            android:hint="@string/hindEdad"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textAlignment="viewStart"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/P50VCampos"
+            app:layout_constraintStart_toStartOf="@+id/P50VCampos"
+            app:layout_constraintTop_toBottomOf="@+id/txtTituloEdad" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/P50Vbotones"
+            android:id="@+id/P50VCampos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.5" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/P50Hbotones"
-            android:layout_width="wrap_content"
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/LayoutBotones"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:visibility="visible"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/P80H">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutBotonAtras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/P50Vbotones"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnVolver_rutaCompleta"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
+            android:background="@drawable/botones"
+            android:contentDescription="@string/btnVolverContent"
+            android:onClick="handleRegresar"
+            android:text="@string/btnVolver"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/cancelar_perfil"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="5dp"
+            android:contentDescription="@string/imgCancelar"
+            android:onClick="handleRegresar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnVolver_rutaCompleta"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/tornar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutBotonRegistrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/P50Vbotones"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnModificar_pefil"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/botones_azules"
+            android:contentDescription="@string/btnRegistrarseContent"
+            android:text="@string/btnRegistrar"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgGuardar_perfil"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="5dp"
+            android:contentDescription="@string/imgCancelar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnModificar_pefil"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/sing_up" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/P15H"
+        android:id="@+id/P50Vbotones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/P80H"
+        android:id="@+id/P50Hbotones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
+        app:layout_constraintGuide_percent="0.5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<androidx.constraintlayout.widget.Guideline
+    android:id="@+id/P15H"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_percent="0.2" />
+
+<androidx.constraintlayout.widget.Guideline
+    android:id="@+id/P80H"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_percent="0.8" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -88,7 +88,9 @@
     <string name="hintEdad_perfil">My age is...</string>
     <string name="txtTituloDireccion">Direcció:</string>
     <string name="hintDireccion_perfil">My address is...</string>
-    <string name="btnRegistrar_pefil">Save</string>
+    <string name="btnRegistrar_pefil">Save Profile</string>
+    <string name="btnModificar_pefil">Edit Profile</string>
+
 
     //RUTAS RECYCLER VIEW
     <string name="tvTituloNombreruta">Name:</string>
@@ -100,5 +102,6 @@
     <string name="tvTituloRutaCompleta">Route:</string>
     <string name="tvTituloCiudadRutaCompleta">City:</string>
     <string name="tvTituloPaisRutaCompleta">Country:</string>
+    <string name="spinerTipSexo">Sex:</string>
 
 </resources>

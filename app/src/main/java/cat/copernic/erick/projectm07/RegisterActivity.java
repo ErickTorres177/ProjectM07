@@ -67,13 +67,13 @@ public class RegisterActivity extends AppCompatActivity {
 
         //currentUser = mAuth.getCurrentUser();
         //updateUI(currentUser);
-        //FIRE BASE IMPLEMENTACION
-        // Initialize Firebase Auth
+
+        //FIRE BASE
         //mAuth = FirebaseAuth.getInstance();
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
-        btnRegistrarU = findViewById(R.id.btnGuardar_perfil);
+        btnRegistrarU = findViewById(R.id.btnModificar_pefil);
 
         btnRegistrarU.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,6 +141,8 @@ public class RegisterActivity extends AppCompatActivity {
         currentUserDB.child("usuario").setValue(etUsuario.getText().toString());
         currentUserDB.child("nombre").setValue(etNombreUsuario.getText().toString());
         currentUserDB.child("edad").setValue(etEdad.getText().toString());
+        currentUserDB.child("sexo").setValue("default");
+        currentUserDB.child("direccion").setValue("default");
     }
 
     private void limpiarCampo() {

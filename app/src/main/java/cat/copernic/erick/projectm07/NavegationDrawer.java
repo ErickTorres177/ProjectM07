@@ -51,7 +51,7 @@ public class NavegationDrawer extends AppCompatActivity {
 
     final String TAG = "REALTIMEDATABASE";
 
-    //fire base
+    //FIRE BASE
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
     private FirebaseDatabase mFirebaseDatabase;

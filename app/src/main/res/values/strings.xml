@@ -1,5 +1,5 @@
 <resources>
-// Activity Login
+    // Activity Login
     <string name="app_name">Find Your Way</string>
     <string name="nombreProyecto">Find Your Way</string>
     <string name="user">Correu</string>
@@ -13,7 +13,7 @@
     <string name="recuperar_pass">Recuperar Contrasenya</string>
     <string name="muestra_usuario" translatable="false">muestra_usuario</string>
     <string name="muestra_pass" translatable="false">muestra_pass</string>
-    <string name="Cerrar_Sesion">Tancar sessió</string>
+<string name="Cerrar_Sesion">Tancar sessió</string>
     // Content description imagenes
     <string name="ContDescLogoApp" translatable="false">Logo Find Your Way</string>
     <string name="ContDescImgFondoTop" translatable="false">"Imagen superior de fondo"</string>
@@ -23,7 +23,7 @@
     <string name="ContDescIconoInsta" translatable="false">Icono de contacto Instagram</string>
     <string name="ContDescIconoMail" translatable="false">Icono de contacto Gmail</string>
 
-// ACTIVITY REGISTRO
+    // ACTIVITY REGISTRO
     <string name="tituloRegistro">CREACIÓ COMPTE</string>
     <string name="tituloRegistroContent">CREACIÓ DEL COMPTE</string>
     <string name="txtTituloNombre">Nom d\'usuari:</string>
@@ -46,6 +46,7 @@
     <string name="ImagenFondo">Imatge de fons de pantalla</string>
     <string name="btnRegistrarseContent">Crear compte</string>
     <string name="btnVolverContent">cancel·lar creació del compte</string>
+    <string name="imgProyecto">Logo Find Your Way</string>
 
     <string name="menu_home">Inici</string>
     <string name="menu_nuevaRuta">Rutes</string>
@@ -112,7 +113,9 @@
     <string name="hintEdad_perfil">La meva edat es..</string>
     <string name="txtTituloDireccion">Direcció:</string>
     <string name="hintDireccion_perfil">La meva direcció es...</string>
-    <string name="btnRegistrar_pefil">Guardar</string>
+    <string name="btnRegistrar_pefil">Guardar Perfil</string>
+    <string name="btnModificar_pefil">Modificar Perfil</string>
+
 
     //RUTAS RECYCLER VIEW
     <string name="tvTituloNombreruta">Nom:</string>
@@ -125,8 +128,7 @@
     <string name="tvTituloRutaCompleta">Ruta:</string>
     <string name="tvTituloCiudadRutaCompleta">Ciutat:</string>
     <string name="tvTituloPaisRutaCompleta">País:</string>
-
-
+    <string name="spinerTipSexo">Sexe:</string>
 
 
 </resources>

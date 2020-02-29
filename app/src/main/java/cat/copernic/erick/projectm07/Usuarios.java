@@ -4,14 +4,18 @@ public class Usuarios {
     private String nombre;
     private String edad;
     private String usuario;
+    private String direccion;
+    private String sexo;
 
     public Usuarios() {
     }
 
-    public Usuarios(String nombre, String edad, String usuario) {
+    public Usuarios(String nombre, String edad, String usuario, String direccion, String sexo) {
         this.nombre = nombre;
         this.edad = edad;
         this.usuario = usuario;
+        this.direccion = direccion;
+        this.sexo = sexo;
     }
 
     public String getNombre() {
@@ -36,6 +40,22 @@ public class Usuarios {
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 }
 

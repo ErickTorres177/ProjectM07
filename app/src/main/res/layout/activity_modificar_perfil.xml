@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".ModificarPerfil">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,11 +22,10 @@
             android:id="@+id/imgTop"
             android:layout_width="0dp"
             android:layout_height="200dp"
-            android:layout_marginBottom="16dp"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/imagen_fondo_login1" />
 
@@ -42,11 +41,11 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/contenedorCampos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="164dp"
+            android:layout_width="387dp"
+            android:layout_height="408dp"
+            android:layout_marginTop="84dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintHorizontal_bias="0.666"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/img1">
 
@@ -150,18 +149,29 @@
                 android:id="@+id/tvTituloCiudadRutaCompleta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
                 android:text="@string/txtTituloDireccion"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.507"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtFondo_edad_perfil" />
+                app:layout_constraintTop_toBottomOf="@+id/spinnerTipSexo" />
+
+            <TextView
+                android:id="@+id/spinerTipSexo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/spinerTipSexo"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEdad_perfil" />
 
             <EditText
                 android:id="@+id/txtFondoDireccion_perfil"
-                android:layout_width="354dp"
+                android:layout_width="337dp"
                 android:layout_height="44dp"
                 android:background="@drawable/campos"
                 android:contentDescription="@string/txtPasswd"
@@ -174,8 +184,8 @@
 
             <EditText
                 android:id="@+id/txtDireccion_pefil"
-                android:layout_width="330dp"
-                android:layout_height="42dp"
+                android:layout_width="316dp"
+                android:layout_height="44dp"
                 android:layout_marginTop="10dp"
                 android:contentDescription="@string/txtPasswd"
                 android:ems="10"
@@ -199,7 +209,53 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.5" />
 
+            <Spinner
+                android:id="@+id/spinnerTipSexo"
+                android:layout_width="170dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:scrollbarSize="6dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinerTipSexo" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btnModificar_pefil"
+            android:layout_width="167dp"
+            android:layout_height="52dp"
+            android:background="@drawable/botones_azules"
+            android:contentDescription="@string/btnRegistrarseContent"
+            android:text="@string/btnRegistrar_pefil"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgTop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.466"
+            app:layout_constraintStart_toEndOf="@+id/btnVolverPerfil"
+            app:layout_constraintTop_toBottomOf="@+id/contenedorCampos"
+            app:layout_constraintVertical_bias="0.359" />
+
+        <Button
+            android:id="@+id/btnVolverPerfil"
+            android:layout_width="167dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/botones"
+            android:contentDescription="@string/btnVolverContent"
+            android:onClick="handleRegresarPerfil"
+            android:text="@string/btnVolver"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgTop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contenedorCampos"
+            app:layout_constraintVertical_bias="0.359" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -248,86 +304,12 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/LayoutBotones"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/P80H">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layoutBotonAtras"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/P50Vbotones"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <Button
-                android:id="@+id/btnVolver_rutaCompleta"
-                android:layout_width="139dp"
-                android:layout_height="49dp"
-                android:background="@drawable/botones"
-                android:contentDescription="@string/btnVolverContent"
-                android:onClick="handleRegresar"
-                android:text="@string/btnVolver"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layoutBotonRegistrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/P50Vbotones"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <Button
-                android:id="@+id/btnGuardar_perfil"
-                android:layout_width="137dp"
-                android:layout_height="50dp"
-                android:background="@drawable/botones_azules"
-                android:contentDescription="@string/btnRegistrarseContent"
-                android:text="@string/btnRegistrar_pefil"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/P50Vbotones"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/P50Hbotones"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/P15H"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.13" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/P80H"
