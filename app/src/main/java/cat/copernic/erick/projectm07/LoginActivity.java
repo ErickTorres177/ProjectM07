@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -36,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText user, pass, nombreUsuariu, edat;
     private ImageButton btn_maps, btn_web, btn_insta, btn_gmail;
-    String str;
+    private ImageView img_login, img_registro;
 
     //FIRE BASE
     Button btnLogin;
@@ -85,12 +86,31 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnIniciarSesion);
         btnLogin.setEnabled(false);
 
+        // Iconos de accesibilidad
+        img_login = findViewById(R.id.imgLogin);
+
         user.addTextChangedListener(loginTW);
         pass.addTextChangedListener(loginTW);
 
         //controlDeCampos(currentUser);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (user.getText().toString().isEmpty() || pass.getText().toString().isEmpty()) {
+                    String toastCredenciales = LoginActivity.this.getResources().getString(R.string.credencialesIcorrectas);
+                    Toast.makeText(LoginActivity.this, toastCredenciales,
+                            Toast.LENGTH_SHORT).show();
+                    //System.out.println("Campos vacios");
+
+                } else {
+                    //System.out.println("Usuario : " +user.getText().toString()  + " pas: " + pass.getText().toString());
+                    loginUser(user.getText().toString(), pass.getText().toString());
+                }
+            }
+        });
+
+        img_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (user.getText().toString().isEmpty() || pass.getText().toString().isEmpty()) {
@@ -172,9 +192,6 @@ public class LoginActivity extends AppCompatActivity {
     public void mostrarUbicacion(View view) {
         Uri intentUri = Uri.parse("geo:41.569940,1.996553?z=16&q=41.569940,1.996553(INS+Nicolau+Copernic)");
         Intent gMaps = new Intent(Intent.ACTION_VIEW, intentUri);
-
-        //String uri = String.format(Locale.ENGLISH, "geo:%f,%f", latitud, longitud);
-        //Intent maps = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
         startActivity(gMaps);
     }
 

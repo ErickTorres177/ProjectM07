@@ -10,13 +10,13 @@
     <string name="edad">Edad:</string>
     <string name="hindEdad">Edad</string>
     <string name="nombreProyecto">Find Your Way</string>
-    <string name="user">USUARIO</string>
+    <string name="user">Correo</string>
     <string name="tituloRegistro">CREACIÓN CUENTA</string>
     <string name="tituloRegistroContent">CREACIÓN DE  LA CUENTA</string>
     <string name="registrate">Regístrate</string>
     <string name="recuperar_pass">Recuperar contraseña</string>
     <string name="txtPasswd">Ingresa tu contraseña</string>
-    <string name="password">CONTRASEÑA</string>
+    <string name="password">Contraseña</string>
     <string name="passwd">Contraseña:</string>
     <string name="txtTituloNombre">Nombre de usuario</string>
     <string name="nombreUsuario">Correo electrónico:</string>
