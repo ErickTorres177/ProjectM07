@@ -25,30 +25,9 @@
         android:paddingBottom="8dp"
         app:srcCompat="@mipmap/user" />
 
-    <TextView
-        android:id="@+id/tvNombreUsuarioRealTime"
-        android:layout_width="168dp"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/nomUsuarioContentNavegationDrawer"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="@string/nav_header_title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@color/white"
-        android:textColorHighlight="@color/white"
-        android:textColorHint="@color/white"
-        android:textColorLink="@color/white"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/tvUsuarioRealTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nav_header_subtitle"
-        android:contentDescription="@string/correoContent"
-        android:textColor="@color/white"
-        android:textColorHighlight="@color/white"
-        android:textColorHint="@color/white"
-        android:textColorLink="@color/white"
-        android:textSize="18sp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>
