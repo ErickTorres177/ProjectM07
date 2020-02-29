@@ -18,25 +18,36 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
+import cat.copernic.erick.projectm07.FireBaseDatabaHelper;
 import cat.copernic.erick.projectm07.R;
+import cat.copernic.erick.projectm07.RecyclerView_Config;
+import cat.copernic.erick.projectm07.Rutas;
 import cat.copernic.erick.projectm07.ui.Rutas.RutasFragment;
 
 public class HomeFragment extends Fragment {
 
-    RecyclerView mRecyclerView;
+   /* RecyclerView mRecyclerView;
     Adapter mAdapter;
 
-    private HomeViewModel homeViewModel;
+
     //----
     private final LinkedList<String> mListaRutas = new LinkedList<>();
 
     //private RecyclerView mRecyclerView;
     //private Adapter mAdapter;
+    */
 
+   //NUEVA PRUEBA
+
+   private RecyclerView mRecyclerView;
+
+    private HomeViewModel homeViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -44,7 +55,30 @@ public class HomeFragment extends Fragment {
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
+        mRecyclerView = root.findViewById(R.id.recyclerView);
+        new FireBaseDatabaHelper().leerRutas(new FireBaseDatabaHelper.DataStatus() {
+            @Override
+            public void DataIsLoaded(List<Rutas> rutas, List<String> keys) {
+                //new RecyclerView_Config().setConfig(mRecyclerView,HomeFragment.this(),rutas,keys);
+                new RecyclerView_Config().setConfig(mRecyclerView,getActivity(),rutas,keys);
+            }
 
+            @Override
+            public void DataIsInserted() {
+
+            }
+
+            @Override
+            public void DataIsUpdate() {
+
+            }
+
+            @Override
+            public void DataIsDelete() {
+
+            }
+        });
+/*
         //RECYCLERVIEW
 
         mRecyclerView = root.findViewById(R.id.recyclerView);
@@ -65,7 +99,7 @@ public class HomeFragment extends Fragment {
         });
 
         //BOTON PARA AÑADIR UN NUEVO CARDVIEW
-        /*
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +115,7 @@ public class HomeFragment extends Fragment {
     }
 
     //RecyclerView ARRAYLIST
-
+/*
     private ArrayList<Model> getMyList(){
         ArrayList<Model> models = new ArrayList<>();
 
@@ -121,6 +155,6 @@ public class HomeFragment extends Fragment {
         models.add(m);
 
         return models;
-    }
+    }*/
 
 }

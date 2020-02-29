@@ -173,10 +173,12 @@ public class NavegationDrawer extends AppCompatActivity {
                 //dataSnapshot.child("")
                 Log.d(TAG, "Value is: " + valor);
                 tvNombreUsuarioRT.setText(valor);*/
-                mUsuario = dataSnapshot.getValue(Usuario.class);
-                showDatabaseSnapshot(mUsuario);
-
-
+                //mUsuario = dataSnapshot.getValue(Usuario.class);
+                //showDatabaseSnapshot(mUsuario);
+                String valor = dataSnapshot.child("nombre").getValue(String.class);
+                //Toast.makeText(NavegationDrawer.this, "usuario" + valor,
+                        //Toast.LENGTH_SHORT).show();
+                //tvNombreUsuarioRT.setText(valor);
             }
 
             @Override
