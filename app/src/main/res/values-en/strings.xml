@@ -26,13 +26,13 @@
     <string name="txtTituloPasswd">Password</string>
     <string name="txtPasswd">Enter your password</string>
     <string name="passwd">Password:</string>
-    <string name="password">PASSWORD</string>
+    <string name="password">Password</string>
     <string name="nombreProyecto">Find Your Way</string>
     <string name="recuperar_pass">Recover Password</string>
     <string name="registrate">Sing up</string>
     <string name="tituloRegistro">Account Creation</string>
     <string name="tituloRegistroContent">ACCOUNT CREATION</string>
-    <string name="user">USER</string>
+    <string name="user">Email</string>
     <string name="btnRegistrarseContent">Create account</string>
     <string name="btnVolverContent">cancel account creation</string>
 

@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LayoutFondo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -14,9 +15,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/image2"
+            android:id="@+id/imgTop"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
+            android:contentDescription="@string/ContDescImgFondoTop"
             android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -24,273 +26,383 @@
             app:srcCompat="@drawable/imagen_fondo_login2" />
 
         <ImageView
-            android:id="@+id/image1"
+            android:id="@+id/imgBott"
             android:layout_width="0dp"
             android:layout_height="200dp"
+            android:contentDescription="@string/ContDescImgFondoBott"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/imagen_fondo_login1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/imgLogo"
-        android:layout_width="172dp"
-        android:layout_height="138dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/imgProyecto"
-        android:minWidth="40dp"
-        android:minHeight="32dp"
-        android:paddingLeft="4dp"
-        android:paddingTop="8dp"
-        android:paddingRight="4dp"
-        android:paddingBottom="8dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LayoutLogo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/GuiaH.35"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_logo" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:layout_width="264dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="4dp"
-        android:contentDescription="@string/nombreProyecto"
-        android:gravity="center"
-        android:minWidth="40dp"
-        android:minHeight="40dp"
-        android:paddingLeft="4dp"
-        android:paddingTop="8dp"
-        android:paddingRight="4dp"
-        android:paddingBottom="8dp"
-        android:text="@string/nombreProyecto"
-        android:textColor="@color/white"
-        android:textSize="32sp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/logo_titulo"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_logo"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="@string/ContDescLogoApp"
+                android:minWidth="40dp"
+                android:minHeight="32dp"
+                android:paddingLeft="4dp"
+                android:paddingTop="8dp"
+                android:paddingRight="4dp"
+                android:paddingBottom="8dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_logo" />
+
+            <TextView
+                android:id="@+id/txt_tituloApp"
+                android:layout_width="wrap_content"
+                android:layout_height="54dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="@string/nombreProyecto"
+                android:gravity="center"
+                android:minWidth="40dp"
+                android:minHeight="40dp"
+                android:paddingLeft="4dp"
+                android:paddingTop="8dp"
+                android:paddingRight="4dp"
+                android:paddingBottom="8dp"
+                android:text="@string/nombreProyecto"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_logo" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/GuiaVLogo.50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LayoutFondoInputs"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.1"
+        android:background="@drawable/style_inputs_log_back"
+        app:layout_constraintBottom_toTopOf="@+id/GuiaH.80"
+        app:layout_constraintEnd_toStartOf="@+id/GuiaV.90"
+        app:layout_constraintStart_toStartOf="@+id/GuiaV.10"
+        app:layout_constraintTop_toTopOf="@id/GuiaH.35">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LayoutInputs"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/GuiaH.58"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
+        app:layout_constraintTop_toTopOf="@+id/GuiaH.35">
 
-    <EditText
-        android:id="@+id/etUser"
-        android:layout_width="250dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/user"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/user"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:minWidth="260dp"
-        android:minHeight="50dp"
-        android:paddingLeft="4dp"
-        android:paddingTop="8dp"
-        android:paddingRight="4dp"
-        android:paddingBottom="8dp"
-        android:textColor="@android:color/white"
-        android:textColorHighlight="@color/textColorHind"
-        android:textColorHint="@color/textColorHind"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Inputs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/etPass"
+                android:layout_width="250dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/password"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:minWidth="160dp"
+                android:minHeight="50dp"
+                android:paddingLeft="4dp"
+                android:paddingTop="8dp"
+                android:paddingRight="4dp"
+                android:paddingBottom="8dp"
+                android:textColor="@android:color/white"
+                android:textColorHighlight="@color/textColorHind"
+                android:textColorHint="@color/textColorHind"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etUser" />
+
+            <EditText
+                android:id="@+id/etUser"
+                android:layout_width="250dp"
+                android:layout_height="46dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/user"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minWidth="260dp"
+                android:minHeight="50dp"
+                android:paddingLeft="4dp"
+                android:paddingTop="8dp"
+                android:paddingRight="4dp"
+                android:paddingBottom="8dp"
+                android:textColor="@android:color/white"
+                android:textColorHighlight="@color/textColorHind"
+                android:textColorHint="@color/textColorHind"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LayoutBotones"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/GuiaH.80"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/PH25" />
+        app:layout_constraintTop_toTopOf="@id/GuiaH.58">
 
-    <EditText
-        android:id="@+id/etPass"
-        android:layout_width="250dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/password"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/password"
-        android:importantForAutofill="no"
-        android:inputType="textPassword"
-        android:minWidth="160dp"
-        android:minHeight="50dp"
-        android:paddingLeft="4dp"
-        android:paddingTop="8dp"
-        android:paddingRight="4dp"
-        android:paddingBottom="8dp"
-        android:textColor="@android:color/white"
-        android:textColorHighlight="@color/textColorHind"
-        android:textColorHint="@color/textColorHind"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Botones"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/Inicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgLogin"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="@string/iniSesion"
+                        app:srcCompat="@drawable/log_in" />
+
+                    <Button
+                        android:id="@+id/btnIniciarSesion"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/botones"
+                        android:contentDescription="@string/iniSesion"
+                        android:gravity="center"
+                        android:minWidth="160dp"
+                        android:minHeight="50dp"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="4dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/iniSesion"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Registrar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgRegistro"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="@string/btnRegistrar"
+                        android:onClick="iniciarRegistro"
+                        app:srcCompat="@drawable/sing_up" />
+
+                    <Button
+                        android:id="@+id/btnRegistrar"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/botones_azules"
+                        android:contentDescription="@string/btnRegistrar"
+                        android:gravity="center"
+                        android:minWidth="160dp"
+                        android:minHeight="50dp"
+                        android:onClick="iniciarRegistro"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="4dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/registrate"
+                        android:textColor="@android:color/white"
+                        android:textIsSelectable="false"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LayoutContactos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUser" />
+        app:layout_constraintTop_toTopOf="@id/GuiaH.80">
 
-    <Button
-        android:id="@+id/btnIniciarSesion"
-        android:layout_width="150dp"
-        android:layout_height="43dp"
-        android:background="@drawable/botones"
-        android:contentDescription="@string/iniSesion"
-        android:gravity="center"
-        android:minWidth="160dp"
-        android:minHeight="50dp"
-        android:paddingLeft="4dp"
-        android:paddingTop="8dp"
-        android:paddingRight="4dp"
-        android:paddingBottom="8dp"
-        android:text="@string/iniSesion"
-        android:textColor="@android:color/white"
-        android:textOff="Enable TextView"
-        android:textOn="Disable TextView"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/PH25..50"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.61"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/PH50"
-        app:layout_constraintVertical_bias="0.461" />
+        <ImageButton
+            android:id="@+id/imgBtn_Gmaps"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/ContDescIconoMaps"
+            android:onClick="mostrarUbicacion"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/GuiaV.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/maps" />
 
-    <ImageView
-        android:id="@+id/imgLogin"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="10dp"
-        android:contentDescription="@string/iniSesion"
-        app:layout_constraintBottom_toTopOf="@+id/PH25..50"
-        app:layout_constraintEnd_toStartOf="@+id/btnIniciarSesion"
-        app:layout_constraintTop_toTopOf="@+id/PH50"
-        app:srcCompat="@drawable/log_in" />
+        <ImageButton
+            android:id="@+id/imgBtn_web"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/ContDescIconoWeb"
+            android:onClick="abrirPagina"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/GuiaVContacto.50"
+            app:layout_constraintStart_toStartOf="@+id/GuiaV.25"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/web" />
 
-    <Button
-        android:id="@+id/btnRegistrar"
-        android:layout_width="150dp"
-        android:layout_height="43dp"
-        android:background="@drawable/botones_azules"
-        android:contentDescription="@string/btnRegistrar"
-        android:gravity="center"
-        android:minWidth="160dp"
-        android:minHeight="50dp"
-        android:onClick="iniciarRegistro"
-        android:paddingLeft="4dp"
-        android:paddingTop="8dp"
-        android:paddingRight="4dp"
-        android:paddingBottom="8dp"
-        android:text="@string/registrate"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/PH75"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.61"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/PH25..50" />
+        <ImageButton
+            android:id="@+id/imgBtn_instagram"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/ContDescIconoInsta"
+            android:onClick="abrirInstagram"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/GuiaV.75"
+            app:layout_constraintStart_toStartOf="@+id/GuiaVContacto.50"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/instagram" />
 
-    <ImageView
-        android:id="@+id/imgRegistro"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="10dp"
-        android:contentDescription="@string/btnRegistrar"
-        app:layout_constraintBottom_toTopOf="@+id/PH75"
-        app:layout_constraintEnd_toStartOf="@+id/btnRegistrar"
-        app:layout_constraintTop_toTopOf="@+id/PH25..50"
-        app:srcCompat="@drawable/sing_up" />
+        <ImageButton
+            android:id="@+id/imgBtn_gmail"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/ContDescIconoMail"
+            android:onClick="abrirGmail"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/GuiaV.75"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/gmail" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/GuiaV.25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/GuiaVContacto.50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/GuiaV.75"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/PV25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/PV50"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/PV75"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/PH25"
+        android:id="@+id/GuiaH.35"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.35" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/PH25..50"
+        android:id="@+id/GuiaH.58"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7" />
+        app:layout_constraintGuide_percent="0.58" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/PH50"
+        android:id="@+id/GuiaH.80"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
+        app:layout_constraintGuide_percent="0.80" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/PH75"
+        android:id="@+id/GuiaV.10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.81" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
 
-    <ImageButton
-        android:id="@+id/imgBtn_Gmaps"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@android:color/transparent"
-        android:onClick="mostrarUbicacion"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/PV25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/PH75"
-        app:srcCompat="@drawable/maps" />
-
-    <ImageButton
-        android:id="@+id/imgBtn_instagram"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@android:color/transparent"
-        android:onClick="abrirInstagram"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/PV75"
-        app:layout_constraintStart_toStartOf="@+id/PV50"
-        app:layout_constraintTop_toTopOf="@+id/PH75"
-        app:srcCompat="@drawable/instagram" />
-
-    <ImageButton
-        android:id="@+id/imgBtn_gmail"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@android:color/transparent"
-        android:onClick="abrirGmail"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/PV75"
-        app:layout_constraintTop_toTopOf="@+id/PH75"
-        app:srcCompat="@drawable/gmail" />
-
-    <ImageButton
-        android:id="@+id/imgBtn_web"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@android:color/transparent"
-        android:onClick="abrirPagina"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/PV50"
-        app:layout_constraintStart_toStartOf="@+id/PV25"
-        app:layout_constraintTop_toTopOf="@+id/PH75"
-        app:srcCompat="@drawable/web" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GuiaV.90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
