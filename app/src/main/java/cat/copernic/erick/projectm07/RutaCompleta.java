@@ -27,8 +27,9 @@ public class RutaCompleta extends AppCompatActivity {
     }
 
     public void handleRegresarRutas(View view) {
-        Intent intent = new Intent(this, HomeFragment.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, HomeFragment.class);
+        //startActivity(intent);
+        finish();
     }
 
 
