@@ -107,7 +107,10 @@
     <string name="hintDireccion_perfil">La meva direcció es...</string>
     <string name="btnRegistrar_pefil">Guardar</string>
 
-
+    //RUTAS RECYCLER VIEW
+    <string name="tvTituloNombreruta">Nom:</string>
+    <string name="tvTituloDescRuta">Descripció:</string>
+    <string name="tvTituloRuta">Ruta:</string>
 
 </resources>
 

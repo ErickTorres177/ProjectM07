@@ -90,4 +90,9 @@
     <string name="hintDireccion_perfil">My address is...</string>
     <string name="btnRegistrar_pefil">Save</string>
 
+    //RUTAS RECYCLER VIEW
+    <string name="tvTituloNombreruta">Name:</string>
+    <string name="tvTituloDescRuta">Description:</string>
+    <string name="tvTituloRuta">Route:</string>
+
 </resources>

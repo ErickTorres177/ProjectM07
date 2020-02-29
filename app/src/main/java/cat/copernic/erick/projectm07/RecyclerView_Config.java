@@ -37,21 +37,21 @@ public class RecyclerView_Config {
             super(LayoutInflater.from(mContext).
             inflate(R.layout.rutas_list_item,parent, false));
 
-            mRuta_id = itemView.findViewById(R.id.tvRuta_id);
+            //mRuta_id = itemView.findViewById(R.id.tvRuta_id);
             mRuta_nombre = itemView.findViewById(R.id.tvRuta_nombre);
             mRuta_descripcion = itemView.findViewById(R.id.tvRuta_descripcion);
             mRuta_ruta = itemView.findViewById(R.id.tvRuta_ruta);
-            mRuta_ciudad = itemView.findViewById(R.id.tvRuta_ciudad);
-            mRuta_pais = itemView.findViewById(R.id.tvRuta_pais);
+            //mRuta_ciudad = itemView.findViewById(R.id.tvRuta_ciudad);
+            //mRuta_pais = itemView.findViewById(R.id.tvRuta_pais);
         }
 
         public void bind(Rutas rutas, String key){
-            mRuta_id.setText(rutas.getIdRuta());
+            //mRuta_id.setText(rutas.getIdRuta());
             mRuta_nombre.setText(rutas.getNombreRuta());
             mRuta_descripcion.setText(rutas.getDescripcionRuta());
             mRuta_ruta.setText(rutas.getRuta());
-            mRuta_ciudad.setText(rutas.getCiudadRuta());
-            mRuta_pais.setText(rutas.getPaisRuta());
+            //mRuta_ciudad.setText(rutas.getCiudadRuta());
+            //mRuta_pais.setText(rutas.getPaisRuta());
             this.key = key;
         }
     }
