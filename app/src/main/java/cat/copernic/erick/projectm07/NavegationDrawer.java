@@ -70,12 +70,13 @@ public class NavegationDrawer extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-       // tvNombreUsuarioRT = findViewById(R.id.tvNombreUsuarioRealTime);
+        tvNombreUsuarioRT = findViewById(R.id.tvNombreUsuarioCurrent);
         //tvUsuarioRT = findViewById(R.id.tvUsuarioRealTime);
         //mListView =
 
         //
         imgUsuario = findViewById(R.id.imgUsuario);
+
 
         /*imgUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,13 +93,13 @@ public class NavegationDrawer extends AppCompatActivity {
 
 
         //FIRE BASE inicializaciones
-        /*mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         //DatabaseReference myRef = mFirebaseDatabase.getReference();
         FirebaseUser user = mAuth.getCurrentUser();
         userID = user.getUid();
 
-        currentUser = mAuth.getCurrentUser();*/
+        currentUser = mAuth.getCurrentUser();
 
         //REAL TIME
 
@@ -135,23 +136,23 @@ public class NavegationDrawer extends AppCompatActivity {
 
         //REAL TIME
 
-        //FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //myRef = database.getReference("Usuarios");
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("Usuarios/"+currentUser.getUid() + "/nombre");
 
 
 
-       /*
+
         myRef.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                String nombre = dataSnapshot.child("").getValue(String.class);
+                String nombre = dataSnapshot.child("nombre").getValue(String.class);
 
                 tvNombreUsuarioRT.setText(nombre);
                 Log.d(TAG, "Value is: " + nombre);
-
+/*
 
                 //valor = dataSnapshot.getValue(String.class);
                 Log.d(TAG, "Value is: " + valor);
@@ -180,7 +181,7 @@ public class NavegationDrawer extends AppCompatActivity {
                 String valor = dataSnapshot.child("nombre").getValue(String.class);
                 //Toast.makeText(NavegationDrawer.this, "usuario" + valor,
                         //Toast.LENGTH_SHORT).show();
-                //tvNombreUsuarioRT.setText(valor);
+                //tvNombreUsuarioRT.setText(valor);*/
             }
 
             @Override
@@ -188,7 +189,7 @@ public class NavegationDrawer extends AppCompatActivity {
                 // Failed to read value
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
-        });*/
+        });
     }
 
 
@@ -245,6 +246,10 @@ public class NavegationDrawer extends AppCompatActivity {
 
     public void anadirRuta(View view) {
         Intent intent = new Intent(this, NuevaRuta.class);
+        startActivity(intent);
+    }
+    public void abrirRutaCompleta(View view) {
+        Intent intent = new Intent(this, RutaCompleta.class);
         startActivity(intent);
     }
 }

@@ -50,7 +50,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/txt_titulo_pefil"
+            android:id="@+id/tvNombreRutaCompleta"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/tituloRegistroContent"
@@ -92,7 +92,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/txtTituloNombre_perfil"
+                android:id="@+id/tvDescRutaCompleta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/txtTituloNombre"
@@ -134,10 +134,10 @@
                 android:textColorLink="@color/white"
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
                 app:layout_constraintStart_toEndOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@id/txtTituloNombre_perfil" />
+                app:layout_constraintTop_toBottomOf="@id/tvDescRutaCompleta" />
 
             <TextView
-                android:id="@+id/txtTitulo_edad_perfil"
+                android:id="@+id/tvTituloRutaCompleta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="132dp"
@@ -182,10 +182,10 @@
                 android:textColorLink="@color/white"
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
                 app:layout_constraintStart_toEndOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/txtTitulo_edad_perfil" />
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloRutaCompleta" />
 
             <TextView
-                android:id="@+id/txtTituloDireccion_perfil"
+                android:id="@+id/tvTituloCiudadRutaCompleta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -227,7 +227,7 @@
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
                 app:layout_constraintHorizontal_bias="0.453"
                 app:layout_constraintStart_toEndOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/txtTituloDireccion_perfil" />
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloCiudadRutaCompleta" />
 
             <TextView
                 android:id="@+id/txtTituloEdad"
@@ -305,7 +305,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/btnVolver_perfil"
+                android:id="@+id/btnVolver_rutaCompleta"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/botones"
@@ -325,7 +325,7 @@
                 android:contentDescription="@string/imgCancelar"
                 android:onClick="handleRegresar"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btnVolver_perfil"
+                app:layout_constraintEnd_toStartOf="@+id/btnVolver_rutaCompleta"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/tornar" />
         </androidx.constraintlayout.widget.ConstraintLayout>

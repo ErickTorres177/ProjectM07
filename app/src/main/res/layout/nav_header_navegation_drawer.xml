@@ -25,9 +25,16 @@
         android:paddingBottom="8dp"
         app:srcCompat="@mipmap/user" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewUsuario"
+    <TextView
+        android:id="@+id/tvNombreUsuarioCurrent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvUsuarioCurrent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
 </LinearLayout>

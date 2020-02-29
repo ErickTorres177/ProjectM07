@@ -24,12 +24,17 @@ public class RecyclerView_Config {
     }
 
     class RutasItemView extends RecyclerView.ViewHolder{
-        private TextView mRuta_id;
+        //RUTA
         private TextView mRuta_nombre;
         private TextView mRuta_descripcion;
         private TextView mRuta_ruta;
-        private TextView mRuta_ciudad;
-        private TextView mRuta_pais;
+        //RUTA COMPLETA
+        private TextView mRutaCompleta_id;
+        private TextView mRutaCompleta_nombre;
+        private TextView mRutaCompleta_descripcion;
+        private TextView mRutaCompleta_ruta;
+        private TextView mRutaCompleta_pais;
+        private TextView mRutaCompleta_ciudad;
 
         private String key;
 
@@ -37,21 +42,40 @@ public class RecyclerView_Config {
             super(LayoutInflater.from(mContext).
             inflate(R.layout.rutas_list_item,parent, false));
 
+            //RUTA
             //mRuta_id = itemView.findViewById(R.id.tvRuta_id);
             mRuta_nombre = itemView.findViewById(R.id.tvRuta_nombre);
             mRuta_descripcion = itemView.findViewById(R.id.tvRuta_descripcion);
             mRuta_ruta = itemView.findViewById(R.id.tvRuta_ruta);
             //mRuta_ciudad = itemView.findViewById(R.id.tvRuta_ciudad);
             //mRuta_pais = itemView.findViewById(R.id.tvRuta_pais);
+            //---------------------------------------
+            //RUTA COMPLETA
+            //mRutaCompleta_id = itemView.findViewById(R.id.tvRutaCompleta);
+            mRutaCompleta_nombre = itemView.findViewById(R.id.tvNombreNuevaRuta);
+            mRutaCompleta_descripcion = itemView.findViewById(R.id.tvDescRutaCompleta);
+            mRutaCompleta_ruta = itemView.findViewById(R.id.tvRutaRutaCompleta);
+            mRutaCompleta_pais = itemView.findViewById(R.id.tvPaisRutaCompleta);
+            mRutaCompleta_ciudad = itemView.findViewById(R.id.tvCiudadRutaCompleta);
         }
 
         public void bind(Rutas rutas, String key){
+            //RUTA
             //mRuta_id.setText(rutas.getIdRuta());
             mRuta_nombre.setText(rutas.getNombreRuta());
             mRuta_descripcion.setText(rutas.getDescripcionRuta());
             mRuta_ruta.setText(rutas.getRuta());
             //mRuta_ciudad.setText(rutas.getCiudadRuta());
             //mRuta_pais.setText(rutas.getPaisRuta());
+            //---------------------------------------
+            //RUTA COMPLETA
+            //mRuta_id.setText(rutas.getIdRuta());
+            /*mRutaCompleta_nombre.setText(rutas.getNombreRuta());
+            mRutaCompleta_descripcion.setText(rutas.getDescripcionRuta());
+            mRutaCompleta_ruta.setText(rutas.getRuta());
+            mRutaCompleta_pais.setText(rutas.getCiudadRuta());
+            mRutaCompleta_ciudad.setText(rutas.getPaisRuta());*/
+
             this.key = key;
         }
     }

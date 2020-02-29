@@ -95,4 +95,10 @@
     <string name="tvTituloDescRuta">Description:</string>
     <string name="tvTituloRuta">Route:</string>
 
+    //RUTAS COMPLETA RECYCLER VIEW
+    <string name="tvTituloDescRutaCompleta">Description:</string>
+    <string name="tvTituloRutaCompleta">Route:</string>
+    <string name="tvTituloCiudadRutaCompleta">City:</string>
+    <string name="tvTituloPaisRutaCompleta">Country:</string>
+
 </resources>

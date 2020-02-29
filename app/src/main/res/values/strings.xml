@@ -112,5 +112,15 @@
     <string name="tvTituloDescRuta">Descripció:</string>
     <string name="tvTituloRuta">Ruta:</string>
 
+
+    //RUTAS COMPLETA RECYCLER VIEW
+    <string name="tvTituloDescRutaCompleta">Descripció:</string>
+    <string name="tvTituloRutaCompleta">Ruta:</string>
+    <string name="tvTituloCiudadRutaCompleta">Ciutat:</string>
+    <string name="tvTituloPaisRutaCompleta">País:</string>
+
+
+
+
 </resources>
 

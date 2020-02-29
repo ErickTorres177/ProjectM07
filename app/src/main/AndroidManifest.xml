@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cat.copernic.erick.projectm07">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".ConfiguracionRuta"></activity>
+        <activity android:name=".RutaCompleta"></activity>
+        <activity android:name=".ConfiguracionRuta" />
         <activity android:name=".EliminarRuta" />
         <activity android:name=".NuevaRuta" />
         <activity
