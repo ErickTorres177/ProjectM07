@@ -54,7 +54,7 @@ public class FireBaseDatabaHelper {
         });
     }
 
-    public void updateUser(String key,Usuarios usuario, final DataStatus dataStatus){
+    /*public void updateUser(String key,Usuarios usuario, final DataStatus dataStatus){
         mRefenceRutas.child(key).setValue(usuario).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
@@ -70,5 +70,5 @@ public class FireBaseDatabaHelper {
                 dataStatus.DataIsUpdate();
             }
         });
-    }
+    }*/
 }

@@ -128,58 +128,8 @@ public class ModificarPerfil extends AppCompatActivity {
                                     + " \nSexe: " + spinnerSelected,
                             Toast.LENGTH_SHORT).show();
                 }
-
-                /*
-                new FireBaseDatabaHelper().updateUser(key, usuarios, new FireBaseDatabaHelper.DataStatus() {
-                    @Override
-                    public void DataIsLoaded(List<Rutas> rutas, List<String> keys) {
-
-                    }
-
-                    @Override
-                    public void DataIsInserted() {
-
-                    }
-
-                    @Override
-                    public void DataIsUpdate() {
-
-                    }
-
-                    @Override
-                    public void DataIsDelete() {
-
-                    }
-                });*/
-
             }
         });
-
-        //REAL TIME - MODIFICACION PERFIL
-        //myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid());
-        //Log.e("Usuario actual: ", "" + currentUser.getUid());
-
-        /*myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Usuarios usuarios = dataSnapshot.getValue(Usuarios.class);
-
-                DatabaseReference currentUserDB = myReference.child(mAuth.getCurrentUser().getUid());
-                currentUserDB.child("usuario").setValue(etUsuario.getText().toString());
-                currentUserDB.child("nombre").setValue(etNombreUsuario.getText().toString());
-                currentUserDB.child("edad").setValue(etEdad.getText().toString());
-                currentUserDB.child("sexo").setValue("Sin definir");
-                currentUserDB.child("direccion").setValue("Sin definir");
-
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });*/
     }
 
     public boolean compIsNumericAndRango(int edad) {
@@ -217,6 +167,4 @@ public class ModificarPerfil extends AppCompatActivity {
     public void handleRegresarPerfil(View view) {
         finish();
     }
-
-
 }
