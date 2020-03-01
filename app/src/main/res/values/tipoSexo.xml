@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="tipo_sexo">
+        <item>Sexe</item>
         <item>Home</item>
         <item>Dona</item>
         <item>Un altre</item>

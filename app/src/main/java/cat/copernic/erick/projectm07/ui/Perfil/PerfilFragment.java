@@ -92,7 +92,6 @@ public class PerfilFragment extends Fragment {
                 //Log.e("nombre: ", "" + nombre);
                 //Log.e("Usuario actual: ", "" + currentUser.getUid());
                 //Log.e("Usuario actual: ", "" + user);
-                btnIrModificarPerfil.setText(nombreU);
                 tvNombreU.setText(nombreU);
                 tvEdadU.setText(edadU);
                 tvSexoU.setText(sexoU);
@@ -109,9 +108,4 @@ public class PerfilFragment extends Fragment {
 
         return root;
 }
-
-    public void abrirEditarPerfil() {
-
-    }
-
 }

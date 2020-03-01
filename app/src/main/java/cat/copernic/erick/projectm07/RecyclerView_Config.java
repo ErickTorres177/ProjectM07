@@ -1,7 +1,9 @@
 package cat.copernic.erick.projectm07;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -9,7 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class RecyclerView_Config {
     private Context mContext;
@@ -57,6 +61,23 @@ public class RecyclerView_Config {
             mRutaCompleta_ruta = itemView.findViewById(R.id.tvRutaRutaCompleta);
             mRutaCompleta_pais = itemView.findViewById(R.id.tvPaisRutaCompleta);
             mRutaCompleta_ciudad = itemView.findViewById(R.id.tvCiudadRutaCompleta);
+
+           /* //------PERFIL-ACTUALIZACION
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext,ModificarPerfil.class);
+                    intent.putExtra("key", key);
+                    intent.putExtra("nombre", key);
+                    intent.putExtra("key", key);
+                    intent.putExtra("key", key);
+                    intent.putExtra("key", key);
+                    intent.putExtra("key", key);
+
+
+                }
+            });*/
+
         }
 
         public void bind(Rutas rutas, String key){

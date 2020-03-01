@@ -25,9 +25,9 @@ import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText etUsuario, etPasswd, etNombreUsuario, etEdad;
-    ImageView iconoRegitrar;
-    Button btnRegistrarU;
+    private EditText etUsuario, etPasswd, etNombreUsuario, etEdad;
+    private ImageView iconoRegitrar;
+    private Button btnRegistrarU;
 
 
     //public static String usuarioEmail = "nulo";
@@ -141,8 +141,8 @@ public class RegisterActivity extends AppCompatActivity {
         currentUserDB.child("usuario").setValue(etUsuario.getText().toString());
         currentUserDB.child("nombre").setValue(etNombreUsuario.getText().toString());
         currentUserDB.child("edad").setValue(etEdad.getText().toString());
-        currentUserDB.child("sexo").setValue("default");
-        currentUserDB.child("direccion").setValue("default");
+        currentUserDB.child("sexo").setValue("Sense definir");
+        currentUserDB.child("direccion").setValue("Sense definir");
     }
 
     private void limpiarCampo() {

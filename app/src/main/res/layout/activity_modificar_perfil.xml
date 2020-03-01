@@ -83,10 +83,9 @@
                 android:contentDescription="@string/txtNombre"
                 android:ems="10"
                 android:gravity="center_horizontal|center_vertical"
-                android:hint="@string/nombreUsuario_perfil"
+                android:hint="@string/etNombreUsuario_perfil"
                 android:importantForAutofill="no"
                 android:inputType="text"
-                android:text="@string/etNombreUsuario_perfil"
                 android:textColor="@color/white"
                 android:textColorHighlight="@color/white"
                 android:textColorHint="@color/white"
@@ -227,8 +226,8 @@
 
         <Button
             android:id="@+id/btnModificar_pefil"
-            android:layout_width="167dp"
-            android:layout_height="52dp"
+            android:layout_width="153dp"
+            android:layout_height="54dp"
             android:background="@drawable/botones_azules"
             android:contentDescription="@string/btnRegistrarseContent"
             android:text="@string/btnRegistrar_pefil"
@@ -236,15 +235,15 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/imgTop"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.466"
+            app:layout_constraintHorizontal_bias="0.675"
             app:layout_constraintStart_toEndOf="@+id/btnVolverPerfil"
             app:layout_constraintTop_toBottomOf="@+id/contenedorCampos"
-            app:layout_constraintVertical_bias="0.359" />
+            app:layout_constraintVertical_bias="0.491" />
 
         <Button
             android:id="@+id/btnVolverPerfil"
-            android:layout_width="167dp"
-            android:layout_height="52dp"
+            android:layout_width="152dp"
+            android:layout_height="51dp"
             android:layout_marginStart="32dp"
             android:background="@drawable/botones"
             android:contentDescription="@string/btnVolverContent"
@@ -254,8 +253,7 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/imgTop"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contenedorCampos"
-            app:layout_constraintVertical_bias="0.359" />
+            app:layout_constraintTop_toBottomOf="@+id/contenedorCampos" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
