@@ -39,6 +39,7 @@ public class RecyclerView_Config {
         private TextView mRutaCompleta_ruta;
         private TextView mRutaCompleta_pais;
         private TextView mRutaCompleta_ciudad;
+        private TextView idRutaCompleta;
 
         private String key;
 
@@ -51,16 +52,41 @@ public class RecyclerView_Config {
             mRuta_nombre = itemView.findViewById(R.id.tvRuta_nombre);
             mRuta_descripcion = itemView.findViewById(R.id.tvRuta_descripcion);
             mRuta_ruta = itemView.findViewById(R.id.tvRuta_ruta);
+            idRutaCompleta = itemView.findViewById(R.id.tvIdRutaCompleta);
+
+
+
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext,RutaCompleta.class);
+                    intent.putExtra("key", key);
+                    intent.putExtra("nombre", key);
+                    intent.putExtra("key", key);
+                    intent.putExtra("key", key);
+                    intent.putExtra("key", key);
+                    intent.putExtra("key", key);
+
+
+                }
+            });
+
+
+
+
+
+
             //mRuta_ciudad = itemView.findViewById(R.id.tvRuta_ciudad);
             //mRuta_pais = itemView.findViewById(R.id.tvRuta_pais);
             //---------------------------------------
             //RUTA COMPLETA
             //mRutaCompleta_id = itemView.findViewById(R.id.tvRutaCompleta);
-            mRutaCompleta_nombre = itemView.findViewById(R.id.tvNombreNuevaRuta);
+           /* mRutaCompleta_nombre = itemView.findViewById(R.id.tvNombreNuevaRuta);
             mRutaCompleta_descripcion = itemView.findViewById(R.id.tvDescRutaCompleta);
             mRutaCompleta_ruta = itemView.findViewById(R.id.tvRutaRutaCompleta);
             mRutaCompleta_pais = itemView.findViewById(R.id.tvPaisRutaCompleta);
-            mRutaCompleta_ciudad = itemView.findViewById(R.id.tvCiudadRutaCompleta);
+            mRutaCompleta_ciudad = itemView.findViewById(R.id.tvCiudadRutaCompleta);*/
 
            /* //------PERFIL-ACTUALIZACION
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +112,7 @@ public class RecyclerView_Config {
             mRuta_nombre.setText(rutas.getNombreRuta());
             mRuta_descripcion.setText(rutas.getDescripcionRuta());
             mRuta_ruta.setText(rutas.getRuta());
+            idRutaCompleta.setText(rutas.getIdRuta());
             //mRuta_ciudad.setText(rutas.getCiudadRuta());
             //mRuta_pais.setText(rutas.getPaisRuta());
             //---------------------------------------

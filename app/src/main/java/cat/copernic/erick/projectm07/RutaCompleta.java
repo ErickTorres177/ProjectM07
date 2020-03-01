@@ -8,10 +8,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -19,11 +28,79 @@ import cat.copernic.erick.projectm07.ui.home.HomeFragment;
 
 public class RutaCompleta extends AppCompatActivity {
 
+    private TextView tvNombreR, tvDescripcionR, tvRutaR, tvPaisR, tvCiudadR;
+
+    final String TAG = "REALTIMEDATABASE";
+
+    //FIRE BASE
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
+    private FirebaseDatabase mFirebaseDatabase;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
+    private DatabaseReference myRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ruta_completa);
+
+        tvNombreR = findViewById(R.id.tvRuta_nombre);
+        tvDescripcionR = findViewById(R.id.tvDescRutaCompleta);
+        tvRutaR = findViewById(R.id.tvRutaRutaCompleta);
+        tvPaisR = findViewById(R.id.tvPaisRutaCompleta);
+        tvCiudadR = findViewById(R.id.tvCiudadRutaCompleta);
+
+        //Recuperar Ruta completa
+      /*  String newString;
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if (extras == null) {
+                newString = null;
+            } else {
+                newString = extras.getString("idRutaC");
+            }
+        } else {
+            newString = (String) savedInstanceState.getSerializable("idRutaC");
+        }
+
+        //REAL TIME -> leer card viw -> usuario actual
+        //FIRE BASE inicializaciones
+        mAuth = FirebaseAuth.getInstance();
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        currentUser = mAuth.getCurrentUser();
+
+
+        //REAL TIME
+        myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid())
+                .child("rutas").child(newString);
+        //Log.e("Usuario actual: ", "" + currentUser.getUid());
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Rutas rutas = dataSnapshot.getValue(Rutas.class);
+                final String nombreR = rutas.getNombreRuta();
+                final String descripcionR = rutas.getDescripcionRuta();
+                final String rutaR = rutas.getRuta();
+                final String paisR = rutas.getPaisRuta();
+                final String ciudadR = rutas.getCiudadRuta();
+
+                tvNombreR.setText(nombreR);
+                tvDescripcionR.setText(descripcionR);
+                tvRutaR.setText(rutaR);
+                tvPaisR.setText(paisR);
+                tvCiudadR.setText(ciudadR);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });*/
+
+
     }
 
     public void handleRegresarRutas(View view) {
@@ -37,8 +114,7 @@ public class RutaCompleta extends AppCompatActivity {
     private RutasCompletasAdapter mRutasAdapter;
 
 
-
-    public void setConfig(RecyclerView recyclerView, Context context, List<Rutas> rutasCompletas, List<String> keys){
+    public void setConfig(RecyclerView recyclerView, Context context, List<Rutas> rutasCompletas, List<String> keys) {
         mContext = context;
         mRutasAdapter = new RutasCompletasAdapter(rutasCompletas, keys);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -46,7 +122,7 @@ public class RutaCompleta extends AppCompatActivity {
 
     }
 
-    class RutasCompletasItemView extends RecyclerView.ViewHolder{
+    class RutasCompletasItemView extends RecyclerView.ViewHolder {
         //RUTA COMPLETA
         private TextView mRutaCompleta_id;
         private TextView mRutaCompleta_nombre;
@@ -57,9 +133,9 @@ public class RutaCompleta extends AppCompatActivity {
 
         private String key;
 
-        public RutasCompletasItemView(ViewGroup parent ){
+        public RutasCompletasItemView(ViewGroup parent) {
             super(LayoutInflater.from(mContext).
-                    inflate(R.layout.activity_ruta_completa,parent, false));
+                    inflate(R.layout.activity_ruta_completa, parent, false));
 
 
             //RUTA COMPLETA
@@ -71,7 +147,7 @@ public class RutaCompleta extends AppCompatActivity {
             mRutaCompleta_ciudad = itemView.findViewById(R.id.tvCiudadRutaCompleta);
         }
 
-        public void bind(Rutas rutasCompletas, String key){
+        public void bind(Rutas rutasCompletas, String key) {
             //RUTA COMPLETA
             //mRuta_id.setText(rutas.getIdRuta());
             mRutaCompleta_nombre.setText(rutasCompletas.getNombreRuta());
@@ -84,7 +160,7 @@ public class RutaCompleta extends AppCompatActivity {
         }
     }
 
-    class RutasCompletasAdapter extends RecyclerView.Adapter<RutasCompletasItemView>{
+    class RutasCompletasAdapter extends RecyclerView.Adapter<RutasCompletasItemView> {
         private List<Rutas> mrutasCompletasList;
         private List<String> mKeys;
 

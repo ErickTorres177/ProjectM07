@@ -49,7 +49,7 @@ public class NavegationDrawer extends AppCompatActivity {
 
     private Button btnLogOut;
     private ImageView imgUsuario;
-    private TextView tvNombreUsuarioRT, tvUsuarioRT;
+    private TextView tvNombreUsuarioRT, tvUsuarioRT, tvIdRutaCompleta;
 
     final String TAG = "REALTIMEDATABASE";
 
@@ -61,6 +61,8 @@ public class NavegationDrawer extends AppCompatActivity {
     private DatabaseReference myRef;
     private static  String userU;
     private static String nombreU;
+
+    private String idRutaEnviar;
 
 
     @Override
@@ -92,6 +94,9 @@ public class NavegationDrawer extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
+        tvIdRutaCompleta = findViewById(R.id.tvIdRutaCompleta);
 
         //FIRE BASE inicializaciones
         mAuth = FirebaseAuth.getInstance();
@@ -193,7 +198,9 @@ public class NavegationDrawer extends AppCompatActivity {
     }
 
     public void abrirRutaCompleta(View view) {
+        String tvIdRutaC = tvIdRutaCompleta.getText().toString();
         Intent intent = new Intent(this, RutaCompleta.class);
+        intent.putExtra("idRutaC", tvIdRutaC);
         startActivity(intent);
     }
 

@@ -54,7 +54,7 @@
             android:layout_width="408dp"
             android:layout_height="94dp"
             android:contentDescription="@string/tituloRegistroContent"
-            android:gravity="center"
+            android:gravity="center_horizontal|center_vertical"
             android:minWidth="46dp"
             android:minHeight="289dp"
             android:paddingLeft="4dp"
@@ -104,14 +104,14 @@
 
             <TextView
                 android:id="@+id/tvDescRutaCompleta"
-                android:layout_width="380dp"
-                android:layout_height="34dp"
-                android:layout_marginTop="20dp"
+                android:layout_width="334dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
                 android:contentDescription="@string/txtTituloNombre"
+                android:gravity="center_horizontal|center_vertical"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTituloDescRutaCompleta" />
 
@@ -136,7 +136,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="68dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="28dp"
                 android:text="@string/tvTituloPaisRutaCompleta"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -146,7 +146,7 @@
             <TextView
                 android:id="@+id/tvPaisRutaCompleta"
                 android:layout_width="189dp"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:textColor="@color/white"
@@ -157,7 +157,7 @@
             <TextView
                 android:id="@+id/tvCiudadRutaCompleta"
                 android:layout_width="186dp"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:textColor="@color/white"
@@ -182,14 +182,15 @@
 
             <TextView
                 android:id="@+id/tvRutaRutaCompleta"
-                android:layout_width="378dp"
-                android:layout_height="34dp"
+                android:layout_width="334dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:gravity="center_horizontal|center_vertical"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTituloRutaCompleta" />
+                app:layout_constraintTop_toBottomOf="@+id/tvRuta_descripcion" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/P50VCampos"
@@ -202,12 +203,12 @@
                 android:id="@+id/imgIrGoogleMaps"
                 android:layout_width="247dp"
                 android:layout_height="140dp"
-                android:layout_marginTop="108dp"
 
+                android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.503"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvRutaRutaCompleta"
+                app:layout_constraintTop_toBottomOf="@+id/tvPaisRutaCompleta"
                 app:srcCompat="@drawable/maps" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

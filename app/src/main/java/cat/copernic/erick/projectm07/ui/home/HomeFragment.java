@@ -2,6 +2,7 @@ package cat.copernic.erick.projectm07.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,6 +20,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -28,32 +36,23 @@ import cat.copernic.erick.projectm07.FireBaseDatabaHelper;
 import cat.copernic.erick.projectm07.R;
 import cat.copernic.erick.projectm07.RecyclerView_Config;
 import cat.copernic.erick.projectm07.Rutas;
+import cat.copernic.erick.projectm07.Usuarios;
 import cat.copernic.erick.projectm07.ui.Rutas.RutasFragment;
 
 public class HomeFragment extends Fragment {
 
-   /* RecyclerView mRecyclerView;
-    Adapter mAdapter;
-
-
-    //----
-    private final LinkedList<String> mListaRutas = new LinkedList<>();
-
-    //private RecyclerView mRecyclerView;
-    //private Adapter mAdapter;
-    */
-
-   //NUEVA PRUEBA
-
-   private RecyclerView mRecyclerView;
-
+    private RecyclerView mRecyclerView;
     private HomeViewModel homeViewModel;
+
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+
+        //OLD
 
         mRecyclerView = root.findViewById(R.id.recyclerView);
         new FireBaseDatabaHelper().leerRutas(new FireBaseDatabaHelper.DataStatus() {
@@ -78,83 +77,10 @@ public class HomeFragment extends Fragment {
 
             }
         });
-/*
-        //RECYCLERVIEW
 
-        mRecyclerView = root.findViewById(R.id.recyclerView);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        //mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        // mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        mAdapter = new Adapter(getActivity(), getMyList());
-        //mAdapter = new Adapter(this, getMyList());
-        mRecyclerView.setAdapter(mAdapter);
-
-        //DEFAULT
-        homeViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                //textView.setText(s);
-            }
-        });
-
-        //BOTON PARA AÑADIR UN NUEVO CARDVIEW
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
-        //.----
 
 
         return root;
     }
-
-    //RecyclerView ARRAYLIST
-/*
-    private ArrayList<Model> getMyList(){
-        ArrayList<Model> models = new ArrayList<>();
-
-
-        Model m = new Model();
-        m.setTitle("Ubicación 1");
-        m.setDescription("Esta es la descipción de la ubicación 1");
-        m.setImg(R.drawable.p1);
-        models.add(m);
-
-        //---
-        m = new Model();
-        m.setTitle("Ubicación 2");
-        m.setDescription("Esta es la descipción de la ubicación 2");
-        m.setImg(R.drawable.p2);
-        models.add(m);
-
-        //---
-        m = new Model();
-        m.setTitle("Ubicación 3");
-        m.setDescription("Esta es la descipción de la ubicación 3");
-        m.setImg(R.drawable.p3);
-        models.add(m);
-
-        //---
-        m = new Model();
-        m.setTitle("Ubicación 4");
-        m.setDescription("Esta es la descipción de la ubicación 4");
-        m.setImg(R.drawable.p4);
-        models.add(m);
-
-        //---
-        m = new Model();
-        m.setTitle("Ubicación 5");
-        m.setDescription("Esta es la descipción de la ubicación 5");
-        m.setImg(R.drawable.p5);
-        models.add(m);
-
-        return models;
-    }*/
 
 }

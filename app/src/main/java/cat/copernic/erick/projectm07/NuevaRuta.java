@@ -27,9 +27,6 @@ public class NuevaRuta extends AppCompatActivity {
 
     public List<Rutas> rutasList;
 
-    private static String paisR2;
-    private static String ciudadR2;
-
     //FIRE BASE
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
@@ -90,12 +87,14 @@ public class NuevaRuta extends AppCompatActivity {
             Toast.makeText(NuevaRuta.this, "La ruta és invàlida: " + etRutaR.getText().toString(),
                     Toast.LENGTH_SHORT).show();
         } else if (paisR.isEmpty() || paisR.equals("") || paisR.equals(null)) {
-            paisR2 = "Sense definir";
+            Toast.makeText(NuevaRuta.this, "El país és invàlid: " + etRutaR.getText().toString(),
+                    Toast.LENGTH_SHORT).show();
         } else if (!compTipoDatosString(paisR)) {
             Toast.makeText(NuevaRuta.this, "El país es invàlid: " + etPaisR.getText().toString(),
                     Toast.LENGTH_SHORT).show();
         } else if (ciudadR.isEmpty() || ciudadR.equals("") || ciudadR.equals(null)) {
-            ciudadR2 = "Sense definir";
+            Toast.makeText(NuevaRuta.this, "La ciutat es invàlida: " + etPaisR.getText().toString(),
+                    Toast.LENGTH_SHORT).show();
         } else if (!compTipoDatosString(ciudadR)) {
             Toast.makeText(NuevaRuta.this, "La ciutat es invàlida: " + etCiudadR.getText().toString(),
                     Toast.LENGTH_SHORT).show();
@@ -109,8 +108,8 @@ public class NuevaRuta extends AppCompatActivity {
             myRef.child("nombreRuta").setValue(etNombreR.getText().toString());
             myRef.child("descripcionRuta").setValue(etDescripcionR.getText().toString());
             myRef.child("ruta").setValue(etRutaR.getText().toString());
-            myRef.child("ciudadRuta").setValue(ciudadR2);
-            myRef.child("paisRuta").setValue(paisR2);
+            myRef.child("ciudadRuta").setValue(etCiudadR.getText().toString());
+            myRef.child("paisRuta").setValue(etPaisR.getText().toString());
 
            /* Rutas rutas = new Rutas(
                     String.valueOf(idRutaGeneral),
