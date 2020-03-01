@@ -4,8 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NavegationDrawer"
+    tools:context=".NuevaRuta"
     android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnVolverConfigRutas"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:background="@drawable/botones"
+        android:contentDescription="@string/btnVolverContent"
+        android:onClick="btnVolverConfigRutas"
+        android:text="@string/btnVolver"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPaisRutaNueva"
+        app:layout_constraintVertical_bias="0.52" />
 
     <TextView
         android:id="@+id/tvCiudadRutaNueva"
@@ -19,7 +34,7 @@
         android:textColorLink="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toEndOf="@+id/tvPaisRutaNueva"
         app:layout_constraintTop_toTopOf="@+id/tvPaisRutaNueva" />
 
@@ -28,7 +43,7 @@
         android:layout_width="177dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="32dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/tvPaisRutaNueva"
         android:textColor="@color/white"
@@ -43,21 +58,18 @@
         android:id="@+id/etCiudadRutaNueva"
         android:layout_width="177dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginEnd="32dp"
         android:ems="10"
         android:gravity="center_horizontal|center_vertical"
-        android:hint="@string/etDireccionRuta"
+        android:hint="@string/etCiudadRutaNueva"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:text="@string/etCiudadRutaNueva"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
         android:textColorHint="@color/white"
         android:textColorLink="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toEndOf="@+id/etPaisRutaNueva"
         app:layout_constraintTop_toTopOf="@+id/etPaisRutaNueva" />
 
     <EditText
@@ -68,10 +80,9 @@
         android:layout_marginTop="32dp"
         android:ems="10"
         android:gravity="center_horizontal|center_vertical"
-        android:hint="@string/etDireccionRuta"
+        android:hint="@string/etPaisRutaNueva"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:text="@string/etPaisRutaNueva"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
         android:textColorHint="@color/white"
@@ -87,10 +98,9 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:gravity="center_horizontal|center_vertical"
-        android:hint="@string/etDireccionRuta"
+        android:hint="@string/etRutaNuevaRuta"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:text="@string/etRutaNuevaRuta"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
         android:textColorHint="@color/white"
@@ -105,7 +115,7 @@
         android:id="@+id/tvRutaNuevaRuta"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/tvRutaNuevaRuta"
         android:textColor="@color/white"
@@ -114,21 +124,20 @@
         android:textColorLink="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etDescripcionRutaNueva" />
 
     <EditText
         android:id="@+id/etDescripcionRutaNueva"
-        android:layout_width="wrap_content"
+        android:layout_width="362dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:gravity="center_horizontal|center_vertical"
-        android:hint="@string/etDireccionRuta"
+        android:hint="@string/etDescripcionRutaNueva"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:text="@string/etDescripcionRutaNueva"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
         android:textColorHint="@color/white"
@@ -140,9 +149,9 @@
 
     <Button
         android:id="@+id/btnAñadirNuevaRuta"
-        android:layout_width="153dp"
-        android:layout_height="54dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
         android:background="@drawable/botones_azules"
         android:contentDescription="@string/btnRegistrarseContent"
         android:text="@string/btnAñadirNuevaRuta"
@@ -150,9 +159,10 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPaisRutaNueva"
-        app:layout_constraintVertical_bias="0.838" />
+        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintStart_toEndOf="@+id/btnVolverConfigRutas"
+        app:layout_constraintTop_toTopOf="@+id/btnVolverConfigRutas"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tvNuevaRutaF"

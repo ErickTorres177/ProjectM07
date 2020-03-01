@@ -21,7 +21,7 @@ public class NuevaRuta extends AppCompatActivity {
 
     private EditText etNombreR, etDescripcionR, etRutaR, etPaisR, etCiudadR;
     private Button btnAñadirNuevaRuta;
-    private static int idRutaGeneral = 1;
+    private static int idRutaGeneral = 0;
 
     //FIRE BASE
     private FirebaseAuth mAuth;
@@ -57,7 +57,6 @@ public class NuevaRuta extends AppCompatActivity {
         });
 
 
-
     }
 
     private void guardarRutaNuevaRT() {
@@ -65,11 +64,13 @@ public class NuevaRuta extends AppCompatActivity {
         String nombreComp = (etNombreR.getText().toString());
         String descripcionR = (etDescripcionR.getText().toString());
         String rutaR = (etRutaR.getText().toString());
+        String paisR = (etPaisR.getText().toString());
+        String ciudadR = (etCiudadR.getText().toString());
 
         if (nombreComp.isEmpty() || nombreComp.equals("") || nombreComp.equals(null)) {
             Toast.makeText(NuevaRuta.this, "Ingressa el nom de la ruta: " + etNombreR.getText().toString(),
                     Toast.LENGTH_SHORT).show();
-        } else if (!compNombreRuta(nombreComp)) {
+        } else if (!compTipoDatosString(nombreComp)) {
             Toast.makeText(NuevaRuta.this, "El nom és invàlid: " + etNombreR.getText().toString() + ", tens d'introduir només lletres.",
                     Toast.LENGTH_SHORT).show();
         } else if (descripcionR.isEmpty() || descripcionR.equals("") || descripcionR.equals(null)) {
@@ -78,21 +79,32 @@ public class NuevaRuta extends AppCompatActivity {
         } else if (rutaR.isEmpty() || rutaR.equals("") || rutaR.equals(null)) {
             Toast.makeText(NuevaRuta.this, "La ruta és invàlida: " + etRutaR.getText().toString(),
                     Toast.LENGTH_SHORT).show();
+        } else if (paisR.isEmpty() || paisR.equals("") || paisR.equals(null)) {
+            paisR = "Sense definir";
+        } else if (!compTipoDatosString(paisR)) {
+            Toast.makeText(NuevaRuta.this, "El país es invàlid: " + etPaisR.getText().toString(),
+                    Toast.LENGTH_SHORT).show();
+        } else if (ciudadR.isEmpty() || ciudadR.equals("") || ciudadR.equals(null)) {
+            ciudadR = "Sense definir";
+        } else if (!compTipoDatosString(ciudadR)) {
+            Toast.makeText(NuevaRuta.this, "La ciutat es invàlida: " + etCiudadR.getText().toString(),
+                    Toast.LENGTH_SHORT).show();
         } else {
             //DatabaseReference currentUserDB = myRef.child(mAuth.getCurrentUser().getUid()).child("rutas");
             idRutaGeneral++;
-            myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("rutas");
+            myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid())
+                    .child("rutas").child(String.valueOf(idRutaGeneral));
             myRef.child("idRuta").setValue(String.valueOf(idRutaGeneral));
             myRef.child("usuarioRuta").setValue(currentUser.getEmail());
             myRef.child("nombreRuta").setValue(etNombreR.getText().toString());
             myRef.child("descripcionRuta").setValue(etDescripcionR.getText().toString());
             myRef.child("ruta").setValue(etRutaR.getText().toString());
-            myRef.child("ciudadRuta").setValue("Sense definir");
-            myRef.child("paisRuta").setValue("Sense definir");
+            myRef.child("ciudadRuta").setValue(ciudadR);
+            myRef.child("paisRuta").setValue(paisR);
         }
     }
 
-    public boolean compNombreRuta(String nombre) {
+    public boolean compTipoDatosString(String nombre) {
         boolean comp = true;
         Pattern patron = Pattern.compile("[a-zA-ZñÑáéíóúÁÉÍÓÚàèòÀÈÒçÇ ]*");
         Matcher matcherNombre = patron.matcher(nombre);
@@ -102,4 +114,7 @@ public class NuevaRuta extends AppCompatActivity {
         return comp;
     }
 
+    public void btnVolverConfigRutas(View view) {
+        finish();
+    }
 }
