@@ -73,7 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
-        btnRegistrarU = findViewById(R.id.btnModificar_pefil);
+        btnRegistrarU = findViewById(R.id.btnAñadirNuevaRuta);
 
         btnRegistrarU.setOnClickListener(new View.OnClickListener() {
             @Override

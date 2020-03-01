@@ -2,29 +2,20 @@ package cat.copernic.erick.projectm07;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -81,7 +72,7 @@ public class ModificarPerfil extends AppCompatActivity {
 
         //myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid());
 
-        btnModificarPerfil = findViewById(R.id.btnModificar_pefil);
+        btnModificarPerfil = findViewById(R.id.btnAñadirNuevaRuta);
 
         //MODIFICAR - PERFIL USUARIO ACTUAL
         btnModificarPerfil.setOnClickListener(new View.OnClickListener() {

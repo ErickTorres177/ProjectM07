@@ -4,7 +4,7 @@
     <string name="Cerrar_Sesion">Cerrar sesión</string>
     <string name="ImagenFondo">Imagen de fondo de pantallaç</string>
     <string name="imgProyecto">Logo Find Your Way</string>
-    <string name="action_settings">Configuración</string>
+    <string name="action_settings">Configuración perfil</string>
     <string name="btnRegistrar">Registrarse</string>
     <string name="btnVolver">Volver</string>
     <string name="edad">Edad:</string>
@@ -26,10 +26,10 @@
     <string name="txtTituloPasswd">Contraseña</string>
     <string name="menu_tools">Herramientas</string>
     <string name="menu_slideshow">Diapositivas</string>
-    <string name="menu_perfil">Mi perfil</string>
+    <string name="menu_perfil">Mi Perfil</string>
     <string name="menu_send">Enviar</string>
-    <string name="menu_home">Inicio</string>
-    <string name="menu_nuevaRuta">Rutas</string>
+    <string name="menu_home">Rutas</string>
+    <string name="menu_nuevaRuta">Configuración Rutas</string>
     <string name="iniSesion">Iniciar sesión</string>
     <string name="hintNombre">Correo</string>
     <string name="hintPasswd">Contraseña</string>
@@ -50,6 +50,8 @@
     <string name="btnCancelarRuta">Cancelar</string>
     <string name="btnAnadirRuta">Agregar Ruta</string>
 
+    <string name="btnAñadirNuevaRuta">Agregar Ruta</string>
+
     <string name="tvSubTitulo">Elige Una opción</string>
     <string name="tvNuevaRuta">Crear Una Ruta</string>
     <string name="btnNuevaRuta">Nueva</string>
@@ -58,10 +60,21 @@
     <string name="tvConfiguracionRuta">Configuración De Una Ruta</string>
     <string name="btnConfiguracionRuta">Configuración</string>
 
+    //NUEVA RUTA
     <string name="tvNuevaRutaF">Nueva Ruta</string>
     <string name="tvNombreNuevaRuta">Ingresa el nombre de la ruta</string>
     <string name="etNombreNuevaRuta">Nombre Ruta</string>
-    <string name="tvDireccionRuta">Ingresa la dirección de la ruta</string>
+    <string name="tvDescripcionRutaNueva">Ingresa la descripción de la ruta</string>
+    <string name="etDescripcionRutaNueva">Descripción</string>
+    <string name="tvRutaNuevaRuta">Ingresa la ruta:</string>
+    <string name="etRutaNuevaRuta">Ruta</string>
+    <string name="tvPaisRutaNueva">Ingresa el país:</string>
+    <string name="tvCiudadRutaNueva">Ingresa la ciudad:</string>
+    <string name="etPaisRutaNueva">País</string>
+    <string name="etCiudadRutaNueva">Ciudad</string>
+
+
+
 
     //Lista navegation drawer
     <string name="sesion">Sesión</string>

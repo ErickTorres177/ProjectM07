@@ -3,6 +3,7 @@ package cat.copernic.erick.projectm07;
 public class Rutas {
 
     private String idRuta;
+    private String usuarioRuta;
     private String nombreRuta;
     private String descripcionRuta;
     private String ruta;
@@ -12,8 +13,9 @@ public class Rutas {
     public Rutas() {
     }
 
-    public Rutas(String idRuta, String nombreRuta, String descripcionRuta, String ruta, String ciudadRuta, String paisRuta) {
+    public Rutas(String idRuta, String usuarioRuta, String nombreRuta, String descripcionRuta, String ruta, String ciudadRuta, String paisRuta) {
         this.idRuta = idRuta;
+        this.usuarioRuta = usuarioRuta;
         this.nombreRuta = nombreRuta;
         this.descripcionRuta = descripcionRuta;
         this.ruta = ruta;
@@ -27,6 +29,14 @@ public class Rutas {
 
     public void setIdRuta(String idRuta) {
         this.idRuta = idRuta;
+    }
+
+    public String getUsuarioRuta() {
+        return usuarioRuta;
+    }
+
+    public void setUsuarioRuta(String usuarioRuta) {
+        this.usuarioRuta = usuarioRuta;
     }
 
     public String getNombreRuta() {

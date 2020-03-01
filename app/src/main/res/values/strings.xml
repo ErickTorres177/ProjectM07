@@ -48,11 +48,11 @@
     <string name="btnVolverContent">cancel·lar creació del compte</string>
     <string name="imgProyecto">Logo Find Your Way</string>
 
-    <string name="menu_home">Inici</string>
-    <string name="menu_nuevaRuta">Rutes</string>
+    <string name="menu_home">Rutes</string>
+    <string name="menu_nuevaRuta">Configuració Rutes</string>
     <string name="menu_slideshow">Diapositives</string>
     <string name="menu_tools">Eines</string>
-    <string name="menu_perfil">El meu perfil</string>
+    <string name="menu_perfil">El Meu Perfil</string>
     <string name="menu_send">Enviar</string>
 
     // NAVIGATION DRAWER
@@ -60,7 +60,7 @@
     <string name="navigation_drawer_close" translatable="false">Tancar navigation drawer</string>
     <string name="nav_header_title" translatable="false">ERICK - USER</string>
     <string name="nav_header_subtitle" translatable="false">user@findyourway.com</string>
-    <string name="action_settings">Configuració</string>
+    <string name="action_settings">Configuració perfil</string>
 
     <string name="nav_header_desc">FOTO D USUARI</string>
     <string name="correoContent">Correu electronic del usuari</string>
@@ -78,6 +78,8 @@
     <string name="btnCancelarRuta">Cancel·lar</string>
     <string name="btnAnadirRuta">Afegir Ruta</string>
 
+    <string name="btnAñadirNuevaRuta">Afegir Ruta</string>
+
     <string name="tvSubTitulo">Tria Una Opció</string>
     <string name="tvNuevaRuta">Crear Una Ruta</string>
     <string name="btnNuevaRuta">Nova</string>
@@ -85,10 +87,21 @@
     <string name="btnEliminarRuta">Eliminar</string>
     <string name="tvConfiguracionRuta">Configuració De Una Ruta</string>
     <string name="btnConfiguracionRuta">Configuració Ruta</string>
+
+
+    //NUEVA RUTA
     <string name="tvNuevaRutaF">Nova Ruta</string>
-    <string name="tvNombreNuevaRuta">Ingressa el nom de la ruta</string>
+    <string name="tvNombreNuevaRuta">Ingressa el nom de la ruta:</string>
     <string name="etNombreNuevaRuta">Nom Ruta</string>
-    <string name="tvDireccionRuta">Ingressa la direcció de la ruta</string>
+    <string name="tvDescripcionRutaNueva">Ingressa la descripció de la ruta:</string>
+    <string name="etDescripcionRutaNueva">Descripció</string>
+    <string name="tvRutaNuevaRuta">Ingressa la ruta:</string>
+    <string name="etRutaNuevaRuta">Ruta</string>
+    <string name="tvPaisRutaNueva">Ingressa el país:</string>
+    <string name="tvCiudadRutaNueva">Ingressa la ciutat:</string>
+    <string name="etPaisRutaNueva">País</string>
+    <string name="etCiudadRutaNueva">Ciutat</string>
+
 
     //Lista navegation drawer
     <string name="sesion">Sessió</string>

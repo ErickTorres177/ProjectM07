@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,7 +22,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import cat.copernic.erick.projectm07.ModificarPerfil;
-import cat.copernic.erick.projectm07.NuevaRuta;
 import cat.copernic.erick.projectm07.R;
 import cat.copernic.erick.projectm07.Usuarios;
 
@@ -56,7 +54,7 @@ public class PerfilFragment extends Fragment {
             }
         });*/
         //INICIALIZACIONES
-        btnIrModificarPerfil = root.findViewById(R.id.btnModificar_pefil);
+        btnIrModificarPerfil = root.findViewById(R.id.btnAñadirNuevaRuta);
         tvNombreU = root.findViewById(R.id.tvNombreUsuario_perfil);
         tvEdadU = root.findViewById(R.id.tvEdadUsuario_perfil);
         tvSexoU = root.findViewById(R.id.tvSexoUsuario_perfil);

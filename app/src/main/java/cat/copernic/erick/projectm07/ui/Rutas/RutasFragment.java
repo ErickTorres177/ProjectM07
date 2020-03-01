@@ -45,7 +45,6 @@ public class RutasFragment extends Fragment {
         btnNuevaR = view.findViewById(R.id.btnNuevaRuta);
         btnConfiguracioR = view.findViewById(R.id.btnConfiguracionRuta);
         btnEliminarR = view.findViewById(R.id.btnEliminarRuta);
-        btnCancelar = view.findViewById(R.id.btnCancelarRuta);
 
         btnNuevaR.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,17 +73,6 @@ public class RutasFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-        btnCancelar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), HomeFragment.class);
-                intent.putExtra("some", "some data");
-                startActivity(intent);
-            }
-        });
-
-
 
 
         return view;

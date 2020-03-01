@@ -176,7 +176,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
-            android:id="@+id/btnModificar_pefil"
+            android:id="@+id/btnAñadirNuevaRuta"
             android:layout_width="198dp"
             android:layout_height="48dp"
             android:background="@drawable/botones_azules"

@@ -340,7 +340,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/btnModificar_pefil"
+                android:id="@+id/btnAñadirNuevaRuta"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/botones_azules"
@@ -358,7 +358,7 @@
                 android:layout_marginEnd="5dp"
                 android:contentDescription="@string/imgCancelar"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btnModificar_pefil"
+                app:layout_constraintEnd_toStartOf="@id/btnAñadirNuevaRuta"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/sing_up" />
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -39,6 +39,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import cat.copernic.erick.projectm07.ui.Perfil.PerfilFragment;
+
 
 public class NavegationDrawer extends AppCompatActivity {
 
@@ -181,6 +183,10 @@ public class NavegationDrawer extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void irConfiguracionPerfil(MenuItem item) {
+        Intent intent = new Intent(this, ModificarPerfil.class);
+        startActivity(intent);
+    }
     public void anadirRuta(View view) {
         Intent intent = new Intent(this, NuevaRuta.class);
         startActivity(intent);
