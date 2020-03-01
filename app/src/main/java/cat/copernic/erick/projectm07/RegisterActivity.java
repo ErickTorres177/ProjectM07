@@ -161,6 +161,7 @@ public class RegisterActivity extends AppCompatActivity {
             currentUserDB.child("edad").setValue(etEdad.getText().toString());
             currentUserDB.child("sexo").setValue("Sense definir");
             currentUserDB.child("direccion").setValue("Sense definir");
+
         }
     }
 

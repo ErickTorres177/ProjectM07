@@ -13,6 +13,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,6 +24,11 @@ public class NuevaRuta extends AppCompatActivity {
     private EditText etNombreR, etDescripcionR, etRutaR, etPaisR, etCiudadR;
     private Button btnAñadirNuevaRuta;
     private static int idRutaGeneral = 0;
+
+    public List<Rutas> rutasList;
+
+    private static String paisR2;
+    private static String ciudadR2;
 
     //FIRE BASE
     private FirebaseAuth mAuth;
@@ -67,6 +74,9 @@ public class NuevaRuta extends AppCompatActivity {
         String paisR = (etPaisR.getText().toString());
         String ciudadR = (etCiudadR.getText().toString());
 
+
+
+
         if (nombreComp.isEmpty() || nombreComp.equals("") || nombreComp.equals(null)) {
             Toast.makeText(NuevaRuta.this, "Ingressa el nom de la ruta: " + etNombreR.getText().toString(),
                     Toast.LENGTH_SHORT).show();
@@ -80,12 +90,12 @@ public class NuevaRuta extends AppCompatActivity {
             Toast.makeText(NuevaRuta.this, "La ruta és invàlida: " + etRutaR.getText().toString(),
                     Toast.LENGTH_SHORT).show();
         } else if (paisR.isEmpty() || paisR.equals("") || paisR.equals(null)) {
-            paisR = "Sense definir";
+            paisR2 = "Sense definir";
         } else if (!compTipoDatosString(paisR)) {
             Toast.makeText(NuevaRuta.this, "El país es invàlid: " + etPaisR.getText().toString(),
                     Toast.LENGTH_SHORT).show();
         } else if (ciudadR.isEmpty() || ciudadR.equals("") || ciudadR.equals(null)) {
-            ciudadR = "Sense definir";
+            ciudadR2 = "Sense definir";
         } else if (!compTipoDatosString(ciudadR)) {
             Toast.makeText(NuevaRuta.this, "La ciutat es invàlida: " + etCiudadR.getText().toString(),
                     Toast.LENGTH_SHORT).show();
@@ -99,8 +109,24 @@ public class NuevaRuta extends AppCompatActivity {
             myRef.child("nombreRuta").setValue(etNombreR.getText().toString());
             myRef.child("descripcionRuta").setValue(etDescripcionR.getText().toString());
             myRef.child("ruta").setValue(etRutaR.getText().toString());
-            myRef.child("ciudadRuta").setValue(ciudadR);
-            myRef.child("paisRuta").setValue(paisR);
+            myRef.child("ciudadRuta").setValue(ciudadR2);
+            myRef.child("paisRuta").setValue(paisR2);
+
+           /* Rutas rutas = new Rutas(
+                    String.valueOf(idRutaGeneral),
+                    currentUser.getEmail().toString(),
+                    etNombreR.getText().toString(),
+                    etDescripcionR.getText().toString(),
+                    etRutaR.getText().toString(),
+                    ciudadR,
+                    paisR);
+
+            rutasList = new ArrayList<>();
+            //rutasList.clear();
+            rutasList.add(rutas);*/
+
+
+
         }
     }
 

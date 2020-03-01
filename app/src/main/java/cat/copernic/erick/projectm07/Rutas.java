@@ -10,6 +10,7 @@ public class Rutas {
     private String ciudadRuta;
     private String paisRuta;
 
+
     public Rutas() {
     }
 

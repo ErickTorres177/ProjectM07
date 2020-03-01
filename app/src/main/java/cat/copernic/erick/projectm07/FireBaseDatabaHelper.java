@@ -5,6 +5,8 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,6 +22,13 @@ public class FireBaseDatabaHelper {
     private DatabaseReference mRefenceRutas;
     private List<Rutas> rutas = new ArrayList<>();
 
+    //FIRE BASE
+    private FirebaseAuth mAuth;
+    private FirebaseDatabase mFirebaseDatabase;
+    private FirebaseUser currentUser;
+
+
+
     public interface DataStatus{
         void DataIsLoaded(List<Rutas> rutas, List<String> keys);
         void DataIsInserted();
@@ -28,8 +37,14 @@ public class FireBaseDatabaHelper {
     }
 
     public FireBaseDatabaHelper() {
+
+        mAuth = FirebaseAuth.getInstance();
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        currentUser = mAuth.getCurrentUser();
+
         mDatabase = FirebaseDatabase.getInstance();
-        mRefenceRutas = mDatabase.getReference("rutas");
+        //mRefenceRutas = mDatabase.getReference("rutas");
+        mRefenceRutas = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("rutas");
     }
 
     public void leerRutas(final DataStatus dataStatus){

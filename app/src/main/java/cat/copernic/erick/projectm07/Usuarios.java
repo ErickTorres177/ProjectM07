@@ -1,11 +1,14 @@
 package cat.copernic.erick.projectm07;
 
+import java.util.List;
+
 public class Usuarios {
     private String nombre;
     private String edad;
     private String usuario;
     private String direccion;
     private String sexo;
+    //private List<Rutas> rutas;
 
     public Usuarios() {
     }
