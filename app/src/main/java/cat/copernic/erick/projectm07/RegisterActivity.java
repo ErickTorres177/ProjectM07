@@ -28,12 +28,11 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText etUsuario, etPasswd, etNombreUsuario, etEdad;
     private ImageView iconoRegitrar;
     private Button btnRegistrarU;
-
-
-    //public static String usuarioEmail = "nulo";
+    private static final int edadMax = 110;
+    private static final int edadMin = 5;
 
     //FIRE BASE
-    private static final String TAG = "LoginActivity";
+    private static final String TAG = "RegisterActivity";
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
     //---
@@ -111,9 +110,10 @@ public class RegisterActivity extends AppCompatActivity {
                                     updateUI(user);
 
                                     String toastCuentaCreada = RegisterActivity.this.getResources().getString(R.string.cuentaCreada);
+                                    guardatUsuarioFB();
                                     Toast.makeText(RegisterActivity.this, toastCuentaCreada + ": " + email,
                                             Toast.LENGTH_SHORT).show();
-                                    guardatUsuarioFB();
+
                                     limpiarCampo();
                                 } else {
                                     // If sign in fails, display a message to the user.
@@ -138,18 +138,30 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void guardatUsuarioFB() {
         DatabaseReference currentUserDB = myReference.child(mAuth.getCurrentUser().getUid());
-        currentUserDB.child("usuario").setValue(etUsuario.getText().toString());
-        currentUserDB.child("nombre").setValue(etNombreUsuario.getText().toString());
-        currentUserDB.child("edad").setValue(etEdad.getText().toString());
-        currentUserDB.child("sexo").setValue("Sense definir");
-        currentUserDB.child("direccion").setValue("Sense definir");
-    }
 
-    private void limpiarCampo() {
-        etUsuario.getText().clear();
-        etNombreUsuario.getText().clear();
-        etPasswd.getText().clear();
-        etEdad.getText().clear();
+        String nombreComp = (etNombreUsuario.getText().toString());
+        String edadComp = (etEdad.getText().toString());
+
+        if (nombreComp.isEmpty() || nombreComp.equals("") || nombreComp.equals(null)){
+            Toast.makeText(RegisterActivity.this, "Ingressa el teu nom: " + etNombreUsuario.getText().toString(),
+                    Toast.LENGTH_SHORT).show();
+        } else if (!compNombreIntroducido(nombreComp)) {
+            Toast.makeText(RegisterActivity.this, "El nom és invàlid: " + etNombreUsuario.getText().toString(),
+                    Toast.LENGTH_SHORT).show();
+        } else if (edadComp.isEmpty() || edadComp.equals("") || edadComp.equals(null)) {
+            Toast.makeText(RegisterActivity.this, "Ingressa a teva edat: " + etEdad.getText().toString(),
+                    Toast.LENGTH_SHORT).show();
+        } else if (!compIsNumericAndRango(Integer.parseInt(edadComp))) {
+            Toast.makeText(RegisterActivity.this, "L'edat és incorrecta: " + etEdad.getText().toString(),
+                    Toast.LENGTH_SHORT).show();
+        } else {
+
+            currentUserDB.child("usuario").setValue(etUsuario.getText().toString());
+            currentUserDB.child("nombre").setValue(etNombreUsuario.getText().toString());
+            currentUserDB.child("edad").setValue(etEdad.getText().toString());
+            currentUserDB.child("sexo").setValue("Sense definir");
+            currentUserDB.child("direccion").setValue("Sense definir");
+        }
     }
 
     private void updateUI(FirebaseUser currentUser) {
@@ -172,8 +184,46 @@ public class RegisterActivity extends AppCompatActivity {
         return comp;
     }
 
+    public boolean compIsNumericAndRango(int edad) {
+        boolean comp = true;
+        if (!isNumeric(edad)) {
+            comp = false;
+        } else if (edad > edadMax) {
+            comp = false;
+        } else if (edad < edadMin) {
+            comp = false;
+        }
+        return comp;
+    }
+
+    private boolean isNumeric(int numeroComp) {
+        String a = String.valueOf(numeroComp);
+        try {
+            Integer.parseInt(a);
+            return true;
+        } catch (NumberFormatException ex) {
+            return false;
+        }
+    }
+
+    public boolean compNombreIntroducido(String nombre) {
+        boolean comp = true;
+        Pattern patron = Pattern.compile("[a-zA-ZñÑáéíóúÁÉÍÓÚàèòÀÈÒçÇ ]*");
+        Matcher matcherNombre = patron.matcher(nombre);
+        if (!matcherNombre.matches()) {
+            comp = false;
+        }
+        return comp;
+    }
+
     public void handleRegresar(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
+    }
+    private void limpiarCampo() {
+        etUsuario.getText().clear();
+        etNombreUsuario.getText().clear();
+        etPasswd.getText().clear();
+        etEdad.getText().clear();
     }
 }
