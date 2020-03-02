@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -41,7 +42,6 @@ public class RecyclerEliminarRuta_Config {
             super(LayoutInflater.from(mContext).
                     inflate(R.layout.eliminar_rutas_list_item, parent, false));
 
-
             //ELIMINAR RUTA
             //mRuta_id = itemView.findViewById(R.id.tvRuta_id);
             mRuta_nombre_eliminar = itemView.findViewById(R.id.tvEliminarRuta_nombre);
@@ -51,15 +51,39 @@ public class RecyclerEliminarRuta_Config {
             mCiudad_ruta_eliminar = itemView.findViewById(R.id.tvEliminarRuta_ciudad);
             idRutaCompleta_eliminar = itemView.findViewById(R.id.tvEliminarRuta_idRuta);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    new FireBaseDHEliminarRuta().deleteRutaEliminar(key, new FireBaseDHEliminarRuta.DataStatus() {
+                        @Override
+                        public void DataIsLoaded(List<Rutas> rutas, List<String> keys) {
 
+                        }
 
+                        @Override
+                        public void DataIsInserted() {
 
+                        }
+
+                        @Override
+                        public void DataIsUpdate() {
+
+                        }
+
+                        @Override
+                        public void DataIsDelete() {
+                           /* Toast.makeText(, "Ruta elimidad correctament: ",
+                                    Toast.LENGTH_SHORT).show();*/
+                           return;
+
+                        }
+                    });
+                }
+            });
 
         }
 
         public void bind(Rutas rutas, String key) {
-
-
 
             //ELIMINAR RUTA
             //mRuta_id = itemView.findViewById(R.id.tvRuta_id);
