@@ -13,7 +13,7 @@
     <string name="recuperar_pass">Recuperar Contrasenya</string>
     <string name="muestra_usuario" translatable="false">muestra_usuario</string>
     <string name="muestra_pass" translatable="false">muestra_pass</string>
-<string name="Cerrar_Sesion">Tancar sessió</string>
+    <string name="Cerrar_Sesion">Tancar sessió</string>
     // Content description imagenes
     <string name="ContDescLogoApp" translatable="false">Logo Find Your Way</string>
     <string name="ContDescImgFondoTop" translatable="false">"Imagen superior de fondo"</string>
@@ -101,6 +101,10 @@
     <string name="tvCiudadRutaNueva">Ingressa la ciutat:</string>
     <string name="etPaisRutaNueva">País</string>
     <string name="etCiudadRutaNueva">Ciutat</string>
+
+
+    //CONFIGURACION RUTA
+    <string name="btnGuradarConfiguracionRuta">Moficicar</string>
 
 
     //Lista navegation drawer

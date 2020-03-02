@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RutaCompleta">
+    tools:context=".ConfiguracionCompleta">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/LayoutImagenesFondo"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tvRuta_rutaCompleta"
+            android:id="@+id/tvConfiguracionRutaC_nombre"
             android:layout_width="408dp"
             android:layout_height="94dp"
             android:contentDescription="@string/tituloRegistroContent"
@@ -103,10 +103,10 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvDescRutaCompleta"
+                android:id="@+id/tvConfiguracionRutaC_descripcion"
                 android:layout_width="334dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="16dp"
                 android:contentDescription="@string/txtTituloNombre"
                 android:gravity="center_horizontal|center_vertical"
                 android:textColor="@color/white"
@@ -120,7 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="132dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="47dp"
                 android:contentDescription="@string/txtTituloPasswd"
                 android:text="@string/tvTituloRutaCompleta"
@@ -129,61 +129,66 @@
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
                 app:layout_constraintHorizontal_bias="0.677"
                 app:layout_constraintStart_toStartOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/tvDescRutaCompleta" />
+                app:layout_constraintTop_toBottomOf="@+id/tvConfiguracionRutaC_descripcion" />
 
             <TextView
                 android:id="@+id/tvTituloPaisRutaCompleta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="64dp"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="12dp"
                 android:text="@string/tvTituloPaisRutaCompleta"
                 android:textColor="@color/white"
                 android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.378"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvRutaRutaCompleta" />
+                app:layout_constraintTop_toBottomOf="@+id/tvConfiguracionRutaC_ruta" />
 
             <TextView
-                android:id="@+id/tvPaisRutaCompleta"
+                android:id="@+id/tvConfiguracionRutaC_pais"
                 android:layout_width="189dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:textColor="@color/white"
-                android:textSize="25sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTituloPaisRutaCompleta" />
-
-            <TextView
-                android:id="@+id/tvCiudadRutaCompleta"
-                android:layout_width="186dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.666"
-                app:layout_constraintStart_toStartOf="@+id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/tvTituloCiudadRutaCompleta" />
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloPaisRutaCompleta" />
 
             <TextView
                 android:id="@+id/tvTituloCiudadRutaCompleta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="60dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="152dp"
                 android:text="@string/tvTituloCiudadRutaCompleta"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/P50VCampos"
-                app:layout_constraintTop_toTopOf="@+id/tvTituloPaisRutaCompleta" />
+                app:layout_constraintHorizontal_bias="0.987"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvConfiguracionRutaC_pais" />
 
             <TextView
-                android:id="@+id/tvRutaRutaCompleta"
+                android:id="@+id/tvConfiguracionRutaC_ciudad"
+                android:layout_width="186dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloCiudadRutaCompleta" />
+
+            <TextView
+                android:id="@+id/tvConfiguracionRutaC_ruta"
                 android:layout_width="334dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -197,18 +202,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.5" />
-
-            <ImageView
-                android:id="@+id/imgIrGoogleMaps"
-                android:layout_width="229dp"
-                android:layout_height="116dp"
-
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.503"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvPaisRutaCompleta"
-                app:srcCompat="@drawable/maps" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -226,26 +219,39 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutBotonAtras"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="383dp"
+            android:layout_height="53dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/btnVolver_rutaCompleta"
+                android:id="@+id/btnGuradarConfiguracionRuta"
                 android:layout_width="156dp"
-                android:layout_height="39dp"
-                android:background="@drawable/botones"
-                android:contentDescription="@string/btnVolverContent"
-                android:onClick="handleRegresarRutas"
-                android:text="@string/btnVolver"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/botones_azules"
+                android:contentDescription="@string/btnRegistrarseContent"
+                android:text="@string/btnGuradarConfiguracionRuta"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnVolver_rutaCompleta"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <Button
+                android:id="@+id/btnVolver_rutaCompleta"
+                android:layout_width="156dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/botones"
+                android:contentDescription="@string/btnVolverContent"
+                android:onClick="volverRutasConfiguracion"
+                android:text="@string/btnVolver"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.Guideline

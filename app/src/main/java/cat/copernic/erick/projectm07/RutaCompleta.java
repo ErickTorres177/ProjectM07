@@ -39,7 +39,6 @@ public class RutaCompleta extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private DatabaseReference myRef;
 
-    //pruebas
     private String key;
     private String nombreR;
     private String descripcionR;

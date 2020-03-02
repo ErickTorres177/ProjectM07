@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,6 +36,7 @@ import java.util.List;
 import cat.copernic.erick.projectm07.FireBaseDatabaHelper;
 import cat.copernic.erick.projectm07.R;
 import cat.copernic.erick.projectm07.RecyclerView_Config;
+import cat.copernic.erick.projectm07.RegisterActivity;
 import cat.copernic.erick.projectm07.Rutas;
 import cat.copernic.erick.projectm07.Usuarios;
 import cat.copernic.erick.projectm07.ui.Rutas.RutasFragment;
