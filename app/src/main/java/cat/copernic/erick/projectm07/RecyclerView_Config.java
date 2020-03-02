@@ -34,6 +34,14 @@ public class RecyclerView_Config {
         private TextView mRuta_ruta;
         private TextView mPais_ruta;
         private TextView mCiudad_ruta;
+      /*  //ELIMINAR RUTA
+        private TextView mRuta_nombre_eliminar;
+        private TextView mRuta_descripcion_eliminar;
+        private TextView mRuta_ruta_eliminar;
+        private TextView mPais_ruta_eliminar;
+        private TextView mCiudad_ruta_eliminar;
+        private TextView idRutaCompleta_eliminar;*/
+
         //RUTA COMPLETA
         private TextView mRutaCompleta_id;
         private TextView mRutaCompleta_nombre;
@@ -57,6 +65,16 @@ public class RecyclerView_Config {
             mPais_ruta = itemView.findViewById(R.id.tvPaisRuta);
             mCiudad_ruta = itemView.findViewById(R.id.tvCiudadRuta);
             idRutaCompleta = itemView.findViewById(R.id.tvIdRutaCompleta);
+
+           /* //ELIMINAR RUTA
+            //mRuta_id = itemView.findViewById(R.id.tvRuta_id);
+            mRuta_nombre_eliminar = itemView.findViewById(R.id.tvEliminarRuta_nombre);
+            mRuta_descripcion_eliminar = itemView.findViewById(R.id.tvEliminarRuta_descripcion);
+            mRuta_ruta_eliminar = itemView.findViewById(R.id.tvEliminarRuta_ruta);
+            mPais_ruta_eliminar = itemView.findViewById(R.id.tvEliminarRuta_pais);
+            mCiudad_ruta_eliminar = itemView.findViewById(R.id.tvEliminarRuta_ciudad);
+            idRutaCompleta_eliminar = itemView.findViewById(R.id.tvEliminarRuta_idRuta);*/
+
 
 
             //RUTA COMPLETA
@@ -115,6 +133,16 @@ public class RecyclerView_Config {
             mRutaCompleta_ruta.setText(rutas.getRuta());
             mRutaCompleta_pais.setText(rutas.getCiudadRuta());
             mRutaCompleta_ciudad.setText(rutas.getPaisRuta());*/
+
+
+           /* //ELIMINAR RUTA
+            //mRuta_id = itemView.findViewById(R.id.tvRuta_id);
+            mRuta_nombre_eliminar.setText(rutas.getNombreRuta());
+            mRuta_descripcion_eliminar.setText(rutas.getDescripcionRuta());
+            mRuta_ruta_eliminar.setText(rutas.getRuta());
+            mPais_ruta_eliminar.setText(rutas.getPaisRuta());
+            mCiudad_ruta_eliminar.setText(rutas.getCiudadRuta());
+            idRutaCompleta_eliminar.setText(rutas.getIdRuta());*/
 
             this.key = key;
         }
