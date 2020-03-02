@@ -50,7 +50,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tvRuta_nombre"
+            android:id="@+id/tvRuta_rutaCompleta"
             android:layout_width="408dp"
             android:layout_height="94dp"
             android:contentDescription="@string/tituloRegistroContent"
@@ -94,6 +94,7 @@
                 android:id="@+id/tvTituloDescRutaCompleta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:contentDescription="@string/txtTituloNombre"
                 android:text="@string/tvTituloDescRutaCompleta"
                 android:textColor="@color/white"
@@ -106,7 +107,7 @@
                 android:id="@+id/tvDescRutaCompleta"
                 android:layout_width="334dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="20dp"
                 android:contentDescription="@string/txtTituloNombre"
                 android:gravity="center_horizontal|center_vertical"
                 android:textColor="@color/white"
@@ -116,11 +117,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvTituloDescRutaCompleta" />
 
             <TextView
-                android:id="@+id/tvRuta_descripcion"
+                android:id="@+id/tvRuta_descripcion2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="132dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="47dp"
                 android:contentDescription="@string/txtTituloPasswd"
                 android:text="@string/tvTituloRutaCompleta"
@@ -135,8 +136,8 @@
                 android:id="@+id/tvTituloPaisRutaCompleta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="68dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="44dp"
                 android:text="@string/tvTituloPaisRutaCompleta"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -184,13 +185,12 @@
                 android:id="@+id/tvRutaRutaCompleta"
                 android:layout_width="334dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvRuta_descripcion" />
+                app:layout_constraintTop_toBottomOf="@+id/tvRuta_descripcion2" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/P50VCampos"
@@ -201,10 +201,10 @@
 
             <ImageView
                 android:id="@+id/imgIrGoogleMaps"
-                android:layout_width="247dp"
-                android:layout_height="140dp"
+                android:layout_width="229dp"
+                android:layout_height="116dp"
 
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.503"
                 app:layout_constraintStart_toStartOf="parent"

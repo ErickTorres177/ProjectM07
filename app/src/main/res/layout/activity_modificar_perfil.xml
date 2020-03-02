@@ -41,8 +41,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/contenedorCampos"
-            android:layout_width="387dp"
-            android:layout_height="408dp"
+            android:layout_width="402dp"
+            android:layout_height="437dp"
             android:layout_marginTop="84dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.666"
@@ -50,21 +50,23 @@
             app:layout_constraintTop_toTopOf="@+id/img1">
 
             <TextView
-                android:id="@+id/tvDescRutaCompleta"
+                android:id="@+id/tvTituloNombrePerfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:contentDescription="@string/txtTituloNombre"
                 android:text="@string/nombreUsuario_perfil"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+                app:layout_constraintHorizontal_bias="0.516"
                 app:layout_constraintStart_toStartOf="@id/P50VCampos"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/txtFondoNombre_perfil"
                 android:layout_width="250dp"
-                android:layout_height="0dp"
+                android:layout_height="44dp"
                 android:background="@drawable/campos"
                 android:contentDescription="@string/txtNombre"
                 android:editable="false"
@@ -72,6 +74,7 @@
                 android:importantForAutofill="no"
                 app:layout_constraintBottom_toBottomOf="@+id/txtNombreUsuario_perfil"
                 app:layout_constraintEnd_toEndOf="@+id/txtNombreUsuario_perfil"
+                app:layout_constraintHorizontal_bias="0.52"
                 app:layout_constraintStart_toStartOf="@+id/txtNombreUsuario_perfil"
                 app:layout_constraintTop_toTopOf="@+id/txtNombreUsuario_perfil" />
 
@@ -79,7 +82,7 @@
                 android:id="@+id/txtNombreUsuario_perfil"
                 android:layout_width="225dp"
                 android:layout_height="39dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:contentDescription="@string/txtNombre"
                 android:ems="10"
                 android:gravity="center_horizontal|center_vertical"
@@ -93,22 +96,18 @@
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
                 app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toEndOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@id/tvDescRutaCompleta" />
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloNombrePerfil" />
 
             <TextView
-                android:id="@+id/tvRuta_descripcion"
+                android:id="@+id/tvTituloEdadMyPerfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="132dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="47dp"
                 android:contentDescription="@string/txtTituloPasswd"
                 android:text="@string/titulo_edad_perfil"
                 android:textColor="@color/white"
                 android:textSize="25sp"
-                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
-                app:layout_constraintHorizontal_bias="0.68"
-                app:layout_constraintStart_toStartOf="@id/P50VCampos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtFondoNombre_perfil" />
 
             <EditText
@@ -124,14 +123,15 @@
                 android:inputType="textPersonName"
                 app:layout_constraintBottom_toBottomOf="@+id/txtEdad_perfil"
                 app:layout_constraintEnd_toEndOf="@+id/txtEdad_perfil"
+                app:layout_constraintHorizontal_bias="0.482"
                 app:layout_constraintStart_toStartOf="@+id/txtEdad_perfil"
-                app:layout_constraintTop_toTopOf="@+id/txtEdad_perfil" />
+                app:layout_constraintTop_toTopOf="@+id/txtEdad_perfil"
+                app:layout_constraintVertical_bias="1.0" />
 
             <EditText
                 android:id="@+id/txtEdad_perfil"
                 android:layout_width="162dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="12dp"
                 android:contentDescription="@string/txtPasswd"
                 android:ems="10"
                 android:gravity="center_horizontal|center_vertical"
@@ -145,17 +145,18 @@
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
                 app:layout_constraintHorizontal_bias="0.506"
                 app:layout_constraintStart_toEndOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/tvRuta_descripcion" />
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloEdadMyPerfil" />
 
             <TextView
-                android:id="@+id/tvTituloCiudadRutaCompleta"
+                android:id="@+id/tvTituloDirecionMyPerfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="28dp"
                 android:text="@string/txtTituloDireccion"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/spinnerTipSexo" />
 
@@ -189,7 +190,7 @@
                 android:id="@+id/txtDireccion_pefil"
                 android:layout_width="316dp"
                 android:layout_height="44dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="28dp"
                 android:contentDescription="@string/txtPasswd"
                 android:ems="10"
                 android:gravity="center_horizontal|center_vertical"
@@ -201,9 +202,9 @@
                 android:textColorHint="@color/white"
                 android:textColorLink="@color/white"
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
-                app:layout_constraintHorizontal_bias="0.453"
+                app:layout_constraintHorizontal_bias="0.503"
                 app:layout_constraintStart_toEndOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/tvTituloCiudadRutaCompleta" />
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloDirecionMyPerfil" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/P50VCampos"
@@ -219,8 +220,8 @@
                 android:layout_marginTop="8dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:scrollbarSize="6dp"
-                android:textSize="20sp"
                 android:textColor="@color/white"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
@@ -272,7 +273,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tvRuta_nombre"
+            android:id="@+id/tvTituloPerfilInicial"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/tituloRegistroContent"

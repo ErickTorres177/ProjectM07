@@ -39,16 +39,36 @@ public class RutaCompleta extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private DatabaseReference myRef;
 
+    //pruebas
+    private String key;
+    private String nombreR;
+    private String descripcionR;
+    private String rutaR;
+    private String paisR;
+    private String ciudadR;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ruta_completa);
 
-        tvNombreR = findViewById(R.id.tvRuta_nombre);
+        key = getIntent().getStringExtra("key");
+        nombreR = getIntent().getStringExtra("nombreRuta");
+        descripcionR = getIntent().getStringExtra("descripcionRuta");
+        rutaR = getIntent().getStringExtra("ruta");
+        paisR = getIntent().getStringExtra("paisRuta");
+        ciudadR = getIntent().getStringExtra("ciudadRuta");
+
+        tvNombreR = findViewById(R.id.tvRuta_rutaCompleta);
+        tvNombreR.setText(nombreR);
         tvDescripcionR = findViewById(R.id.tvDescRutaCompleta);
+        tvDescripcionR.setText(descripcionR);
         tvRutaR = findViewById(R.id.tvRutaRutaCompleta);
+        tvRutaR.setText(rutaR);
         tvPaisR = findViewById(R.id.tvPaisRutaCompleta);
+        tvPaisR.setText(paisR);
         tvCiudadR = findViewById(R.id.tvCiudadRutaCompleta);
+        tvCiudadR.setText(ciudadR);
 
         //Recuperar Ruta completa
       /*  String newString;

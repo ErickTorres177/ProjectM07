@@ -111,6 +111,10 @@ public class NuevaRuta extends AppCompatActivity {
             myRef.child("ciudadRuta").setValue(etCiudadR.getText().toString());
             myRef.child("paisRuta").setValue(etPaisR.getText().toString());
 
+            limpiarCampo();
+            Toast.makeText(NuevaRuta.this, "Ruta agregada correctament: " + etNombreR.getText().toString(),
+                    Toast.LENGTH_SHORT).show();
+
            /* Rutas rutas = new Rutas(
                     String.valueOf(idRutaGeneral),
                     currentUser.getEmail().toString(),
@@ -139,7 +143,15 @@ public class NuevaRuta extends AppCompatActivity {
         return comp;
     }
 
+    private void limpiarCampo() {
+        etNombreR.getText().clear();
+        etDescripcionR.getText().clear();
+        etRutaR.getText().clear();
+        etPaisR.getText().clear();
+        etCiudadR.getText().clear();
+    }
     public void btnVolverConfigRutas(View view) {
+        limpiarCampo();
         finish();
     }
 }

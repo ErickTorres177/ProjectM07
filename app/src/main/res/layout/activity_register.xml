@@ -84,23 +84,25 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/contenedorCampos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="267dp"
+            android:layout_height="415dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/tvDescRutaCompleta"
+                android:id="@+id/tvTituloNombreUsuario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
                 android:contentDescription="@string/txtTituloNombre"
                 android:text="@string/nombreUsuario"
                 android:textColor="@color/white"
                 android:textSize="25sp"
-                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
-                app:layout_constraintStart_toStartOf="@id/P50VCampos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
@@ -115,14 +117,16 @@
                 android:inputType="textPersonName"
                 app:layout_constraintBottom_toBottomOf="@+id/txtNombreUsuario_perfil"
                 app:layout_constraintEnd_toEndOf="@+id/txtNombreUsuario_perfil"
+                app:layout_constraintHorizontal_bias="0.48"
                 app:layout_constraintStart_toStartOf="@+id/txtNombreUsuario_perfil"
-                app:layout_constraintTop_toTopOf="@+id/txtNombreUsuario_perfil" />
+                app:layout_constraintTop_toTopOf="@+id/txtNombreUsuario_perfil"
+                app:layout_constraintVertical_bias="1.0" />
 
             <EditText
                 android:id="@+id/txtNombreUsuario_perfil"
                 android:layout_width="225dp"
                 android:layout_height="39dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="8dp"
                 android:contentDescription="@string/txtNombre"
                 android:ems="10"
                 android:hint="@string/hintNombre"
@@ -133,8 +137,9 @@
                 android:textColorHint="@color/white"
                 android:textColorLink="@color/white"
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+                app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toEndOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@id/tvDescRutaCompleta" />
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloNombreUsuario" />
 
             <TextView
                 android:id="@+id/tvTituloRutaCompleta"
