@@ -69,7 +69,7 @@ public class FireBaseDatabaHelper {
         });
     }
 
-    /*public void updateUser(String key,Usuarios usuario, final DataStatus dataStatus){
+    public void updateRuta(String key,Usuarios usuario, final DataStatus dataStatus){
         mRefenceRutas.child(key).setValue(usuario).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
@@ -78,12 +78,12 @@ public class FireBaseDatabaHelper {
         });
     }
 
-    public void deleteUser(String key, final DataStatus dataStatus){
+    public void deleteRuta(String key, final DataStatus dataStatus){
         mRefenceRutas.child(key).setValue(null).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 dataStatus.DataIsUpdate();
             }
         });
-    }*/
+    }
 }

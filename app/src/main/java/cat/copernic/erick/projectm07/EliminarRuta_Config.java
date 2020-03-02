@@ -6,16 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class RecyclerView_Config {
+public class EliminarRuta_Config {
     private Context mContext;
     private RutasAdapter mRutasAdapter;
 
@@ -47,53 +46,48 @@ public class RecyclerView_Config {
 
         public RutasItemView(ViewGroup parent) {
             super(LayoutInflater.from(mContext).
-                    inflate(R.layout.rutas_list_item, parent, false));
+                    inflate(R.layout.activity_eliminar_ruta, parent, false));
 
             //RUTA
             //mRuta_id = itemView.findViewById(R.id.tvRuta_id);
-            mRuta_nombre = itemView.findViewById(R.id.tvRuta_nombre);
-            mRuta_descripcion = itemView.findViewById(R.id.tvRuta_descripcion);
-            mRuta_ruta = itemView.findViewById(R.id.tvRuta_ruta);
-            mPais_ruta = itemView.findViewById(R.id.tvPaisRuta);
-            mCiudad_ruta = itemView.findViewById(R.id.tvCiudadRuta);
-            idRutaCompleta = itemView.findViewById(R.id.tvIdRutaCompleta);
+            mRuta_nombre = itemView.findViewById(R.id.tvEliminarRuta_nombre);
+            mRuta_descripcion = itemView.findViewById(R.id.tvEliminarRuta_descripcion);
+            mRuta_ruta = itemView.findViewById(R.id.tvEliminarRuta_ruta);
+            mPais_ruta = itemView.findViewById(R.id.tvEliminarRuta_pais);
+            mCiudad_ruta = itemView.findViewById(R.id.tvEliminarRuta_ciudad);
+            idRutaCompleta = itemView.findViewById(R.id.tvEliminarRuta_idRuta);
 
 
-            //RUTA COMPLETA
-            //mRutaCompleta_id = itemView.findViewById(R.id.tvRutaCompleta);
-            mRutaCompleta_nombre = itemView.findViewById(R.id.tvRuta_nombre);
-            mRutaCompleta_descripcion = itemView.findViewById(R.id.tvRuta_descripcion);
-            mRutaCompleta_ruta = itemView.findViewById(R.id.tvRuta_ruta);
-            mRutaCompleta_pais = itemView.findViewById(R.id.tvPaisRuta);
-            mRutaCompleta_ciudad = itemView.findViewById(R.id.tvCiudadRuta);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(mContext, RutaCompleta.class);
-                    intent.putExtra("key", key);
-                    //intent.putExtra("idRuta:", key);
-                    intent.putExtra("nombreRuta", mRutaCompleta_nombre.getText().toString());
-                    intent.putExtra("descripcionRuta", mRutaCompleta_descripcion.getText().toString());
-                    intent.putExtra("ruta", mRutaCompleta_ruta.getText().toString());
-                    intent.putExtra("paisRuta", mRutaCompleta_pais.getText().toString());
-                    intent.putExtra("ciudadRuta", mRutaCompleta_ciudad.getText().toString());
+                    new FireBaseDatabaHelper().deleteRuta(key, new FireBaseDatabaHelper.DataStatus() {
+                        @Override
+                        public void DataIsLoaded(List<Rutas> rutas, List<String> keys) {
 
-                    mContext.startActivity(intent);
+                        }
+
+                        @Override
+                        public void DataIsInserted() {
+
+                        }
+
+                        @Override
+                        public void DataIsUpdate() {
+
+                        }
+
+                        @Override
+                        public void DataIsDelete() {
+
+
+                            return;
+                        }
+                    });
                 }
             });
 
-
-            //mRuta_ciudad = itemView.findViewById(R.id.tvRuta_ciudad);
-            //mRuta_pais = itemView.findViewById(R.id.tvRuta_pais);
-            //---------------------------------------
-            //RUTA COMPLETA
-            //mRutaCompleta_id = itemView.findViewById(R.id.tvRutaCompleta);
-           /* mRutaCompleta_nombre = itemView.findViewById(R.id.tvNombreNuevaRuta);
-            mRutaCompleta_descripcion = itemView.findViewById(R.id.tvDescRutaCompleta);
-            mRutaCompleta_ruta = itemView.findViewById(R.id.tvRutaRutaCompleta);
-            mRutaCompleta_pais = itemView.findViewById(R.id.tvPaisRutaCompleta);
-            mRutaCompleta_ciudad = itemView.findViewById(R.id.tvCiudadRutaCompleta);*/
 
 
         }
@@ -107,14 +101,6 @@ public class RecyclerView_Config {
             idRutaCompleta.setText(rutas.getIdRuta());
             mCiudad_ruta.setText(rutas.getCiudadRuta());
             mPais_ruta.setText(rutas.getPaisRuta());
-            //---------------------------------------
-            //RUTA COMPLETA
-            //mRuta_id.setText(rutas.getIdRuta());
-            /*mRutaCompleta_nombre.setText(rutas.getNombreRuta());
-            mRutaCompleta_descripcion.setText(rutas.getDescripcionRuta());
-            mRutaCompleta_ruta.setText(rutas.getRuta());
-            mRutaCompleta_pais.setText(rutas.getCiudadRuta());
-            mRutaCompleta_ciudad.setText(rutas.getPaisRuta());*/
 
             this.key = key;
         }
@@ -148,12 +134,3 @@ public class RecyclerView_Config {
 
 
 }
-
-
-
-
-
-
-
-
-
