@@ -18,9 +18,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imgTop"
+            android:id="@+id/imgBott"
             android:layout_width="0dp"
-            android:layout_height="200dp"
+            android:layout_height="100dp"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,9 +29,9 @@
             app:srcCompat="@drawable/imagen_fondo_login1" />
 
         <ImageView
-            android:id="@+id/img1"
+            android:id="@+id/imgTop"
             android:layout_width="0dp"
-            android:layout_height="200dp"
+            android:layout_height="100dp"
             android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
             android:layout_marginTop="76dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/img1">
+            app:layout_constraintTop_toTopOf="@+id/imgTop">
 
             <TextView
                 android:id="@+id/tvRuta_descripcion"
