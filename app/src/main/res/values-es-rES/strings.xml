@@ -73,7 +73,8 @@
     <string name="etPaisRutaNueva">País</string>
     <string name="etCiudadRutaNueva">Ciudad</string>
 
-
+    //CONFIGURACION RUTA
+    <string name="btnGuradarConfiguracionRuta">Modificar</string>
 
 
     //Lista navegation drawer

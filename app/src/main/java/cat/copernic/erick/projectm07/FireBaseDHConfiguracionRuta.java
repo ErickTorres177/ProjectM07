@@ -14,7 +14,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FireBaseDHEliminarRuta {
+public class FireBaseDHConfiguracionRuta {
 
     private FirebaseDatabase mDatabase;
     private DatabaseReference mRefenceRutas;
@@ -34,7 +34,7 @@ public class FireBaseDHEliminarRuta {
         void DataIsDelete();
     }
 
-    public FireBaseDHEliminarRuta() {
+    public FireBaseDHConfiguracionRuta() {
 
         mAuth = FirebaseAuth.getInstance();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -45,7 +45,7 @@ public class FireBaseDHEliminarRuta {
         mRefenceRutas = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("rutas");
     }
 
-    public void leerRutasAEliminar(final FireBaseDHEliminarRuta.DataStatus dataStatus){
+    public void leerRutasAConfigurar(final FireBaseDHConfiguracionRuta.DataStatus dataStatus){
         mRefenceRutas.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -67,21 +67,21 @@ public class FireBaseDHEliminarRuta {
         });
     }
 
-   /* public void updateRuta(String key,Usuarios usuario, final FireBaseDHEliminarRuta.DataStatus dataStatus){
+    public void updateRutaConfiguracion(String key,Usuarios usuario, final FireBaseDHConfiguracionRuta.DataStatus dataStatus){
         mRefenceRutas.child(key).setValue(usuario).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 dataStatus.DataIsUpdate();
             }
         });
-    }*/
+    }
 
-    public void deleteRutaEliminar(String key, final FireBaseDHEliminarRuta.DataStatus dataStatus){
+    /*public void deleteRutaEliminar(String key, final FireBaseDHConfiguracionRuta.DataStatus dataStatus){
         mRefenceRutas.child(key).setValue(null).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 dataStatus.DataIsUpdate();
             }
         });
-    }
+    }*/
 }

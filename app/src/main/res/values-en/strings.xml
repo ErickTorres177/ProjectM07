@@ -75,6 +75,10 @@
     <string name="etCiudadRutaNueva">City</string>
 
 
+    //CONFIGURACION RUTA
+    <string name="btnGuradarConfiguracionRuta">Modify</string>
+
+
 
 
 
