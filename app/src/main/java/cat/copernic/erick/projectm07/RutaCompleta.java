@@ -133,6 +133,7 @@ public class RutaCompleta extends AppCompatActivity {
         Uri intentUri = Uri.parse("geo:41.569940,1.996553?z=16");
         Intent gMaps = new Intent(Intent.ACTION_VIEW, intentUri);
         startActivity(gMaps);
+        // Prueba
     }
 
 
