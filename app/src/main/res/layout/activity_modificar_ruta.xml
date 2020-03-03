@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ModificarRuta">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LayoutImagenesFondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgTop"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/imagen_fondo_login1" />
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/imagen_fondo_login2" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/contenedorCampos"
+            android:layout_width="398dp"
+            android:layout_height="489dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img1">
+
+            <EditText
+                android:id="@+id/txtFonfopais"
+                android:layout_width="224dp"
+                android:layout_height="41dp"
+                android:background="@drawable/campos"
+                android:contentDescription="@string/txtPasswd"
+                android:ems="10"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/etModificarRuta_pais"
+                app:layout_constraintEnd_toEndOf="@+id/etModificarRuta_pais"
+                app:layout_constraintStart_toStartOf="@+id/etModificarRuta_pais" />
+
+            <EditText
+                android:id="@+id/txtFondo_desc"
+                android:layout_width="191dp"
+                android:layout_height="44dp"
+                android:background="@drawable/campos"
+                android:contentDescription="@string/txtPasswd"
+                android:editable="false"
+                android:ems="10"
+                android:gravity="clip_vertical|center_vertical"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/etModificarRuta_descripcion"
+                app:layout_constraintEnd_toEndOf="@+id/etModificarRuta_descripcion"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="@+id/etModificarRuta_descripcion"
+                app:layout_constraintTop_toTopOf="@+id/etModificarRuta_descripcion"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <EditText
+                android:id="@+id/txtFondo_desc2"
+                android:layout_width="191dp"
+                android:layout_height="44dp"
+                android:background="@drawable/campos"
+                android:contentDescription="@string/txtPasswd"
+                android:editable="false"
+                android:ems="10"
+                android:gravity="clip_vertical|center_vertical"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="@+id/etModificarRuta_ruta"
+                app:layout_constraintStart_toStartOf="@+id/etModificarRuta_ruta"
+                app:layout_constraintTop_toTopOf="@+id/etModificarRuta_ruta" />
+
+            <EditText
+                android:id="@+id/etModificarRuta_ruta"
+                android:layout_width="162dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/txtPasswd"
+                android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="@string/hintEdad_perfil"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+                app:layout_constraintStart_toEndOf="@id/P50VCampos"
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloModificar_rutaR" />
+
+            <EditText
+                android:id="@+id/etModificarRuta_pais"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/txtPasswd"
+                android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="@string/hintEdad_perfil"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toEndOf="@id/P50VCampos"
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloModificar_paisR" />
+
+            <TextView
+                android:id="@+id/tvTituloModificar_nombreR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/txtTituloNombre"
+                android:text="@string/tvTituloModificar_nombreR"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="@id/P50VCampos"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/txtFondoNombre_perfil"
+                android:layout_width="250dp"
+                android:layout_height="44dp"
+                android:background="@drawable/campos"
+                android:contentDescription="@string/txtNombre"
+                android:editable="false"
+                android:ems="10"
+                android:importantForAutofill="no"
+                app:layout_constraintBottom_toBottomOf="@+id/etModificarRuta_nombre"
+                app:layout_constraintEnd_toEndOf="@+id/etModificarRuta_nombre"
+                app:layout_constraintHorizontal_bias="0.52"
+                app:layout_constraintStart_toStartOf="@+id/etModificarRuta_nombre"
+                app:layout_constraintTop_toTopOf="@+id/etModificarRuta_nombre" />
+
+            <EditText
+                android:id="@+id/etModificarRuta_nombre"
+                android:layout_width="225dp"
+                android:layout_height="39dp"
+                android:contentDescription="@string/txtNombre"
+                android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="@string/etNombreUsuario_perfil"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toEndOf="@id/P50VCampos"
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloModificar_nombreR" />
+
+            <TextView
+                android:id="@+id/tvTituloModificar_descripcionR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:contentDescription="@string/txtTituloPasswd"
+                android:text="@string/tvTituloModificar_descripcionR"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etModificarRuta_nombre" />
+
+            <EditText
+                android:id="@+id/etModificarRuta_descripcion"
+                android:layout_width="162dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/txtPasswd"
+                android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="@string/hintEdad_perfil"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+                app:layout_constraintStart_toEndOf="@id/P50VCampos"
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloModificar_descripcionR" />
+
+            <TextView
+                android:id="@+id/tvTituloModificar_ciudadR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/tvTituloModificar_ciudadR"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtFonfopais" />
+
+            <TextView
+                android:id="@+id/tvTituloModificar_paisR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/tvTituloModificar_paisR"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.508"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtFondo_desc2" />
+
+            <EditText
+                android:id="@+id/etModificarRuta_ciudad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:contentDescription="@string/txtPasswd"
+                android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="@string/hintDireccion_perfil"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toEndOf="@id/P50VCampos"
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloModificar_ciudadR" />
+
+            <TextView
+                android:id="@+id/tvTituloModificar_rutaR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/tvTituloModificar_rutaR"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtFondo_desc" />
+
+            <EditText
+                android:id="@+id/txtFonfoCiudad"
+                android:layout_width="230dp"
+                android:layout_height="41dp"
+                android:background="@drawable/campos"
+                android:contentDescription="@string/txtPasswd"
+                android:ems="10"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/etModificarRuta_ciudad"
+                app:layout_constraintEnd_toEndOf="@+id/etModificarRuta_ciudad"
+                app:layout_constraintHorizontal_bias="0.647"
+                app:layout_constraintStart_toStartOf="@+id/etModificarRuta_ciudad"
+                app:layout_constraintTop_toTopOf="@+id/etModificarRuta_ciudad"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/P50VCampos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btnModificarRuta"
+            android:layout_width="153dp"
+            android:layout_height="54dp"
+            android:background="@drawable/botones_azules"
+            android:contentDescription="@string/btnRegistrarseContent"
+            android:text="@string/btnGuradarConfiguracionRuta"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgTop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.675"
+            app:layout_constraintStart_toEndOf="@+id/btnVolverPerfil"
+            app:layout_constraintTop_toBottomOf="@+id/contenedorCampos"
+            app:layout_constraintVertical_bias="0.491" />
+
+        <Button
+            android:id="@+id/btnVolverPerfil"
+            android:layout_width="152dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/botones"
+            android:contentDescription="@string/btnVolverContent"
+            android:onClick="volverRutasConfiguracion"
+            android:text="@string/btnVolver"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgTop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contenedorCampos" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LayoutTitulo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/P15H"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvTituloRutamodificar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/tituloRegistroContent"
+            android:gravity="center"
+            android:minWidth="46dp"
+            android:minHeight="289dp"
+            android:paddingLeft="4dp"
+            android:paddingTop="8dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="8dp"
+            android:shadowRadius="1"
+            android:text="@string/titulo_perfil_usuario"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LayoutDatos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/P80H"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/P15H">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/P15H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/P80H"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+</androidx.constraintlayout.widget.ConstraintLayout>

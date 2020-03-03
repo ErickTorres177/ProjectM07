@@ -105,6 +105,13 @@
 
     //CONFIGURACION RUTA
     <string name="btnGuradarConfiguracionRuta">Moficicar</string>
+    //Modificar ruta
+    <string name="tvTituloModificar_nombreR">Nom:</string>
+    <string name="tvTituloModificar_descripcionR">Descripció:</string>
+    <string name="tvTituloModificar_rutaR">Ruta:</string>
+    <string name="tvTituloModificar_paisR">País:</string>
+    <string name="tvTituloModificar_ciudadR">Ciutat:</string>
+
 
 
     //Lista navegation drawer

@@ -2,6 +2,7 @@ package cat.copernic.erick.projectm07;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -60,4 +61,8 @@ public class ConfiguracionCompleta extends AppCompatActivity {
         finish();
     }
 
+    public void irModificarRuta(View view) {
+        Intent intent = new Intent(this, ModificarRuta.class);
+        startActivity(intent);
+    }
 }
