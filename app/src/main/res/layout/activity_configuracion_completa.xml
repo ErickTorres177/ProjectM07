@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/img2"
+            android:id="@+id/imgBott"
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:scaleType="fitXY"
@@ -27,7 +27,7 @@
             app:srcCompat="@drawable/imagen_fondo_login1" />
 
         <ImageView
-            android:id="@+id/img1"
+            android:id="@+id/imgTop"
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:scaleType="fitXY"
