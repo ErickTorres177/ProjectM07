@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imgBott"
+            android:id="@+id/imgTop"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:contentDescription="@string/ContDescImgFondoTop"
@@ -33,9 +33,9 @@
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/imagen_fondo_login1" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -300,8 +300,8 @@
             android:onClick="mostrarUbicacion"
             android:scaleType="centerInside"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/GuiaV.25"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/GuiaVContacto.50"
+            app:layout_constraintStart_toStartOf="@id/GuiaV.25"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/maps" />
 
@@ -314,8 +314,8 @@
             android:onClick="abrirPagina"
             android:scaleType="centerInside"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/GuiaVContacto.50"
-            app:layout_constraintStart_toStartOf="@+id/GuiaV.25"
+            app:layout_constraintEnd_toStartOf="@id/GuiaV.25"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/web" />
 

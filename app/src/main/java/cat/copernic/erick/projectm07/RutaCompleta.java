@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -126,6 +127,12 @@ public class RutaCompleta extends AppCompatActivity {
         //Intent intent = new Intent(this, HomeFragment.class);
         //startActivity(intent);
         finish();
+    }
+
+    public void handleAbrirMapa(View view) {
+        Uri intentUri = Uri.parse("geo:41.569940,1.996553?z=16");
+        Intent gMaps = new Intent(Intent.ACTION_VIEW, intentUri);
+        startActivity(gMaps);
     }
 
 

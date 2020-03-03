@@ -17,9 +17,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/img2"
+            android:id="@+id/imgBott"
             android:layout_width="0dp"
             android:layout_height="200dp"
+            android:contentDescription="@string/ContDescImgFondoBott"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,6 +31,7 @@
             android:id="@+id/imgTop"
             android:layout_width="0dp"
             android:layout_height="200dp"
+            android:contentDescription="@string/ContDescImgFondoTop"
             android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -204,11 +206,13 @@
                 android:layout_height="116dp"
 
                 android:layout_marginTop="16dp"
+                android:contentDescription="@string/ContDescIconoMaps"
+                android:onClick="handleAbrirMapa"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.503"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvPaisRutaCompleta"
-                app:srcCompat="@drawable/maps" />
+                app:srcCompat="@drawable/navegacion" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
