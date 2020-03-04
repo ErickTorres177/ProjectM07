@@ -112,8 +112,8 @@
         android:alpha="0.1"
         android:background="@drawable/style_inputs_log_back"
         app:layout_constraintBottom_toTopOf="@+id/GuiaH.80"
-        app:layout_constraintEnd_toStartOf="@+id/GuiaV.90"
-        app:layout_constraintStart_toStartOf="@+id/GuiaV.10"
+        app:layout_constraintEnd_toStartOf="@+id/GuiaV.5"
+        app:layout_constraintStart_toStartOf="@+id/GuiaV.5"
         app:layout_constraintTop_toTopOf="@id/GuiaH.35">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -392,14 +392,14 @@
         app:layout_constraintGuide_percent="0.80" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/GuiaV.10"
+        android:id="@+id/GuiaV.5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.10" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/GuiaV.90"
+        android:id="@+id/GuiaV.5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"

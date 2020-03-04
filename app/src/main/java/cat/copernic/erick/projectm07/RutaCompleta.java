@@ -130,10 +130,13 @@ public class RutaCompleta extends AppCompatActivity {
     }
 
     public void handleAbrirMapa(View view) {
+        Intent intent = new Intent(this, ActivityMapsNavegacion.class);
+        startActivity(intent);
+        /*
         Uri intentUri = Uri.parse("geo:41.569940,1.996553?z=16");
         Intent gMaps = new Intent(Intent.ACTION_VIEW, intentUri);
         startActivity(gMaps);
-        // Prueba
+        // Prueba */
     }
 
 
