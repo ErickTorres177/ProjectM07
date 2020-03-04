@@ -1,4 +1,7 @@
 <resources>
+    //APIS
+    <string name="map_key" translatable="false">AIzaSyDledLfbgB1GxLHKmDAVBDfUy2Mdgkh11I</string>
+
     // Activity Login
     <string name="app_name">Find Your Way</string>
     <string name="nombreProyecto">Find Your Way</string>
@@ -152,10 +155,8 @@
     <string name="tvTituloCiudadRutaCompleta">Ciutat:</string>
     <string name="tvTituloPaisRutaCompleta">País:</string>
     <string name="spinerTipSexo">Sexe:</string>
-    <string name="title_activity_maps_navegacion">Map</string>
+    <string name="title_activity_maps_navegacion">Mapa</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
