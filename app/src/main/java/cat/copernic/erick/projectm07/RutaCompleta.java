@@ -124,19 +124,14 @@ public class RutaCompleta extends AppCompatActivity {
     }
 
     public void handleRegresarRutas(View view) {
-        //Intent intent = new Intent(this, HomeFragment.class);
-        //startActivity(intent);
         finish();
     }
 
     public void handleAbrirMapa(View view) {
         Intent intent = new Intent(this, ActivityMapsNavegacion.class);
+        intent.putExtra("direccion_final",tvRutaR.getText());
+        intent.putExtra("titulo", tvNombreR.getText());
         startActivity(intent);
-        /*
-        Uri intentUri = Uri.parse("geo:41.569940,1.996553?z=16");
-        Intent gMaps = new Intent(Intent.ACTION_VIEW, intentUri);
-        startActivity(gMaps);
-        // Prueba */
     }
 
 

@@ -128,5 +128,7 @@
     <string name="tvTituloCiudadRutaCompleta">City:</string>
     <string name="tvTituloPaisRutaCompleta">Country:</string>
     <string name="spinerTipSexo">Sex:</string>
+    <string name="localizacionUsuario">Your location</string>
+    <string name="title_activity_maps_navegacion">Map</string>
 
 </resources>

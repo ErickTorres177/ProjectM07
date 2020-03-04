@@ -8,7 +8,10 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -23,6 +26,9 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
 public class ActivityMapsNavegacion extends FragmentActivity implements OnMapReadyCallback {
+    String direccionFinal;
+    LatLng coordDireccFinal;
+    String tituloRuta;
 
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
@@ -33,15 +39,25 @@ public class ActivityMapsNavegacion extends FragmentActivity implements OnMapRea
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps_navigation);
 
+        direccionFinal = getIntent().getStringExtra("direccion_final");
+        tituloRuta = getIntent().getStringExtra("titulo");
+
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         fetchLastLocation();
+
+        GeoLocation geoLocation = new GeoLocation();
+        geoLocation.getAdress(direccionFinal, getApplicationContext(), new GeoHandler());
     }
 
     /**
      * Comprovacion de los permisos de localizacion y obtencion de la localizacion del usuario
      */
     private void fetchLastLocation() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED ||
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+
             ActivityCompat.requestPermissions(this, new String[]
                     {Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
         }
@@ -72,24 +88,15 @@ public class ActivityMapsNavegacion extends FragmentActivity implements OnMapRea
     @Override
     public void onMapReady(GoogleMap googleMap) {
         LatLng latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-        // LatLng sydney = new LatLng(-34, 151);
+        MarkerOptions currentLocationMarker = new MarkerOptions().position(latLng)
+                .title(String.valueOf(R.string.localizacionUsuario));
 
-        MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("User location");
-        //MarkerOptions sydneyMarker = new MarkerOptions().position(sydney).title("Sydney");
-
-        //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney, 15));
-        //googleMap.addMarker(sydneyMarker);
+        MarkerOptions destinyLocationMarker = new MarkerOptions().position(coordDireccFinal)
+                .title(tituloRuta);
 
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
-        googleMap.addMarker(markerOptions);
-
-        /*
-        mMap = googleMap;
-
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-        */
+        googleMap.addMarker(currentLocationMarker);
+        googleMap.addMarker(destinyLocationMarker);
     }
 
     @Override
@@ -105,5 +112,23 @@ public class ActivityMapsNavegacion extends FragmentActivity implements OnMapRea
     }
     public void handleRegresar(View view) {
         finish();
+    }
+
+    private class GeoHandler extends Handler {
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            String lat, longit;
+            switch (msg.what) {
+                case 1:
+                    Bundle bundle = msg.getData();
+                    lat = bundle.getString("latitud");
+                    longit = bundle.getString("longitud");
+                    break;
+                default:
+                    lat = null;
+                    longit = null;
+            }
+            coordDireccFinal = new LatLng(Double.parseDouble(lat), Double.parseDouble(longit));
+        }
     }
 }
