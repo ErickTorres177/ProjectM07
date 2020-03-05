@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,31 +23,62 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
-public class ActivityMapsNavegacion extends FragmentActivity implements OnMapReadyCallback {
+import cat.copernic.erick.projectm07.directionhelpers.FetchURL;
+import cat.copernic.erick.projectm07.directionhelpers.TaskLoadedCallback;
+
+public class ActivityMapsNavegacion extends FragmentActivity implements OnMapReadyCallback, TaskLoadedCallback {
+    GoogleMap map;
+
     String direccionFinal;
     LatLng coordDireccFinal;
     String tituloRuta;
 
+    Button btnMostrar;
+
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
     private static final int REQUEST_CODE = 101;
+
+    MarkerOptions start, end;
+
+    Polyline currentPolyline;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps_navigation);
 
+        btnMostrar = findViewById(R.id.btn_mostrar);
+        btnMostrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(ActivityMapsNavegacion.this, "Ruta creada", Toast.LENGTH_SHORT).show();
+                new FetchURL(ActivityMapsNavegacion.this).execute(getUrl(start.getPosition(), end.getPosition(), "driving"), "driving");
+            }
+        });
+
         direccionFinal = getIntent().getStringExtra("direccion_final");
         tituloRuta = getIntent().getStringExtra("titulo");
 
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-        fetchLastLocation();
-
         GeoLocation geoLocation = new GeoLocation();
         geoLocation.getAdress(direccionFinal, getApplicationContext(), new GeoHandler());
+
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        fetchLastLocation();
+/*
+        start = new MarkerOptions().position(new LatLng(currentLocation.getLatitude()
+                , currentLocation.getLongitude())).title(String.valueOf(R.string.localizacionUsuario));
+        end = new MarkerOptions().position(coordDireccFinal).title(tituloRuta);
+
+        String url = getUrl(start.getPosition(), end.getPosition(), "walking");
+        new FetchURL(ActivityMapsNavegacion.this).execute(url, "walking");
+
+ */
     }
 
     /**
@@ -87,16 +119,18 @@ public class ActivityMapsNavegacion extends FragmentActivity implements OnMapRea
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        LatLng latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-        MarkerOptions currentLocationMarker = new MarkerOptions().position(latLng)
-                .title(String.valueOf(R.string.localizacionUsuario));
+        map = googleMap;
 
-        MarkerOptions destinyLocationMarker = new MarkerOptions().position(coordDireccFinal)
-                .title(tituloRuta);
+        LatLng posUsuario = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
 
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
-        googleMap.addMarker(currentLocationMarker);
-        googleMap.addMarker(destinyLocationMarker);
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(posUsuario, 15));
+
+        start = new MarkerOptions().position(new LatLng(currentLocation.getLatitude()
+                , currentLocation.getLongitude())).title(String.valueOf(R.string.localizacionUsuario));
+        end = new MarkerOptions().position(coordDireccFinal).title(tituloRuta);
+
+        map.addMarker(start);
+        map.addMarker(end);
     }
 
     @Override
@@ -130,5 +164,30 @@ public class ActivityMapsNavegacion extends FragmentActivity implements OnMapRea
             }
             coordDireccFinal = new LatLng(Double.parseDouble(lat), Double.parseDouble(longit));
         }
+    }
+
+    private String getUrl(LatLng origin, LatLng dest, String directionMode) {
+        // Origin of route
+        String str_origin = "origin=" + origin.latitude + "," + origin.longitude;
+        // Destination of route
+        String str_dest = "destination=" + dest.latitude + "," + dest.longitude;
+        // Mode
+        String mode = "mode=" + directionMode;
+        // Building the parameters to the web service
+        String parameters = str_origin + "&" + str_dest + "&" + mode;
+        // Output format
+        String output = "json";
+        // Building the url to the web service
+        String url = "https://maps.googleapis.com/maps/api/directions/" + output + "?"
+                + parameters + "&key=" + getString(R.string.map_key);
+        return url;
+    }
+
+    @Override
+    public void onTaskDone(Object... values) {
+        if (currentPolyline != null) {
+            currentPolyline.remove();
+        }
+        currentPolyline = map.addPolyline((PolylineOptions) values[0]);
     }
 }

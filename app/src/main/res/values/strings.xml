@@ -1,6 +1,6 @@
 <resources>
     //APIS
-    <string name="map_key" translatable="false">AIzaSyDledLfbgB1GxLHKmDAVBDfUy2Mdgkh11I</string>
+    <string name="map_key" translatable="false">AIzaSyAIgzww5lFBA_2LBaRc-uW3DLtCgwY7A9M</string>
 
     // Activity Login
     <string name="app_name">Find Your Way</string>
