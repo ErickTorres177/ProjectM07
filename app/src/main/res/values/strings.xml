@@ -51,12 +51,12 @@
     <string name="btnVolverContent">cancel·lar creació del compte</string>
     <string name="imgProyecto">Logo Find Your Way</string>
 
-    <string name="menu_home">Rutes</string>
-    <string name="menu_nuevaRuta">Configuració Rutes</string>
-    <string name="menu_slideshow">Diapositives</string>
-    <string name="menu_tools">Eines</string>
+    <string name="menu_home">Les Meves Rutes</string>
+    <string name="menu_nuevaRuta">Nova Ruta</string>
+    <string name="menu_configuracionRuta">Configuració Ruta</string>
+    <string name="menu_eliminarRuta">Delete Route</string>
     <string name="menu_perfil">El Meu Perfil</string>
-    <string name="menu_send">Enviar</string>
+    <string name="menu_configuracionApp">Configuració General</string>
 
     // NAVIGATION DRAWER
     <string name="navigation_drawer_open" translatable="false">Obrir navigation drawer</string>
@@ -108,12 +108,17 @@
 
     //CONFIGURACION RUTA
     <string name="btnGuradarConfiguracionRuta">Moficicar</string>
-    //Modificar ruta
+    //MODIFICAR RUTA ACTIVITY
     <string name="tvTituloModificar_nombreR">Nom:</string>
     <string name="tvTituloModificar_descripcionR">Descripció:</string>
     <string name="tvTituloModificar_rutaR">Ruta:</string>
     <string name="tvTituloModificar_paisR">País:</string>
     <string name="tvTituloModificar_ciudadR">Ciutat:</string>
+    <string name="etModificarRuta_nombre">Ingressa el nom</string>
+    <string name="etModificarRuta_descripcion">Ingressa la descripció</string>
+    <string name="etModificarRuta_ruta">Ingressa la ruta</string>
+    <string name="etModificarRuta_pais">Ingressa el país</string>
+    <string name="etModificarRuta_ciudad">Ingressa la ciutat</string>
 
 
     //Lista navegation drawer
@@ -156,6 +161,10 @@
     <string name="tvTituloPaisRutaCompleta">País:</string>
     <string name="spinerTipSexo">Sexe:</string>
     <string name="title_activity_maps_navegacion">Mapa</string>
+
+
+
+
 
     // ACTIVITY DEL MAPA DE NAVEGACIÓN
     <string name="localizacionUsuario">La teva posició</string>

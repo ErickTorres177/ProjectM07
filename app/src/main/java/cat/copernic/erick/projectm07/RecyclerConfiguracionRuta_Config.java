@@ -57,8 +57,8 @@ public class RecyclerConfiguracionRuta_Config {
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext, ConfiguracionCompleta.class);
                     intent.putExtra("key", key);
-                    intent.putExtra("idRuta:", mRutaConfiguracion_id.getText().toString());
-                    intent.putExtra("usuarioRuta:", mRutaConfiguracion_usuario.getText().toString());
+                    intent.putExtra("idRuta", mRutaConfiguracion_id.getText().toString());
+                    intent.putExtra("usuarioRuta", mRutaConfiguracion_usuario.getText().toString());
                     intent.putExtra("nombreRuta", mRutaConfiguracion_nombre.getText().toString());
                     intent.putExtra("descripcionRuta", mRutaConfiguracion_descipcion.getText().toString());
                     intent.putExtra("ruta", mRutaConfiguracion_ruta.getText().toString());

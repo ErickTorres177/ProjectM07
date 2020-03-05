@@ -63,9 +63,9 @@ public class ConfiguracionCompleta extends AppCompatActivity {
 
     public void irModificarRuta(View view) {
         Intent intent = new Intent(this, ModificarRuta.class);
-        intent.putExtra("nombreRutaModificar", tvNombreR.getText().toString());
-        intent.putExtra("idRutaModificar", tvIdR.getText().toString());
-        intent.putExtra("usuarioRutaModificar", tvUserT.getText().toString());
+        intent.putExtra("nombreRutaModificar", nombreR);
+        intent.putExtra("idRutaModificar", idRuta);
+        intent.putExtra("usuarioRutaModificar", usuarioR);
         startActivity(intent);
     }
 }

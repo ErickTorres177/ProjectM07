@@ -24,12 +24,12 @@
     <string name="txtTituloEdad">Edad</string>
     <string name="txtEdadContent">Ingresa tu edad</string>
     <string name="txtTituloPasswd">Contraseña</string>
-    <string name="menu_tools">Herramientas</string>
-    <string name="menu_slideshow">Diapositivas</string>
+    <string name="menu_eliminarRuta">Eliminar Ruta</string>
+    <string name="menu_configuracionRuta">Configuración Ruta</string>
     <string name="menu_perfil">Mi Perfil</string>
-    <string name="menu_send">Enviar</string>
-    <string name="menu_home">Rutas</string>
-    <string name="menu_nuevaRuta">Configuración Rutas</string>
+    <string name="menu_configuracionApp">Configuración General</string>
+    <string name="menu_home">Mis Rutas</string>
+    <string name="menu_nuevaRuta">Nueva Ruta</string>
     <string name="iniSesion">Iniciar sesión</string>
     <string name="hintNombre">Correo</string>
     <string name="hintPasswd">Contraseña</string>
@@ -75,15 +75,17 @@
 
     //CONFIGURACION RUTA
     <string name="btnGuradarConfiguracionRuta">Modificar</string>
-    //Modificar ruta
-    <string name="tvTituloModificar_nombreR">Nombre:</string>
-    <string name="tvTituloModificar_descripcionR">Descripción:</string>
+    //MODIFICAR RUTA ACTIVITY
+    <string name="tvTituloModificar_nombreR">Nom:</string>
+    <string name="tvTituloModificar_descripcionR">Descripció:</string>
     <string name="tvTituloModificar_rutaR">Ruta:</string>
-    <string name="tvTituloModificar_paisR">Pais:</string>
-    <string name="tvTituloModificar_ciudadR">Ciudad:</string>
-
-
-
+    <string name="tvTituloModificar_paisR">País:</string>
+    <string name="tvTituloModificar_ciudadR">Ciutat:</string>
+    <string name="etModificarRuta_nombre">Ingresa el nombre</string>
+    <string name="etModificarRuta_descripcion">Ingresa la descripción:</string>
+    <string name="etModificarRuta_ruta">Ingresa la ruta:</string>
+    <string name="etModificarRuta_pais">Ingresa el país:</string>
+    <string name="etModificarRuta_ciudad">Ingresa la ciudad:</string>
 
     //Lista navegation drawer
     <string name="sesion">Sesión</string>

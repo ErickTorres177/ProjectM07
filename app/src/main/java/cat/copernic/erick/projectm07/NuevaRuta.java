@@ -100,7 +100,7 @@ public class NuevaRuta extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         } else {
             //DatabaseReference currentUserDB = myRef.child(mAuth.getCurrentUser().getUid()).child("rutas");
-            idRutaGeneral++;
+            //idRutaGeneral++;
             myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid())
                     .child("rutas").child(String.valueOf(idRutaGeneral));
             myRef.child("idRuta").setValue(String.valueOf(idRutaGeneral));

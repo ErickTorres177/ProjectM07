@@ -48,20 +48,20 @@
 
             <EditText
                 android:id="@+id/txtFonfopais"
-                android:layout_width="224dp"
-                android:layout_height="41dp"
+                android:layout_width="255dp"
+                android:layout_height="44dp"
                 android:background="@drawable/campos"
                 android:contentDescription="@string/txtPasswd"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="text"
                 app:layout_constraintBottom_toBottomOf="@+id/etModificarRuta_pais"
                 app:layout_constraintEnd_toEndOf="@+id/etModificarRuta_pais"
                 app:layout_constraintStart_toStartOf="@+id/etModificarRuta_pais" />
 
             <EditText
                 android:id="@+id/txtFondo_desc"
-                android:layout_width="191dp"
-                android:layout_height="44dp"
+                android:layout_width="352dp"
+                android:layout_height="45dp"
                 android:background="@drawable/campos"
                 android:contentDescription="@string/txtPasswd"
                 android:editable="false"
@@ -78,7 +78,7 @@
 
             <EditText
                 android:id="@+id/txtFondo_desc2"
-                android:layout_width="191dp"
+                android:layout_width="346dp"
                 android:layout_height="44dp"
                 android:background="@drawable/campos"
                 android:contentDescription="@string/txtPasswd"
@@ -86,15 +86,15 @@
                 android:ems="10"
                 android:gravity="clip_vertical|center_vertical"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName"
+                android:inputType="text"
                 app:layout_constraintEnd_toEndOf="@+id/etModificarRuta_ruta"
                 app:layout_constraintStart_toStartOf="@+id/etModificarRuta_ruta"
                 app:layout_constraintTop_toTopOf="@+id/etModificarRuta_ruta" />
 
             <EditText
                 android:id="@+id/etModificarRuta_ruta"
-                android:layout_width="162dp"
-                android:layout_height="50dp"
+                android:layout_width="336dp"
+                android:layout_height="47dp"
                 android:layout_marginTop="8dp"
                 android:contentDescription="@string/txtPasswd"
                 android:ems="10"
@@ -112,15 +112,15 @@
 
             <EditText
                 android:id="@+id/etModificarRuta_pais"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="237dp"
+                android:layout_height="45dp"
                 android:layout_marginTop="8dp"
                 android:contentDescription="@string/txtPasswd"
                 android:ems="10"
                 android:gravity="center_horizontal|center_vertical"
                 android:hint="@string/hintEdad_perfil"
                 android:importantForAutofill="no"
-                android:inputType="number"
+                android:inputType="text"
                 android:textColor="@color/white"
                 android:textColorHighlight="@color/white"
                 android:textColorHint="@color/white"
@@ -192,15 +192,15 @@
 
             <EditText
                 android:id="@+id/etModificarRuta_descripcion"
-                android:layout_width="162dp"
-                android:layout_height="50dp"
+                android:layout_width="336dp"
+                android:layout_height="51dp"
                 android:layout_marginTop="8dp"
                 android:contentDescription="@string/txtPasswd"
                 android:ems="10"
                 android:gravity="center_horizontal|center_vertical"
                 android:hint="@string/hintEdad_perfil"
                 android:importantForAutofill="no"
-                android:inputType="number"
+                android:inputType="text"
                 android:textColor="@color/white"
                 android:textColorHighlight="@color/white"
                 android:textColorHint="@color/white"
@@ -237,8 +237,8 @@
 
             <EditText
                 android:id="@+id/etModificarRuta_ciudad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="233dp"
+                android:layout_height="45dp"
                 android:layout_marginTop="12dp"
                 android:contentDescription="@string/txtPasswd"
                 android:ems="10"
@@ -270,15 +270,15 @@
 
             <EditText
                 android:id="@+id/txtFonfoCiudad"
-                android:layout_width="230dp"
-                android:layout_height="41dp"
+                android:layout_width="257dp"
+                android:layout_height="39dp"
                 android:background="@drawable/campos"
                 android:contentDescription="@string/txtPasswd"
                 android:ems="10"
                 android:inputType="textPersonName"
                 app:layout_constraintBottom_toBottomOf="@+id/etModificarRuta_ciudad"
                 app:layout_constraintEnd_toEndOf="@+id/etModificarRuta_ciudad"
-                app:layout_constraintHorizontal_bias="0.647"
+                app:layout_constraintHorizontal_bias="0.59"
                 app:layout_constraintStart_toStartOf="@+id/etModificarRuta_ciudad"
                 app:layout_constraintTop_toTopOf="@+id/etModificarRuta_ciudad"
                 app:layout_constraintVertical_bias="0.0" />
@@ -294,23 +294,22 @@
                 android:id="@+id/tvTituloModificar_idRuta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="156dp"
-                android:text="TextView"
+                android:layout_marginTop="16dp"
+                android:textColor="#303030"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.855"
+                app:layout_constraintHorizontal_bias="0.305"
                 app:layout_constraintStart_toEndOf="@+id/tvTituloModificar_rutaR"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/txtFondo_desc" />
 
             <TextView
                 android:id="@+id/tvTituloModificar_usuarioRuta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="TextView"
+                android:textColor="#303030"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.855"
+                app:layout_constraintHorizontal_bias="0.847"
                 app:layout_constraintStart_toEndOf="@+id/tvTituloModificar_rutaR"
-                app:layout_constraintTop_toBottomOf="@+id/tvTituloModificar_idRuta" />
+                app:layout_constraintTop_toTopOf="@+id/tvTituloModificar_idRuta" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
