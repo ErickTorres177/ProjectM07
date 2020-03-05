@@ -24,20 +24,20 @@ public class GeoLocation {
                     if (addressList != null && addressList.size() > 0) {
                         Address address = (Address) addressList.get(0);
 
-                        StringBuilder stringBuilder = new StringBuilder();
-                        stringBuilder.append(address.getLatitude());
-                        lat = stringBuilder.toString();
+                        StringBuilder stringBuilder1 = new StringBuilder();
+                        stringBuilder1.append(address.getLatitude());
+                        lat = stringBuilder1.toString();
 
-                        stringBuilder = new StringBuilder();
-                        stringBuilder.append(address.getLongitude());
-                        longit = stringBuilder.toString();
+                        StringBuilder stringBuilder2 = new StringBuilder();
+                        stringBuilder2.append(address.getLongitude());
+                        longit = stringBuilder2.toString();
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
                 } finally {
                     Message message = Message.obtain();
                     message.setTarget(handler);
-                    if (lat != null && longit != null) {
+                    if (lat != null) {
                         message.what = 1;
                         Bundle bundle = new Bundle();
                         bundle.putString("latitud", lat);
