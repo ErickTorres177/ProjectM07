@@ -27,7 +27,7 @@ public class ConfiguracionCompleta extends AppCompatActivity {
 
 
         key = getIntent().getStringExtra("key");
-        idRuta = getIntent().getStringExtra("idRuta");
+        //idRuta = getIntent().getStringExtra("idRuta");
         usuarioR = getIntent().getStringExtra("usuarioRuta");
         nombreR = getIntent().getStringExtra("nombreRuta");
         descripcionR = getIntent().getStringExtra("descripcionRuta");
@@ -63,6 +63,8 @@ public class ConfiguracionCompleta extends AppCompatActivity {
 
     public void irModificarRuta(View view) {
         Intent intent = new Intent(this, ModificarRuta.class);
+        intent.putExtra("nombreRutaModificar", tvNombreR.getText().toString());
+        intent.putExtra("idRutaModificar", tvNombreR.getText().toString());
         startActivity(intent);
     }
 }

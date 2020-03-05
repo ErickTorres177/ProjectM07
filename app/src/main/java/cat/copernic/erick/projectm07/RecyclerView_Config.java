@@ -73,7 +73,7 @@ public class RecyclerView_Config {
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext, RutaCompleta.class);
                     intent.putExtra("key", key);
-                    //intent.putExtra("idRuta:", key);
+                    intent.putExtra("idRuta:", key);
                     intent.putExtra("nombreRuta", mRutaCompleta_nombre.getText().toString());
                     intent.putExtra("descripcionRuta", mRutaCompleta_descripcion.getText().toString());
                     intent.putExtra("ruta", mRutaCompleta_ruta.getText().toString());

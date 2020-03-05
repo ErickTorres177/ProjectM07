@@ -19,13 +19,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imgTop"
+            android:id="@+id/imgBottom"
             android:layout_width="0dp"
             android:layout_height="200dp"
+            android:layout_marginBottom="4dp"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/imagen_fondo_login1" />
 
@@ -233,30 +234,29 @@
             android:id="@+id/btnAñadirNuevaRuta"
             android:layout_width="153dp"
             android:layout_height="54dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/botones_azules"
             android:contentDescription="@string/btnRegistrarseContent"
             android:text="@string/btnRegistrar_pefil"
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imgTop"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.675"
+            app:layout_constraintHorizontal_bias="0.378"
             app:layout_constraintStart_toEndOf="@+id/btnVolverPerfil"
-            app:layout_constraintTop_toBottomOf="@+id/contenedorCampos"
-            app:layout_constraintVertical_bias="0.491" />
+            app:layout_constraintTop_toBottomOf="@+id/contenedorCampos" />
 
         <Button
             android:id="@+id/btnVolverPerfil"
             android:layout_width="152dp"
             android:layout_height="51dp"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="44dp"
             android:background="@drawable/botones"
             android:contentDescription="@string/btnVolverContent"
             android:onClick="handleRegresarPerfil"
             android:text="@string/btnVolver"
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imgTop"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/contenedorCampos" />
 

@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imgTop"
+            android:id="@+id/imgBottom"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:scaleType="fitXY"
@@ -90,11 +90,11 @@
                 android:id="@+id/tvPaisRuta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="88dp"
+                android:layout_marginTop="48dp"
                 android:text="TextView"
                 android:textColor="#303030"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.236"
+                app:layout_constraintHorizontal_bias="0.072"
                 app:layout_constraintStart_toEndOf="@+id/tvRuta_ruta"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -102,11 +102,11 @@
                 android:id="@+id/tvIdRuta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="52dp"
+                android:layout_marginTop="16dp"
                 android:text="TextView"
                 android:textColor="#303030"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.536"
+                app:layout_constraintHorizontal_bias="0.272"
                 app:layout_constraintStart_toEndOf="@+id/tvRuta_ruta"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -114,11 +114,11 @@
                 android:id="@+id/tvCiudadRuta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="88dp"
+                android:layout_marginTop="16dp"
                 android:text="TextView"
                 android:textColor="#303030"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.854"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/tvRuta_ruta"
                 app:layout_constraintTop_toTopOf="parent" />
 

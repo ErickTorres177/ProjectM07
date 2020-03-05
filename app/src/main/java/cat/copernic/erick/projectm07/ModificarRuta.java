@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,7 +21,10 @@ public class ModificarRuta extends AppCompatActivity {
 
 
     private EditText etNombreRutaM, etDescripcionRutaM, etRutaRutaM, etPaisRutaM, etCiudadRutaM;
-    private Button btnModificarRuta;
+    private Button mofificarRutaRealTime;
+    private String nomRutaModificar, idRutaModificar;
+    private TextView setNomRutaModificar;
+
 
     //FIRE BASE
     private FirebaseAuth mAuth;
@@ -34,12 +38,19 @@ public class ModificarRuta extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modificar_ruta);
 
-       /* etNombreRutaM = findViewById(R.id.etNombreNuevaRuta);
-        etDescripcionRutaM = findViewById(R.id.etDescripcionRutaNueva);
-        etRutaRutaM = findViewById(R.id.etRutaNuevaRuta);
-        etPaisRutaM = findViewById(R.id.etPaisRutaNueva);
-        etCiudadRutaM = findViewById(R.id.etCiudadRutaNueva);
-        btnModificarRutautaM = findViewById(R.id.btnModificarRuta);
+        nomRutaModificar = getIntent().getStringExtra("nombreRutaModificar");
+        //idRutaModificar = getIntent().getStringExtra("idRuta");
+
+        setNomRutaModificar = findViewById(R.id.tvTituloRutamodificar);
+        setNomRutaModificar.setText(nomRutaModificar);
+
+        etNombreRutaM = findViewById(R.id.etModificarRuta_nombre);
+        etDescripcionRutaM = findViewById(R.id.etModificarRuta_descripcion);
+        etRutaRutaM = findViewById(R.id.etModificarRuta_ruta);
+        etPaisRutaM = findViewById(R.id.etModificarRuta_pais);
+        etCiudadRutaM = findViewById(R.id.etModificarRuta_ciudad);
+
+        mofificarRutaRealTime = findViewById(R.id.btnModificarRuta);
 
 
         //REAL TIME -> MODIFICACION PERFIL
@@ -48,16 +59,26 @@ public class ModificarRuta extends AppCompatActivity {
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         currentUser = mAuth.getCurrentUser();
 
-        btnAñadirNuevaRuta.setOnClickListener(new View.OnClickListener() {
+        mofificarRutaRealTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                guardarRutaNuevaRT();
+
+                Rutas ruta = new Rutas();
+                //ruta.setIdRuta(idRutaModificar);
+                ruta.setNombreRuta(etNombreRutaM.getText().toString());
+                ruta.setDescripcionRuta(etDescripcionRutaM.getText().toString());
+                ruta.setRuta(etRutaRutaM.getText().toString());
+                ruta.setPaisRuta(etPaisRutaM.getText().toString());
+                ruta.setCiudadRuta(etCiudadRutaM.getText().toString());
+                ruta.setUsuarioRuta(etNombreRutaM.getText().toString());
+
+                //new FireBaseDHConfiguracionRuta().updateRutaConfiguracion(key, );
+
+                //guardarRutaNuevaRT();
             }
         });
 
 
-
-*/
 
     }
 
@@ -65,38 +86,38 @@ public class ModificarRuta extends AppCompatActivity {
 
     private void guardarRutaNuevaRT() {
 
-   /*     String nombreComp = (etNombreR.getText().toString());
-        String descripcionR = (etDescripcionR.getText().toString());
-        String rutaR = (etRutaR.getText().toString());
-        String paisR = (etPaisR.getText().toString());
-        String ciudadR = (etCiudadR.getText().toString());
+        String nombreComp = (etNombreRutaM.getText().toString());
+        String descripcionR = (etDescripcionRutaM.getText().toString());
+        String rutaR = (etRutaRutaM.getText().toString());
+        String paisR = (etPaisRutaM.getText().toString());
+        String ciudadR = (etCiudadRutaM.getText().toString());
 
 
-
+/*
 
         if (nombreComp.isEmpty() || nombreComp.equals("") || nombreComp.equals(null)) {
-            Toast.makeText(NuevaRuta.this, "Ingressa el nom de la ruta: " + etNombreR.getText().toString(),
+            Toast.makeText(ModificarRuta.this, "Ingressa el nom de la rut." ,
                     Toast.LENGTH_SHORT).show();
         } else if (!compTipoDatosString(nombreComp)) {
-            Toast.makeText(NuevaRuta.this, "El nom és invàlid: " + etNombreR.getText().toString() + ", tens d'introduir només lletres.",
+            Toast.makeText(ModificarRuta.this, "El nom és invàlid: " + etNombreRutaM.getText().toString() + ", tens d'introduir només lletres.",
                     Toast.LENGTH_SHORT).show();
         } else if (descripcionR.isEmpty() || descripcionR.equals("") || descripcionR.equals(null)) {
-            Toast.makeText(NuevaRuta.this, "La descripció és invàlida: " + etDescripcionR.getText().toString(),
+            Toast.makeText(ModificarRuta.this, "La descripció és invàlida.",
                     Toast.LENGTH_SHORT).show();
         } else if (rutaR.isEmpty() || rutaR.equals("") || rutaR.equals(null)) {
-            Toast.makeText(NuevaRuta.this, "La ruta és invàlida: " + etRutaR.getText().toString(),
+            Toast.makeText(ModificarRuta.this, "La ruta és invàlida.",
                     Toast.LENGTH_SHORT).show();
         } else if (paisR.isEmpty() || paisR.equals("") || paisR.equals(null)) {
-            Toast.makeText(NuevaRuta.this, "El país és invàlid: " + etRutaR.getText().toString(),
+            Toast.makeText(ModificarRuta.this, "El país és invàlid.",
                     Toast.LENGTH_SHORT).show();
         } else if (!compTipoDatosString(paisR)) {
-            Toast.makeText(NuevaRuta.this, "El país es invàlid: " + etPaisR.getText().toString(),
+            Toast.makeText(ModificarRuta.this, "El país es invàlid: " + etPaisRutaM.getText().toString(),
                     Toast.LENGTH_SHORT).show();
         } else if (ciudadR.isEmpty() || ciudadR.equals("") || ciudadR.equals(null)) {
-            Toast.makeText(NuevaRuta.this, "La ciutat es invàlida: " + etPaisR.getText().toString(),
+            Toast.makeText(ModificarRuta.this, "La ciutat es invàlida.",
                     Toast.LENGTH_SHORT).show();
         } else if (!compTipoDatosString(ciudadR)) {
-            Toast.makeText(NuevaRuta.this, "La ciutat es invàlida: " + etCiudadR.getText().toString(),
+            Toast.makeText(ModificarRuta.this, "La ciutat es invàlida: " + etCiudadRutaM.getText().toString(),
                     Toast.LENGTH_SHORT).show();
         } else {
             //DatabaseReference currentUserDB = myRef.child(mAuth.getCurrentUser().getUid()).child("rutas");
@@ -148,4 +169,6 @@ public class ModificarRuta extends AppCompatActivity {
     public void volverRutasConfiguracion(View view) {
         finish();
     }
+
+
 }

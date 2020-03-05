@@ -290,6 +290,17 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.5" />
 
+            <TextView
+                android:id="@+id/tvTituloModificar_idRuta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.747"
+                app:layout_constraintStart_toEndOf="@+id/tvTituloModificar_rutaR"
+                app:layout_constraintTop_toBottomOf="@+id/txtFondo_desc" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
@@ -337,8 +348,8 @@
 
         <TextView
             android:id="@+id/tvTituloRutamodificar"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="412dp"
+            android:layout_height="74dp"
             android:contentDescription="@string/tituloRegistroContent"
             android:gravity="center"
             android:minWidth="46dp"

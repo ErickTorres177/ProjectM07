@@ -77,7 +77,15 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegistrarU.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                crearUsuario(etUsuario.getText().toString(), etPasswd.getText().toString());
+                if(!compNombreIntroducido(etNombreUsuario.getText().toString())){
+                    Toast.makeText(RegisterActivity.this, "El nom es incorrecte: " + etNombreUsuario.getText().toString(),
+                            Toast.LENGTH_SHORT).show();
+                } else if(!compIsNumericAndRango(Integer.valueOf(etEdad.getText().toString()))){
+                    Toast.makeText(RegisterActivity.this, "Edat incorrecta: " + etEdad.getText().toString(),
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    crearUsuario(etUsuario.getText().toString(), etPasswd.getText().toString());
+                }
             }
         });
     }
