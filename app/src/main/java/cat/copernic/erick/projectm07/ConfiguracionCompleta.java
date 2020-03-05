@@ -27,7 +27,7 @@ public class ConfiguracionCompleta extends AppCompatActivity {
 
 
         key = getIntent().getStringExtra("key");
-        //idRuta = getIntent().getStringExtra("idRuta");
+        idRuta = getIntent().getStringExtra("idRuta");
         usuarioR = getIntent().getStringExtra("usuarioRuta");
         nombreR = getIntent().getStringExtra("nombreRuta");
         descripcionR = getIntent().getStringExtra("descripcionRuta");
@@ -37,10 +37,10 @@ public class ConfiguracionCompleta extends AppCompatActivity {
 
 
 
-        /*tvIdR = findViewById(R.id.tvConfiguracionRutaC_);
+        tvIdR = findViewById(R.id.tvConfiguracionRutaC_idRuta);
         tvIdR.setText(idRuta);
-        tvUserT = findViewById(R.id.tvConfiguracionRutaC_);
-        tvUserT.setText(usuarioR);*/
+        tvUserT = findViewById(R.id.tvConfiguracionRutaC_usuarioRuta);
+        tvUserT.setText(usuarioR);
         tvNombreR = findViewById(R.id.tvConfiguracionRutaC_nombre);
         tvNombreR.setText(nombreR);
         tvDescripcionR = findViewById(R.id.tvConfiguracionRutaC_descripcion);
@@ -64,7 +64,8 @@ public class ConfiguracionCompleta extends AppCompatActivity {
     public void irModificarRuta(View view) {
         Intent intent = new Intent(this, ModificarRuta.class);
         intent.putExtra("nombreRutaModificar", tvNombreR.getText().toString());
-        intent.putExtra("idRutaModificar", tvNombreR.getText().toString());
+        intent.putExtra("idRutaModificar", tvIdR.getText().toString());
+        intent.putExtra("usuarioRutaModificar", tvUserT.getText().toString());
         startActivity(intent);
     }
 }

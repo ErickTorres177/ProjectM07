@@ -45,6 +45,9 @@ public class ModificarPerfil extends AppCompatActivity {
     private FirebaseDatabase mFirebaseDatabase;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private DatabaseReference myRef;
+    //Para modificar solo los datos del usuario no las rutas
+    private DatabaseReference miNom, miDireccion, miEdad, miSexo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,73 +117,28 @@ public class ModificarPerfil extends AppCompatActivity {
                     Toast.makeText(ModificarPerfil.this, "L'adreça és incorrecta: " + tvDireccionUModifcar.getText().toString(),
                             Toast.LENGTH_SHORT).show();
                 } else {
-                    usuarios.setNombre(tvNombreUModifcar.getText().toString());
+
+
+                    miNom = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("nombre");
+                    miNom.setValue(tvNombreUModifcar.getText().toString());
+
+                    miEdad = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("edad");
+                    miEdad.setValue(tvEdadUModifcar.getText().toString());
+
+                    miDireccion = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("direccion");
+                    miDireccion.setValue(tvDireccionUModifcar.getText().toString());
+
+                    miSexo = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("sexo");
+                    miSexo.setValue(spinnerSelected);
+
+                   /* usuarios.setNombre(tvNombreUModifcar.getText().toString());
                     usuarios.setEdad(tvEdadUModifcar.getText().toString());
                     usuarios.setUsuario(currentUser.getEmail());
                     usuarios.setDireccion(tvDireccionUModifcar.getText().toString());
                     usuarios.setSexo(spinnerSelected);
                     //usuarios.setRutas();
-
-
-                    //myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid());
-                    //myRef.setValue(usuarios);
-
-/*
-                    Rutas pMain = new Rutas();
-                    listContent = new ArrayList<>();
-                    listContent.add(pMain.rutasList);*/
-
-                    //myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid());
-                    //myRef.setValue(usuarios);
-
-
-
-                   /* myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid());
-                    //Log.e("Usuario actual: ", "" + currentUser.getUid());
-
-                    myRef.addValueEventListener(new ValueEventListener() {
-                        //myRef.addValueEventListener(new ValueEventListener() {
-
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-
-                            Usuarios usuarios = dataSnapshot.getValue(Usuarios.class);
-                            final String nombre = usuarios.getNombre();
-                            final String user = usuarios.getUsuario();
-                            final String edad = usuarios.getEdad();
-                            final String sexo = usuarios.getSexo();
-                            final String direccion = usuarios.getDireccion();
-                            //final List<Rutas> rutasUsuario = usuarios.getRutas();
-
-
-                            //Obtencion de todos los usuarios
-                            for (final DataSnapshot ds : dataSnapshot.getChildren()) {
-                                myRef.child("rutas").addValueEventListener(new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                        Usuarios usuarios = ds.getValue(Usuarios.class);
-                                        listContent = usuarios.getRutas();
-
-
-
-                                        Log.e("Nombre: ", "" + listContent);
-                                        Log.e("Datos: ", "" + ds.getValue());
-                                    }
-
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                                    }
-                                });
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError error) {
-                            // Failed to read value
-                            Log.w(TAG, "Failed to read value.", error.toException());
-                        }
-                    });*/
-
+                    myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid());
+                    myRef.setValue(usuarios);*/
 
                     Toast.makeText(ModificarPerfil.this, "Perfil modificat correctament: "
                                     + " \nNom: " + tvNombreUModifcar.getText().toString()

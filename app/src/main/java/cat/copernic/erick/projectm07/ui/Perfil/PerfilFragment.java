@@ -54,7 +54,7 @@ public class PerfilFragment extends Fragment {
             }
         });*/
         //INICIALIZACIONES
-        btnIrModificarPerfil = root.findViewById(R.id.btnAñadirNuevaRuta);
+        btnIrModificarPerfil = root.findViewById(R.id.btnModificarPerfil);
         tvNombreU = root.findViewById(R.id.tvNombreUsuario_perfil);
         tvEdadU = root.findViewById(R.id.tvEdadUsuario_perfil);
         tvSexoU = root.findViewById(R.id.tvSexoUsuario_perfil);

@@ -176,10 +176,10 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
-            android:id="@+id/btnAñadirNuevaRuta"
+            android:id="@+id/btnModificarPerfil"
             android:layout_width="198dp"
             android:layout_height="48dp"
-            android:layout_marginTop="88dp"
+            android:layout_marginTop="28dp"
             android:background="@drawable/botones_azules"
             android:contentDescription="@string/btnRegistrarseContent"
             android:onClick="abrirEditarPerfil"

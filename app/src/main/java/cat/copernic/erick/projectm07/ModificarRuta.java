@@ -22,8 +22,8 @@ public class ModificarRuta extends AppCompatActivity {
 
     private EditText etNombreRutaM, etDescripcionRutaM, etRutaRutaM, etPaisRutaM, etCiudadRutaM;
     private Button mofificarRutaRealTime;
-    private String nomRutaModificar, idRutaModificar;
-    private TextView setNomRutaModificar;
+    private String nomRutaModificar, idRutaModificar, usuarioRuta;
+    private TextView setNomRutaModificar, setIdiRuta, setUsuarioRuta;
 
 
     //FIRE BASE
@@ -39,10 +39,17 @@ public class ModificarRuta extends AppCompatActivity {
         setContentView(R.layout.activity_modificar_ruta);
 
         nomRutaModificar = getIntent().getStringExtra("nombreRutaModificar");
-        //idRutaModificar = getIntent().getStringExtra("idRuta");
+        idRutaModificar = getIntent().getStringExtra("idRutaModificar");
+        usuarioRuta = getIntent().getStringExtra("usuarioRutaModificar");
 
         setNomRutaModificar = findViewById(R.id.tvTituloRutamodificar);
         setNomRutaModificar.setText(nomRutaModificar);
+        setIdiRuta= findViewById(R.id.tvTituloRutamodificar);
+        setIdiRuta.setText(idRutaModificar);
+        setUsuarioRuta = findViewById(R.id.tvTituloRutamodificar);
+        setUsuarioRuta.setText(usuarioRuta);
+
+
 
         etNombreRutaM = findViewById(R.id.etModificarRuta_nombre);
         etDescripcionRutaM = findViewById(R.id.etModificarRuta_descripcion);

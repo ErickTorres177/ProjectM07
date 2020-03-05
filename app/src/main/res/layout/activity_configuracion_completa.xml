@@ -203,6 +203,33 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.5" />
 
+            <TextView
+                android:id="@+id/tvConfiguracionRutaC_idRuta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="TextView"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvConfiguracionRutaC_descripcion" />
+
+            <TextView
+                android:id="@+id/tvConfiguracionRutaC_usuarioRuta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="TextView"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:textColorHint="@color/white"
+                android:textColorLink="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvConfiguracionRutaC_idRuta" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
