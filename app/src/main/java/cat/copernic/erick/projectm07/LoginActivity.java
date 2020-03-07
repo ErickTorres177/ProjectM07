@@ -38,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText user, pass, nombreUsuariu, edat;
     private ImageButton btn_maps, btn_web, btn_insta, btn_gmail;
     private ImageView img_login, img_registro;
+    private String useruarioLogin, passLogin;
 
     //FIRE BASE
     Button btnLogin;
@@ -61,6 +62,12 @@ public class LoginActivity extends AppCompatActivity {
         user = findViewById(R.id.etUser);
         pass = findViewById(R.id.etPass);
 
+        //PONER DATOS DEL USER REGISTRADO
+        useruarioLogin = getIntent().getStringExtra("usuer");
+        passLogin = getIntent().getStringExtra("pass");
+
+        user.setText(useruarioLogin);
+        pass.setText(passLogin);
         //---
         //database = FirebaseDatabase.getInstance();
         //database.getReference();
@@ -84,13 +91,12 @@ public class LoginActivity extends AppCompatActivity {
         btn_insta = findViewById(R.id.imgBtn_instagram);
         btn_gmail = findViewById(R.id.imgBtn_instagram);
         btnLogin = findViewById(R.id.btnIniciarSesion);
-        btnLogin.setEnabled(false);
 
         // Iconos de accesibilidad
         img_login = findViewById(R.id.imgLogin);
 
-        user.addTextChangedListener(loginTW);
-        pass.addTextChangedListener(loginTW);
+        //user.addTextChangedListener(loginTW);
+        //pass.addTextChangedListener(loginTW);
 
         //controlDeCampos(currentUser);
 
@@ -101,10 +107,8 @@ public class LoginActivity extends AppCompatActivity {
                     String toastCredenciales = LoginActivity.this.getResources().getString(R.string.credencialesIcorrectas);
                     Toast.makeText(LoginActivity.this, toastCredenciales,
                             Toast.LENGTH_SHORT).show();
-                    //System.out.println("Campos vacios");
 
                 } else {
-                    //System.out.println("Usuario : " +user.getText().toString()  + " pas: " + pass.getText().toString());
                     loginUser(user.getText().toString(), pass.getText().toString());
                 }
             }
@@ -117,10 +121,8 @@ public class LoginActivity extends AppCompatActivity {
                     String toastCredenciales = LoginActivity.this.getResources().getString(R.string.credencialesIcorrectas);
                     Toast.makeText(LoginActivity.this, toastCredenciales,
                             Toast.LENGTH_SHORT).show();
-                    //System.out.println("Campos vacios");
 
                 } else {
-                    //System.out.println("Usuario : " +user.getText().toString()  + " pas: " + pass.getText().toString());
                     loginUser(user.getText().toString(), pass.getText().toString());
                 }
             }
@@ -173,10 +175,6 @@ public class LoginActivity extends AppCompatActivity {
         if (currentUser != null) {
         } else {
         }
-    }
-
-    public void autofillDeCampos(String email) {
-        user.setText(email);
     }
 
     public void iniciarRegistro(View view) {
@@ -239,21 +237,18 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(emailIntent);
     }
 
-    private TextWatcher loginTW  = new TextWatcher() {
+    //METODO QUE CONTROLA QUE NO SE PULSE LOGIN(BTN) HASTA QUE RELLENE LOS DOS CAMPOS (USER AND PASS)
+   /*  private TextWatcher loginTW  = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
         }
 
-        @Override
+       @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             String userNameInput = user.getText().toString().trim();
             String passNameInput = user.getText().toString().trim();
 
-            /*if (btnLogin.isEnabled())
-                btnLogin.getBackground().setColorFilter(Color.WHITE), PorterDuff.Mode.MULTIPLY);
-            else
-                btnLogin.getBackground().setColorFilter(null);*/
             btnLogin.setEnabled(!userNameInput.isEmpty() && !passNameInput.isEmpty());
         }
 
@@ -261,7 +256,7 @@ public class LoginActivity extends AppCompatActivity {
         public void afterTextChanged(Editable s) {
 
         }
-    };
+    };*/
     private void controlDeCampos(FirebaseUser currentUser) {
         if (currentUser != null){
             user.getText().clear();

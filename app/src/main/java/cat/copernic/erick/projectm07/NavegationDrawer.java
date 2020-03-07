@@ -192,10 +192,7 @@ public class NavegationDrawer extends AppCompatActivity {
         Intent intent = new Intent(this, ModificarPerfil.class);
         startActivity(intent);
     }
-    public void anadirRuta(View view) {
-        Intent intent = new Intent(this, NuevaRuta.class);
-        startActivity(intent);
-    }
+
 
     public void abrirRutaCompleta(View view) {
         String tvIdRutaC = tvIdRutaCompleta.getText().toString();

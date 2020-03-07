@@ -62,16 +62,16 @@
 
     //NUEVA RUTA
     <string name="tvNuevaRutaF">Nueva Ruta</string>
-    <string name="tvNombreNuevaRuta">Ingresa el nombre de la ruta</string>
-    <string name="etNombreNuevaRuta">Nombre Ruta</string>
-    <string name="tvDescripcionRutaNueva">Ingresa la descripción de la ruta</string>
-    <string name="etDescripcionRutaNueva">Descripción</string>
-    <string name="tvRutaNuevaRuta">Ingresa la ruta:</string>
-    <string name="etRutaNuevaRuta">Ruta</string>
-    <string name="tvPaisRutaNueva">Ingresa el país:</string>
-    <string name="tvCiudadRutaNueva">Ingresa la ciudad:</string>
-    <string name="etPaisRutaNueva">País</string>
-    <string name="etCiudadRutaNueva">Ciudad</string>
+    <string name="tvNombreNuevaRuta">Escribe el nombre de la ruta</string>
+    <string name="etNombreNuevaRuta">ejemplo: casa de verano</string>
+    <string name="tvDescripcionRutaNueva">Escribe alguna descripción:</string>
+    <string name="etDescripcionRutaNueva">casa de verano de Castelldefels</string>
+    <string name="tvRutaNuevaRuta">Escribe la ruta:</string>
+    <string name="etRutaNuevaRuta">ejemplo: castelldefels</string>
+    <string name="tvPaisRutaNueva">País:</string>
+    <string name="etPaisRutaNueva">Espanya</string>
+    <string name="tvCiudadRutaNueva">Ciutat:</string>
+    <string name="etCiudadRutaNueva">Barcelona</string>
 
     //CONFIGURACION RUTA
     <string name="btnGuradarConfiguracionRuta">Modificar</string>

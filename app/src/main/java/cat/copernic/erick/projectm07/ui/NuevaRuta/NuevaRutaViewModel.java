@@ -1,14 +1,14 @@
-package cat.copernic.erick.projectm07.ui.Rutas;
+package cat.copernic.erick.projectm07.ui.NuevaRuta;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class RutasViewModel extends ViewModel {
+public class NuevaRutaViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public RutasViewModel() {
+    public NuevaRutaViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("AÑADIR RUTA");
     }

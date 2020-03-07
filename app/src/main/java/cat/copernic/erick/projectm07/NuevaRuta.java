@@ -33,6 +33,7 @@ public class NuevaRuta extends AppCompatActivity {
     private FirebaseDatabase mFirebaseDatabase;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private DatabaseReference myRef;
+    private DatabaseReference miNomRuta, miDescripcionRuta,miRutaRuta, miPaisRuta, miCiudadRuta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,29 @@ public class NuevaRuta extends AppCompatActivity {
 
     }
 
+    private void compGuardaRutaNueva() {
+        String nombreComp = (etNombreR.getText().toString());
+        String descripcionR = (etDescripcionR.getText().toString());
+        String rutaR = (etRutaR.getText().toString());
+        String paisR = (etPaisR.getText().toString());
+        String ciudadR = (etCiudadR.getText().toString());
+
+        if (!nombreComp.isEmpty() && !nombreComp.equals(" ")) {
+
+            Toast.makeText(NuevaRuta.this, "Ingressa el nom de la ruta: " + etNombreR.getText().toString(),
+                    Toast.LENGTH_SHORT).show();
+        } else {
+
+        }
+    }
+    private void modificarNombreRuta(String nombreR) {
+        miNomRuta = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("rutas").child(String.valueOf(idRutaGeneral));
+        miNomRuta.setValue(nombreR);
+
+    }
+    private void leerIdRutasDisponibles() {
+
+    }
     private void guardarRutaNuevaRT() {
 
         String nombreComp = (etNombreR.getText().toString());
@@ -70,8 +94,6 @@ public class NuevaRuta extends AppCompatActivity {
         String rutaR = (etRutaR.getText().toString());
         String paisR = (etPaisR.getText().toString());
         String ciudadR = (etCiudadR.getText().toString());
-
-
 
 
         if (nombreComp.isEmpty() || nombreComp.equals("") || nombreComp.equals(null)) {
@@ -129,7 +151,6 @@ public class NuevaRuta extends AppCompatActivity {
             rutasList.add(rutas);*/
 
 
-
         }
     }
 
@@ -150,6 +171,7 @@ public class NuevaRuta extends AppCompatActivity {
         etPaisR.getText().clear();
         etCiudadR.getText().clear();
     }
+
     public void btnVolverConfigRutas(View view) {
         limpiarCampo();
         finish();

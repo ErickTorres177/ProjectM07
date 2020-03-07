@@ -77,10 +77,10 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegistrarU.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!compNombreIntroducido(etNombreUsuario.getText().toString())){
+                if (!compNombreIntroducido(etNombreUsuario.getText().toString())) {
                     Toast.makeText(RegisterActivity.this, "El nom es incorrecte: " + etNombreUsuario.getText().toString(),
                             Toast.LENGTH_SHORT).show();
-                } else if(!compIsNumericAndRango(Integer.valueOf(etEdad.getText().toString()))){
+                } else if (!compIsNumericAndRango(Integer.valueOf(etEdad.getText().toString()))) {
                     Toast.makeText(RegisterActivity.this, "Edat incorrecta: " + etEdad.getText().toString(),
                             Toast.LENGTH_SHORT).show();
                 } else {
@@ -121,8 +121,9 @@ public class RegisterActivity extends AppCompatActivity {
                                     guardatUsuarioFB();
                                     Toast.makeText(RegisterActivity.this, toastCuentaCreada + ": " + email,
                                             Toast.LENGTH_SHORT).show();
-
+                                    comprobacionRegistro();
                                     limpiarCampo();
+                                    enviarLogin(email, password);
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -144,13 +145,13 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    private void guardatUsuarioFB() {
-        DatabaseReference currentUserDB = myReference.child(mAuth.getCurrentUser().getUid());
+    private void comprobacionRegistro() {
+        boolean comp = true;
 
         String nombreComp = (etNombreUsuario.getText().toString());
         String edadComp = (etEdad.getText().toString());
 
-        if (nombreComp.isEmpty() || nombreComp.equals("") || nombreComp.equals(null)){
+        if (nombreComp.isEmpty() || nombreComp.equals("") || nombreComp.equals(null)) {
             Toast.makeText(RegisterActivity.this, "Ingressa el teu nom: " + etNombreUsuario.getText().toString(),
                     Toast.LENGTH_SHORT).show();
         } else if (!compNombreIntroducido(nombreComp)) {
@@ -163,17 +164,29 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(RegisterActivity.this, "L'edat és incorrecta: " + etEdad.getText().toString(),
                     Toast.LENGTH_SHORT).show();
         } else {
-
-            currentUserDB.child("usuario").setValue(etUsuario.getText().toString());
-            currentUserDB.child("nombre").setValue(etNombreUsuario.getText().toString());
-            currentUserDB.child("edad").setValue(etEdad.getText().toString());
-            currentUserDB.child("sexo").setValue("Sense definir");
-            currentUserDB.child("direccion").setValue("Sense definir");
-
+            guardatUsuarioFB();
         }
+
+    }
+
+    private void guardatUsuarioFB() {
+        DatabaseReference currentUserDB = myReference.child(mAuth.getCurrentUser().getUid());
+        currentUserDB.child("usuario").setValue(etUsuario.getText().toString());
+        currentUserDB.child("nombre").setValue(etNombreUsuario.getText().toString());
+        currentUserDB.child("edad").setValue(etEdad.getText().toString());
+        currentUserDB.child("sexo").setValue("Sense definir");
+        currentUserDB.child("direccion").setValue("Sense definir");
     }
 
     private void updateUI(FirebaseUser currentUser) {
+
+    }
+
+    private void enviarLogin(String usuario, String pass) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.putExtra("usuer", usuario);
+        intent.putExtra("pass", pass);
+        this.startActivity(intent);
 
     }
 
@@ -226,9 +239,11 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void handleRegresar(View view) {
+        limpiarCampo();
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
+
     private void limpiarCampo() {
         etUsuario.getText().clear();
         etNombreUsuario.getText().clear();
