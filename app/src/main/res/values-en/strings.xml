@@ -55,6 +55,7 @@
     <string name="tvSubTitulo">Choose An option</string>
     <string name="tvNuevaRuta">Create A Route</string>
     <string name="btnNuevaRuta">New</string>
+    <string name="bntAñadirNuevaRuta">New Route</string>
     <string name="tvEliminarRuta">Delete A Route</string>
     <string name="btnEliminarRuta">Eliminar Ruta</string>
     <string name="tvConfiguracionRuta">Configuration Of A Route</string>

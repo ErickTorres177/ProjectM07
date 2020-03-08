@@ -56,18 +56,6 @@ public class NavegationDrawer extends AppCompatActivity {
 
     final String TAG = "REALTIMEDATABASE";
 
-    //Nueva ruta
-    private static EditText etNombreR, etDescripcionR, etRutaR, etPaisR, etCiudadR;
-    private static int idRutaGeneral = 0;
-
-    static String nombreRutaNueva;
-    static String rutaRutaNueva;
-    static String descripcionRutaNueva;
-    static String paisRutaNueva;
-    static String ciudadRutaNueva;
-    private static final String sinDefinir = "Sense definir";
-    //-------
-
     //FIRE BASE
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
@@ -112,14 +100,7 @@ public class NavegationDrawer extends AppCompatActivity {
 
 
         //INCIALIZACIONES GENERALES
-        //-- NUEVA RUTA (NuevaRutaFragmnet)
-        etNombreR = findViewById(R.id.etNombreNuevaRuta);
-        etDescripcionR = findViewById(R.id.etDescripcionRutaNueva);
-        etRutaR = findViewById(R.id.etRutaNuevaRuta);
-        etPaisR = findViewById(R.id.etPaisRutaNueva222);
-        etCiudadR = findViewById(R.id.etCiudadRutaNueva);
 
-        //------------
         tvIdRutaCompleta = findViewById(R.id.tvIdRutaCompleta);
 
         //FIRE BASE inicializaciones
@@ -185,87 +166,6 @@ public class NavegationDrawer extends AppCompatActivity {
         });
     }
 
-    //GUARDAR NUEVA RUTA
-    public void nuevaRuta(View view) {
-
-        idRutaGeneral++;
-        myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid())
-                .child("rutas").child(String.valueOf(idRutaGeneral));
-
-
-        String nomComp = etNombreR.getText().toString();
-        String rutaComp = etRutaR.getText().toString();
-
-
-        if (!nomComp.isEmpty() && !nomComp.equals(" ")
-                && !rutaComp.isEmpty() && !rutaComp.equals(" ")) {
-            if (!compTipoDatosString(nomComp)) {
-                Toast.makeText(NavegationDrawer.this, "El nom és invàlid: " + etNombreR.getText().toString() + ", tens d'introduir només lletres.",
-                        Toast.LENGTH_SHORT).show();
-
-            } else if (!compTipoDatosString(rutaComp)) {
-                Toast.makeText(NavegationDrawer.this, "La ruta és invàlida: " + etRutaR.getText().toString() + ", tens d'introduir només lletres.",
-                        Toast.LENGTH_SHORT).show();
-            } else {
-                myRef.child("nombreRuta").setValue(etNombreR.getText().toString());
-                myRef.child("ruta").setValue(etRutaR.getText().toString());
-            }
-
-            if (etDescripcionR.getText().toString().isEmpty()) {
-                myRef.child("descripcionRuta").setValue(sinDefinir);
-            } else if (!etDescripcionR.getText().toString().isEmpty()) {
-                myRef.child("descripcionRuta").setValue(etDescripcionR.getText().toString());
-
-            } else if (etPaisR.getText().toString().isEmpty()) {
-                myRef.child("paisRuta").setValue(sinDefinir);
-            } else if (!etPaisR.getText().toString().isEmpty()) {
-                if (!compTipoDatosString(etPaisR.getText().toString())) {
-                    Toast.makeText(NavegationDrawer.this, "El país es invàlid: " + etPaisR.getText().toString() + ", tens d'introduir només lletres.",
-                            Toast.LENGTH_SHORT).show();
-                } else {
-                    myRef.child("paisRuta").setValue(etPaisR.getText().toString());
-                }
-            } else if (etCiudadR.getText().toString().isEmpty()) {
-                myRef.child("ciudadRuta").setValue(sinDefinir);
-            } else if (!etCiudadR.getText().toString().isEmpty()) {
-                if (!compTipoDatosString(etCiudadR.getText().toString())) {
-                    Toast.makeText(NavegationDrawer.this, "El país es invàlid: " + etCiudadR.getText().toString() + ", tens d'introduir només lletres.",
-                            Toast.LENGTH_SHORT).show();
-                } else {
-                    myRef.child("ciudadRuta").setValue(etCiudadR.getText().toString());
-                }
-            }
-            myRef.child("idRuta").setValue(String.valueOf(idRutaGeneral));
-            myRef.child("usuarioRuta").setValue(currentUser.getEmail());
-            limpiarCampo();
-            Toast.makeText(NavegationDrawer.this, "Ruta agregada correctament: " + etNombreR.getText().toString(),
-                    Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(NavegationDrawer.this.getApplicationContext(), "El nom i la ruta son obligatoris: ",
-                    Toast.LENGTH_SHORT).show();
-        }
-
-    }
-
-
-    public boolean compTipoDatosString(String nombre) {
-        boolean comp = true;
-        Pattern patron = Pattern.compile("[a-zA-ZñÑáéíóúÁÉÍÓÚàèòÀÈÒçÇ ]*");
-        Matcher matcherNombre = patron.matcher(nombre);
-        if (!matcherNombre.matches()) {
-            comp = false;
-        }
-        return comp;
-    }
-
-    private void limpiarCampo() {
-        etNombreR.getText().clear();
-        etDescripcionR.getText().clear();
-        etRutaR.getText().clear();
-        etPaisR.getText().clear();
-        etCiudadR.getText().clear();
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -306,5 +206,14 @@ public class NavegationDrawer extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void irAnyadirNuevaRuta(View view) {
+        Intent intent = new Intent(this, NuevaRuta.class);
+        startActivity(intent);
+    }
 
+    public void irEliminarRuta(View view) {
+    }
+
+    public void irConfigurarRuta(View view) {
+    }
 }
