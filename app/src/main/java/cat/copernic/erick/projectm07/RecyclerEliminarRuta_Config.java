@@ -1,6 +1,7 @@
 package cat.copernic.erick.projectm07;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -54,30 +56,59 @@ public class RecyclerEliminarRuta_Config {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    new FireBaseDHEliminarRuta().deleteRutaEliminar(key, new FireBaseDHEliminarRuta.DataStatus() {
+
+
+
+                    final String[] respuesta = {"Si", "No"};
+                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(mContext);
+                    mBuilder.setTitle("Vols eliminar aquesta ruta?");
+                    mBuilder.setSingleChoiceItems(respuesta, -1, new DialogInterface.OnClickListener() {
                         @Override
-                        public void DataIsLoaded(List<Rutas> rutas, List<String> keys) {
+                        public void onClick(DialogInterface dialog, int i) {
+                            if (i == 0) {
 
-                        }
 
-                        @Override
-                        public void DataIsInserted() {
+                                ///----
+                                new FireBaseDHEliminarRuta().deleteRutaEliminar(key, new FireBaseDHEliminarRuta.DataStatus() {
+                                    @Override
+                                    public void DataIsLoaded(List<Rutas> rutas, List<String> keys) {
 
-                        }
+                                    }
 
-                        @Override
-                        public void DataIsUpdate() {
+                                    @Override
+                                    public void DataIsInserted() {
 
-                        }
+                                    }
 
-                        @Override
-                        public void DataIsDelete() {
+                                    @Override
+                                    public void DataIsUpdate() {
+
+                                    }
+
+                                    @Override
+                                    public void DataIsDelete() {
                            /* Toast.makeText(, "Ruta elimidad correctament: ",
                                     Toast.LENGTH_SHORT).show();*/
-                           return;
+                                        return;
 
+                                    }
+                                });
+                                ///----
+
+
+                            } else if (i == 1) {
+                                dialog.dismiss();
+                            }
+                            dialog.dismiss();
                         }
                     });
+                    AlertDialog alertDialog = mBuilder.create();
+                    alertDialog.show();
+
+
+
+
+
                 }
             });
 

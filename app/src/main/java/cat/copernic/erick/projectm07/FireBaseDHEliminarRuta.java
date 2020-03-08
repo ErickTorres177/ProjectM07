@@ -1,6 +1,9 @@
 package cat.copernic.erick.projectm07;
 
+import android.content.DialogInterface;
+
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;

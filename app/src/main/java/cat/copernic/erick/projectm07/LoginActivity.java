@@ -131,12 +131,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                mostrarCambiarLIdioma();
+                mostrarCambiarIdioma();
             }
         });
     }
 
-    private void mostrarCambiarLIdioma() {
+    private void mostrarCambiarIdioma() {
         final String[] lista_item = {"Catalán", "English", "Castellano "};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(LoginActivity.this);
         mBuilder.setTitle("Tria l'idioma");

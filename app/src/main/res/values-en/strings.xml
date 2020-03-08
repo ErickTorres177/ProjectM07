@@ -17,7 +17,7 @@
     <string name="menu_nuevaRuta">New Routes</string>
     <string name="menu_home">My Routes</string>
     <string name="menu_perfil">My Profile</string>
-    <string name="menu_configuracionApp">General configurationl</string>
+    <string name="menu_configuracionApp">General configuration</string>
     <string name="menu_configuracionRuta">Route Configuration</string>
     <string name="menu_eliminarRuta">Delete Route</string>
     <string name="txtTituloNombre">Username</string>
