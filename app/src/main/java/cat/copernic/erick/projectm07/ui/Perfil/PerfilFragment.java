@@ -65,6 +65,11 @@ public class PerfilFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ModificarPerfil.class);
+                intent.putExtra("nombrePerfil", tvNombreU.getText().toString());
+                intent.putExtra("edadPerfil", tvEdadU.getText().toString());
+                intent.putExtra("sexoPerfil", tvSexoU.getText().toString());
+                intent.putExtra("direccionPerdil", tvDireccionU.getText().toString());
+
                 startActivity(intent);
             }
         });

@@ -31,12 +31,14 @@ import java.util.regex.Pattern;
 public class ModificarPerfil extends AppCompatActivity {
 
     private Spinner spinnerS;
-    private String spinnerSelected;
+    private String spinnerSelectedString;
     private EditText tvNombreUModifcar, tvEdadUModifcar, tvSexoUModifcar, tvDireccionUModifcar;
     private Button btnModificarPerfil;
     private static final int edadMax = 110;
     private static final int edadMin = 5;
     final String TAG = "REALTIMEDATABASE";
+
+    private String nombreMostrar, edadMostrar, sexoMostrar, direccionMostrar;
 
     public List<Rutas> listContent;
     //FIRE BASE
@@ -61,6 +63,11 @@ public class ModificarPerfil extends AppCompatActivity {
         currentUser = mAuth.getCurrentUser();
 
         //INICIALIZACIONES
+        nombreMostrar = getIntent().getStringExtra("nombrePerfil");
+        nombreMostrar = getIntent().getStringExtra("edadPerfil");
+        nombreMostrar = getIntent().getStringExtra("sexoPerfil");
+        nombreMostrar = getIntent().getStringExtra("direccionPerdil");
+
 
         //Spiner
         spinnerS = findViewById(R.id.spinnerTipSexo);
@@ -70,7 +77,7 @@ public class ModificarPerfil extends AppCompatActivity {
         spinnerS.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                spinnerSelected = parent.getItemAtPosition(position).toString();
+                spinnerSelectedString = parent.getItemAtPosition(position).toString();
             }
 
             @Override
@@ -80,9 +87,13 @@ public class ModificarPerfil extends AppCompatActivity {
         });
         //-----------------------------------
         tvNombreUModifcar = findViewById(R.id.txtNombreUsuario_perfil);
+        tvNombreUModifcar.setHint(nombreMostrar);
         tvEdadUModifcar = findViewById(R.id.txtEdad_perfil);
+        tvEdadUModifcar.setHint(edadMostrar);
         tvSexoUModifcar = findViewById(R.id.txtNombreUsuario_perfil);
+        tvSexoUModifcar.setHint(sexoMostrar);
         tvDireccionUModifcar = findViewById(R.id.txtDireccion_pefil);
+        tvDireccionUModifcar.setHint(direccionMostrar);
 
         //myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid());
 
@@ -98,57 +109,70 @@ public class ModificarPerfil extends AppCompatActivity {
                 String edadComp = (tvEdadUModifcar.getText().toString());
                 String direccionComp = (tvDireccionUModifcar.getText().toString());
 
-                if (nombreComp.isEmpty() || nombreComp.equals("") || nombreComp.equals(null)) {
-                    Toast.makeText(ModificarPerfil.this, "Ingressa el teu nom: " + tvNombreUModifcar.getText().toString(),
-                            Toast.LENGTH_SHORT).show();
-                } else if (!compNombreIntroducido(nombreComp)) {
-                    Toast.makeText(ModificarPerfil.this, "El nom és invàlid: " + tvNombreUModifcar.getText().toString(),
-                            Toast.LENGTH_SHORT).show();
-                } else if (edadComp.isEmpty() || edadComp.equals("") || edadComp.equals(null)) {
-                    Toast.makeText(ModificarPerfil.this, "Ingressa a teva edat: " + tvEdadUModifcar.getText().toString(),
-                            Toast.LENGTH_SHORT).show();
-                } else if (!compIsNumericAndRango(Integer.parseInt(edadComp))) {
-                    Toast.makeText(ModificarPerfil.this, "L'edat és incorrecta: " + tvEdadUModifcar.getText().toString(),
-                            Toast.LENGTH_SHORT).show();
-                } else if (spinnerSelected.equals("Sexe")) {
-                    Toast.makeText(ModificarPerfil.this, "Ingressa el teu sexe.",
-                            Toast.LENGTH_SHORT).show();
-                } else if (direccionComp.isEmpty() || direccionComp.equals("") || direccionComp.equals(null)) {
-                    Toast.makeText(ModificarPerfil.this, "L'adreça és incorrecta: " + tvDireccionUModifcar.getText().toString(),
-                            Toast.LENGTH_SHORT).show();
-                } else {
 
+                //MODIFICAR NOMBRE PERFIL
+                if (!nombreComp.isEmpty() && !nombreComp.equals(" ")) {
+                    if (!compTipoDatosString(nombreComp)) {
+                        Toast.makeText(ModificarPerfil.this, "El nom és invàlid: " + tvNombreUModifcar.getText().toString() + ", tens d'introduir només lletres.",
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        modificarNombrePerfil(tvNombreUModifcar.getText().toString());
+                    }
+                }
 
-                    miNom = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("nombre");
-                    miNom.setValue(tvNombreUModifcar.getText().toString());
+                //MODIFICAR EDAD PERFIL
+                if (!edadComp.isEmpty() && !edadComp.equals(" ")) {
+                    if (!compIsNumericAndRango(Integer.valueOf(nombreComp))) {
+                        Toast.makeText(ModificarPerfil.this, "La edat és invàlida: " + tvEdadUModifcar.getText().toString() + ", (5 - 110).",
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        modificarEdadPerfil(tvNombreUModifcar.getText().toString());
+                    }
+                }
 
-                    miEdad = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("edad");
-                    miEdad.setValue(tvEdadUModifcar.getText().toString());
+                //MODIFICAR SEXO PERFIL
+                if (!spinnerSelectedString.isEmpty() && !spinnerSelectedString.equals("Sexe")) {
+                    modificarSexoPerfil(spinnerSelectedString);
+                }
 
-                    miDireccion = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("direccion");
-                    miDireccion.setValue(tvDireccionUModifcar.getText().toString());
-
-                    miSexo = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("sexo");
-                    miSexo.setValue(spinnerSelected);
-
-                   /* usuarios.setNombre(tvNombreUModifcar.getText().toString());
-                    usuarios.setEdad(tvEdadUModifcar.getText().toString());
-                    usuarios.setUsuario(currentUser.getEmail());
-                    usuarios.setDireccion(tvDireccionUModifcar.getText().toString());
-                    usuarios.setSexo(spinnerSelected);
-                    //usuarios.setRutas();
-                    myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid());
-                    myRef.setValue(usuarios);*/
-
-                    Toast.makeText(ModificarPerfil.this, "Perfil modificat correctament: "
-                                    + " \nNom: " + tvNombreUModifcar.getText().toString()
-                                    + " \nEdat: " + tvEdadUModifcar.getText().toString()
-                                    + " \nDirecció: " + tvDireccionUModifcar.getText().toString()
-                                    + " \nSexe: " + spinnerSelected,
-                            Toast.LENGTH_SHORT).show();
+                //MODIFICAR DIRECCION PERFIL
+                if (!direccionComp.isEmpty() && !direccionComp.equals(" ")) {
+                    modificarDireccionPerfil(tvDireccionUModifcar.getText().toString());
                 }
             }
         });
+    }
+
+    private void modificarNombrePerfil(String nombre) {
+        miNom = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("nombre");
+        miNom.setValue(nombre);
+        tvNombreUModifcar.setText(nombre);
+        Toast.makeText(ModificarPerfil.this, "Nom modificat correctament: " + nombre,
+                Toast.LENGTH_SHORT).show();
+    }
+
+    private void modificarEdadPerfil(String edad) {
+        miEdad = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("edad");
+        miEdad.setValue(edad);
+        tvEdadUModifcar.setText(edad);
+        Toast.makeText(ModificarPerfil.this, "Edat modificada correctament: " + edad,
+                Toast.LENGTH_SHORT).show();
+    }
+
+    private void modificarSexoPerfil(String sexo) {
+        miSexo = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("sexo");
+        miSexo.setValue(sexo);
+        tvSexoUModifcar.setText(sexo);
+        Toast.makeText(ModificarPerfil.this, "Sexe modificat correctament: " + sexo,
+                Toast.LENGTH_SHORT).show();
+    }
+
+    private void modificarDireccionPerfil(String direccion) {
+        miDireccion = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("direccion");
+        miDireccion.setValue(direccion);
+        tvDireccionUModifcar.setText(direccion);
+        Toast.makeText(ModificarPerfil.this, "Direcció modificada correctament: " + direccion,
+                Toast.LENGTH_SHORT).show();
     }
 
     public boolean compIsNumericAndRango(int edad) {
@@ -173,7 +197,7 @@ public class ModificarPerfil extends AppCompatActivity {
         }
     }
 
-    public boolean compNombreIntroducido(String nombre) {
+    public boolean compTipoDatosString(String nombre) {
         boolean comp = true;
         Pattern patron = Pattern.compile("[a-zA-ZñÑáéíóúÁÉÍÓÚàèòÀÈÒçÇ ]*");
         Matcher matcherNombre = patron.matcher(nombre);
