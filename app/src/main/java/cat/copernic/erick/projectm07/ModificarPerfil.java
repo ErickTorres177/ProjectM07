@@ -64,9 +64,9 @@ public class ModificarPerfil extends AppCompatActivity {
 
         //INICIALIZACIONES
         nombreMostrar = getIntent().getStringExtra("nombrePerfil");
-        nombreMostrar = getIntent().getStringExtra("edadPerfil");
-        nombreMostrar = getIntent().getStringExtra("sexoPerfil");
-        nombreMostrar = getIntent().getStringExtra("direccionPerdil");
+        edadMostrar = getIntent().getStringExtra("edadPerfil");
+        sexoMostrar = getIntent().getStringExtra("sexoPerfil");
+        direccionMostrar = getIntent().getStringExtra("direccionPerdil");
 
 
         //Spiner
@@ -85,13 +85,17 @@ public class ModificarPerfil extends AppCompatActivity {
 
             }
         });
+
+        String compareValue = sexoMostrar;
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.tipo_sexo, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerS.setAdapter(adapter);
+
         //-----------------------------------
         tvNombreUModifcar = findViewById(R.id.txtNombreUsuario_perfil);
         tvNombreUModifcar.setHint(nombreMostrar);
         tvEdadUModifcar = findViewById(R.id.txtEdad_perfil);
         tvEdadUModifcar.setHint(edadMostrar);
-        tvSexoUModifcar = findViewById(R.id.txtNombreUsuario_perfil);
-        tvSexoUModifcar.setHint(sexoMostrar);
         tvDireccionUModifcar = findViewById(R.id.txtDireccion_pefil);
         tvDireccionUModifcar.setHint(direccionMostrar);
 
@@ -122,11 +126,11 @@ public class ModificarPerfil extends AppCompatActivity {
 
                 //MODIFICAR EDAD PERFIL
                 if (!edadComp.isEmpty() && !edadComp.equals(" ")) {
-                    if (!compIsNumericAndRango(Integer.valueOf(nombreComp))) {
+                    if (!compIsNumericAndRango(Integer.valueOf(edadComp))) {
                         Toast.makeText(ModificarPerfil.this, "La edat és invàlida: " + tvEdadUModifcar.getText().toString() + ", (5 - 110).",
                                 Toast.LENGTH_SHORT).show();
                     } else {
-                        modificarEdadPerfil(tvNombreUModifcar.getText().toString());
+                        modificarEdadPerfil(tvEdadUModifcar.getText().toString());
                     }
                 }
 
@@ -162,7 +166,6 @@ public class ModificarPerfil extends AppCompatActivity {
     private void modificarSexoPerfil(String sexo) {
         miSexo = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("sexo");
         miSexo.setValue(sexo);
-        tvSexoUModifcar.setText(sexo);
         Toast.makeText(ModificarPerfil.this, "Sexe modificat correctament: " + sexo,
                 Toast.LENGTH_SHORT).show();
     }

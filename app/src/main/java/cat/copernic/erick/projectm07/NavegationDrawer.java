@@ -194,7 +194,7 @@ public class NavegationDrawer extends AppCompatActivity {
     }
 
     public void irConfiguracionPerfil(MenuItem item) {
-        Intent intent = new Intent(this, ModificarPerfil.class);
+        Intent intent = new Intent(this, PerfilFragment.class);
         startActivity(intent);
     }
 
