@@ -38,8 +38,8 @@ public class NuevaRuta extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nueva_ruta);
-
+       // setContentView(R.layout.activity_nueva_ruta);
+/*
         etNombreR = findViewById(R.id.etNombreNuevaRuta);
         etDescripcionR = findViewById(R.id.etDescripcionRutaNueva);
         etRutaR = findViewById(R.id.etRutaNuevaRuta);
@@ -59,7 +59,7 @@ public class NuevaRuta extends AppCompatActivity {
             public void onClick(View v) {
                 guardarRutaNuevaRT();
             }
-        });
+        });*/
 
 
     }

@@ -29,6 +29,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import cat.copernic.erick.projectm07.NavegationDrawer;
 import cat.copernic.erick.projectm07.R;
 import cat.copernic.erick.projectm07.Rutas;
 import cat.copernic.erick.projectm07.Usuarios;
@@ -62,9 +63,9 @@ public class NuevaRutaFragment extends Fragment {
         etNombreR = root.findViewById(R.id.etNombreNuevaRuta);
         etDescripcionR = root.findViewById(R.id.etDescripcionRutaNueva);
         etRutaR = root.findViewById(R.id.etRutaNuevaRuta);
-        etPaisR = root.findViewById(R.id.etPaisRutaNueva);
+        etPaisR = root.findViewById(R.id.etPaisRutaNueva222);
         etCiudadR = root.findViewById(R.id.etCiudadRutaNueva);
-        btnAñadirNuevaRuta = root.findViewById(R.id.btnAñadirNuevaRuta);
+        btnAñadirNuevaRuta = root.findViewById(R.id.btnAñadirNuevaRuta222);
 
 
         //REAL TIME -> MODIFICACION PERFIL
@@ -118,12 +119,15 @@ public class NuevaRutaFragment extends Fragment {
 
 
         //AÑADIR NUEVA RUTA -> REAL TIME
-        btnAñadirNuevaRuta.setOnClickListener(new View.OnClickListener() {
+      /*  btnAñadirNuevaRuta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                guardarRutaNuevaRT();
+                Toast.makeText(getActivity(), "Tens que ingressa el nom de la ruta: ",
+                        Toast.LENGTH_SHORT).show();
+
+
             }
-        });
+        });*/
 
 
         return view;
@@ -150,7 +154,9 @@ public class NuevaRutaFragment extends Fragment {
     }
 
     private void guardarRutaNuevaRT() {
-
+        Toast.makeText(getActivity(), "Tens que ingressa el nom de la ruta: " + etNombreR.getText().toString(),
+                Toast.LENGTH_SHORT).show();
+/*
         String nombreComp = (etNombreR.getText().toString());
         String descripcionR = (etDescripcionR.getText().toString());
         String rutaR = (etRutaR.getText().toString());
@@ -159,7 +165,7 @@ public class NuevaRutaFragment extends Fragment {
 
 
         if (nombreComp.isEmpty() || nombreComp.equals(" ")) {
-            Toast.makeText(getContext(), "Tens que ingressa el nom de la ruta: " + etNombreR.getText().toString(),
+            Toast.makeText(getContext().getApplicationContext(), "Tens que ingressa el nom de la ruta: " + etNombreR.getText().toString(),
                     Toast.LENGTH_SHORT).show();
         } else if (!compTipoDatosString(nombreComp)) {
             Toast.makeText(getContext(), "El nom és invàlid: " + etNombreR.getText().toString() + ", tens d'introduir només lletres.",
@@ -180,7 +186,7 @@ public class NuevaRutaFragment extends Fragment {
 
         } else {
             //DatabaseReference currentUserDB = myRef.child(mAuth.getCurrentUser().getUid()).child("rutas");
-            //idRutaGeneral++;
+            idRutaGeneral++;
             myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid())
                     .child("rutas").child(String.valueOf(idRutaGeneral));
             myRef.child("idRuta").setValue(String.valueOf(idRutaGeneral));
@@ -194,7 +200,7 @@ public class NuevaRutaFragment extends Fragment {
             limpiarCampo();
             Toast.makeText(getContext(), "Ruta agregada correctament: " + etNombreR.getText().toString(),
                     Toast.LENGTH_SHORT).show();
-        }
+        }*/
     }
 
     public boolean compTipoDatosString(String nombre) {

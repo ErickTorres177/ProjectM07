@@ -39,18 +39,22 @@
             app:srcCompat="@drawable/imagen_fondo_login2" />
 
         <Button
-            android:id="@+id/btnAñadirNuevaRuta"
+            android:id="@+id/btnAñadirNuevaRuta222"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/botones_azules"
             android:contentDescription="@string/btnRegistrarseContent"
             android:text="@string/btnAñadirNuevaRuta"
             android:textColor="@color/white"
+            android:onClick="nuevaRuta"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contenedorCampos"
+            app:layout_constraintTop_toTopOf="@+id/imgBottom"
+            app:layout_constraintVertical_bias="1.0" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/contenedorCampos"
@@ -71,13 +75,13 @@
                 android:gravity="center_horizontal|center_vertical"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
-                app:layout_constraintBottom_toBottomOf="@+id/etPaisRutaNueva"
-                app:layout_constraintEnd_toEndOf="@+id/etPaisRutaNueva"
-                app:layout_constraintStart_toStartOf="@+id/etPaisRutaNueva"
-                app:layout_constraintTop_toTopOf="@+id/etPaisRutaNueva" />
+                app:layout_constraintBottom_toBottomOf="@+id/etPaisRutaNueva222"
+                app:layout_constraintEnd_toEndOf="@+id/etPaisRutaNueva222"
+                app:layout_constraintStart_toStartOf="@+id/etPaisRutaNueva222"
+                app:layout_constraintTop_toTopOf="@+id/etPaisRutaNueva222" />
 
             <EditText
-                android:id="@+id/etPaisRutaNueva"
+                android:id="@+id/etPaisRutaNueva222"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -330,33 +334,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/P15H">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/LayoutBotones"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/P80H">
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/P50Vbotones"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/P50Hbotones"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
