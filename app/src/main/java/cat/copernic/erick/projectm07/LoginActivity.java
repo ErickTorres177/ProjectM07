@@ -1,19 +1,17 @@
 package cat.copernic.erick.projectm07;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.ActivityNotFoundException;
-import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -27,10 +25,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
-import java.nio.file.Files;
 import java.util.Locale;
 
 public class LoginActivity extends AppCompatActivity {
@@ -41,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
     private String useruarioLogin, passLogin;
 
     //FIRE BASE
-    Button btnLogin;
+    private Button btnLogin, btnCambiarIdioma;
     private static final String TAG = "MainActivity";
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
@@ -91,6 +86,7 @@ public class LoginActivity extends AppCompatActivity {
         btn_insta = findViewById(R.id.imgBtn_instagram);
         btn_gmail = findViewById(R.id.imgBtn_instagram);
         btnLogin = findViewById(R.id.btnIniciarSesion);
+        btnCambiarIdioma = findViewById(R.id.btnCambiarIdioma);
 
         // Iconos de accesibilidad
         img_login = findViewById(R.id.imgLogin);
@@ -127,6 +123,58 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setTitle(getResources().getString(R.string.app_name));
+
+        btnCambiarIdioma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mostrarCambiarLIdioma();
+            }
+        });
+    }
+
+    private void mostrarCambiarLIdioma() {
+        final String[] lista_item = {"Catalán", "English", "Castellano "};
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(LoginActivity.this);
+        mBuilder.setTitle("Tria l'idioma");
+        mBuilder.setSingleChoiceItems(lista_item, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                if (i == 0) {
+                    setLocale("ca");
+                    recreate();
+                } else if (i == 1) {
+                    setLocale("en");
+                    recreate();
+                } else if (i == 2) {
+                    setLocale("es");
+                    recreate();
+                }
+                dialog.dismiss();
+            }
+        });
+        AlertDialog alertDialog = mBuilder.create();
+        alertDialog.show();
+    }
+    private void setLocale(String lenguaje) {
+        Locale locale = new Locale(lenguaje);
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
+
+        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
+        editor.putString("miLenguaje", lenguaje);
+        editor.apply();
+    }
+
+    private void cargaLocale() {
+        SharedPreferences preferences = getSharedPreferences("Settings", LoginActivity.MODE_PRIVATE);
+        String lenguaje = preferences.getString("miLenguaje", "");
+        setLocale(lenguaje);
     }
 
     @Override
@@ -258,7 +306,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     };*/
     private void controlDeCampos(FirebaseUser currentUser) {
-        if (currentUser != null){
+        if (currentUser != null) {
             user.getText().clear();
             //pass.getText().clear();
         } else {

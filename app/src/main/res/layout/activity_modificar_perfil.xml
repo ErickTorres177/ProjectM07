@@ -240,7 +240,7 @@
             android:text="@string/btnRegistrar_pefil"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.546"
+            app:layout_constraintHorizontal_bias="0.566"
             app:layout_constraintStart_toEndOf="@+id/btnVolverPerfil"
             app:layout_constraintTop_toTopOf="@+id/btnVolverPerfil" />
 
@@ -248,8 +248,8 @@
             android:id="@+id/btnVolverPerfil"
             android:layout_width="152dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
             android:background="@drawable/botones"
             android:contentDescription="@string/btnVolverContent"
             android:onClick="handleRegresarPerfil"

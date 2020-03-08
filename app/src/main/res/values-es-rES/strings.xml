@@ -35,6 +35,7 @@
     <string name="hintPasswd">Contraseña</string>
     <string name="btnRegistrarseContent">Crear cuenta</string>
     <string name="btnVolverContent">cancelar creación de la cuenta</string>
+    <string name="btnCambiarIdioma">Idioma</string>
 
     <string name="nav_header_desc" >FOTO DE USUARIO</string>
     <string name="correoContent">Correo electronico del usuario</string>

@@ -17,6 +17,7 @@
     <string name="muestra_usuario" translatable="false">muestra_usuario</string>
     <string name="muestra_pass" translatable="false">muestra_pass</string>
     <string name="Cerrar_Sesion">Tancar sessió</string>
+    <string name="btnCambiarIdioma">Idioma</string>
     // Content description imagenes
     <string name="ContDescLogoApp" translatable="false">Logo Find Your Way</string>
     <string name="ContDescImgFondoTop" translatable="false">"Imagen superior de fondo"</string>
@@ -25,6 +26,7 @@
     <string name="ContDescIconoWeb" translatable="false">Icono de contacto pagina web</string>
     <string name="ContDescIconoInsta" translatable="false">Icono de contacto Instagram</string>
     <string name="ContDescIconoMail" translatable="false">Icono de contacto Gmail</string>
+
 
     // ACTIVITY REGISTRO
     <string name="tituloRegistro">CREACIÓ COMPTE</string>
