@@ -46,7 +46,7 @@
             android:layout_marginBottom="24dp"
             android:background="@drawable/botones"
             android:contentDescription="@string/btnRegistrarseContent"
-            android:onClick="nuevaRuta"
+            android:onClick="btnVolverConfigRutas"
             android:text="@string/btnCancelarRuta"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -65,10 +65,8 @@
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.563"
             app:layout_constraintStart_toEndOf="@+id/btnVolverNavegation"
-            app:layout_constraintTop_toBottomOf="@+id/contenedorCampos"
-            app:layout_constraintVertical_bias="0.456" />
+            app:layout_constraintTop_toBottomOf="@+id/contenedorCampos" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/contenedorCampos"

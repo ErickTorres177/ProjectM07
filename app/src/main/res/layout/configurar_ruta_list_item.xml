@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imgTop"
+            android:id="@+id/imgTop1"
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:scaleType="fitXY"
@@ -91,7 +91,7 @@
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="44dp"
                 android:text="TextView"
-                android:textColor="#303030"
+                android:textColor="#00000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.236"
                 app:layout_constraintStart_toEndOf="@+id/tvRuta_ruta"
@@ -104,7 +104,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="96dp"
                 android:text="TextView"
-                android:textColor="#303030"
+                android:textColor="#00000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.536"
                 app:layout_constraintStart_toEndOf="@+id/tvRuta_ruta"
@@ -117,7 +117,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
                 android:text="TextView"
-                android:textColor="#303030"
+                android:textColor="#00000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.854"
                 app:layout_constraintStart_toEndOf="@+id/tvRuta_ruta"

@@ -211,9 +211,12 @@ public class NavegationDrawer extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void irEliminarRuta(View view) {
-    }
-
     public void irConfigurarRuta(View view) {
+        Intent intent = new Intent(this, ConfiguracionRuta.class);
+        startActivity(intent);
+    }
+    public void irEliminarRuta(View view) {
+        Intent intent = new Intent(this, EliminarRuta.class);
+        startActivity(intent);
     }
 }

@@ -54,8 +54,6 @@ public class ConfiguracionCompleta extends AppCompatActivity {
 
     }
 
-    public void guardarModificacionRuta(View view) {
-    }
 
     public void volverRutasConfiguracion(View view) {
         finish();
@@ -66,6 +64,11 @@ public class ConfiguracionCompleta extends AppCompatActivity {
         intent.putExtra("nombreRutaModificar", nombreR);
         intent.putExtra("idRutaModificar", idRuta);
         intent.putExtra("usuarioRutaModificar", usuarioR);
+        intent.putExtra("descripcionRutaModificar", descripcionR);
+        intent.putExtra("rutaRutaModificar", rutaR);
+        intent.putExtra("paisRutaModificar", paisR);
+        intent.putExtra("ciudadRutaModificar", ciudadR);
+
         startActivity(intent);
     }
 }

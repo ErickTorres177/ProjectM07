@@ -82,8 +82,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/contenedorCampos"
-            android:layout_width="382dp"
-            android:layout_height="434dp"
+            android:layout_width="match_parent"
+            android:layout_height="474dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -93,12 +93,13 @@
                 android:id="@+id/tvTituloDescRutaCompleta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="16dp"
                 android:contentDescription="@string/txtTituloNombre"
                 android:text="@string/tvTituloDescRutaCompleta"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+                app:layout_constraintHorizontal_bias="0.508"
                 app:layout_constraintStart_toStartOf="@id/P50VCampos"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -120,14 +121,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="132dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="47dp"
                 android:contentDescription="@string/txtTituloPasswd"
                 android:text="@string/tvTituloRutaCompleta"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
-                app:layout_constraintHorizontal_bias="0.677"
+                app:layout_constraintHorizontal_bias="0.682"
                 app:layout_constraintStart_toStartOf="@id/P50VCampos"
                 app:layout_constraintTop_toBottomOf="@+id/tvConfiguracionRutaC_descripcion" />
 
@@ -136,12 +137,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="64dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/tvTituloPaisRutaCompleta"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.378"
+                app:layout_constraintHorizontal_bias="0.385"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvConfiguracionRutaC_ruta" />
 
@@ -162,13 +163,13 @@
                 android:id="@+id/tvTituloCiudadRutaCompleta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="152dp"
                 android:text="@string/tvTituloCiudadRutaCompleta"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.987"
+                app:layout_constraintHorizontal_bias="0.951"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvConfiguracionRutaC_pais" />
 
@@ -209,11 +210,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
-                android:text="TextView"
-                android:textColor="#303030"
-                android:textColorHighlight="#303030"
-                android:textColorHint="#303030"
-                android:textColorLink="#303030"
+                android:textColor="#00000000"
+                android:textColorHighlight="#00000000"
+                android:textColorHint="#00000000"
+                android:textColorLink="#00000000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvConfiguracionRutaC_descripcion" />
 
@@ -222,11 +222,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:text="TextView"
-                android:textColor="@color/white"
-                android:textColorHighlight="@color/white"
-                android:textColorHint="@color/white"
-                android:textColorLink="@color/white"
+                android:textColor="#00000000"
+                android:textColorHighlight="#00000000"
+                android:textColorHint="#00000000"
+                android:textColorLink="#00000000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvConfiguracionRutaC_idRuta" />
 
@@ -254,22 +253,26 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/btnGuradarConfiguracionRuta"
-                android:layout_width="156dp"
+                android:id="@+id/btnIrModificicarRuta"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="4dp"
-                android:onClick="irModificarRuta"
                 android:background="@drawable/botones_azules"
                 android:contentDescription="@string/btnRegistrarseContent"
+                android:onClick="irModificarRuta"
                 android:text="@string/btnGuradarConfiguracionRuta"
                 android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.1"
                 app:layout_constraintStart_toEndOf="@+id/btnVolver_rutaCompleta"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <Button
                 android:id="@+id/btnVolver_rutaCompleta"
-                android:layout_width="156dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="4dp"
@@ -278,6 +281,7 @@
                 android:onClick="volverRutasConfiguracion"
                 android:text="@string/btnVolver"
                 android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -297,7 +301,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.17" />
+        app:layout_constraintGuide_percent="0.13" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/P80H"

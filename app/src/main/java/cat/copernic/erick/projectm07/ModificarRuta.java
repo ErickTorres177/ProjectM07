@@ -22,7 +22,7 @@ public class ModificarRuta extends AppCompatActivity {
 
     private EditText etNombreRutaM, etDescripcionRutaM, etRutaRutaM, etPaisRutaM, etCiudadRutaM;
     private Button modificarRutaRealTime;
-    private String nomRutaModificar, idRutaModificar, usuarioRuta;
+    private String nomRutaModificar, idRutaModificar, usuarioRutaModificar, descripcionRutaModificar, rutaRutaModificar, paisRutaModificar, ciudadRutaModificar;
     private TextView setNomRutaModificar, setIdiRuta, setUsuarioRuta, etIdRutaM, etUsuarioRutaM;
 
 
@@ -40,24 +40,33 @@ public class ModificarRuta extends AppCompatActivity {
 
         nomRutaModificar = getIntent().getStringExtra("nombreRutaModificar");
         idRutaModificar = getIntent().getStringExtra("idRutaModificar");
-        usuarioRuta = getIntent().getStringExtra("usuarioRutaModificar");
+        usuarioRutaModificar = getIntent().getStringExtra("usuarioRutaModificar");
+        descripcionRutaModificar = getIntent().getStringExtra("descripcionRutaModificar");
+        rutaRutaModificar = getIntent().getStringExtra("rutaRutaModificar");
+        paisRutaModificar = getIntent().getStringExtra("paisRutaModificar");
+        ciudadRutaModificar = getIntent().getStringExtra("ciudadRutaModificar");
 
         setNomRutaModificar = findViewById(R.id.tvTituloRutamodificar);
         setNomRutaModificar.setText(nomRutaModificar);
         setIdiRuta = findViewById(R.id.tvTituloModificar_idRuta);
         setIdiRuta.setText(idRutaModificar);
         setUsuarioRuta = findViewById(R.id.tvTituloModificar_usuarioRuta);
-        setUsuarioRuta.setText(usuarioRuta);
+        setUsuarioRuta.setText(usuarioRutaModificar);
 
 
         //Inicializaciones
         etIdRutaM = findViewById(R.id.tvTituloModificar_idRuta);
         etUsuarioRutaM = findViewById(R.id.tvTituloModificar_usuarioRuta);
         etNombreRutaM = findViewById(R.id.etModificarRuta_nombre);
+        etNombreRutaM.setHint(nomRutaModificar);
         etDescripcionRutaM = findViewById(R.id.etModificarRuta_descripcion);
+        etDescripcionRutaM.setHint(descripcionRutaModificar);
         etRutaRutaM = findViewById(R.id.etModificarRuta_ruta);
+        etRutaRutaM.setHint(rutaRutaModificar);
         etPaisRutaM = findViewById(R.id.etModificarRuta_pais);
+        etPaisRutaM.setHint(paisRutaModificar);
         etCiudadRutaM = findViewById(R.id.etModificarRuta_ciudad);
+        etCiudadRutaM.setHint(ciudadRutaModificar);
 
         modificarRutaRealTime = findViewById(R.id.btnModificarRuta);
 
@@ -75,120 +84,56 @@ public class ModificarRuta extends AppCompatActivity {
                 String idRuta = idRutaModificar;
 
                 String nombreComp = (etNombreRutaM.getText().toString());
-                String descripcionR = (etDescripcionRutaM.getText().toString());
                 String rutaR = (etRutaRutaM.getText().toString());
+                String descripcionR = (etDescripcionRutaM.getText().toString());
                 String paisR = (etPaisRutaM.getText().toString());
                 String ciudadR = (etCiudadRutaM.getText().toString());
 
-                if (!nombreComp.isEmpty() || !nombreComp.equals("")) {
-                    if (compTipoDatosString(nombreComp)) {
-                        modificarNombreRuta(nombreComp, idRuta);
+
+                //MODIFICAR NOMBRE
+                if (!nombreComp.isEmpty() && !nombreComp.equals(" ")) {
+                    if (!compTipoDatosString(nombreComp)) {
+                        Toast.makeText(ModificarRuta.this, "El nom és invàlid: " + etNombreRutaM.getText().toString() + ", tens d'introduir només lletres.",
+                                Toast.LENGTH_SHORT).show();
                     } else {
-                        /*Toast.makeText(ModificarRuta.this, "El nom és invàlid: " + nombreComp,
-                                Toast.LENGTH_SHORT).show();*/
-                        toastModificacionCorrecta();
+                        modificarNombreRuta(etNombreRutaM.getText().toString(), idRuta);
                     }
-                } else if (!descripcionR.isEmpty() || !descripcionR.equals("")) {
-                    if (compTipoDatosString(descripcionR)) {
-                        modificarDescripcionRuta(descripcionR, idRuta);
-                    } else {
-                        toastModificacionCorrecta();
-                       /* Toast.makeText(ModificarRuta.this, "La descripció és invàlida: " + descripcionR,
-                                Toast.LENGTH_SHORT).show();*/
-                    }
-                } else if (!rutaR.isEmpty() || !rutaR.equals("")) {
-                    if (compTipoDatosString(rutaR)) {
-                        modificarRutaRuta(rutaR, idRuta);
-                    } else {
-                        toastModificacionCorrecta();
-                      /*  Toast.makeText(ModificarRuta.this, "La ruta és invàlida: " + rutaR,
-                                Toast.LENGTH_SHORT).show();*/
-                    }
-                } else if (!paisR.isEmpty() || !paisR.equals("")) {
-                    if (compTipoDatosString(paisR)) {
-                        modificarDescripcionRuta(paisR, idRuta);
-                    } else {
-                        toastModificacionCorrecta();
-                       /* Toast.makeText(ModificarRuta.this, "El país és invàlid: " + paisR,
-                                Toast.LENGTH_SHORT).show();*/
-                    }
-                } else if (!ciudadR.isEmpty() || !ciudadR.equals("")) {
-                    if (compTipoDatosString(ciudadR)) {
-                        modificarDescripcionRuta(ciudadR, idRuta);
-                    } else {
-                        toastModificacionCorrecta();
-                       /*Toast.makeText(ModificarRuta.this, "La ciutat és invàlida: " + ciudadR,
-                                Toast.LENGTH_SHORT).show();*/
-                    }
-                } else {
-                    Toast.makeText(ModificarRuta.this, "Sense modificar: ",
-                            Toast.LENGTH_SHORT).show();
                 }
 
+                //MODIFICAR RUTA
+                if (!rutaR.isEmpty() && !rutaR.equals(" ")) {
+                    if (!compTipoDatosString(rutaR)) {
+                        Toast.makeText(ModificarRuta.this, "La ruta és invàlida: " + etRutaRutaM.getText().toString() + ", tens d'introduir només lletres.",
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        modificarRutaRuta(etRutaRutaM.getText().toString(), idRuta);
+                    }
+                }
 
+                //MODIFICAR DESCRIPCION
+                if (!descripcionR.isEmpty() && !descripcionR.equals(" ")) {
+                    modificarDescripcionRuta(etDescripcionRutaM.getText().toString(), idRuta);
+                }
 
+                //MODIFICAR PAIS
+                if (!paisR.isEmpty() && !paisR.equals(" ")) {
+                    if (!compTipoDatosString(paisR)) {
+                        Toast.makeText(ModificarRuta.this, "El país és invàlid: " + etPaisRutaM.getText().toString() + ", tens d'introduir només lletres.",
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        modificarPaisRuta(etPaisRutaM.getText().toString(), idRuta);
+                    }
+                }
 
-
-
-
-
-                /*
-
-
-            } else if(descripcionR.isEmpty()||descripcionR.equals("")||descripcionR.equals(null))
-
-            {
-                Toast.makeText(ModificarRuta.this, "La descripció és invàlida.",
-                        Toast.LENGTH_SHORT).show();
-            } else if(rutaR.isEmpty()||rutaR.equals("")||rutaR.equals(null))
-
-            {
-                Toast.makeText(ModificarRuta.this, "La ruta és invàlida.",
-                        Toast.LENGTH_SHORT).show();
-            } else if(paisR.isEmpty()||paisR.equals("")||paisR.equals(null))
-
-            {
-                Toast.makeText(ModificarRuta.this, "El país és invàlid.",
-                        Toast.LENGTH_SHORT).show();
-            } else if(!
-
-            compTipoDatosString(paisR))
-
-            {
-                Toast.makeText(ModificarRuta.this, "El país es invàlid: " + etPaisRutaM.getText().toString(),
-                        Toast.LENGTH_SHORT).show();
-            } else if(ciudadR.isEmpty()||ciudadR.equals("")||ciudadR.equals(null))
-
-            {
-                Toast.makeText(ModificarRuta.this, "La ciutat es invàlida.",
-                        Toast.LENGTH_SHORT).show();
-            } else if(!
-
-            compTipoDatosString(ciudadR))
-
-            {
-                Toast.makeText(ModificarRuta.this, "La ciutat es invàlida: " + etCiudadRutaM.getText().toString(),
-                        Toast.LENGTH_SHORT).show();
-            } else
-
-            {
-
-                guardarRutaNuevaRT();
-            }
-
-                Rutas ruta = new Rutas();
-                //ruta.setIdRuta(idRutaModificar);
-                ruta.setNombreRuta(etNombreRutaM.getText().toString());
-                ruta.setDescripcionRuta(etDescripcionRutaM.getText().toString());
-                ruta.setRuta(etRutaRutaM.getText().toString());
-                ruta.setPaisRuta(etPaisRutaM.getText().toString());
-                ruta.setCiudadRuta(etCiudadRutaM.getText().toString());
-                ruta.setUsuarioRuta(etNombreRutaM.getText().toString());
-
-                //new FireBaseDHConfiguracionRuta().updateRutaConfiguracion(key, );
-*/
-
-
+                //MODIFICAR CIUDAD
+                if (!ciudadR.isEmpty() && !ciudadR.equals(" ")) {
+                    if (!compTipoDatosString(ciudadR)) {
+                        Toast.makeText(ModificarRuta.this, "La ciutat és invàlida: " + etCiudadRutaM.getText().toString() + ", tens d'introduir només lletres.",
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        modificarCiudadRuta(etCiudadRutaM.getText().toString(), idRuta);
+                    }
+                }
             }
         });
 
@@ -198,7 +143,7 @@ public class ModificarRuta extends AppCompatActivity {
     private void modificarNombreRuta(String nombre, String idRuta) {
         refNombreR = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("rutas").child(idRuta).child("nombreRuta");
         refNombreR.setValue(nombre);
-        limpiarCampo();
+        setNomRutaModificar.setText(nombre);
         Toast.makeText(ModificarRuta.this, "Nom modificat correctament: " + nombre,
                 Toast.LENGTH_SHORT).show();
     }
@@ -206,7 +151,6 @@ public class ModificarRuta extends AppCompatActivity {
     private void modificarDescripcionRuta(String descripcion, String idRuta) {
         refDescripcionR = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("rutas").child(idRuta).child("descripcionRuta");
         refDescripcionR.setValue(descripcion);
-        limpiarCampo();
         Toast.makeText(ModificarRuta.this, "Descripció modificada correctament: " + descripcion,
                 Toast.LENGTH_SHORT).show();
     }
@@ -214,7 +158,6 @@ public class ModificarRuta extends AppCompatActivity {
     private void modificarRutaRuta(String ruta, String idRuta) {
         refRutaR = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("rutas").child(idRuta).child("ruta");
         refRutaR.setValue(ruta);
-        limpiarCampo();
         Toast.makeText(ModificarRuta.this, "Ruta modificada correctament: " + ruta,
                 Toast.LENGTH_SHORT).show();
     }
@@ -222,7 +165,6 @@ public class ModificarRuta extends AppCompatActivity {
     private void modificarPaisRuta(String pais, String idRuta) {
         refPaisR = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("rutas").child(idRuta).child("paisRuta");
         refPaisR.setValue(pais);
-        limpiarCampo();
         Toast.makeText(ModificarRuta.this, "País modificat correctament: " + pais,
                 Toast.LENGTH_SHORT).show();
     }
@@ -230,35 +172,10 @@ public class ModificarRuta extends AppCompatActivity {
     private void modificarCiudadRuta(String ciudad, String idRuta) {
         refCiudadR = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("rutas").child(idRuta).child("ciudadRuta");
         refCiudadR.setValue(ciudad);
-        limpiarCampo();
         Toast.makeText(ModificarRuta.this, "Ciutat modificada correctament: " + ciudad,
                 Toast.LENGTH_SHORT).show();
     }
 
-
-    private void guardarRutaNuevaRT() {
-
-/*
-        //DatabaseReference currentUserDB = myRef.child(mAuth.getCurrentUser().getUid()).child("rutas");
-        idRutaGeneral++;
-        myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid())
-                .child("rutas").child(String.valueOf(idRutaGeneral));
-        myRef.child("idRuta").setValue(String.valueOf(idRutaGeneral));
-        myRef.child("usuarioRuta").setValue(currentUser.getEmail());
-        myRef.child("nombreRuta").setValue(etNombreR.getText().toString());
-        myRef.child("descripcionRuta").setValue(etDescripcionR.getText().toString());
-        myRef.child("ruta").setValue(etRutaR.getText().toString());
-        myRef.child("ciudadRuta").setValue(etCiudadR.getText().toString());
-        myRef.child("paisRuta").setValue(etPaisR.getText().toString());
-
-        limpiarCampo();
-        Toast.makeText(NuevaRuta.this, "Ruta agregada correctament: " + etNombreR.getText().toString(),
-                Toast.LENGTH_SHORT).show();
-
-
-    }*/
-
-    }
 
     public boolean compTipoDatosString(String nombre) {
         boolean comp = true;
@@ -271,26 +188,15 @@ public class ModificarRuta extends AppCompatActivity {
     }
 
     private void limpiarCampo() {
-       /*etNombreR.getText().clear();
-        etDescripcionR.getText().clear();
-        etRutaR.getText().clear();
-        etPaisR.getText().clear();
-        etCiudadR.getText().clear();*/
-    }
-
-    public void btnVolverConfigRutas(View view) {
-        limpiarCampo();
-        finish();
+        etNombreRutaM.getText().clear();
+        etDescripcionRutaM.getText().clear();
+        etRutaRutaM.getText().clear();
+        etPaisRutaM.getText().clear();
+        etCiudadRutaM.getText().clear();
     }
 
     public void volverRutasConfiguracion(View view) {
+        limpiarCampo();
         finish();
     }
-
-    public void toastModificacionCorrecta() {
-        Toast.makeText(ModificarRuta.this, "Modificació correcta.: ",
-                Toast.LENGTH_SHORT).show();
-
-    }
-
 }
