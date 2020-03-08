@@ -57,8 +57,6 @@ public class RecyclerEliminarRuta_Config {
                 @Override
                 public void onClick(View v) {
 
-
-
                     final String[] respuesta = {"Si", "No"};
                     AlertDialog.Builder mBuilder = new AlertDialog.Builder(mContext);
                     mBuilder.setTitle("Vols eliminar aquesta ruta?");
@@ -66,7 +64,6 @@ public class RecyclerEliminarRuta_Config {
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
                             if (i == 0) {
-
 
                                 ///----
                                 new FireBaseDHEliminarRuta().deleteRutaEliminar(key, new FireBaseDHEliminarRuta.DataStatus() {
@@ -95,7 +92,8 @@ public class RecyclerEliminarRuta_Config {
                                 });
                                 ///----
 
-
+                                Toast.makeText(mContext, "Ruta elimidad correctament." ,
+                                        Toast.LENGTH_SHORT).show();
                             } else if (i == 1) {
                                 dialog.dismiss();
                             }
