@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText user, pass, nombreUsuariu, edat;
     private ImageButton btn_maps, btn_web, btn_insta, btn_gmail;
-    private ImageView img_login, img_registro;
+    private ImageView img_login, img_registro, img_cambiarIdioma;
     private String useruarioLogin, passLogin;
 
     //FIRE BASE
@@ -84,12 +84,13 @@ public class LoginActivity extends AppCompatActivity {
         btn_maps = findViewById(R.id.imgBtn_Gmaps);
         btn_web = findViewById(R.id.imgBtn_web);
         btn_insta = findViewById(R.id.imgBtn_instagram);
-        btn_gmail = findViewById(R.id.imgBtn_instagram);
+        btn_gmail = findViewById(R.id.imgBtn_gmail);
         btnLogin = findViewById(R.id.btnIniciarSesion);
         btnCambiarIdioma = findViewById(R.id.btnCambiarIdioma);
 
         // Iconos de accesibilidad
         img_login = findViewById(R.id.imgLogin);
+        img_cambiarIdioma = findViewById(R.id.imgIdioma);
 
         //user.addTextChangedListener(loginTW);
         //pass.addTextChangedListener(loginTW);
@@ -130,7 +131,13 @@ public class LoginActivity extends AppCompatActivity {
         btnCambiarIdioma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mostrarCambiarIdioma();
+            }
+        });
 
+        img_cambiarIdioma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 mostrarCambiarIdioma();
             }
         });

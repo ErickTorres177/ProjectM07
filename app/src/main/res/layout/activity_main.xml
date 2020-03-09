@@ -214,8 +214,8 @@
 
                     <ImageView
                         android:id="@+id/imgLogin"
-                        android:layout_width="50dp"
-                        android:layout_height="45dp"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:layout_marginEnd="10dp"
                         android:contentDescription="@string/iniSesion"
                         app:srcCompat="@drawable/log_in" />
@@ -223,7 +223,7 @@
                     <Button
                         android:id="@+id/btnIniciarSesion"
                         android:layout_width="150dp"
-                        android:layout_height="45dp"
+                        android:layout_height="48dp"
                         android:background="@drawable/botones"
                         android:contentDescription="@string/iniSesion"
                         android:gravity="center"
@@ -247,8 +247,8 @@
 
                     <ImageView
                         android:id="@+id/imgRegistro"
-                        android:layout_width="50dp"
-                        android:layout_height="45dp"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="10dp"
                         android:contentDescription="@string/btnRegistrar"
@@ -258,7 +258,7 @@
                     <Button
                         android:id="@+id/btnRegistrar"
                         android:layout_width="150dp"
-                        android:layout_height="45dp"
+                        android:layout_height="48dp"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/botones_azules"
                         android:contentDescription="@string/btnRegistrar"
@@ -285,18 +285,18 @@
 
                     <ImageView
                         android:id="@+id/imgIdioma"
-                        android:layout_width="50dp"
-                        android:layout_height="45dp"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="10dp"
                         android:contentDescription="@string/btnRegistrar"
                         android:onClick="iniciarRegistro"
-                        app:srcCompat="@drawable/idioma" />
+                        app:srcCompat="@drawable/new_idioma" />
 
                     <Button
                         android:id="@+id/btnCambiarIdioma"
                         android:layout_width="150dp"
-                        android:layout_height="45dp"
+                        android:layout_height="48dp"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/boton_idioma"
                         android:contentDescription="@string/btnRegistrar"
