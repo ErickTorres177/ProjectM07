@@ -12,22 +12,16 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="cat.copernic.erick.projectm07.ui.NuevaRuta.NuevaRutaFragment"
-        android:label="@string/menu_nuevaRuta"
-        tools:layout="@layout/fragment_rutas" />
-
-    <fragment
         android:id="@+id/nav_slideshow"
-        android:name="cat.copernic.erick.projectm07.ui.slideshow.SlideshowFragment"
+        android:name="cat.copernic.erick.projectm07.ui.ConfiguracionRutas.ConfiguracionRutasFragment"
         android:label="@string/menu_configuracionRuta"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_configuracion_rutas" />
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="cat.copernic.erick.projectm07.ui.tools.ToolsFragment"
-        android:label="@string/menu_eliminarRuta"
-        tools:layout="@layout/fragment_tools" />
+        android:id="@+id/nav_mi_ubicacion"
+        android:name="cat.copernic.erick.projectm07.ui.miUbicacion.miUbicacionFragment"
+        android:label="@string/menu_mi_ubicacion"
+        tools:layout="@layout/fragment_mi_ubicacion" />
 
     <fragment
         android:id="@+id/nav_share"
@@ -37,8 +31,8 @@
 
     <fragment
         android:id="@+id/nav_send"
-        android:name="cat.copernic.erick.projectm07.ui.send.SendFragment"
+        android:name="cat.copernic.erick.projectm07.ui.ConfiguracionGeneral.ConfiguracionGeneralFragment"
         android:label="@string/menu_configuracionApp"
-        tools:layout="@layout/fragment_send" />
+        tools:layout="@layout/fragment_configuracion_general" />
 
 </navigation>

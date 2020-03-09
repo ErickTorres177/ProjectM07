@@ -1,14 +1,14 @@
-package cat.copernic.erick.projectm07.ui.slideshow;
+package cat.copernic.erick.projectm07.ui.ConfiguracionRutas;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class ConfiguracionRutasViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public ConfiguracionRutasViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is slideshow fragment");
     }

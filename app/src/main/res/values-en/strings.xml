@@ -140,4 +140,18 @@
     <string name="condicionSi">Si</string>
     <string name="condicionNo">No</string>
 
+    //CONFIGURACION GENERAL
+    <string name="tituloCambiarIdioma">Change the language</string>
+    <string name="tvTituloCatalan">Catalàn</string>
+    <string name="btnCastellano">Castellano</string>
+    <string name="btnEEUU">Ingles</string>
+
+    //UBICACION -> TIEMPO REAL
+    <string name="menu_mi_ubicacion">My location</string>
+    <string name="tvTituloMiUbicacionActual">My location</string>
+    <string name="tvTituloMiDireccion">My current address:</string>
+    <string name="tvTituloMisCoordenadas">My current coordinates:</string>
+    <string name="tvTituloLongitud">Current length:</string>
+    <string name="tvTituloLatitud">Current latitude:</string>
+
 </resources>

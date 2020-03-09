@@ -1,6 +1,9 @@
 package cat.copernic.erick.projectm07;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import android.util.Log;
@@ -8,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -39,6 +43,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -73,6 +78,9 @@ public class NavegationDrawer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navegation_drawer);
 
+        //Cargar idioma -> SharedPrefernece
+        cargaLocale();
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
           /*
@@ -89,8 +97,8 @@ public class NavegationDrawer extends AppCompatActivity {
         final NavigationView navigationView = findViewById(R.id.nav_view);
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
+                R.id.nav_home, R.id.nav_slideshow,
+                R.id.nav_mi_ubicacion, R.id.nav_share, R.id.nav_send)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -215,8 +223,50 @@ public class NavegationDrawer extends AppCompatActivity {
         Intent intent = new Intent(this, ConfiguracionRuta.class);
         startActivity(intent);
     }
+
     public void irEliminarRuta(View view) {
         Intent intent = new Intent(this, EliminarRuta.class);
         startActivity(intent);
     }
+
+    public void btnCambiarEEUU(View view) {
+        setLocale("en");
+        Toast.makeText(NavegationDrawer.this, "Llenguatge canviat amb èxit.",
+                Toast.LENGTH_SHORT).show();
+        recreate();
+    }
+
+    public void btnCambiarCastellano(View view) {
+        setLocale("es");
+        Toast.makeText(NavegationDrawer.this, "Llenguatge canviat amb èxit.",
+                Toast.LENGTH_SHORT).show();
+        recreate();
+    }
+
+    public void btnCambiarCatalan(View view) {
+        setLocale("ca");
+        Toast.makeText(NavegationDrawer.this, "Llenguatge canviat amb èxit.",
+                Toast.LENGTH_SHORT).show();
+        recreate();
+    }
+
+
+    private void setLocale(String lenguaje) {
+        Locale locale = new Locale(lenguaje);
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
+
+        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
+        editor.putString("miLenguaje", lenguaje);
+        editor.apply();
+    }
+
+    private void cargaLocale() {
+        SharedPreferences preferences = getSharedPreferences("Settings", LoginActivity.MODE_PRIVATE);
+        String lenguaje = preferences.getString("miLenguaje", "");
+        setLocale(lenguaje);
+    }
+
 }

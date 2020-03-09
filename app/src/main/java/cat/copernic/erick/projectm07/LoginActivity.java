@@ -49,6 +49,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Cargar idioma -> SharedPrefernece
+        cargaLocale();
+
         //FIRE BASE
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();

@@ -13,6 +13,10 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_build_black_24dp"
             android:title="@string/menu_configuracionRuta" />
+        <item
+            android:id="@+id/nav_mi_ubicacion"
+            android:icon="@drawable/ic_person_pin_circle_black_24dp"
+            android:title="@string/menu_mi_ubicacion" />
     </group>
 
     <item android:title="@string/perfil">

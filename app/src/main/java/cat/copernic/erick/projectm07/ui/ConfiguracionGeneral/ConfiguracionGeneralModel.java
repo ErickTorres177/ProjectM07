@@ -1,14 +1,14 @@
-package cat.copernic.erick.projectm07.ui.send;
+package cat.copernic.erick.projectm07.ui.ConfiguracionGeneral;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SendViewModel extends ViewModel {
+public class ConfiguracionGeneralModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SendViewModel() {
+    public ConfiguracionGeneralModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is send fragment");
     }

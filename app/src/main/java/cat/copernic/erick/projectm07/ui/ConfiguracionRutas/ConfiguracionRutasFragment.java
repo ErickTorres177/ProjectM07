@@ -1,28 +1,25 @@
-package cat.copernic.erick.projectm07.ui.slideshow;
+package cat.copernic.erick.projectm07.ui.ConfiguracionRutas;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import cat.copernic.erick.projectm07.R;
 
-public class SlideshowFragment extends Fragment {
+public class ConfiguracionRutasFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private ConfiguracionRutasViewModel slideshowViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
+                ViewModelProviders.of(this).get(ConfiguracionRutasViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_configuracion_rutas, container, false);
 
 
 
