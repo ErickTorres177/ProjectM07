@@ -95,12 +95,12 @@
                 android:id="@+id/tvTituloMiDireccion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="32dp"
                 android:contentDescription="@string/txtTituloNombre"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="@string/tvTituloMiDireccion"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -114,41 +114,40 @@
                 android:layout_marginEnd="47dp"
                 android:contentDescription="@string/txtTituloPasswd"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="@string/passwd"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
                 app:layout_constraintHorizontal_bias="0.629"
                 app:layout_constraintStart_toStartOf="@id/P50VCampos"
                 app:layout_constraintTop_toBottomOf="@+id/tvTituloMiDireccion" />
 
             <TextView
+                android:id="@+id/tvTituloLongitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="28dp"
+                android:contentDescription="@string/txtTituloPasswd"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/tvTituloLongitud"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloMisCoordenadas" />
+
+            <TextView
                 android:id="@+id/tvTituloLatitud"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="44dp"
                 android:layout_marginTop="20dp"
                 android:contentDescription="@string/txtTituloPasswd"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="@string/tvTituloLatitud"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTituloLongitud" />
-
-            <TextView
-                android:id="@+id/tvTituloLongitud"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="24dp"
-                android:contentDescription="@string/txtTituloPasswd"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/tvTituloLongitud"
-                android:textColor="@color/white"
-                android:textSize="25sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTituloMisCoordenadas" />
 
             <TextView
                 android:id="@+id/tvLongitudActual"
@@ -156,9 +155,8 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/txtTituloPasswd"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="@string/passwd"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.14"
                 app:layout_constraintStart_toEndOf="@+id/tvTituloLongitud"
@@ -170,11 +168,10 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/txtTituloPasswd"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="@string/passwd"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.345"
+                app:layout_constraintHorizontal_bias="0.198"
                 app:layout_constraintStart_toEndOf="@+id/tvTituloLatitud"
                 app:layout_constraintTop_toTopOf="@+id/tvTituloLatitud" />
 
@@ -183,15 +180,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="132dp"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="56dp"
                 android:layout_marginEnd="47dp"
                 android:contentDescription="@string/txtTituloPasswd"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="@string/tvTituloMisCoordenadas"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
-                app:layout_constraintHorizontal_bias="0.633"
+                app:layout_constraintHorizontal_bias="0.591"
                 app:layout_constraintStart_toStartOf="@id/P50VCampos"
                 app:layout_constraintTop_toBottomOf="@+id/tvDireccionActual" />
 
@@ -226,11 +223,12 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:layout_width="100dp"
+                android:id="@+id/btnMostrarGPS"
+                android:layout_width="138dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/botones"
                 android:contentDescription="@string/btnVolverContent"
-                android:text="@string/btnVolver"
+                android:text="@string/btnMostrarGPS"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -248,11 +246,12 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:layout_width="110dp"
+                android:id="@+id/btnMostrarMapaUbicacionActual"
+                android:layout_width="138dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/botones_azules"
                 android:contentDescription="@string/btnRegistrarseContent"
-                android:text="@string/btnRegistrar"
+                android:text="@string/btnMostrarMapaUbicacionActual"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

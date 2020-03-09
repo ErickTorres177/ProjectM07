@@ -16,7 +16,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -32,6 +34,7 @@ import java.util.Locale;
 
 import cat.copernic.erick.projectm07.Localizacion;
 import cat.copernic.erick.projectm07.NavegationDrawer;
+import cat.copernic.erick.projectm07.NuevaRuta;
 import cat.copernic.erick.projectm07.R;
 
 public class miUbicacionFragment extends Fragment {
@@ -39,6 +42,7 @@ public class miUbicacionFragment extends Fragment {
     private miUbicacionViewModel toolsViewModel;
 
     private TextView tvDireccion, tvLongitud, tvLatitud;
+    private Button bntGPS;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -50,155 +54,100 @@ public class miUbicacionFragment extends Fragment {
         tvDireccion = root.findViewById(R.id.tvDireccionActual);
         tvLongitud = root.findViewById(R.id.tvLongitudActual);
         tvLatitud = root.findViewById(R.id.tvLatitudActual);
-
-
-        int permisosCheck = ContextCompat.checkSelfPermission(getContext(),Manifest.permission.ACCESS_FINE_LOCATION);
-
+        bntGPS = root.findViewById(R.id.btnMostrarGPS);
 
 
 
 
+        bntGPS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+                LocationListener locationListener = new Localizacion() {
+
+                    @Override
+                    public void onLocationChanged(Location loc) {
+                        loc.getLatitude();
+                        loc.getLongitude();
+
+                        tvLatitud.setText("" + loc.getLatitude());
+                        tvLongitud.setText("" + loc.getLongitude());
+
+                        //OBTENER LA DIRECCION
+                        if (loc.getLatitude() != 0.0 && loc.getLongitude() != 0.0) {
+                            try {
+                                Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
+                                List<Address> list = geocoder.getFromLocation(
+                                        loc.getLatitude(), loc.getLongitude(), 1);
+                                if (!list.isEmpty()) {
+                                    Address DirCalle = list.get(0);
+                                    tvDireccion.setText("" + DirCalle.getAddressLine(0));
+                                }
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        Toast.makeText(getContext(), "Coordenades obtingudes.",
+                                Toast.LENGTH_SHORT).show();
+                    }
+
+                    public void onStatusChanged(String provider, int status, Bundle extras) {
+                        Toast.makeText(getContext(), "Calculant coordenades.",
+                                Toast.LENGTH_SHORT).show();
+                    }
+
+                    public void onProviderEnabled(String provider) {
+                        Toast.makeText(getContext(), "Calculant coordenades.",
+                                Toast.LENGTH_SHORT).show();
+                    }
+
+                    public void onProviderDisabled(String provider) {
+                        Toast.makeText(getContext(), "El GPS està desactivat.",
+                                Toast.LENGTH_SHORT).show();
+                    }
+
+                };
+
+                int permisosCheck = ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION);
+
+                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0,0,locationListener);
+
+            }
+        });
+
+        int permisosCheck = ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION);
 
 
+        //Here, thisActivity is the current activity
+        if (ContextCompat.checkSelfPermission(getContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
 
+            // Permission is not granted
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
+                    Manifest.permission.ACCESS_FINE_LOCATION)) {
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+            } else {
+                // No explanation needed; request the permission
+                ActivityCompat.requestPermissions(getActivity(),
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
 
-
-
-
-
-
-
-       /* if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}, 1000);
+                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
+            }
         } else {
-            locationStart();
-        }*/
-
-
-
-
-
-
-
+            // Permission has already been granted
+        }
 
 
         return root;
     }
 }
-
-/*
-    private void locationStart() {
-        LocationManager mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        Localizacion Local = new Localizacion();
-        Local.setMainActivity(this);
-        final boolean gpsEnabled = mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-        if (!gpsEnabled) {
-            Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-            startActivity(settingsIntent);
-        }
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}, 1000);
-            return;
-        }
-        mlocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, (LocationListener) Local);
-        mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) Local);
-       // mensaje1.setText("Localización agregada");
-        //mensaje2.setText("");
-    }
-
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        if (requestCode == 1000) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                locationStart();
-                return;
-            }
-        }
-    }
-
-    public void setLocation(Location loc) {
-        //Obtener la direccion de la calle a partir de la latitud y la longitud
-        if (loc.getLatitude() != 0.0 && loc.getLongitude() != 0.0) {
-            try {
-                Geocoder geocoder = new Geocoder(this, Locale.getDefault());
-                List<Address> list = geocoder.getFromLocation(
-                        loc.getLatitude(), loc.getLongitude(), 1);
-                if (!list.isEmpty()) {
-                    Address DirCalle = list.get(0);
-                    //mensaje2.setText("Mi direccion es: \n"
-                            + DirCalle.getAddressLine(0));
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-
-    }
-
-
-
-
-
-
-
-
-    public class Localizacion implements LocationListener {
-
-        NavegationDrawer mainActivity;
-
-
-        public NavegationDrawer getMainActivity() {
-            return mainActivity;
-        }
-
-
-        @Override
-        public void onLocationChanged(Location loc) {
-// Este metodo se ejecuta cada vez que el GPS recibe nuevas coordenadas
-            // debido a la deteccion de un cambio de ubicacion
-            loc.getLatitude();
-            loc.getLongitude();
-            String Text = "Mi ubicacion actual es: " + "\n Lat = "
-                    + loc.getLatitude() + "\n Long = " + loc.getLongitude();
-            //mensaje1.setText(Text);
-            //this.mainActivity.setLocation(loc);
-        }
-
-        @Override
-        public void onStatusChanged(String provider, int status, Bundle extras) {
-            switch (status) {
-                case LocationProvider.AVAILABLE:
-                    Log.d("debug", "LocationProvider.AVAILABLE");
-                    break;
-                case LocationProvider.OUT_OF_SERVICE:
-                    Log.d("debug", "LocationProvider.OUT_OF_SERVICE");
-                    break;
-                case LocationProvider.TEMPORARILY_UNAVAILABLE:
-                    Log.d("debug", "LocationProvider.TEMPORARILY_UNAVAILABLE");
-                    break;
-            }
-        }
-
-        @Override
-        public void onProviderEnabled(String provider) {
-            // Este metodo se ejecuta cuando el GPS es activado
-            //mensaje1.setText("GPS Activado");
-        }
-
-        @Override
-        public void onProviderDisabled(String provider) {
-            // Este metodo se ejecuta cuando el GPS es desactivado
-            //mensaje1.setText("GPS Desactivado");
-        }
-
-
-    }
-    }
-*/
-
-
-
 
 
 

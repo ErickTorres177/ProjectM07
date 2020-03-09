@@ -183,8 +183,10 @@
     <string name="tvTituloMiUbicacionActual">La meva ubicació</string>
     <string name="tvTituloMiDireccion">La meva direcció actual:</string>
     <string name="tvTituloMisCoordenadas">Les meves coordenades actuals:</string>
-    <string name="tvTituloLongitud">Longitud actual:</string>
-    <string name="tvTituloLatitud">Latitud actual:</string>
+    <string name="tvTituloLongitud">Longitud:</string>
+    <string name="tvTituloLatitud">Latitud:</string>
+    <string name="btnMostrarGPS">GPS</string>
+    <string name="btnMostrarMapaUbicacionActual">Mostar Mapa</string>
 
 </resources>
 

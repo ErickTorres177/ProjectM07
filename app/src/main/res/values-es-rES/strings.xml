@@ -147,7 +147,9 @@
     <string name="tvTituloMiUbicacionActual">Mi ubicación</string>
     <string name="tvTituloMiDireccion">Mi dirección actual:</string>
     <string name="tvTituloMisCoordenadas">Mis coordenades actuales:</string>
-    <string name="tvTituloLongitud">Longitud actual:</string>
-    <string name="tvTituloLatitud">Latitud actual:</string>
+    <string name="tvTituloLongitud">Longitud:</string>
+    <string name="tvTituloLatitud">Latitud:</string>
+    <string name="btnMostrarGPS">GPS</string>
+    <string name="btnMostrarMapaUbicacionActual">Mostar Mapa</string>
 
 </resources>
