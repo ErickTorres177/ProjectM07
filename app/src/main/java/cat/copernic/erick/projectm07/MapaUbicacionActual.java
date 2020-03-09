@@ -86,18 +86,32 @@ public class MapaUbicacionActual extends AppCompatActivity implements OnMapReady
                 return super.onOptionsItemSelected(item);
         }
     }
-    
+
     //Metodo onMpaReady para lanzar la el mapa cuando el 'map' este listo.
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
         // MARCADOR CON LA LONGITUD Y LA LATITUD DE NICOLAU COPERNIC (41°34'12.3"N 1°59'47.5"E)
-        LatLng nicolauCopernic = new LatLng(41.570118, 1.996618);
+        //LatLng nicolauCopernic = new LatLng(41.570118, 1.996618);
         //Con este metodo se crea el icono rojo ese. MARCADOR
         //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         //Movemos la camara a nuestras coordenadas.
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nicolauCopernic,INITIAL_ZOOM));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nicolauCopernic,INITIAL_ZOOM));
+        googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+
+
+
+
+        //Cargar la direccion
+
+
+
+
+
+
+        LatLng nicolauCopernic = new LatLng(41.570118, 1.996618);
+
 
 
         //Agregar Superposició:
@@ -164,7 +178,7 @@ public class MapaUbicacionActual extends AppCompatActivity implements OnMapReady
                 poiMarker.showInfoWindow();
 
                 //Etiquetar el marcador de PDI PARA habilitar Street View
-                poiMarker.setTag("poi");
+                poiMarker.setTag("Position");
             }
         });
 
@@ -180,10 +194,10 @@ public class MapaUbicacionActual extends AppCompatActivity implements OnMapReady
                             this, R.raw.map_style));
 
             if (!success) {
-                Log.e(TAG, "Error del Style Map.");
+                Log.e(TAG, "No s'ha pogut obrir el mapa");
             }
         } catch (Resources.NotFoundException e) {
-            Log.e(TAG, "No se Escuentra: Style Map -> ", e);
+            Log.e(TAG, "No s'ha pogut obrir el mapa", e);
         }
     }
 

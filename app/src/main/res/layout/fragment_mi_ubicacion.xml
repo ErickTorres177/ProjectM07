@@ -199,6 +199,17 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.5" />
 
+            <Button
+                android:id="@+id/btnPrueba"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="12dp"
+                android:onClick="irPrueba"
+                android:text="@string/Cerrar_Sesion"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloLatitud" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -252,7 +263,7 @@
                 android:background="@drawable/botones_azules"
                 android:contentDescription="@string/btnRegistrarseContent"
                 android:text="@string/btnMostrarMapaUbicacionActual"
-                android:onClick="abrirMapaUbicacionActual"
+                android:onClick="abrirMapaUbicacionA"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

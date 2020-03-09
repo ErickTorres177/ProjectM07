@@ -57,11 +57,12 @@ public class miUbicacionFragment extends Fragment {
         tvDireccion.setText(SenseDenifir);
         tvLongitud = root.findViewById(R.id.tvLongitudActual);
         tvLongitud.setText(SenseDenifir);
-        tvLatitud = root.findViewById(R.id.tvLatitudActual);
-        tvLatitud.setText(SenseDenifir);
+
 
         bntGPS = root.findViewById(R.id.btnMostrarGPS);
 
+
+        //Preubas
 
 
 
@@ -86,6 +87,8 @@ public class miUbicacionFragment extends Fragment {
                                 if (!list.isEmpty()) {
                                     Address DirCalle = list.get(0);
                                     tvDireccion.setText("" + DirCalle.getAddressLine(0));
+
+
                                 }
                             } catch (IOException e) {
                                 e.printStackTrace();

@@ -269,7 +269,13 @@ public class NavegationDrawer extends AppCompatActivity {
         setLocale(lenguaje);
     }
 
-    public void abrirMapaUbicacionActual(View view) {
+
+    public void abrirMapaUbicacionA(View view) {
+        Intent intent = new Intent(this, MapaUbicacionActual.class);
+        startActivity(intent);
+    }
+
+    public void irPrueba(View view) {
         Intent intent = new Intent(this, prueba.class);
         startActivity(intent);
     }
