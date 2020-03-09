@@ -57,6 +57,8 @@ public class miUbicacionFragment extends Fragment {
         tvDireccion.setText(SenseDenifir);
         tvLongitud = root.findViewById(R.id.tvLongitudActual);
         tvLongitud.setText(SenseDenifir);
+        tvLatitud = root.findViewById(R.id.tvLongitudActual);
+        tvLatitud.setText(SenseDenifir);
 
 
         bntGPS = root.findViewById(R.id.btnMostrarGPS);
@@ -87,8 +89,6 @@ public class miUbicacionFragment extends Fragment {
                                 if (!list.isEmpty()) {
                                     Address DirCalle = list.get(0);
                                     tvDireccion.setText("" + DirCalle.getAddressLine(0));
-
-
                                 }
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -129,27 +129,14 @@ public class miUbicacionFragment extends Fragment {
         if (ContextCompat.checkSelfPermission(getContext(),
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
-
-            // Permission is not granted
-            // Should we show an explanation?
             if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
                     Manifest.permission.ACCESS_FINE_LOCATION)) {
-                // Show an explanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
             } else {
-                // No explanation needed; request the permission
                 ActivityCompat.requestPermissions(getActivity(),
                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-
-                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-                // app-defined int constant. The callback method gets the
-                // result of the request.
             }
         } else {
-            // Permission has already been granted
         }
-
 
         return root;
     }

@@ -158,7 +158,7 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.14"
+                app:layout_constraintHorizontal_bias="0.148"
                 app:layout_constraintStart_toEndOf="@+id/tvTituloLongitud"
                 app:layout_constraintTop_toTopOf="@+id/tvTituloLongitud" />
 
@@ -198,17 +198,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.5" />
-
-            <Button
-                android:id="@+id/btnPrueba"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="220dp"
-                android:layout_marginTop="12dp"
-                android:onClick="irPrueba"
-                android:text="@string/Cerrar_Sesion"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTituloLatitud" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
