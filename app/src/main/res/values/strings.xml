@@ -167,10 +167,10 @@
 
 
 
-
-
     // ACTIVITY DEL MAPA DE NAVEGACIÓN
     <string name="localizacionUsuario">La teva posició</string>
+    <string name="condicionSi">Si</string>
+    <string name="condicionNo">No</string>
 
 </resources>
 

@@ -132,4 +132,8 @@
     <string name="localizacionUsuario">Tu posicion</string>
     <string name="title_activity_maps_navegacion">Mapa</string>
 
+
+    <string name="condicionSi">Yes</string>
+    <string name="condicionNo">No</string>
+
 </resources>

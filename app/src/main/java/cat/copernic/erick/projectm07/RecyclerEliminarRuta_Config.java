@@ -3,6 +3,8 @@ package cat.copernic.erick.projectm07;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,14 +13,18 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+import java.util.Locale;
 
-public class RecyclerEliminarRuta_Config {
+public class RecyclerEliminarRuta_Config{
     private Context mContext;
     private RutasAdapter mRutasAdapter;
+    private static final String TAG = "MainActivity";
+
 
     public void setConfig(RecyclerView recyclerView, Context context, List<Rutas> rutas, List<String> keys) {
         mContext = context;
@@ -40,6 +46,7 @@ public class RecyclerEliminarRuta_Config {
 
         private String key;
 
+
         public RutasItemView(ViewGroup parent) {
             super(LayoutInflater.from(mContext).
                     inflate(R.layout.eliminar_rutas_list_item, parent, false));
@@ -53,13 +60,21 @@ public class RecyclerEliminarRuta_Config {
             mCiudad_ruta_eliminar = itemView.findViewById(R.id.tvEliminarRuta_ciudad);
             idRutaCompleta_eliminar = itemView.findViewById(R.id.tvEliminarRuta_idRuta);
 
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    final String[] respuesta = {"Si", "No"};
+
+
+
+
+
+
+                    final String[] respuesta = {"Yes", "No"};
                     AlertDialog.Builder mBuilder = new AlertDialog.Builder(mContext);
                     mBuilder.setTitle("Vols eliminar aquesta ruta?");
+                    mBuilder.setIcon(R.drawable.cerrar_ses);
                     mBuilder.setSingleChoiceItems(respuesta, -1, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
@@ -102,10 +117,6 @@ public class RecyclerEliminarRuta_Config {
                     });
                     AlertDialog alertDialog = mBuilder.create();
                     alertDialog.show();
-
-
-
-
 
                 }
             });
