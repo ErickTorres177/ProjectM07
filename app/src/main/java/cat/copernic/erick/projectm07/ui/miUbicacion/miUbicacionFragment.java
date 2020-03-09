@@ -44,6 +44,8 @@ public class miUbicacionFragment extends Fragment {
     private TextView tvDireccion, tvLongitud, tvLatitud;
     private Button bntGPS;
 
+    private static final String SenseDenifir = "Sense denifir";
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         toolsViewModel =
@@ -52,8 +54,12 @@ public class miUbicacionFragment extends Fragment {
 
         //INICIALIZACIONES
         tvDireccion = root.findViewById(R.id.tvDireccionActual);
+        tvDireccion.setText(SenseDenifir);
         tvLongitud = root.findViewById(R.id.tvLongitudActual);
+        tvLongitud.setText(SenseDenifir);
         tvLatitud = root.findViewById(R.id.tvLatitudActual);
+        tvLatitud.setText(SenseDenifir);
+
         bntGPS = root.findViewById(R.id.btnMostrarGPS);
 
 
@@ -68,9 +74,6 @@ public class miUbicacionFragment extends Fragment {
 
                     @Override
                     public void onLocationChanged(Location loc) {
-                        loc.getLatitude();
-                        loc.getLongitude();
-
                         tvLatitud.setText("" + loc.getLatitude());
                         tvLongitud.setText("" + loc.getLongitude());
 
@@ -98,12 +101,12 @@ public class miUbicacionFragment extends Fragment {
                     }
 
                     public void onProviderEnabled(String provider) {
-                        Toast.makeText(getContext(), "Calculant coordenades.",
+                        Toast.makeText(getContext(), "Ubicació GPS activada.",
                                 Toast.LENGTH_SHORT).show();
                     }
 
                     public void onProviderDisabled(String provider) {
-                        Toast.makeText(getContext(), "El GPS està desactivat.",
+                        Toast.makeText(getContext(), "La ubicació GPS està desactivat.",
                                 Toast.LENGTH_SHORT).show();
                     }
 

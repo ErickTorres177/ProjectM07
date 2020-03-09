@@ -152,4 +152,13 @@
     <string name="btnMostrarGPS">GPS</string>
     <string name="btnMostrarMapaUbicacionActual">Mostar Mapa</string>
 
+    //MAPA UBICACION ACTUAL
+    <string name="normal_map">Mapa Normal</string>
+    <string name="hybrid_map">Map Híbrido</string>
+    <string name="satellite_map">Mapa Satélite</string>
+    <string name="terrain_map">Mapa Terreno</string>
+    <string name="lat_long_snippet">Lat: %1$.5f, Long: %2$.5f</string>
+    <string name="dropped_pin">Dropped Pin</string>
+    <string name="poi">poi</string>
+
 </resources>

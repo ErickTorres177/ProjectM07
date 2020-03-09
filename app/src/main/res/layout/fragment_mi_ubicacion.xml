@@ -252,6 +252,7 @@
                 android:background="@drawable/botones_azules"
                 android:contentDescription="@string/btnRegistrarseContent"
                 android:text="@string/btnMostrarMapaUbicacionActual"
+                android:onClick="abrirMapaUbicacionActual"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
