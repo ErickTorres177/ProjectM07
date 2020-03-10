@@ -288,10 +288,15 @@ public class RutaCompleta extends AppCompatActivity {
        obtenerDirecionFB();
        ObtenerCoordenadaD();
 
-       String a ="4.543986";
-       String b ="-75.666736";
-       String c ="4.540026";
-       String d ="-75.665479";
+       String a ="41.5600112";
+       String b ="2.0054576";
+       String c ="41.3828939";
+       String d ="2.1774322";
+
+
+       //webServiceObtenerRuta(String.valueOf(latitud),String.valueOf(logintud),
+               //String.valueOf(latitudDestino),String.valueOf(logintudDestino));
+
        Utilidades.coordenadas.setLatitudInicial(Double.parseDouble(a));
        Utilidades.coordenadas.setLongitudInicial(Double.parseDouble(b));
        Utilidades.coordenadas.setLatitudFinal(Double.parseDouble(c));
@@ -302,7 +307,7 @@ public class RutaCompleta extends AppCompatActivity {
 
 
        webServiceObtenerRuta(a,b,c,d);
-       //webServiceObtenerRuta(String.valueOf(latitud),String.valueOf(logintud),
+      // webServiceObtenerRuta(String.valueOf(latitud),String.valueOf(logintud),
                //String.valueOf(latitudDestino),String.valueOf(logintudDestino));
        //webServiceObtenerRuta(latitud.toString(),logintud.toString(),
                //latitudDestino.toString(),logintudDestino.toString());

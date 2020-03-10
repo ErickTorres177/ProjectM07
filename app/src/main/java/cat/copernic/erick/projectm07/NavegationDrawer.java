@@ -202,10 +202,9 @@ public class NavegationDrawer extends AppCompatActivity {
     }
 
     public void irConfiguracionPerfil(MenuItem item) {
-        Intent intent = new Intent(this, PerfilFragment.class);
-        startActivity(intent);
+        //Intent intent = new Intent(getApplicationContext(), ModificarPerfil.class);
+        //startActivity(intent);
     }
-
 
     public void abrirRutaCompleta(View view) {
         String tvIdRutaC = tvIdRutaCompleta.getText().toString();

@@ -222,6 +222,7 @@ public class ModificarPerfil extends AppCompatActivity {
     }
 
     public void handleRegresarPerfil(View view) {
+
         finish();
     }
 }

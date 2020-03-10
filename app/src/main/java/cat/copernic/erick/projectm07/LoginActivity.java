@@ -182,7 +182,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void cargaLocale() {
-        SharedPreferences preferences = getSharedPreferences("Settings", LoginActivity.MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences("Settings", MODE_PRIVATE);
         String lenguaje = preferences.getString("miLenguaje", "");
         setLocale(lenguaje);
     }

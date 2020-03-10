@@ -36,6 +36,7 @@ import cat.copernic.erick.projectm07.Localizacion;
 import cat.copernic.erick.projectm07.NavegationDrawer;
 import cat.copernic.erick.projectm07.NuevaRuta;
 import cat.copernic.erick.projectm07.R;
+import cat.copernic.erick.projectm07.RutaCompleta;
 
 public class miUbicacionFragment extends Fragment {
 
@@ -57,7 +58,7 @@ public class miUbicacionFragment extends Fragment {
         tvDireccion.setText(SenseDenifir);
         tvLongitud = root.findViewById(R.id.tvLongitudActual);
         tvLongitud.setText(SenseDenifir);
-        tvLatitud = root.findViewById(R.id.tvLongitudActual);
+        tvLatitud = root.findViewById(R.id.tvLatitudActual);
         tvLatitud.setText(SenseDenifir);
 
 
@@ -94,22 +95,26 @@ public class miUbicacionFragment extends Fragment {
                                 e.printStackTrace();
                             }
                         }
-                        Toast.makeText(getContext(), "Coordenades obtingudes.",
+                        String toastCalculandoCoo = miUbicacionFragment.this.getResources().getString(R.string.calculandoGSPRutaCompleta);
+                        Toast.makeText(getContext(), toastCalculandoCoo,
                                 Toast.LENGTH_SHORT).show();
                     }
 
                     public void onStatusChanged(String provider, int status, Bundle extras) {
-                        Toast.makeText(getContext(), "Calculant coordenades.",
+                        String toastCalculandoCoo = miUbicacionFragment.this.getResources().getString(R.string.calculandoGSPRutaCompleta);
+                        Toast.makeText(getContext(), toastCalculandoCoo,
                                 Toast.LENGTH_SHORT).show();
                     }
 
                     public void onProviderEnabled(String provider) {
-                        Toast.makeText(getContext(), "Ubicació GPS activada.",
+                        String toastGpsActivado = miUbicacionFragment.this.getResources().getString(R.string.ubicacionActivadaRutaCompleta);
+                        Toast.makeText(getContext(), toastGpsActivado,
                                 Toast.LENGTH_SHORT).show();
                     }
 
                     public void onProviderDisabled(String provider) {
-                        Toast.makeText(getContext(), "La ubicació GPS està desactivat.",
+                        String toastGpsDesactivado = miUbicacionFragment.this.getResources().getString(R.string.ubicacionDesactivadaRutaCompleta);
+                        Toast.makeText(getContext(), toastGpsDesactivado,
                                 Toast.LENGTH_SHORT).show();
                     }
 

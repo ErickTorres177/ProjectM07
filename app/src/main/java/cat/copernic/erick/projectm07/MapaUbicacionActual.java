@@ -5,13 +5,22 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
+import android.widget.Toolbar;
+
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -26,10 +35,32 @@ import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PointOfInterest;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.io.IOException;
+import java.util.List;
 import java.util.Locale;
 
+import cat.copernic.erick.projectm07.ui.miUbicacion.miUbicacionFragment;
+
 public class MapaUbicacionActual extends AppCompatActivity implements OnMapReadyCallback {
+
+    //FIRE BASE
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
+    private FirebaseDatabase mFirebaseDatabase;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
+    private DatabaseReference myRef;
+    private DatabaseReference myRefDestino;
+    private String direccionMapa;
+    private double direccionLong;
+    private double direccionLat;
 
     private GoogleMap mMap;
     //Float para fijar la posicion del ZOOM de la camara
@@ -43,13 +74,20 @@ public class MapaUbicacionActual extends AppCompatActivity implements OnMapReady
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapa_ubicacion_actual);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        //Toolbar toolbar = findViewById(R.id.toolbar);
+       //setSupportActionBar(toolbar);
+
         //Habilitar Street View
         SupportMapFragment mapFragment = SupportMapFragment.newInstance();
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.fragment_container, mapFragment).commit();
 
 
-
+        //FIRE BASE inicializaciones
+        mAuth = FirebaseAuth.getInstance();
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        currentUser = mAuth.getCurrentUser();
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         //SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
         //        .findFragmentById(R.id.map);
@@ -86,41 +124,88 @@ public class MapaUbicacionActual extends AppCompatActivity implements OnMapReady
                 return super.onOptionsItemSelected(item);
         }
     }
+    public void ObtenerCoordenadaD(){
 
+        myRefDestino = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid());
+
+        myRefDestino.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Usuarios usuarios = dataSnapshot.getValue(Usuarios.class);
+                final String direccionU = usuarios.getDireccion();
+                direccionMapa = direccionU;
+                Log.e("usuario: ", currentUser.getUid() + " DIRECCION: " + direccionMapa);
+                try {
+                    obtenerCoordenadasDestino(MapaUbicacionActual.this,direccionMapa);
+
+                }catch (Exception e){
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+    }
+
+
+    public LatLng obtenerCoordenadasDestino(Context context, String strAddress) {
+
+        Geocoder coder = new Geocoder(context);
+        List<Address> address;
+        LatLng p1 = null;
+
+        try {
+            // May throw an IOException
+            address = coder.getFromLocationName(strAddress, 5);
+            if (address == null) {
+                return null;
+            }
+
+            Address location = address.get(0);
+            p1 = new LatLng(location.getLatitude(), location.getLongitude());
+            direccionLong = location.getLongitude();
+            direccionLat = location.getLatitude();
+
+
+        } catch (IOException ex) {
+
+            ex.printStackTrace();
+        }
+
+        return p1;
+    }
     //Metodo onMpaReady para lanzar la el mapa cuando el 'map' este listo.
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+
         // MARCADOR CON LA LONGITUD Y LA LATITUD DE NICOLAU COPERNIC (41°34'12.3"N 1°59'47.5"E)
-        //LatLng nicolauCopernic = new LatLng(41.570118, 1.996618);
+
+        //----
+
+
+
+        //---
+        LatLng nicolauCopernic = new LatLng(41.570118, 1.996618);
         //Con este metodo se crea el icono rojo ese. MARCADOR
         //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         //Movemos la camara a nuestras coordenadas.
-        //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nicolauCopernic,INITIAL_ZOOM));
-        googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
-
-
-
-
-        //Cargar la direccion
-
-
-
-
-
-
-        LatLng nicolauCopernic = new LatLng(41.570118, 1.996618);
-
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nicolauCopernic,INITIAL_ZOOM));
 
 
         //Agregar Superposició:
         GroundOverlayOptions CopernicOverLay = new GroundOverlayOptions()
-                .image(BitmapDescriptorFactory.fromResource(R.drawable.boton_idioma))
+                .image(BitmapDescriptorFactory.fromResource(R.drawable.cerrar_ses))
                 //Establecemos la posicion 100metros.
                 .position(nicolauCopernic, 20);
 
-        //mMap.addGroundOverlay(CopernicOverLay );
+        mMap.addGroundOverlay(CopernicOverLay );
 
         //Cagamos los metodo necesraios.
 
@@ -135,7 +220,6 @@ public class MapaUbicacionActual extends AppCompatActivity implements OnMapReady
         //Llamamos al metodo setInfoWindowClickToPanorama(mMap):
         setInfoWindowClickToPanorama(mMap);
     }
-
 
 
     //Implementacion del Marcador que al tocarlo te muestre las coordenadas
@@ -178,7 +262,7 @@ public class MapaUbicacionActual extends AppCompatActivity implements OnMapReady
                 poiMarker.showInfoWindow();
 
                 //Etiquetar el marcador de PDI PARA habilitar Street View
-                poiMarker.setTag("Position");
+                poiMarker.setTag("poi");
             }
         });
 
@@ -194,10 +278,10 @@ public class MapaUbicacionActual extends AppCompatActivity implements OnMapReady
                             this, R.raw.map_style));
 
             if (!success) {
-                Log.e(TAG, "No s'ha pogut obrir el mapa");
+                Log.e(TAG, "Error del Style Map.");
             }
         } catch (Resources.NotFoundException e) {
-            Log.e(TAG, "No s'ha pogut obrir el mapa", e);
+            Log.e(TAG, "No se Escuentra: Style Map -> ", e);
         }
     }
 

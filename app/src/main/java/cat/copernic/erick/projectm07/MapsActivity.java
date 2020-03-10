@@ -98,8 +98,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(origen).title("Lat: "+Utilidades.coordenadas.getLatitudInicial()+" - Long: "+Utilidades.coordenadas.getLongitudInicial()));
 
         LatLng destino = new LatLng(Utilidades.coordenadas.getLatitudFinal(), Utilidades.coordenadas.getLongitudFinal());
-        mMap.addMarker(new MarkerOptions().position(destino).title("Lat: "+Utilidades.coordenadas.getLatitudFinal()+" - Long: "+Utilidades.coordenadas.getLongitudFinal()));
-
+        mMap.addMarker(new MarkerOptions().position(destino).title("Aqui estoy"));
+        //mMap.addMarker(new MarkerOptions().position(latLng).title("Aqui estoy"));
         //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(center, 15));
         /////////////
 
