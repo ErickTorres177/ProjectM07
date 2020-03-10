@@ -20,14 +20,22 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.JsonReader;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -38,10 +46,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import com.android.volley.RequestQueue;
 
-import cat.copernic.erick.projectm07.ui.home.HomeFragment;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class RutaCompleta extends AppCompatActivity {
 
@@ -56,6 +69,7 @@ public class RutaCompleta extends AppCompatActivity {
     private FirebaseDatabase mFirebaseDatabase;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private DatabaseReference myRef;
+    private DatabaseReference myRefDestino;
 
     private String key;
     private String nombreR;
@@ -65,9 +79,16 @@ public class RutaCompleta extends AppCompatActivity {
     private String ciudadR;
 
     //IMPORTANTE -> LOG Y LAT FINALES A ENVIAR A LA RUTA
+    //ORIGEN
     private static Double logintud;
     private static Double latitud;
     private static String finalDireccionRuta;
+    private static Double logintudDestino;
+    private static Double latitudDestino;
+
+    //JSON
+    JsonObjectRequest jsonObjectRequest;
+    RequestQueue request;
 
 
     @Override
@@ -181,7 +202,8 @@ public class RutaCompleta extends AppCompatActivity {
 
 
 
-
+        //INICIALIZACION REQUEST VOLLEY
+        request= Volley.newRequestQueue(getApplicationContext());
 
     }
 
@@ -256,7 +278,264 @@ public class RutaCompleta extends AppCompatActivity {
         }
 
     }*/
+   public void goToRuta(){
+       Utilidades.coordenadas.setLatitudInicial(latitud);
+       Utilidades.coordenadas.setLongitudInicial(logintud);
+       Utilidades.coordenadas.setLatitudFinal(latitudDestino);
+       Utilidades.coordenadas.setLongitudFinal(logintudDestino);
 
+       webServiceObtenerRuta(latitud.toString(),logintud.toString(),
+               latitudDestino.toString(),logintudDestino.toString());
+
+       Intent miIntent=new Intent(RutaCompleta.this, MapsActivity.class);
+       startActivity(miIntent);
+   }
+    private void webServiceObtenerRuta(String latitudInicial, String longitudInicial, String latitudFinal, String longitudFinal) {
+
+        String url="https://maps.googleapis.com/maps/api/directions/json?origin="+latitudInicial+","+longitudInicial
+                +"&destination="+latitudFinal+","+longitudFinal;
+
+        jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                //Este método PARSEA el JSONObject que retorna del API de Rutas de Google devolviendo
+                //una lista del lista de HashMap Strings con el listado de Coordenadas de Lat y Long,
+                //con la cual se podrá dibujar pollinas que describan la ruta entre 2 puntos.
+                JSONArray jRoutes = null;
+                JSONArray jLegs = null;
+                JSONArray jSteps = null;
+
+                try {
+
+                    jRoutes = response.getJSONArray("routes");
+
+                    /** Traversing all routes */
+                    for(int i=0;i<jRoutes.length();i++){
+                        jLegs = ( (JSONObject)jRoutes.get(i)).getJSONArray("legs");
+                        List<HashMap<String, String>> path = new ArrayList<HashMap<String, String>>();
+
+                        /** Traversing all legs */
+                        for(int j=0;j<jLegs.length();j++){
+                            jSteps = ( (JSONObject)jLegs.get(j)).getJSONArray("steps");
+
+                            /** Traversing all steps */
+                            for(int k=0;k<jSteps.length();k++){
+                                String polyline = "";
+                                polyline = (String)((JSONObject)((JSONObject)jSteps.get(k)).get("polyline")).get("points");
+                                List<LatLng> list = decodePoly(polyline);
+
+                                /** Traversing all points */
+                                for(int l=0;l<list.size();l++){
+                                    HashMap<String, String> hm = new HashMap<String, String>();
+                                    hm.put("lat", Double.toString(((LatLng)list.get(l)).latitude) );
+                                    hm.put("lng", Double.toString(((LatLng)list.get(l)).longitude) );
+                                    path.add(hm);
+                                }
+                            }
+                            Utilidades.routes.add(path);
+                        }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }catch (Exception e){
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), "No se puede conectar "+error.toString(), Toast.LENGTH_LONG).show();
+                System.out.println();
+                Log.d("ERROR: ", error.toString());
+            }
+        }
+        );
+
+        request.add(jsonObjectRequest);
+    }
+
+    public List<List<HashMap<String,String>>> parse(JSONObject jObject){
+        //Este método PARSEA el JSONObject que retorna del API de Rutas de Google devolviendo
+        //una lista del lista de HashMap Strings con el listado de Coordenadas de Lat y Long,
+        //con la cual se podrá dibujar pollinas que describan la ruta entre 2 puntos.
+        JSONArray jRoutes = null;
+        JSONArray jLegs = null;
+        JSONArray jSteps = null;
+
+        try {
+
+            jRoutes = jObject.getJSONArray("routes");
+
+            /** Traversing all routes */
+            for(int i=0;i<jRoutes.length();i++){
+                jLegs = ( (JSONObject)jRoutes.get(i)).getJSONArray("legs");
+                List<HashMap<String, String>> path = new ArrayList<HashMap<String, String>>();
+
+                /** Traversing all legs */
+                for(int j=0;j<jLegs.length();j++){
+                    jSteps = ( (JSONObject)jLegs.get(j)).getJSONArray("steps");
+
+                    /** Traversing all steps */
+                    for(int k=0;k<jSteps.length();k++){
+                        String polyline = "";
+                        polyline = (String)((JSONObject)((JSONObject)jSteps.get(k)).get("polyline")).get("points");
+                        List<LatLng> list = decodePoly(polyline);
+
+                        /** Traversing all points */
+                        for(int l=0;l<list.size();l++){
+                            HashMap<String, String> hm = new HashMap<String, String>();
+                            hm.put("lat", Double.toString(((LatLng)list.get(l)).latitude) );
+                            hm.put("lng", Double.toString(((LatLng)list.get(l)).longitude) );
+                            path.add(hm);
+                        }
+                    }
+                    Utilidades.routes.add(path);
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }catch (Exception e){
+        }
+        return Utilidades.routes;
+    }
+
+
+   /*   public void onClick(View view) {
+
+      if (view.getId()==R.id.btnObtenerCoordenadas){
+            txtLatInicio.setText("4.543986"); txtLongInicio.setText("-75.666736");
+            //Unicentro
+            txtLatFinal.setText("4.540026"); txtLongFinal.setText("-75.665479");
+            //Parque del café
+            //  txtLatFinal.setText("4.541396"); txtLongFinal.setText("-75.771741");
+        }
+
+    }*/
+
+    private List<LatLng> decodePoly(String encoded) {
+
+        List<LatLng> poly = new ArrayList<LatLng>();
+        int index = 0, len = encoded.length();
+        int lat = 0, lng = 0;
+
+        while (index < len) {
+            int b, shift = 0, result = 0;
+            do {
+                b = encoded.charAt(index++) - 63;
+                result |= (b & 0x1f) << shift;
+                shift += 5;
+            } while (b >= 0x20);
+            int dlat = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
+            lat += dlat;
+
+            shift = 0;
+            result = 0;
+            do {
+                b = encoded.charAt(index++) - 63;
+                result |= (b & 0x1f) << shift;
+                shift += 5;
+            } while (b >= 0x20);
+            int dlng = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
+            lng += dlng;
+
+            LatLng p = new LatLng((((double) lat / 1E5)),
+                    (((double) lng / 1E5)));
+            poly.add(p);
+        }
+
+        return poly;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    //------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------
+   //------------------------------------------------------------------------------------------------------------
+   //OBTENER COORDENADAS DESTINO -> FIRE BASE RUTA -> RUTA
+    public void ObtenerCoordenadaD(){
+
+        myRefDestino = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid());
+
+        myRefDestino.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Usuarios usuarios = dataSnapshot.getValue(Usuarios.class);
+                final String direccionU = usuarios.getDireccion();
+                finalDireccionRuta = direccionU;
+                Log.e("usuario: ", currentUser.getUid() + " direcion DESTINO FINAL: " + finalDireccionRuta);
+                try {
+                    obtenerCoordenadasDestino(RutaCompleta.this,finalDireccionRuta);
+
+                }catch (Exception e){
+                    Log.w(TAG, "------RUTA INVALIDA------");
+                    mostrarAlertTipoAdrres();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+    }
+
+    //OBTENER COORDENADAS DESTINO -> RUTA RUTA -> FIRE BASE
+    public LatLng obtenerCoordenadasDestino(Context context, String strAddress) {
+
+        Geocoder coder = new Geocoder(context);
+        List<Address> address;
+        LatLng p1 = null;
+
+        try {
+            // May throw an IOException
+            address = coder.getFromLocationName(strAddress, 5);
+            if (address == null) {
+                return null;
+            }
+
+            Address location = address.get(0);
+            p1 = new LatLng(location.getLatitude(), location.getLongitude());
+            logintudDestino = location.getLongitude();
+            latitudDestino = location.getLatitude();
+
+            //longitud y latitud ORIGEN
+            Log.e("usuario: ", currentUser.getUid() + " lon:: " + logintud);
+            Log.e("usuario: ", currentUser.getUid() + " lat:: " + latitud);
+
+        } catch (IOException ex) {
+
+            ex.printStackTrace();
+        }
+
+        return p1;
+    }
+
+
+
+   //OBTENER COORDENADAS ORIGEN -> DIRECCION USUARIO
     public void obtenerDirecionFB() {
 
         myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid());
@@ -305,6 +584,7 @@ public class RutaCompleta extends AppCompatActivity {
     }
 
 
+    //OBTENER COORDENADAS ORIGEN
     public LatLng obtenerCoordenadasFromAdrres(Context context, String strAddress) {
 
         Geocoder coder = new Geocoder(context);
@@ -322,6 +602,8 @@ public class RutaCompleta extends AppCompatActivity {
             p1 = new LatLng(location.getLatitude(), location.getLongitude());
             logintud= location.getLongitude();
             latitud = location.getLatitude();
+
+            //longitud y latitud ORIGEN
             Log.e("usuario: ", currentUser.getUid() + " lon:: " + logintud);
             Log.e("usuario: ", currentUser.getUid() + " lat:: " + latitud);
 
