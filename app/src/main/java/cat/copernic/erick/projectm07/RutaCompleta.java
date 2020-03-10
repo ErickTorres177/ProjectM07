@@ -279,13 +279,27 @@ public class RutaCompleta extends AppCompatActivity {
 
     }*/
    public void goToRuta(){
-       Utilidades.coordenadas.setLatitudInicial(latitud);
-       Utilidades.coordenadas.setLongitudInicial(logintud);
-       Utilidades.coordenadas.setLatitudFinal(latitudDestino);
-       Utilidades.coordenadas.setLongitudFinal(logintudDestino);
+       obtenerDirecionFB();
+       ObtenerCoordenadaD();
 
-       webServiceObtenerRuta(latitud.toString(),logintud.toString(),
-               latitudDestino.toString(),logintudDestino.toString());
+       String a ="4.543986";
+       String b ="-75.666736";
+       String c ="4.540026";
+       String d ="-75.665479";
+       Utilidades.coordenadas.setLatitudInicial(Double.parseDouble(a));
+       Utilidades.coordenadas.setLongitudInicial(Double.parseDouble(b));
+       Utilidades.coordenadas.setLatitudFinal(Double.parseDouble(c));
+       Utilidades.coordenadas.setLongitudFinal(Double.parseDouble(d));
+
+
+       //prueba
+
+
+       webServiceObtenerRuta(a,b,c,d);
+       //webServiceObtenerRuta(String.valueOf(latitud),String.valueOf(logintud),
+               //String.valueOf(latitudDestino),String.valueOf(logintudDestino));
+       //webServiceObtenerRuta(latitud.toString(),logintud.toString(),
+               //latitudDestino.toString(),logintudDestino.toString());
 
        Intent miIntent=new Intent(RutaCompleta.this, MapsActivity.class);
        startActivity(miIntent);
@@ -574,7 +588,7 @@ public class RutaCompleta extends AppCompatActivity {
                 if (i == 0) {
                     //obtenerUbicacionActual();
                 } else if (i == 1) {
-                    obtenerDirecionFB();
+                    goToRuta();
                 }
                 dialog.dismiss();
             }

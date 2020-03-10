@@ -161,4 +161,7 @@
     <string name="dropped_pin">Dropped Pin</string>
     <string name="poi">poi</string>
 
+    //PRUEBA
+    <string name="title_activity_maps">HOLAA</string>
+
 </resources>

@@ -92,7 +92,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
         // Dibujamos las Polilineas en el Google Map para cada ruta
-        mMap.addPolyline(lineOptions);
+        //mMap.addPolyline(lineOptions);
 
         LatLng origen = new LatLng(Utilidades.coordenadas.getLatitudInicial(), Utilidades.coordenadas.getLongitudInicial());
         mMap.addMarker(new MarkerOptions().position(origen).title("Lat: "+Utilidades.coordenadas.getLatitudInicial()+" - Long: "+Utilidades.coordenadas.getLongitudInicial()));
@@ -100,7 +100,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng destino = new LatLng(Utilidades.coordenadas.getLatitudFinal(), Utilidades.coordenadas.getLongitudFinal());
         mMap.addMarker(new MarkerOptions().position(destino).title("Lat: "+Utilidades.coordenadas.getLatitudFinal()+" - Long: "+Utilidades.coordenadas.getLongitudFinal()));
 
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(center, 15));
+        //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(center, 15));
         /////////////
 
     }
