@@ -231,21 +231,24 @@ public class NavegationDrawer extends AppCompatActivity {
 
     public void btnCambiarEEUU(View view) {
         setLocale("en");
-        Toast.makeText(NavegationDrawer.this, "Llenguatge canviat amb èxit.",
+        String toastIdiomaCambiadoC = NavegationDrawer.this.getResources().getString(R.string.idiomaModificadoCNavegationDrawer);
+        Toast.makeText(NavegationDrawer.this, toastIdiomaCambiadoC,
                 Toast.LENGTH_SHORT).show();
         recreate();
     }
 
     public void btnCambiarCastellano(View view) {
         setLocale("es");
-        Toast.makeText(NavegationDrawer.this, "Llenguatge canviat amb èxit.",
+        String toastIdiomaCambiadoC = NavegationDrawer.this.getResources().getString(R.string.idiomaModificadoCNavegationDrawer);
+        Toast.makeText(NavegationDrawer.this, toastIdiomaCambiadoC,
                 Toast.LENGTH_SHORT).show();
         recreate();
     }
 
     public void btnCambiarCatalan(View view) {
         setLocale("ca");
-        Toast.makeText(NavegationDrawer.this, "Llenguatge canviat amb èxit.",
+        String toastIdiomaCambiadoC = NavegationDrawer.this.getResources().getString(R.string.idiomaModificadoCNavegationDrawer);
+        Toast.makeText(NavegationDrawer.this, toastIdiomaCambiadoC,
                 Toast.LENGTH_SHORT).show();
         recreate();
     }

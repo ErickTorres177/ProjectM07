@@ -117,7 +117,9 @@ public class ModificarPerfil extends AppCompatActivity {
                 //MODIFICAR NOMBRE PERFIL
                 if (!nombreComp.isEmpty() && !nombreComp.equals(" ")) {
                     if (!compTipoDatosString(nombreComp)) {
-                        Toast.makeText(ModificarPerfil.this, "El nom és invàlid: " + tvNombreUModifcar.getText().toString() + ", tens d'introduir només lletres.",
+
+                        String toastNombreInvalido = ModificarPerfil.this.getResources().getString(R.string.nomInvalidoModificarPerfil);
+                        Toast.makeText(ModificarPerfil.this, toastNombreInvalido + tvNombreUModifcar.getText().toString(),
                                 Toast.LENGTH_SHORT).show();
                     } else {
                         modificarNombrePerfil(tvNombreUModifcar.getText().toString());
@@ -127,7 +129,8 @@ public class ModificarPerfil extends AppCompatActivity {
                 //MODIFICAR EDAD PERFIL
                 if (!edadComp.isEmpty() && !edadComp.equals(" ")) {
                     if (!compIsNumericAndRango(Integer.valueOf(edadComp))) {
-                        Toast.makeText(ModificarPerfil.this, "La edat és invàlida: " + tvEdadUModifcar.getText().toString() + ", (5 - 110).",
+                        String toastEdadInvalido = ModificarPerfil.this.getResources().getString(R.string.edadInvalidaModificarPerfil);
+                        Toast.makeText(ModificarPerfil.this, toastEdadInvalido + tvEdadUModifcar.getText().toString(),
                                 Toast.LENGTH_SHORT).show();
                     } else {
                         modificarEdadPerfil(tvEdadUModifcar.getText().toString());
@@ -151,7 +154,9 @@ public class ModificarPerfil extends AppCompatActivity {
         miNom = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("nombre");
         miNom.setValue(nombre);
         tvNombreUModifcar.setText(nombre);
-        Toast.makeText(ModificarPerfil.this, "Nom modificat correctament: " + nombre,
+
+        String toastNombreModificado = ModificarPerfil.this.getResources().getString(R.string.nomModificadoCModificarPerfil);
+        Toast.makeText(ModificarPerfil.this, toastNombreModificado + nombre,
                 Toast.LENGTH_SHORT).show();
     }
 
@@ -159,14 +164,18 @@ public class ModificarPerfil extends AppCompatActivity {
         miEdad = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("edad");
         miEdad.setValue(edad);
         tvEdadUModifcar.setText(edad);
-        Toast.makeText(ModificarPerfil.this, "Edat modificada correctament: " + edad,
+
+        String toastEdadModificada = ModificarPerfil.this.getResources().getString(R.string.edadModificadaCModificarPerfil);
+        Toast.makeText(ModificarPerfil.this, toastEdadModificada + edad,
                 Toast.LENGTH_SHORT).show();
     }
 
     private void modificarSexoPerfil(String sexo) {
         miSexo = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("sexo");
         miSexo.setValue(sexo);
-        Toast.makeText(ModificarPerfil.this, "Sexe modificat correctament: " + sexo,
+
+        String toastSexoModificado = ModificarPerfil.this.getResources().getString(R.string.sexoModificadoCModificarPerfil);
+        Toast.makeText(ModificarPerfil.this, toastSexoModificado + sexo,
                 Toast.LENGTH_SHORT).show();
     }
 
@@ -174,7 +183,9 @@ public class ModificarPerfil extends AppCompatActivity {
         miDireccion = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("direccion");
         miDireccion.setValue(direccion);
         tvDireccionUModifcar.setText(direccion);
-        Toast.makeText(ModificarPerfil.this, "Direcció modificada correctament: " + direccion,
+
+        String toastDirrecionModi = ModificarPerfil.this.getResources().getString(R.string.direccionModificadaCModificarPerfil);
+        Toast.makeText(ModificarPerfil.this, toastDirrecionModi + direccion,
                 Toast.LENGTH_SHORT).show();
     }
 

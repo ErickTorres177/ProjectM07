@@ -93,7 +93,9 @@ public class ModificarRuta extends AppCompatActivity {
                 //MODIFICAR NOMBRE
                 if (!nombreComp.isEmpty() && !nombreComp.equals(" ")) {
                     if (!compTipoDatosString(nombreComp)) {
-                        Toast.makeText(ModificarRuta.this, "El nom és invàlid: " + etNombreRutaM.getText().toString() + ", tens d'introduir només lletres.",
+
+                        String toastNomInvalido = ModificarRuta.this.getResources().getString(R.string.nombreInvalidoModificarRuta);
+                        Toast.makeText(ModificarRuta.this, toastNomInvalido + etNombreRutaM.getText().toString(),
                                 Toast.LENGTH_SHORT).show();
                     } else {
                         modificarNombreRuta(etNombreRutaM.getText().toString(), idRuta);
@@ -103,7 +105,9 @@ public class ModificarRuta extends AppCompatActivity {
                 //MODIFICAR RUTA
                 if (!rutaR.isEmpty() && !rutaR.equals(" ")) {
                     if (!compTipoDatosString(rutaR)) {
-                        Toast.makeText(ModificarRuta.this, "La ruta és invàlida: " + etRutaRutaM.getText().toString() + ", tens d'introduir només lletres.",
+
+                        String toastRutaInvalida = ModificarRuta.this.getResources().getString(R.string.rutaInvalidaModificarRuta);
+                        Toast.makeText(ModificarRuta.this, toastRutaInvalida + etRutaRutaM.getText().toString() ,
                                 Toast.LENGTH_SHORT).show();
                     } else {
                         modificarRutaRuta(etRutaRutaM.getText().toString(), idRuta);
@@ -118,7 +122,9 @@ public class ModificarRuta extends AppCompatActivity {
                 //MODIFICAR PAIS
                 if (!paisR.isEmpty() && !paisR.equals(" ")) {
                     if (!compTipoDatosString(paisR)) {
-                        Toast.makeText(ModificarRuta.this, "El país és invàlid: " + etPaisRutaM.getText().toString() + ", tens d'introduir només lletres.",
+
+                        String toastPaisInvalido = ModificarRuta.this.getResources().getString(R.string.paisInvalidoModificarRuta);
+                        Toast.makeText(ModificarRuta.this, toastPaisInvalido + etPaisRutaM.getText().toString(),
                                 Toast.LENGTH_SHORT).show();
                     } else {
                         modificarPaisRuta(etPaisRutaM.getText().toString(), idRuta);
@@ -128,7 +134,9 @@ public class ModificarRuta extends AppCompatActivity {
                 //MODIFICAR CIUDAD
                 if (!ciudadR.isEmpty() && !ciudadR.equals(" ")) {
                     if (!compTipoDatosString(ciudadR)) {
-                        Toast.makeText(ModificarRuta.this, "La ciutat és invàlida: " + etCiudadRutaM.getText().toString() + ", tens d'introduir només lletres.",
+
+                        String toastCiudadInvalida = ModificarRuta.this.getResources().getString(R.string.ciudadInvalidoModificarRuta);
+                        Toast.makeText(ModificarRuta.this, toastCiudadInvalida + etCiudadRutaM.getText().toString(),
                                 Toast.LENGTH_SHORT).show();
                     } else {
                         modificarCiudadRuta(etCiudadRutaM.getText().toString(), idRuta);
@@ -144,35 +152,45 @@ public class ModificarRuta extends AppCompatActivity {
         refNombreR = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("rutas").child(idRuta).child("nombreRuta");
         refNombreR.setValue(nombre);
         setNomRutaModificar.setText(nombre);
-        Toast.makeText(ModificarRuta.this, "Nom modificat correctament: " + nombre,
+
+        String toastNombreModificada = ModificarRuta.this.getResources().getString(R.string.nombreModificadoCModificarRuta);
+        Toast.makeText(ModificarRuta.this, toastNombreModificada + nombre,
                 Toast.LENGTH_SHORT).show();
     }
 
     private void modificarDescripcionRuta(String descripcion, String idRuta) {
         refDescripcionR = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("rutas").child(idRuta).child("descripcionRuta");
         refDescripcionR.setValue(descripcion);
-        Toast.makeText(ModificarRuta.this, "Descripció modificada correctament: " + descripcion,
+
+        String toastDescripcionModificada = ModificarRuta.this.getResources().getString(R.string.descripcionModificadoCModificarRuta);
+        Toast.makeText(ModificarRuta.this, toastDescripcionModificada + descripcion,
                 Toast.LENGTH_SHORT).show();
     }
 
     private void modificarRutaRuta(String ruta, String idRuta) {
         refRutaR = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("rutas").child(idRuta).child("ruta");
         refRutaR.setValue(ruta);
-        Toast.makeText(ModificarRuta.this, "Ruta modificada correctament: " + ruta,
+
+        String toastRutaModificada = ModificarRuta.this.getResources().getString(R.string.rutaModificadaCModificarRuta);
+        Toast.makeText(ModificarRuta.this, toastRutaModificada + ruta,
                 Toast.LENGTH_SHORT).show();
     }
 
     private void modificarPaisRuta(String pais, String idRuta) {
         refPaisR = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("rutas").child(idRuta).child("paisRuta");
         refPaisR.setValue(pais);
-        Toast.makeText(ModificarRuta.this, "País modificat correctament: " + pais,
+
+        String toastPaisModificado = ModificarRuta.this.getResources().getString(R.string.paisModificadoCModificarRuta);
+        Toast.makeText(ModificarRuta.this, toastPaisModificado + pais,
                 Toast.LENGTH_SHORT).show();
     }
 
     private void modificarCiudadRuta(String ciudad, String idRuta) {
         refCiudadR = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid()).child("rutas").child(idRuta).child("ciudadRuta");
         refCiudadR.setValue(ciudad);
-        Toast.makeText(ModificarRuta.this, "Ciutat modificada correctament: " + ciudad,
+
+        String toastCiudadModificada = ModificarRuta.this.getResources().getString(R.string.ciudadModificadaCModificarRuta);
+        Toast.makeText(ModificarRuta.this, toastCiudadModificada + ciudad,
                 Toast.LENGTH_SHORT).show();
     }
 

@@ -65,11 +65,15 @@ public class NuevaRuta extends AppCompatActivity {
         if (!nomComp.isEmpty() && !nomComp.equals(" ")
                 && !rutaComp.isEmpty() && !rutaComp.equals(" ")) {
             if (!compTipoDatosString(nomComp)) {
-                Toast.makeText(NuevaRuta.this, "El nom és invàlid: " + etNombreR.getText().toString() + ", tens d'introduir només lletres.",
+
+                String toastInvalidoNombre = NuevaRuta.this.getResources().getString(R.string.nombreInvalidoNuevaRuta);
+                Toast.makeText(NuevaRuta.this, toastInvalidoNombre + etNombreR.getText().toString(),
                         Toast.LENGTH_SHORT).show();
 
             } else if (!compTipoDatosString(rutaComp)) {
-                Toast.makeText(NuevaRuta.this, "La ruta és invàlida: " + etRutaR.getText().toString() + ", tens d'introduir només lletres.",
+
+                String toastInvalidoRuta = NuevaRuta.this.getResources().getString(R.string.rutaInvalidaNuevaRuta);
+                Toast.makeText(NuevaRuta.this, toastInvalidoRuta + etRutaR.getText().toString(),
                         Toast.LENGTH_SHORT).show();
             } else {
                 myRef.child("nombreRuta").setValue(etNombreR.getText().toString());
@@ -86,7 +90,9 @@ public class NuevaRuta extends AppCompatActivity {
                 myRef.child("paisRuta").setValue(sinDefinir);
             } else {
                 if (!compTipoDatosString(etPaisR.getText().toString())) {
-                    Toast.makeText(NuevaRuta.this, "El país es invàlid: " + etPaisR.getText().toString() + ", tens d'introduir només lletres.",
+
+                    String toastInvalidoRuta = NuevaRuta.this.getResources().getString(R.string.paisInvalidoNuevaRuta);
+                    Toast.makeText(NuevaRuta.this, toastInvalidoRuta + etPaisR.getText().toString(),
                             Toast.LENGTH_SHORT).show();
                 } else {
                     myRef.child("paisRuta").setValue(etPaisR.getText().toString());
@@ -96,7 +102,9 @@ public class NuevaRuta extends AppCompatActivity {
                 myRef.child("ciudadRuta").setValue(sinDefinir);
             } else {
                 if (!compTipoDatosString(etCiudadR.getText().toString())) {
-                    Toast.makeText(NuevaRuta.this, "El país es invàlid: " + etCiudadR.getText().toString() + ", tens d'introduir només lletres.",
+
+                    String toastInvalidoCiudad = NuevaRuta.this.getResources().getString(R.string.ciudadInvalidaNuevaRuta);
+                    Toast.makeText(NuevaRuta.this, toastInvalidoCiudad + etCiudadR.getText().toString(),
                             Toast.LENGTH_SHORT).show();
                 } else {
                     myRef.child("ciudadRuta").setValue(etCiudadR.getText().toString());
@@ -105,10 +113,14 @@ public class NuevaRuta extends AppCompatActivity {
             myRef.child("idRuta").setValue(String.valueOf(idRutaGeneral));
             myRef.child("usuarioRuta").setValue(currentUser.getEmail());
             limpiarCampo();
-            Toast.makeText(NuevaRuta.this, "Ruta agregada correctament: " + etNombreR.getText().toString(),
+
+            String toastAgregadaRuta = NuevaRuta.this.getResources().getString(R.string.rutaAgregadaCNuevaRuta);
+            Toast.makeText(NuevaRuta.this, toastAgregadaRuta+ etNombreR.getText().toString(),
                     Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(NuevaRuta.this.getApplicationContext(), "El nom i la ruta son obligatoris: ",
+
+            String toastObligatorio = NuevaRuta.this.getResources().getString(R.string.nom_ruta_obligatoriosNuevaRuta);
+            Toast.makeText(NuevaRuta.this.getApplicationContext(), toastObligatorio,
                     Toast.LENGTH_SHORT).show();
         }
     }

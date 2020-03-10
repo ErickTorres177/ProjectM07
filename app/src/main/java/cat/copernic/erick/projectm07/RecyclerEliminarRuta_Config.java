@@ -73,7 +73,7 @@ public class RecyclerEliminarRuta_Config{
 
                     final String[] respuesta = {"Yes", "No"};
                     AlertDialog.Builder mBuilder = new AlertDialog.Builder(mContext);
-                    mBuilder.setTitle("Vols eliminar aquesta ruta?");
+                    mBuilder.setTitle(R.string.eliminarRutaElert);
                     mBuilder.setIcon(R.drawable.cerrar_ses);
                     mBuilder.setSingleChoiceItems(respuesta, -1, new DialogInterface.OnClickListener() {
                         @Override

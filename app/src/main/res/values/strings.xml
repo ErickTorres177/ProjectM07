@@ -34,16 +34,16 @@
     <string name="txtTituloNombre">Nom d\'usuari:</string>
     <string name="nombreUsuario">Correu electrònic:</string>
     <string name="txtNombre">Ingressa el teu correu electronic</string>
-    <string name="hintNombre">Correu</string>
+    <string name="hintNombre">Escriu el teu correu</string>
     <string name="txtTituloPasswd">Contrasenya</string>
     <string name="txtPasswd">Ingressa la teva contrasenya</string>
     <string name="passwd">Contrasenya:</string>
     <string name="txtTituloNombreReal">Nom:</string>
     <string name="txtNombreReal">Nom real de l\'usuari</string>
-    <string name="hintNombreReal">Nom</string>
+    <string name="hintNombreReal">Escriu el teu nom</string>
     <string name="txtTituloEdad">Edat</string>
     <string name="txtEdadContent">Ingressa la teva edat</string>
-    <string name="hintPasswd">Contrasenya</string>
+    <string name="hintPasswd">Escriu la teva constrasenya</string>
     <string name="edad">Edat:</string>
     <string name="hindEdad">Edat</string>
     <string name="btnVolver">Tornar</string>
@@ -174,8 +174,8 @@
     //CONFIGURACION GENERAL
     <string name="tituloCambiarIdioma">Canviar l`idioma</string>
     <string name="tvTituloCatalan">Català</string>
-    <string name="btnCastellano">Castellà</string>
-    <string name="btnEEUU">Anglès</string>
+    <string name="tvTituloCastellano">Castellà</string>
+    <string name="tvTituloEEUU">Anglès</string>
 
     //UBICACION -> TIEMPO REAL
     <string name="menu_mi_ubicacion">La meva ubicació</string>
@@ -199,6 +199,62 @@
 
     //PRUEBA
     <string name="title_activity_maps">HOLAA</string>
+
+
+    //ESCOGE EL IDIOMA
+    <string name="tituloEscogeIdioma">Tria l`idioma</string>
+    //Alert eliminar ruta
+    <string name="eliminarRutaElert">Vols eliminar aquesta ruta?"</string>
+
+
+    //TOAST DE LA APP
+
+    //MODIIFICAR PERFIL
+    <string name="nomInvalidoModificarPerfil">Nom invàlid, introdueixi només lletres: </string> 
+    <string name="edadInvalidaModificarPerfil">Edat invàlida, (5 - 110): </string>   
+    <string name="nomModificadoCModificarPerfil">Nom modificat correctament: </string> 
+    <string name="edadModificadaCModificarPerfil">Edat modificada correctament: </string> 
+    <string name="sexoModificadoCModificarPerfil">Sexe modificat correctament: </string> 
+    <string name="direccionModificadaCModificarPerfil">Direcció modificada correctament: </string> 
+
+
+    //MODIFICAR RUTA.JAVA
+
+    <string name="nombreInvalidoModificarRuta">Nom invàlid, introdueixi només lletres:</string> 
+    <string name="rutaInvalidaModificarRuta">Ruta invàlida, introdueixi només lletres: </string> 
+    <string name="paisInvalidoModificarRuta">Pais invàlid, introdueixi només lletres: </string> 
+    <string name="ciudadInvalidoModificarRuta">Ciutat invàlid, introdueix només lletres: </string> 
+    <string name="nombreModificadoCModificarRuta">Nom modificat correctament: </string> 
+    <string name="descripcionModificadoCModificarRuta">Descripció modificada correctament: </string> 
+    <string name="rutaModificadaCModificarRuta">Ruta modificada correctament: </string> 
+    <string name="paisModificadoCModificarRuta">País modificat correctament: </string> 
+    <string name="ciudadModificadaCModificarRuta">Ciutat modificada correctament: </string> 
+
+    //NavegationDrawer. JAVA
+    <string name="idiomaModificadoCNavegationDrawer">Idioma canviat amb èxit.</string> 
+
+    //NUEVA RUTA.JAVA
+    <string name="nombreInvalidoNuevaRuta">Nom invàlid, introdueix només lletres:</string> 
+    <string name="rutaInvalidaNuevaRuta">Ruta invàlida, introdueixi només lletres: </string> 
+    <string name="paisInvalidoNuevaRuta">Pais invàlid, introdueix només lletres: </string> 
+    <string name="ciudadInvalidaNuevaRuta">Ciutat invàlid, introdueix només lletres: </string> 
+    <string name="rutaAgregadaCNuevaRuta">Ruta agregada correctament: </string> 
+    <string name="nom_ruta_obligatoriosNuevaRuta">El nom i la ruta son obligatoris: </string>
+
+    //REGISTER ACTIVITY.JAVA
+    <string name="nombreIncorrectoRegisterActivity">Nom incorrecte: </string> 
+    <string name="edadIncorrectaRegisterActivity">Edat incorrecta: </string> 
+    <string name="ingresarNombreRegisterActivity">Introdueixi el seu nom: </string> 
+    <string name="nombreInvalidoRegisterActivity">Nom invàlid: </string> 
+    <string name="ingresarEdadRegisterActivity">Introdueixi la seva edat: </string> 
+    <string name="edadInvalidaRegisterActivity">Edat invàlida: </string> 
+
+    //RUTA COMPLETA.JAVA
+    <string name="calculandoGSPRutaCompleta">Calculant coordenades.</string> 
+    <string name="ubicacionActivadaRutaCompleta">Ubicació GPS activada.</string> 
+    <string name="ubicacionDesactivadaRutaCompleta">La ubicació GPS està desactivat.</string> 
+    <string name="errorConeccionRutaCompleta">Error d`conección: </string> 
+
 
 </resources>
 

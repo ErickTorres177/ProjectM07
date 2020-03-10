@@ -78,9 +78,13 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (!compNombreIntroducido(etNombreUsuario.getText().toString())) {
+
+                    String toastInvalidoNombre = RegisterActivity.this.getResources().getString(R.string.nombreIncorrectoRegisterActivity);
                     Toast.makeText(RegisterActivity.this, "El nom es incorrecte: " + etNombreUsuario.getText().toString(),
                             Toast.LENGTH_SHORT).show();
                 } else if (!compIsNumericAndRango(Integer.valueOf(etEdad.getText().toString()))) {
+
+                    String toastInvalidoEdad = RegisterActivity.this.getResources().getString(R.string.edadIncorrectaRegisterActivity);
                     Toast.makeText(RegisterActivity.this, "Edat incorrecta: " + etEdad.getText().toString(),
                             Toast.LENGTH_SHORT).show();
                 } else {
@@ -152,16 +156,24 @@ public class RegisterActivity extends AppCompatActivity {
         String edadComp = (etEdad.getText().toString());
 
         if (nombreComp.isEmpty() || nombreComp.equals("") || nombreComp.equals(null)) {
-            Toast.makeText(RegisterActivity.this, "Ingressa el teu nom: " + etNombreUsuario.getText().toString(),
+
+            String toastIngresaNombre = RegisterActivity.this.getResources().getString(R.string.ingresarNombreRegisterActivity);
+            Toast.makeText(RegisterActivity.this, toastIngresaNombre + etNombreUsuario.getText().toString(),
                     Toast.LENGTH_SHORT).show();
         } else if (!compNombreIntroducido(nombreComp)) {
-            Toast.makeText(RegisterActivity.this, "El nom és invàlid: " + etNombreUsuario.getText().toString(),
+
+            String toastInvalidoNombre = RegisterActivity.this.getResources().getString(R.string.nombreInvalidoRegisterActivity);
+            Toast.makeText(RegisterActivity.this, toastInvalidoNombre + etNombreUsuario.getText().toString(),
                     Toast.LENGTH_SHORT).show();
         } else if (edadComp.isEmpty() || edadComp.equals("") || edadComp.equals(null)) {
-            Toast.makeText(RegisterActivity.this, "Ingressa a teva edat: " + etEdad.getText().toString(),
+
+            String toastIngresaEdad = RegisterActivity.this.getResources().getString(R.string.ingresarEdadRegisterActivity);
+            Toast.makeText(RegisterActivity.this, toastIngresaEdad + etEdad.getText().toString(),
                     Toast.LENGTH_SHORT).show();
         } else if (!compIsNumericAndRango(Integer.parseInt(edadComp))) {
-            Toast.makeText(RegisterActivity.this, "L'edat és incorrecta: " + etEdad.getText().toString(),
+
+            String toastInvalidoEdad = RegisterActivity.this.getResources().getString(R.string.edadInvalidaRegisterActivity);
+            Toast.makeText(RegisterActivity.this, toastInvalidoEdad + etEdad.getText().toString(),
                     Toast.LENGTH_SHORT).show();
         } else {
             guardatUsuarioFB();

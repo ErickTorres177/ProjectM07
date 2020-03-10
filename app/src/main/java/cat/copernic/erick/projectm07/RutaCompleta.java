@@ -157,17 +157,23 @@ public class RutaCompleta extends AppCompatActivity {
                     }
 
                     public void onStatusChanged(String provider, int status, Bundle extras) {
-                        Toast.makeText(RutaCompleta.this, "Calculant coordenades.",
+
+                        String toastCalculandoCoo = RutaCompleta.this.getResources().getString(R.string.calculandoGSPRutaCompleta);
+                        Toast.makeText(RutaCompleta.this, toastCalculandoCoo,
                                 Toast.LENGTH_SHORT).show();
                     }
 
                     public void onProviderEnabled(String provider) {
-                        Toast.makeText(RutaCompleta.this, "Ubicació GPS activada.",
+
+                        String toastGpsActivado = RutaCompleta.this.getResources().getString(R.string.ubicacionActivadaRutaCompleta);
+                        Toast.makeText(RutaCompleta.this, toastGpsActivado,
                                 Toast.LENGTH_SHORT).show();
                     }
 
                     public void onProviderDisabled(String provider) {
-                        Toast.makeText(RutaCompleta.this, "La ubicació GPS està desactivat.",
+
+                        String toastGpsDesactivado = RutaCompleta.this.getResources().getString(R.string.ubicacionDesactivadaRutaCompleta);
+                        Toast.makeText(RutaCompleta.this, toastGpsDesactivado,
                                 Toast.LENGTH_SHORT).show();
                     }
                 };
@@ -357,7 +363,9 @@ public class RutaCompleta extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "No se puede conectar "+error.toString(), Toast.LENGTH_LONG).show();
+
+                String toastErrorConn = RutaCompleta.this.getResources().getString(R.string.errorConeccionRutaCompleta);
+                Toast.makeText(getApplicationContext(), toastErrorConn + error.toString(), Toast.LENGTH_LONG).show();
                 System.out.println();
                 Log.d("ERROR: ", error.toString());
             }

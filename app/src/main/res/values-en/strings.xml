@@ -12,7 +12,7 @@
     <string name="txtEdadContent">Enter your age</string>
     <string name="hindEdad">Age</string>
     <string name="hintNombre">Mail</string>
-    <string name="hintPasswd">Password</string>
+    <string name="hintPasswd">Write your password</string>
     <string name="iniSesion">Log in</string>
     <string name="menu_nuevaRuta">New Routes</string>
     <string name="menu_home">My Routes</string>
@@ -107,7 +107,7 @@
     <string name="registroFallido">Dailed account registration</string>
     <string name="emailInvalido">Invalid email</string>
     <string name="txtTituloNombreReal">Name:</string>
-    <string name="hintNombreReal">Name</string>
+    <string name="hintNombreReal">Write your name</string>
     <string name="txtNombreReal">Real username</string>
 
     //PERFIL USUARIO
@@ -142,9 +142,10 @@
 
     //CONFIGURACION GENERAL
     <string name="tituloCambiarIdioma">Change the language</string>
-    <string name="tvTituloCatalan">Catalàn</string>
-    <string name="btnCastellano">Castellano</string>
-    <string name="btnEEUU">Ingles</string>
+    <string name="tvTituloCatalan">Catalan</string>
+    <string name="tvTituloCastellano">Spanish</string>
+    <string name="tvTituloEEUU">English</string>
+
 
     //UBICACION -> TIEMPO REAL
     <string name="menu_mi_ubicacion">My location</string>
@@ -167,5 +168,57 @@
 
     //PRUEBA
     <string name="title_activity_maps">HOLAA</string>
+
+
+    //ESCOGE EL IDIOMA
+    <string name="tituloEscogeIdioma">Choose the language</string>
+    //Alert eliminar ruta
+    <string name="eliminarRutaElert">Do you ant to delete this route?</string>
+
+    //TOAST DE LA APP
+    //MODIIFICAR PERFIL
+    <string name="nomInvalidoModificarPerfil">Invalid name, enter only letters: </string>   
+    <string name="edadInvalidaModificarPerfil">Invalid age, (5 - 110): </string> 
+    <string name="nomModificadoCModificarPerfil">Correctly modified name: </string> 
+    <string name="edadModificadaCModificarPerfil">Correctly modified age: </string> 
+    <string name="sexoModificadoCModificarPerfil">Properly Modified Gender: </string> 
+    <string name="direccionModificadaCModificarPerfil">Successfully changed address: </string> 
+
+    //MODIFICAR RUTA.JAVA
+    <string name="nombreInvalidoModificarRuta">Invalid name, enter only letters: </string> 
+    <string name="rutaInvalidaModificarRuta">Invalid route, enter only letters: </string> 
+    <string name="paisInvalidoModificarRuta">Invalid country, enter only letters: </string> 
+    <string name="ciudadInvalidoModificarRuta">Invalid city, enter only letters: </string> 
+    <string name="nombreModificadoCModificarRuta">Name modified successfully: </string> 
+    <string name="descripcionModificadoCModificarRuta">Description successfully modified: </string> 
+    <string name="rutaModificadaCModificarRuta">Route modified successfully: </string> 
+    <string name="paisModificadoCModificarRuta">Country modified successfully: </string> 
+    <string name="ciudadModificadaCModificarRuta">City modified successfully: </string> 
+
+    //NavegationDrawer. JAVA
+    <string name="idiomaModificadoCNavegationDrawer">Language successfully changed.</string> 
+
+    //NUEVA RUTA.JAVA
+    <string name="nombreInvalidoNuevaRuta">Invalid name, enter only letters: </string> 
+    <string name="rutaInvalidaNuevaRuta">Invalid route, enter only letters: </string> 
+    <string name="paisInvalidoNuevaRuta">Invalid country, enter only letters: </string> 
+    <string name="ciudadInvalidaNuevaRuta">Invalid city, enter only letters: </string> 
+    <string name="rutaAgregadaCNuevaRuta">Route successfully added: </string> 
+    <string name="nom_ruta_obligatoriosNuevaRuta">Name and route are required: </string> 
+
+    //REGISTER ACTIVITY.JAVA
+    <string name="nombreIncorrectoRegisterActivity">Wrong name: </string> 
+    <string name="edadIncorrectaRegisterActivity">Wrong age: </string> 
+    <string name="ingresarNombreRegisterActivity">Enter your name: </string> 
+    <string name="nombreInvalidoRegisterActivity">Invalid name: </string> 
+    <string name="ingresarEdadRegisterActivity">Enter your age: </string> 
+    <string name="edadInvalidaRegisterActivity">Wrong age: </string> 
+
+
+    RUTA COMPLETA.JAVA
+    <string name="calculandoGSPRutaCompleta">Calculating coordinates.</string> 
+    <string name="ubicacionActivadaRutaCompleta">GPS location enabled.</string> 
+    <string name="ubicacionDesactivadaRutaCompleta">GPS location is off.</string> 
+    <string name="errorConeccionRutaCompleta">Connection error: </string> 
 
 </resources>

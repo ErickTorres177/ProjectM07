@@ -149,7 +149,7 @@ public class LoginActivity extends AppCompatActivity {
     private void mostrarCambiarIdioma() {
         final String[] lista_item = {"Catalán", "English", "Castellano "};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(LoginActivity.this);
-        mBuilder.setTitle("Tria l'idioma");
+        mBuilder.setTitle(R.string.tituloEscogeIdioma);
         mBuilder.setSingleChoiceItems(lista_item, -1, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int i) {

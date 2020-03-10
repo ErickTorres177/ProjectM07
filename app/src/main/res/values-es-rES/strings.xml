@@ -32,7 +32,7 @@
     <string name="menu_nuevaRuta">Nueva Ruta</string>
     <string name="iniSesion">Iniciar sesión</string>
     <string name="hintNombre">Correo</string>
-    <string name="hintPasswd">Contraseña</string>
+    <string name="hintPasswd">Escribe tu contraseña</string>
     <string name="btnRegistrarseContent">Crear cuenta</string>
     <string name="btnVolverContent">cancelar creación de la cuenta</string>
     <string name="btnCambiarIdioma">Idioma</string>
@@ -103,7 +103,7 @@
     <string name="registroFallido">Registro de cuenta fallido</string>
     <string name="emailInvalido">Email inválido</string>
     <string name="txtTituloNombreReal">Nombre:</string>
-    <string name="hintNombreReal">Nombre</string>
+    <string name="hintNombreReal">Escribe tu nombre</string>
     <string name="txtNombreReal">Nombre real del usuario</string>
 
     //PERFIL USUARIO
@@ -138,9 +138,9 @@
 
     //CONFIGURACION GENERAL
     <string name="tituloCambiarIdioma">Cambiar el idioma</string>
-    <string name="tvTituloCatalan">Catalan</string>
-    <string name="btnCastellano">Spanish</string>
-    <string name="btnEEUU">English</string>
+    <string name="tvTituloCatalan">Catalàn</string>
+    <string name="tvTituloCastellano">Castellano</string>
+    <string name="tvTituloEEUU">Ingles</string>
 
     //UBICACION -> TIEMPO REAL
     <string name="menu_mi_ubicacion">Mi ubicación</string>
@@ -164,4 +164,54 @@
     //PRUEBA
     <string name="title_activity_maps">HOLAA</string>
 
+    //ESCOGE EL IDIOMA
+    <string name="tituloEscogeIdioma">Escoge el idioma</string>
+    //Alert eliminar ruta
+    <string name="eliminarRutaElert">Quieres eliminar esta ruta"</string>
+
+
+    //TOAST DE LA APP
+    //MODIIFICAR PERFIL
+    <string name="nomInvalidoModificarPerfil">Nombre inválido, introduzca solo letras: </string> 
+    <string name="edadInvalidaModificarPerfil">Edad inválida, (5 - 110): </string>   
+    <string name="nomModificadoCModificarPerfil">Nombre modificado correctamente: </string> 
+    <string name="edadModificadaCModificarPerfil">Edad modificada coorectamente: </string> 
+    <string name="sexoModificadoCModificarPerfil">Sexo modificado correctamento: </string> 
+    <string name="direccionModificadaCModificarPerfil">Dirección modificada correctamente: </string> 
+
+    //MODIFICAR RUTA.JAVA
+    <string name="nombreInvalidoModificarRuta">Nombre inválido, introduzca solo letras: </string> 
+    <string name="rutaInvalidaModificarRuta">Ruta inválida, introduzca solo letras: </string> 
+    <string name="paisInvalidoModificarRuta">Pais invalido, introduzca solo letras: </string> 
+    <string name="ciudadInvalidoModificarRuta">Ciudad invalida, introduzca solo letras: </string> 
+    <string name="nombreModificadoCModificarRuta">Nombre modificado correctamente: </string> 
+    <string name="descripcionModificadoCModificarRuta">Descripción modificada correctamente: </string> 
+    <string name="rutaModificadaCModificarRuta">Ruta modificada correctamente: </string> 
+    <string name="paisModificadoCModificarRuta">País modificado correctamente: </string> 
+    <string name="ciudadModificadaCModificarRuta">Ciudad modificada correctamente: </string> 
+
+    //NavegationDrawer. JAVA
+    <string name="idiomaModificadoCNavegationDrawer">Idioma cambiado con éxito.</string> 
+
+    //NUEVA RUTA.JAVA
+    <string name="nombreInvalidoNuevaRuta">Nombre inválido, introduzca solo letras: </string> 
+    <string name="rutaInvalidaNuevaRuta">Ruta inválida, introduzca solo letras: </string> 
+    <string name="paisInvalidoNuevaRuta">Pais invalido, introduzca solo letras: </string> 
+    <string name="ciudadInvalidaNuevaRuta">Ciudad invalida, introduzca solo letras: </string> 
+    <string name="rutaAgregadaCNuevaRuta">Ruta agregada correctamente: </string> 
+    <string name="nom_ruta_obligatoriosNuevaRuta">El nombre y la ruta son obligatorios: </string> 
+
+    //REGISTER ACTIVITY.JAVA
+    <string name="nombreIncorrectoRegisterActivity">Nombre incorrecto: </string> 
+    <string name="edadIncorrectaRegisterActivity">Edad incorrecta: </string> 
+    <string name="ingresarNombreRegisterActivity">Introduzca su nombre: </string> 
+    <string name="nombreInvalidoRegisterActivity">Nombre inválido: </string> 
+    <string name="ingresarEdadRegisterActivity">Introduzca su edad: </string> 
+    <string name="edadInvalidaRegisterActivity">Edad inválida: </string> 
+
+    //RUTA COMPLETA.JAVA
+    <string name="calculandoGSPRutaCompleta">Calculando coordenadas.</string> 
+    <string name="ubicacionActivadaRutaCompleta">Ubicación GPS activada.</string> 
+    <string name="ubicacionDesactivadaRutaCompleta">La ubicación GPS está desactivada.</string> 
+    <string name="errorConeccionRutaCompleta">Error de conección: </string> 
 </resources>
