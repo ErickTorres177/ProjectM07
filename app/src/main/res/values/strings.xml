@@ -212,6 +212,7 @@
     <string name="obligatorioRegister">El usuari, constrasenya, nom i edat son obligatoris.</string> 
     <string name="passMenor">La contrasenya te que ser més gran de 6 caracteres.</string> 
     <string name="cacenlaGeneral">Cancelar</string> 
+    <string name="sinRutas">No tens rutes creades, si us plau afegeix una.</string> 
 
     //MODIIFICAR PERFIL
     <string name="nomInvalidoModificarPerfil">Nom invàlid, introdueixi només lletres: </string> 

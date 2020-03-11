@@ -90,14 +90,16 @@ public class miUbicacionFragment extends Fragment {
                                 if (!list.isEmpty()) {
                                     Address DirCalle = list.get(0);
                                     tvDireccion.setText("" + DirCalle.getAddressLine(0));
+                                    String toastCalculandoCoo = miUbicacionFragment.this.getResources().getString(R.string.calculandoGSPRutaCompleta);
+                                    Toast.makeText(getContext(), toastCalculandoCoo,
+                                            Toast.LENGTH_SHORT).show();
+                                    bntGPS.setEnabled(false);
                                 }
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
                         }
-                        String toastCalculandoCoo = miUbicacionFragment.this.getResources().getString(R.string.calculandoGSPRutaCompleta);
-                        Toast.makeText(getContext(), toastCalculandoCoo,
-                                Toast.LENGTH_SHORT).show();
+
                     }
 
                     public void onStatusChanged(String provider, int status, Bundle extras) {

@@ -6,18 +6,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 public class EliminarRuta extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
+    private TextView tvSinrutasEliminar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eliminar_ruta);
 
+        tvSinrutasEliminar = findViewById(R.id.tvSinRutasEliminarRuta);
         mRecyclerView = findViewById(R.id.recyclerViewEliminarRuta);
         new FireBaseDHEliminarRuta().leerRutasAEliminar(new FireBaseDHEliminarRuta.DataStatus() {
             @Override
@@ -25,8 +30,22 @@ public class EliminarRuta extends AppCompatActivity {
                 //new RecyclerView_Config().setConfig(mRecyclerView,HomeFragment.this(),rutas,keys);
 
 
+                /*if (rutas.size() <= 0) {
 
-                new RecyclerEliminarRuta_Config().setConfig(mRecyclerView, EliminarRuta.this, rutas, keys);
+                    tvSinrutasEliminar.setVisibility(View.VISIBLE);
+                    String toastSinRutas = EliminarRuta.this.getResources().getString(R.string.sinRutas);
+                    tvSinrutasEliminar.setText(toastSinRutas);
+                    Toast.makeText(EliminarRuta.this, toastSinRutas,
+                            Toast.LENGTH_SHORT).show();
+
+                } else {*/
+                    //tvSinrutasEliminar.setVisibility(View.GONE);
+                    new RecyclerEliminarRuta_Config().setConfig(mRecyclerView, EliminarRuta.this, rutas, keys);
+
+                //}
+
+                //--
+                //new RecyclerEliminarRuta_Config().setConfig(mRecyclerView, EliminarRuta.this, rutas, keys);
             }
 
             @Override
@@ -44,6 +63,9 @@ public class EliminarRuta extends AppCompatActivity {
 
             }
         });
+        //
+
     }
+
 
 }

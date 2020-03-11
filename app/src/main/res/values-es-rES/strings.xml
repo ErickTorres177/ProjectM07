@@ -175,6 +175,7 @@
     <string name="obligatorioRegister">El usuario, contraseña, nombre y la edad son obligatorios.</string> 
     <string name="passMenor">La contraseña tiene que ser mayor de 6 caracteres.</string> 
     <string name="cacenlaGeneral">Cancel</string> 
+    <string name="sinRutas">no tienes rutas creadas, por favor añade una.</string> 
 
     //MODIIFICAR PERFIL
     <string name="nomInvalidoModificarPerfil">Nombre inválido, introduzca solo letras: </string> 

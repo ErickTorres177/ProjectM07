@@ -65,7 +65,7 @@
 
     //NUEVA RUTA
     <string name="tvNuevaRutaF">New Route</string>
-    <string name="tvNombreNuevaRuta">Write the path name</string>
+    <string name="tvNombreNuevaRuta">Write the route name</string>
     <string name="etNombreNuevaRuta">example: summer house</string>
     <string name="tvDescripcionRutaNueva">Write some description:</string>
     <string name="etDescripcionRutaNueva">Castelldefels summer house</string>
@@ -180,6 +180,7 @@
     <string name="obligatorioRegister">The username, password, name and age are required.</string> 
     <string name="passMenor">Password must be longer than 6 characters.</string> 
     <string name="cacenlaGeneral">Cancelar</string> 
+    <string name="sinRutas">You have no routes created, please add one.</string> 
 
     //MODIIFICAR PERFIL
     <string name="nomInvalidoModificarPerfil">Invalid name, enter only letters: </string>   

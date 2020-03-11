@@ -282,4 +282,9 @@ public class NavegationDrawer extends AppCompatActivity {
         Intent intent = new Intent(this, prueba.class);
         startActivity(intent);
     }
+
+    public void irAnadirRutanueva(View view) {
+        Intent intent = new Intent(this, NuevaRuta.class);
+        startActivity(intent);
+    }
 }

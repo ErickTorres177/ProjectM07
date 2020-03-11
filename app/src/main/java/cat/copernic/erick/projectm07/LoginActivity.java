@@ -159,7 +159,7 @@ public class LoginActivity extends AppCompatActivity {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(LoginActivity.this);
         mBuilder.setTitle(R.string.tituloEscogeIdioma);
         mBuilder.setIcon(R.drawable.ic_toc_black_24dp);
-        
+
         String toastCancelar = LoginActivity.this.getResources().getString(R.string.cacenlaGeneral);
         mBuilder.setNeutralButton(toastCancelar, new DialogInterface.OnClickListener() {
             @Override
