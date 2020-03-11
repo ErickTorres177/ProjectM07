@@ -176,6 +176,11 @@
     <string name="eliminarRutaElert">Do you ant to delete this route?</string>
 
     //TOAST DE LA APP
+    <string name="sinModificaciones">No modifications.</string> 
+    <string name="obligatorioRegister">The username, password, name and age are required.</string> 
+    <string name="passMenor">Password must be longer than 6 characters.</string> 
+    <string name="cacenlaGeneral">Cancelar</string> 
+
     //MODIIFICAR PERFIL
     <string name="nomInvalidoModificarPerfil">Invalid name, enter only letters: </string>   
     <string name="edadInvalidaModificarPerfil">Invalid age, (5 - 110): </string> 

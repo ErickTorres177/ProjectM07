@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -47,10 +49,16 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         //Cargar idioma -> SharedPrefernece
         cargaLocale();
+
+        setContentView(R.layout.activity_main);
+
+
+        //ACTION BAR
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setTitle(getResources().getString(R.string.app_name));
 
         //FIRE BASE
         mAuth = FirebaseAuth.getInstance();
@@ -150,6 +158,17 @@ public class LoginActivity extends AppCompatActivity {
         final String[] lista_item = {"Catalán", "English", "Castellano "};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(LoginActivity.this);
         mBuilder.setTitle(R.string.tituloEscogeIdioma);
+        mBuilder.setIcon(R.drawable.ic_toc_black_24dp);
+        
+        String toastCancelar = LoginActivity.this.getResources().getString(R.string.cacenlaGeneral);
+        mBuilder.setNeutralButton(toastCancelar, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String toastSinModificaciones = LoginActivity.this.getResources().getString(R.string.sinModificaciones);
+                Toast.makeText(LoginActivity.this, toastSinModificaciones,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
         mBuilder.setSingleChoiceItems(lista_item, -1, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int i) {
@@ -182,7 +201,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void cargaLocale() {
-        SharedPreferences preferences = getSharedPreferences("Settings", MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
         String lenguaje = preferences.getString("miLenguaje", "");
         setLocale(lenguaje);
     }

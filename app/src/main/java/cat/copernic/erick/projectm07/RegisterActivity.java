@@ -45,8 +45,8 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         etUsuario = findViewById(R.id.txtNombreUsuario_perfil);
-        etPasswd = findViewById(R.id.txtEdad_perfil);
-        etNombreUsuario = findViewById(R.id.txtDireccion_pefil);
+        etPasswd = findViewById(R.id.tv_pass_user_register);
+        etNombreUsuario = findViewById(R.id.tv_nom_user_register);
         etEdad = findViewById(R.id.txtEdad);
 
 
@@ -77,19 +77,48 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegistrarU.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!compNombreIntroducido(etNombreUsuario.getText().toString())) {
 
-                    String toastInvalidoNombre = RegisterActivity.this.getResources().getString(R.string.nombreIncorrectoRegisterActivity);
-                    Toast.makeText(RegisterActivity.this, "El nom es incorrecte: " + etNombreUsuario.getText().toString(),
-                            Toast.LENGTH_SHORT).show();
-                } else if (!compIsNumericAndRango(Integer.valueOf(etEdad.getText().toString()))) {
+                String user = etUsuario.getText().toString();
+                String contra = etPasswd.getText().toString();
+                String nom = etNombreUsuario.getText().toString();
+                String edad = etEdad.getText().toString();
 
-                    String toastInvalidoEdad = RegisterActivity.this.getResources().getString(R.string.edadIncorrectaRegisterActivity);
-                    Toast.makeText(RegisterActivity.this, "Edat incorrecta: " + etEdad.getText().toString(),
+
+                if (!user.isEmpty() && !user.equals(" ")
+                        && !contra.isEmpty() && !contra.equals(" ")
+                        && !nom.isEmpty() && !nom.equals(" ")
+                        && !edad.isEmpty() && !edad.equals(" ")) {
+
+                    //com email
+                    if (!compEmail(user)) {
+                        String toastCredencialesIncorrectas = RegisterActivity.this.getResources().getString(R.string.credencialesIcorrectas);
+                        Toast.makeText(RegisterActivity.this, toastCredencialesIncorrectas,
+                                Toast.LENGTH_SHORT).show();
+
+                    }else if(contra.length()< 6){
+                        String toastpassMenor = RegisterActivity.this.getResources().getString(R.string.passMenor);
+                        Toast.makeText(RegisterActivity.this, toastpassMenor,
+                                Toast.LENGTH_SHORT).show();
+                    }else if(!compNombreIntroducido(nom)){
+                        String toastInvalidoNombre = RegisterActivity.this.getResources().getString(R.string.nombreIncorrectoRegisterActivity);
+                        Toast.makeText(RegisterActivity.this, toastInvalidoNombre + etNombreUsuario.getText().toString(),
+                                Toast.LENGTH_SHORT).show();
+                    }else if (!compIsNumericAndRango(Integer.valueOf(edad))){
+                        String toastInvalidoEdad = RegisterActivity.this.getResources().getString(R.string.edadIncorrectaRegisterActivity);
+                        Toast.makeText(RegisterActivity.this, toastInvalidoEdad + etEdad.getText().toString(),
+                                Toast.LENGTH_SHORT).show();
+
+                    }else {
+                        crearUsuario(user,contra);
+                    }
+
+                }else {
+                    String toastObligatorioRegister = RegisterActivity.this.getResources().getString(R.string.obligatorioRegister);
+                    Toast.makeText(RegisterActivity.this.getApplicationContext(), toastObligatorioRegister,
                             Toast.LENGTH_SHORT).show();
-                } else {
-                    crearUsuario(etUsuario.getText().toString(), etPasswd.getText().toString());
                 }
+
+
             }
         });
     }
@@ -103,13 +132,13 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void crearUsuario(final String email, final String password) {
 
-        if (email.isEmpty() || password.isEmpty()) {
+        /*if (email.isEmpty() || password.isEmpty()) {
 
             String toastCredencialesIncorrectas = RegisterActivity.this.getResources().getString(R.string.credencialesIcorrectas);
             Toast.makeText(RegisterActivity.this, toastCredencialesIncorrectas,
                     Toast.LENGTH_SHORT).show();
 
-        } else {
+        } else {*/
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
@@ -122,12 +151,13 @@ public class RegisterActivity extends AppCompatActivity {
                                     updateUI(user);
 
                                     String toastCuentaCreada = RegisterActivity.this.getResources().getString(R.string.cuentaCreada);
-                                    guardatUsuarioFB();
                                     Toast.makeText(RegisterActivity.this, toastCuentaCreada + ": " + email,
                                             Toast.LENGTH_SHORT).show();
-                                    comprobacionRegistro();
-                                    limpiarCampo();
+
+                                    guardatUsuarioFB();
+                                    // comprobacionRegistro();
                                     enviarLogin(email, password);
+                                    limpiarCampo();
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -146,11 +176,11 @@ public class RegisterActivity extends AppCompatActivity {
                             // ...
                         }
                     });
-        }
+        //}
     }
 
     private void comprobacionRegistro() {
-        boolean comp = true;
+      /*  boolean comp = true;
 
         String nombreComp = (etNombreUsuario.getText().toString());
         String edadComp = (etEdad.getText().toString());
@@ -177,7 +207,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         } else {
             guardatUsuarioFB();
-        }
+        }*/
 
     }
 

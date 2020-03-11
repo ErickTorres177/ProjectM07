@@ -171,6 +171,11 @@
 
 
     //TOAST DE LA APP
+    <string name="sinModificaciones">Sin modificaciónes.</string> 
+    <string name="obligatorioRegister">El usuario, contraseña, nombre y la edad son obligatorios.</string> 
+    <string name="passMenor">La contraseña tiene que ser mayor de 6 caracteres.</string> 
+    <string name="cacenlaGeneral">Cancel</string> 
+
     //MODIIFICAR PERFIL
     <string name="nomInvalidoModificarPerfil">Nombre inválido, introduzca solo letras: </string> 
     <string name="edadInvalidaModificarPerfil">Edad inválida, (5 - 110): </string>   

@@ -1,5 +1,6 @@
 package cat.copernic.erick.projectm07;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -266,7 +267,7 @@ public class NavegationDrawer extends AppCompatActivity {
     }
 
     private void cargaLocale() {
-        SharedPreferences preferences = getSharedPreferences("Settings", LoginActivity.MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
         String lenguaje = preferences.getString("miLenguaje", "");
         setLocale(lenguaje);
     }

@@ -208,6 +208,10 @@
 
 
     //TOAST DE LA APP
+    <string name="sinModificaciones">Sense modificacións.</string> 
+    <string name="obligatorioRegister">El usuari, constrasenya, nom i edat son obligatoris.</string> 
+    <string name="passMenor">La contrasenya te que ser més gran de 6 caracteres.</string> 
+    <string name="cacenlaGeneral">Cancelar</string> 
 
     //MODIIFICAR PERFIL
     <string name="nomInvalidoModificarPerfil">Nom invàlid, introdueixi només lletres: </string> 
