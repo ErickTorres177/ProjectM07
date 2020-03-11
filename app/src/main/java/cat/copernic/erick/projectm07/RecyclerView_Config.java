@@ -29,6 +29,7 @@ public class RecyclerView_Config {
 
     class RutasItemView extends RecyclerView.ViewHolder {
         //RUTA
+        private TextView mRuta_id;
         private TextView mRuta_nombre;
         private TextView mRuta_descripcion;
         private TextView mRuta_ruta;
@@ -51,7 +52,7 @@ public class RecyclerView_Config {
                     inflate(R.layout.rutas_list_item, parent, false));
 
             //RUTA
-            //mRuta_id = itemView.findViewById(R.id.tvRuta_id);
+            //mRuta_id = itemView.findViewById(R.id.tvIdRuta);
             mRuta_nombre = itemView.findViewById(R.id.tvRuta_nombre);
             mRuta_descripcion = itemView.findViewById(R.id.tvRuta_descripcion);
             mRuta_ruta = itemView.findViewById(R.id.tvRuta_ruta);
@@ -61,7 +62,7 @@ public class RecyclerView_Config {
 
 
             //RUTA COMPLETA
-            //mRutaCompleta_id = itemView.findViewById(R.id.tvRutaCompleta);
+            mRutaCompleta_id = itemView.findViewById(R.id.tvIdRutaCompleta);
             mRutaCompleta_nombre = itemView.findViewById(R.id.tvRuta_nombre);
             mRutaCompleta_descripcion = itemView.findViewById(R.id.tvRuta_descripcion);
             mRutaCompleta_ruta = itemView.findViewById(R.id.tvRuta_ruta);
@@ -73,7 +74,7 @@ public class RecyclerView_Config {
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext, RutaCompleta.class);
                     intent.putExtra("key", key);
-                    intent.putExtra("idRuta:", key);
+                    intent.putExtra("idRuta", mRutaCompleta_id.getText().toString());
                     intent.putExtra("nombreRuta", mRutaCompleta_nombre.getText().toString());
                     intent.putExtra("descripcionRuta", mRutaCompleta_descripcion.getText().toString());
                     intent.putExtra("ruta", mRutaCompleta_ruta.getText().toString());

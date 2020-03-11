@@ -220,4 +220,6 @@
     <string name="ubicacionActivadaRutaCompleta">Ubicación GPS activada.</string> 
     <string name="ubicacionDesactivadaRutaCompleta">La ubicación GPS está desactivada.</string> 
     <string name="errorConeccionRutaCompleta">Error de conección: </string> 
+
+    <string name="aquiEstoy">Estoy aquí</string>
 </resources>

@@ -22,6 +22,12 @@ import android.widget.Toast;
 import android.widget.Toolbar;
 
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -29,6 +35,7 @@ import com.google.android.gms.maps.StreetViewPanoramaOptions;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.SupportStreetViewPanoramaFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
@@ -42,6 +49,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.List;
@@ -178,6 +188,15 @@ public class MapaUbicacionActual extends AppCompatActivity implements OnMapReady
 
         return p1;
     }
+
+
+
+    //GoogleMap map;
+    Boolean actualPosicion = true;
+    JSONObject jsonObject;
+    Double longituI, latitudI;
+
+
     //Metodo onMpaReady para lanzar la el mapa cuando el 'map' este listo.
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -187,25 +206,57 @@ public class MapaUbicacionActual extends AppCompatActivity implements OnMapReady
 
         // MARCADOR CON LA LONGITUD Y LA LATITUD DE NICOLAU COPERNIC (41°34'12.3"N 1°59'47.5"E)
 
-        //----
+        //----,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+        mMap.setMyLocationEnabled(true);
+
+        mMap.setOnMyLocationChangeListener(new GoogleMap.OnMyLocationChangeListener() {
+
+            @Override
+            public void onMyLocationChange(Location location) {
+
+                if (actualPosicion) {
+                    latitudI = location.getLatitude();
+                    longituI = location.getLongitude();
+                    actualPosicion = false;
+
+                    LatLng latLng = new LatLng(latitudI, longituI);
+
+                    String toastAquiEstoy = MapaUbicacionActual.this.getResources().getString(R.string.aquiEstoy);
+                    mMap.addMarker(new MarkerOptions().position(latLng).title(toastAquiEstoy));
+
+//41°33'49.1"N 2°00'23.5"E
+                    CameraPosition cameraPosition  = new CameraPosition.Builder()
+                            .target(new LatLng(latitudI,longituI))
+                            .zoom(14)
+                            .bearing(30)
+                            .build();
+                    mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                    mMap.getUiSettings().setZoomControlsEnabled(true);
+                }
 
 
+            }
+        });
 
-        //---
+
+        //mMap.addMarker(new MarkerOptions().position().title("Aqui estoy"));
+
+        //---,,,,
         LatLng nicolauCopernic = new LatLng(41.570118, 1.996618);
         //Con este metodo se crea el icono rojo ese. MARCADOR
         //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         //Movemos la camara a nuestras coordenadas.
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nicolauCopernic,INITIAL_ZOOM));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(nicolauCopernic,INITIAL_ZOOM));
 
 
-        //Agregar Superposició:
-        GroundOverlayOptions CopernicOverLay = new GroundOverlayOptions()
+        //PARA PONER EL ICONO
+        /*GroundOverlayOptions CopernicOverLay = new GroundOverlayOptions()
                 .image(BitmapDescriptorFactory.fromResource(R.drawable.cerrar_ses))
                 //Establecemos la posicion 100metros.
-                .position(nicolauCopernic, 20);
+                .position(nicolauCopernic, 20);*/
 
-        mMap.addGroundOverlay(CopernicOverLay );
+        //mMap.addGroundOverlay(CopernicOverLay );
 
         //Cagamos los metodo necesraios.
 
@@ -219,6 +270,9 @@ public class MapaUbicacionActual extends AppCompatActivity implements OnMapReady
         enableMyLocation();
         //Llamamos al metodo setInfoWindowClickToPanorama(mMap):
         setInfoWindowClickToPanorama(mMap);
+
+        //NUEVAS OPCIONES
+
     }
 
 

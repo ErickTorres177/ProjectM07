@@ -9,20 +9,5 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MapsActivity" >
-
-        <Button
-            android:id="@+id/btnPost"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_gravity="right|top"
-            android:layout_marginEnd="13.5dp"
-            android:layout_marginTop="70dp"
-            android:background="@android:color/background_light"
-            android:onClick="obtenerCoordenadas"
-            tools:src="@android:drawable/btn_dialog"
-            android:drawableBottom="@drawable/ic_launcher_foreground"/>
-
-
-    </fragment>
+        tools:context=".MapsActivity" />
 </RelativeLayout>

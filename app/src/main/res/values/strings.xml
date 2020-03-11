@@ -260,6 +260,8 @@
     <string name="ubicacionDesactivadaRutaCompleta">La ubicació GPS està desactivat.</string> 
     <string name="errorConeccionRutaCompleta">Error d`conección: </string> 
 
+    <string name="aquiEstoy">Em trobo aquí</string>
+
 
 </resources>
 

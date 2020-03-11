@@ -227,4 +227,6 @@
     <string name="ubicacionDesactivadaRutaCompleta">GPS location is off.</string> 
     <string name="errorConeccionRutaCompleta">Connection error: </string> 
 
+    <string name="aquiEstoy">I am here</string>
+
 </resources>

@@ -212,6 +212,21 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvPaisRutaCompleta"
                 app:srcCompat="@drawable/navegacion" />
 
+            <TextView
+                android:id="@+id/tvIdRuta_completa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="#303030"
+                android:textColorHighlight="#303030"
+                android:textColorHint="#303030"
+                android:textColorLink="#303030"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.519"
+                app:layout_constraintStart_toEndOf="@+id/tvRuta_descripcion2"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescRutaCompleta" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

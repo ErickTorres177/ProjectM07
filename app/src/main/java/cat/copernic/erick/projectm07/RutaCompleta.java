@@ -58,7 +58,7 @@ import org.json.JSONObject;
 
 public class RutaCompleta extends AppCompatActivity {
 
-    private TextView tvNombreR, tvDescripcionR, tvRutaR, tvPaisR, tvCiudadR;
+    private TextView tvRitaId, tvNombreR, tvDescripcionR, tvRutaR, tvPaisR, tvCiudadR;
     private ImageView imgIrRuta;
 
     final String TAG = "REALTIMEDATABASE";
@@ -72,6 +72,7 @@ public class RutaCompleta extends AppCompatActivity {
     private DatabaseReference myRefDestino;
 
     private String key;
+    private String idRutaPasar;
     private String nombreR;
     private String descripcionR;
     private String rutaR;
@@ -83,6 +84,7 @@ public class RutaCompleta extends AppCompatActivity {
     private static Double logintud;
     private static Double latitud;
     private static String finalDireccionRuta;
+    private static String finalDestinoRutaFB;
     private static Double logintudDestino;
     private static Double latitudDestino;
 
@@ -102,11 +104,16 @@ public class RutaCompleta extends AppCompatActivity {
         currentUser = mAuth.getCurrentUser();
 
         key = getIntent().getStringExtra("key");
+        idRutaPasar = getIntent().getStringExtra("idRuta");
         nombreR = getIntent().getStringExtra("nombreRuta");
         descripcionR = getIntent().getStringExtra("descripcionRuta");
         rutaR = getIntent().getStringExtra("ruta");
         paisR = getIntent().getStringExtra("paisRuta");
         ciudadR = getIntent().getStringExtra("ciudadRuta");
+
+
+        tvRitaId = findViewById(R.id.tvIdRuta_completa);
+        tvRitaId.setText(idRutaPasar);
 
         tvNombreR = findViewById(R.id.tvRuta_rutaCompleta);
         tvNombreR.setText(nombreR);
@@ -285,32 +292,40 @@ public class RutaCompleta extends AppCompatActivity {
 
     }*/
    public void goToRuta(){
+
+       //Esta funciona coorectamente
        obtenerDirecionFB();
+
+       //
        ObtenerCoordenadaD();
 
-       String a ="41.5600112";
+       /*String a ="41.5600112";
        String b ="2.0054576";
        String c ="41.3828939";
-       String d ="2.1774322";
+       String d ="2.1774322";*/
 
 
        //webServiceObtenerRuta(String.valueOf(latitud),String.valueOf(logintud),
                //String.valueOf(latitudDestino),String.valueOf(logintudDestino));
 
-       Utilidades.coordenadas.setLatitudInicial(Double.parseDouble(a));
-       Utilidades.coordenadas.setLongitudInicial(Double.parseDouble(b));
-       Utilidades.coordenadas.setLatitudFinal(Double.parseDouble(c));
-       Utilidades.coordenadas.setLongitudFinal(Double.parseDouble(d));
+       /*Utilidades.coordenadas.setLatitudInicial(latitud);
+       Utilidades.coordenadas.setLongitudInicial(logintud);
+       Utilidades.coordenadas.setLatitudFinal(latitudDestino);
+       Utilidades.coordenadas.setLongitudFinal(logintudDestino);
+*/
 
 
-       //prueba
+       String stringLatInicial = String.valueOf(latitud);
+       String stringLongInicial = String.valueOf(logintud);
+       String stringLatDestino = String.valueOf(latitudDestino);
+       String stringLongDestino = String.valueOf(logintudDestino);
 
-
-       webServiceObtenerRuta(a,b,c,d);
+       webServiceObtenerRuta(stringLatInicial,stringLongInicial,stringLatDestino,stringLongDestino);
       // webServiceObtenerRuta(String.valueOf(latitud),String.valueOf(logintud),
                //String.valueOf(latitudDestino),String.valueOf(logintudDestino));
        //webServiceObtenerRuta(latitud.toString(),logintud.toString(),
                //latitudDestino.toString(),logintudDestino.toString());
+
 
        Intent miIntent=new Intent(RutaCompleta.this, MapsActivity.class);
        startActivity(miIntent);
@@ -503,17 +518,23 @@ public class RutaCompleta extends AppCompatActivity {
    //OBTENER COORDENADAS DESTINO -> FIRE BASE RUTA -> RUTA
     public void ObtenerCoordenadaD(){
 
-        myRefDestino = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid());
+        myRefDestino = FirebaseDatabase.getInstance().getReference().child("Usuarios")
+                .child(currentUser.getUid()).child("rutas").child(idRutaPasar);
 
         myRefDestino.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Usuarios usuarios = dataSnapshot.getValue(Usuarios.class);
-                final String direccionU = usuarios.getDireccion();
-                finalDireccionRuta = direccionU;
-                Log.e("usuario: ", currentUser.getUid() + " direcion DESTINO FINAL: " + finalDireccionRuta);
+                //Usuarios usuarios = dataSnapshot.getValue(Usuarios.class);
+                //final String direccionU = usuarios.getDireccion();
+                //finalDireccionRuta = direccionU;
+                //Log.e("usuario: ", currentUser.getUid() + " direcion DESTINO FINAL: " + finalDireccionRuta);
+
+                Rutas rutas = dataSnapshot.getValue(Rutas.class);
+                final String direccionDestino = rutas.getRuta();
+                finalDestinoRutaFB = direccionDestino;
+                Log.e("usuario RUTAAA DESTINO:", currentUser.getUid() + " direcion DESTINO FINAL: " + finalDestinoRutaFB);
                 try {
-                    obtenerCoordenadasDestino(RutaCompleta.this,finalDireccionRuta);
+                    obtenerCoordenadasDestino(RutaCompleta.this,finalDestinoRutaFB);
 
                 }catch (Exception e){
                     Log.w(TAG, "------RUTA INVALIDA------");
@@ -548,9 +569,16 @@ public class RutaCompleta extends AppCompatActivity {
             logintudDestino = location.getLongitude();
             latitudDestino = location.getLatitude();
 
+            //----------------------
+
+            Utilidades.coordenadas.setLatitudFinal(latitudDestino);
+            Utilidades.coordenadas.setLongitudFinal(logintudDestino);
+
+            //---------------------
+
             //longitud y latitud ORIGEN
-            Log.e("usuario: ", currentUser.getUid() + " lon:: " + logintud);
-            Log.e("usuario: ", currentUser.getUid() + " lat:: " + latitud);
+            Log.e("usuario DESTINO: ", currentUser.getUid() + " lon:: " + logintudDestino);
+            Log.e("usuario DESTINO: ", currentUser.getUid() + " lat:: " + latitudDestino);
 
         } catch (IOException ex) {
 
@@ -573,7 +601,7 @@ public class RutaCompleta extends AppCompatActivity {
                 Usuarios usuarios = dataSnapshot.getValue(Usuarios.class);
                 final String direccionU = usuarios.getDireccion();
                 finalDireccionRuta = direccionU;
-                Log.e("usuario: ", currentUser.getUid() + " direcion:: " + finalDireccionRuta);
+                Log.e("usuario: ", currentUser.getUid() + " direcion: " + finalDireccionRuta);
                 try {
                     obtenerCoordenadasFromAdrres(RutaCompleta.this,finalDireccionRuta);
 
@@ -630,6 +658,10 @@ public class RutaCompleta extends AppCompatActivity {
             logintud= location.getLongitude();
             latitud = location.getLatitude();
 
+            //----------------------
+            Utilidades.coordenadas.setLatitudInicial(latitud);
+            Utilidades.coordenadas.setLongitudInicial(logintud);
+            //------------------
             //longitud y latitud ORIGEN
             Log.e("usuario: ", currentUser.getUid() + " lon:: " + logintud);
             Log.e("usuario: ", currentUser.getUid() + " lat:: " + latitud);
