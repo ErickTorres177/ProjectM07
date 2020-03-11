@@ -228,5 +228,5 @@
     <string name="errorConeccionRutaCompleta">Connection error: </string> 
 
     <string name="aquiEstoy">I am here</string>
-
+    <string name="destino">My destiny</string>
 </resources>

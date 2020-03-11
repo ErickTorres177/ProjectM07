@@ -9,6 +9,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -92,16 +93,35 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
         // Dibujamos las Polilineas en el Google Map para cada ruta
-        //mMap.addPolyline(lineOptions);
+
+        if (lineOptions != null){
+            googleMap.addPolyline(lineOptions);
+            mMap.addPolyline(lineOptions);
+        }
+
 
         //LatLng origen = new LatLng(Utilidades.coordenadas.getLatitudInicial(), Utilidades.coordenadas.getLongitudInicial());
         LatLng origen = new LatLng(Utilidades.coordenadas.getLatitudInicial(), Utilidades.coordenadas.getLongitudInicial());
-        mMap.addMarker(new MarkerOptions().position(origen).title("Lat: "+Utilidades.coordenadas.getLatitudInicial()+" - Long: "+Utilidades.coordenadas.getLongitudInicial()));
+        String toastAquiEstoy = MapsActivity.this.getResources().getString(R.string.aquiEstoy);
+        //mMap.addMarker(new MarkerOptions().position(origen).title("Lat: "+Utilidades.coordenadas.getLatitudInicial()+" - Long: "+Utilidades.coordenadas.getLongitudInicial()));
+        mMap.addMarker(new MarkerOptions().position(origen).title(toastAquiEstoy));
 
+
+        String toastDestino= MapsActivity.this.getResources().getString(R.string.destino);
         LatLng destino = new LatLng(Utilidades.coordenadas.getLatitudFinal(), Utilidades.coordenadas.getLongitudFinal());
-        mMap.addMarker(new MarkerOptions().position(destino).title("Aqui estoy"));
-        //mMap.addMarker(new MarkerOptions().position(latLng).title("Aqui estoy"));
+        mMap.addMarker(new MarkerOptions().position(destino).title(toastDestino));
         //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(center, 15));
+        //---
+        mMap.setMyLocationEnabled(true);
+        CameraPosition cameraPosition  = new CameraPosition.Builder()
+                .target(new LatLng(Utilidades.coordenadas.getLatitudInicial(),Utilidades.coordenadas.getLongitudInicial()))
+                .zoom(14)
+                .bearing(30)
+                .build();
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+
+
         /////////////
 
     }

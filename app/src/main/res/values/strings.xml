@@ -261,6 +261,8 @@
     <string name="errorConeccionRutaCompleta">Error d`conección: </string> 
 
     <string name="aquiEstoy">Em trobo aquí</string>
+    <string name="destino">La meva destinació</string>
+
 
 
 </resources>

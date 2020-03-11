@@ -50,11 +50,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+
 import com.android.volley.RequestQueue;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import cat.copernic.erick.projectm07.ui.miUbicacion.miUbicacionFragment;
 
 public class RutaCompleta extends AppCompatActivity {
 
@@ -87,6 +90,9 @@ public class RutaCompleta extends AppCompatActivity {
     private static String finalDestinoRutaFB;
     private static Double logintudDestino;
     private static Double latitudDestino;
+
+    private static Double logintudUbicacionActual;
+    private static Double latitudUbicacionActual;
 
     //JSON
     JsonObjectRequest jsonObjectRequest;
@@ -187,7 +193,7 @@ public class RutaCompleta extends AppCompatActivity {
 
                 int permisosCheck = ContextCompat.checkSelfPermission(RutaCompleta.this, Manifest.permission.ACCESS_FINE_LOCATION);
 
-                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0,0,locationListener);
+                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
 
 
                 //int permisosCheck = ContextCompat.checkSelfPermission(RutaCompleta.this, Manifest.permission.ACCESS_FINE_LOCATION);
@@ -207,97 +213,136 @@ public class RutaCompleta extends AppCompatActivity {
                 }
 
 
-
-
                 mostrarAlertTipoAdrres();
             }
         });
 
 
-
         //INICIALIZACION REQUEST VOLLEY
-        request= Volley.newRequestQueue(getApplicationContext());
+        request = Volley.newRequestQueue(getApplicationContext());
 
     }
 
-   /* public void obtenerUbicacionActual() {
-        LocationManager locationManager = (LocationManager) RutaCompleta.this.getSystemService(Context.LOCATION_SERVICE);
-        LocationListener locationListener = new Localizacion() {
+    /* public void obtenerUbicacionActual() {
+         LocationManager locationManager = (LocationManager) RutaCompleta.this.getSystemService(Context.LOCATION_SERVICE);
+         LocationListener locationListener = new Localizacion() {
 
-            @Override
-            public void onLocationChanged(Location loc) {
+             @Override
+             public void onLocationChanged(Location loc) {
 
-                logintud = loc.getLongitude();
-                latitud = loc.getLatitude();
-                Log.e("usuario: ", currentUser.getUid() + " lon: " + logintud);
-                Log.e("usuario: ", currentUser.getUid() + " lat: " + latitud);
+                 logintud = loc.getLongitude();
+                 latitud = loc.getLatitude();
+                 Log.e("usuario: ", currentUser.getUid() + " lon: " + logintud);
+                 Log.e("usuario: ", currentUser.getUid() + " lat: " + latitud);
 
-                //OBTENER LA DIRECCION
-                if (loc.getLatitude() != 0.0 && loc.getLongitude() != 0.0) {
-                    try {
-                        Geocoder geocoder = new Geocoder(RutaCompleta.this, Locale.getDefault());
-                        List<Address> list = geocoder.getFromLocation(
-                                loc.getLatitude(), loc.getLongitude(), 1);
-                        if (!list.isEmpty()) {
-                            Address DirCalle = list.get(0);
-                            finalDireccionRuta = DirCalle.getAddressLine(0);
-                            Log.e("usuario: ", currentUser.getUid() + " direcion: " + finalDireccionRuta);
-                            Log.e("usuario: ", currentUser.getUid() + " lon: " + logintud);
-                            Log.e("usuario: ", currentUser.getUid() + " lat: " + latitud);
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
+                 //OBTENER LA DIRECCION
+                 if (loc.getLatitude() != 0.0 && loc.getLongitude() != 0.0) {
+                     try {
+                         Geocoder geocoder = new Geocoder(RutaCompleta.this, Locale.getDefault());
+                         List<Address> list = geocoder.getFromLocation(
+                                 loc.getLatitude(), loc.getLongitude(), 1);
+                         if (!list.isEmpty()) {
+                             Address DirCalle = list.get(0);
+                             finalDireccionRuta = DirCalle.getAddressLine(0);
+                             Log.e("usuario: ", currentUser.getUid() + " direcion: " + finalDireccionRuta);
+                             Log.e("usuario: ", currentUser.getUid() + " lon: " + logintud);
+                             Log.e("usuario: ", currentUser.getUid() + " lat: " + latitud);
+                         }
+                     } catch (IOException e) {
+                         e.printStackTrace();
+                     }
+                 }
 
-            }
+             }
 
-            public void onStatusChanged(String provider, int status, Bundle extras) {
-                Toast.makeText(RutaCompleta.this, "Calculant coordenades.",
-                        Toast.LENGTH_SHORT).show();
-            }
+             public void onStatusChanged(String provider, int status, Bundle extras) {
+                 Toast.makeText(RutaCompleta.this, "Calculant coordenades.",
+                         Toast.LENGTH_SHORT).show();
+             }
 
-            public void onProviderEnabled(String provider) {
-                Toast.makeText(RutaCompleta.this, "Ubicació GPS activada.",
-                        Toast.LENGTH_SHORT).show();
-            }
+             public void onProviderEnabled(String provider) {
+                 Toast.makeText(RutaCompleta.this, "Ubicació GPS activada.",
+                         Toast.LENGTH_SHORT).show();
+             }
 
-            public void onProviderDisabled(String provider) {
-                Toast.makeText(RutaCompleta.this, "La ubicació GPS està desactivat.",
-                        Toast.LENGTH_SHORT).show();
-            }
+             public void onProviderDisabled(String provider) {
+                 Toast.makeText(RutaCompleta.this, "La ubicació GPS està desactivat.",
+                         Toast.LENGTH_SHORT).show();
+             }
 
-        };
+         };
 
-        int permisosCheck = ContextCompat.checkSelfPermission(RutaCompleta.this, Manifest.permission.ACCESS_FINE_LOCATION);
+         int permisosCheck = ContextCompat.checkSelfPermission(RutaCompleta.this, Manifest.permission.ACCESS_FINE_LOCATION);
 
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0,0,locationListener);
-
-
-        //int permisosCheck = ContextCompat.checkSelfPermission(RutaCompleta.this, Manifest.permission.ACCESS_FINE_LOCATION);
+         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0,0,locationListener);
 
 
-        //Here, thisActivity is the current activity
-        if (ContextCompat.checkSelfPermission(RutaCompleta.this,
-                Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(RutaCompleta.this,
-                    Manifest.permission.ACCESS_FINE_LOCATION)) {
-            } else {
-                ActivityCompat.requestPermissions(RutaCompleta.this,
-                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-            }
-        } else {
-        }
+         //int permisosCheck = ContextCompat.checkSelfPermission(RutaCompleta.this, Manifest.permission.ACCESS_FINE_LOCATION);
 
-    }*/
-   public void goToRuta(){
 
-       //Esta funciona coorectamente
-       obtenerDirecionFB();
+         //Here, thisActivity is the current activity
+         if (ContextCompat.checkSelfPermission(RutaCompleta.this,
+                 Manifest.permission.ACCESS_FINE_LOCATION)
+                 != PackageManager.PERMISSION_GRANTED) {
+             if (ActivityCompat.shouldShowRequestPermissionRationale(RutaCompleta.this,
+                     Manifest.permission.ACCESS_FINE_LOCATION)) {
+             } else {
+                 ActivityCompat.requestPermissions(RutaCompleta.this,
+                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+             }
+         } else {
+         }
 
-       //
-       ObtenerCoordenadaD();
+     }*/
+
+
+    public void goToRutaUbicacionActual() {
+
+        Log.e("ubicacion actual coo: ", "LON: " + logintudUbicacionActual);
+        Log.e("ubicacion actual coo: ", " LAT: "+ latitudUbicacionActual);
+
+
+        obtenerUbicacionActual();
+
+
+        Log.e("DESPUES ", "LONFFFFFF: ");
+        Log.e("ubicacion actual coo: ", "LON: " + logintudUbicacionActual);
+        Log.e("ubicacion actual coo: ", " LAT: "+ latitudUbicacionActual);
+
+
+        ObtenerCoordenadaD();
+
+
+        String stringLatInicialUbicacionActual = String.valueOf(latitudUbicacionActual);
+        String stringLongInicialUbicacionActual = String.valueOf(logintudUbicacionActual);
+        String stringLatDestino = String.valueOf(latitudDestino);
+        String stringLongDestino = String.valueOf(logintudDestino);
+
+
+        Log.e("FFF ", "LONFFFFFF: ");
+        Log.e("ubicacion actual coo: ", "LON: " + logintudUbicacionActual);
+        Log.e("ubicacion actual coo: ", " LAT: "+ latitudUbicacionActual);
+
+
+
+        //webServiceObtenerRuta(stringLatInicialUbicacionActual, stringLongInicialUbicacionActual, stringLatDestino, stringLongDestino);
+        // webServiceObtenerRuta(String.valueOf(latitud),String.valueOf(logintud),
+        //String.valueOf(latitudDestino),String.valueOf(logintudDestino));
+        //webServiceObtenerRuta(latitud.toString(),logintud.toString(),
+        //latitudDestino.toString(),logintudDestino.toString());
+
+
+        //Intent miIntent = new Intent(RutaCompleta.this, MapsActivity.class);
+        //startActivity(miIntent);
+    }
+
+    public void goToRuta() {
+
+        //Esta funciona coorectamente
+        obtenerDirecionFB();
+
+        //
+        ObtenerCoordenadaD();
 
        /*String a ="41.5600112";
        String b ="2.0054576";
@@ -305,8 +350,8 @@ public class RutaCompleta extends AppCompatActivity {
        String d ="2.1774322";*/
 
 
-       //webServiceObtenerRuta(String.valueOf(latitud),String.valueOf(logintud),
-               //String.valueOf(latitudDestino),String.valueOf(logintudDestino));
+        //webServiceObtenerRuta(String.valueOf(latitud),String.valueOf(logintud),
+        //String.valueOf(latitudDestino),String.valueOf(logintudDestino));
 
        /*Utilidades.coordenadas.setLatitudInicial(latitud);
        Utilidades.coordenadas.setLongitudInicial(logintud);
@@ -315,27 +360,28 @@ public class RutaCompleta extends AppCompatActivity {
 */
 
 
-       String stringLatInicial = String.valueOf(latitud);
-       String stringLongInicial = String.valueOf(logintud);
-       String stringLatDestino = String.valueOf(latitudDestino);
-       String stringLongDestino = String.valueOf(logintudDestino);
+        String stringLatInicial = String.valueOf(latitud);
+        String stringLongInicial = String.valueOf(logintud);
+        String stringLatDestino = String.valueOf(latitudDestino);
+        String stringLongDestino = String.valueOf(logintudDestino);
 
-       webServiceObtenerRuta(stringLatInicial,stringLongInicial,stringLatDestino,stringLongDestino);
-      // webServiceObtenerRuta(String.valueOf(latitud),String.valueOf(logintud),
-               //String.valueOf(latitudDestino),String.valueOf(logintudDestino));
-       //webServiceObtenerRuta(latitud.toString(),logintud.toString(),
-               //latitudDestino.toString(),logintudDestino.toString());
+        webServiceObtenerRuta(stringLatInicial, stringLongInicial, stringLatDestino, stringLongDestino);
+        // webServiceObtenerRuta(String.valueOf(latitud),String.valueOf(logintud),
+        //String.valueOf(latitudDestino),String.valueOf(logintudDestino));
+        //webServiceObtenerRuta(latitud.toString(),logintud.toString(),
+        //latitudDestino.toString(),logintudDestino.toString());
 
 
-       Intent miIntent=new Intent(RutaCompleta.this, MapsActivity.class);
-       startActivity(miIntent);
-   }
+        Intent miIntent = new Intent(RutaCompleta.this, MapsActivity.class);
+        startActivity(miIntent);
+    }
+
     private void webServiceObtenerRuta(String latitudInicial, String longitudInicial, String latitudFinal, String longitudFinal) {
 
-        String url="https://maps.googleapis.com/maps/api/directions/json?origin="+latitudInicial+","+longitudInicial
-                +"&destination="+latitudFinal+","+longitudFinal;
+        String url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + latitudInicial + "," + longitudInicial
+                + "&destination=" + latitudFinal + "," + longitudFinal;
 
-        jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 //Este método PARSEA el JSONObject que retorna del API de Rutas de Google devolviendo
@@ -350,25 +396,25 @@ public class RutaCompleta extends AppCompatActivity {
                     jRoutes = response.getJSONArray("routes");
 
                     /** Traversing all routes */
-                    for(int i=0;i<jRoutes.length();i++){
-                        jLegs = ( (JSONObject)jRoutes.get(i)).getJSONArray("legs");
+                    for (int i = 0; i < jRoutes.length(); i++) {
+                        jLegs = ((JSONObject) jRoutes.get(i)).getJSONArray("legs");
                         List<HashMap<String, String>> path = new ArrayList<HashMap<String, String>>();
 
                         /** Traversing all legs */
-                        for(int j=0;j<jLegs.length();j++){
-                            jSteps = ( (JSONObject)jLegs.get(j)).getJSONArray("steps");
+                        for (int j = 0; j < jLegs.length(); j++) {
+                            jSteps = ((JSONObject) jLegs.get(j)).getJSONArray("steps");
 
                             /** Traversing all steps */
-                            for(int k=0;k<jSteps.length();k++){
+                            for (int k = 0; k < jSteps.length(); k++) {
                                 String polyline = "";
-                                polyline = (String)((JSONObject)((JSONObject)jSteps.get(k)).get("polyline")).get("points");
+                                polyline = (String) ((JSONObject) ((JSONObject) jSteps.get(k)).get("polyline")).get("points");
                                 List<LatLng> list = decodePoly(polyline);
 
                                 /** Traversing all points */
-                                for(int l=0;l<list.size();l++){
+                                for (int l = 0; l < list.size(); l++) {
                                     HashMap<String, String> hm = new HashMap<String, String>();
-                                    hm.put("lat", Double.toString(((LatLng)list.get(l)).latitude) );
-                                    hm.put("lng", Double.toString(((LatLng)list.get(l)).longitude) );
+                                    hm.put("lat", Double.toString(((LatLng) list.get(l)).latitude));
+                                    hm.put("lng", Double.toString(((LatLng) list.get(l)).longitude));
                                     path.add(hm);
                                 }
                             }
@@ -377,7 +423,7 @@ public class RutaCompleta extends AppCompatActivity {
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
-                }catch (Exception e){
+                } catch (Exception e) {
                 }
             }
         }, new Response.ErrorListener() {
@@ -395,7 +441,7 @@ public class RutaCompleta extends AppCompatActivity {
         request.add(jsonObjectRequest);
     }
 
-    public List<List<HashMap<String,String>>> parse(JSONObject jObject){
+    public List<List<HashMap<String, String>>> parse(JSONObject jObject) {
         //Este método PARSEA el JSONObject que retorna del API de Rutas de Google devolviendo
         //una lista del lista de HashMap Strings con el listado de Coordenadas de Lat y Long,
         //con la cual se podrá dibujar pollinas que describan la ruta entre 2 puntos.
@@ -408,25 +454,25 @@ public class RutaCompleta extends AppCompatActivity {
             jRoutes = jObject.getJSONArray("routes");
 
             /** Traversing all routes */
-            for(int i=0;i<jRoutes.length();i++){
-                jLegs = ( (JSONObject)jRoutes.get(i)).getJSONArray("legs");
+            for (int i = 0; i < jRoutes.length(); i++) {
+                jLegs = ((JSONObject) jRoutes.get(i)).getJSONArray("legs");
                 List<HashMap<String, String>> path = new ArrayList<HashMap<String, String>>();
 
                 /** Traversing all legs */
-                for(int j=0;j<jLegs.length();j++){
-                    jSteps = ( (JSONObject)jLegs.get(j)).getJSONArray("steps");
+                for (int j = 0; j < jLegs.length(); j++) {
+                    jSteps = ((JSONObject) jLegs.get(j)).getJSONArray("steps");
 
                     /** Traversing all steps */
-                    for(int k=0;k<jSteps.length();k++){
+                    for (int k = 0; k < jSteps.length(); k++) {
                         String polyline = "";
-                        polyline = (String)((JSONObject)((JSONObject)jSteps.get(k)).get("polyline")).get("points");
+                        polyline = (String) ((JSONObject) ((JSONObject) jSteps.get(k)).get("polyline")).get("points");
                         List<LatLng> list = decodePoly(polyline);
 
                         /** Traversing all points */
-                        for(int l=0;l<list.size();l++){
+                        for (int l = 0; l < list.size(); l++) {
                             HashMap<String, String> hm = new HashMap<String, String>();
-                            hm.put("lat", Double.toString(((LatLng)list.get(l)).latitude) );
-                            hm.put("lng", Double.toString(((LatLng)list.get(l)).longitude) );
+                            hm.put("lat", Double.toString(((LatLng) list.get(l)).latitude));
+                            hm.put("lng", Double.toString(((LatLng) list.get(l)).longitude));
                             path.add(hm);
                         }
                     }
@@ -435,7 +481,7 @@ public class RutaCompleta extends AppCompatActivity {
             }
         } catch (JSONException e) {
             e.printStackTrace();
-        }catch (Exception e){
+        } catch (Exception e) {
         }
         return Utilidades.routes;
     }
@@ -513,10 +559,62 @@ public class RutaCompleta extends AppCompatActivity {
     //------------------------------------------------------------------------------------------------------------
     //------------------------------------------------------------------------------------------------------------
     //------------------------------------------------------------------------------------------------------------
+
+    public void obtenerUbicacionActual() {
+        LocationManager locationManager = (LocationManager) RutaCompleta.this.getSystemService(Context.LOCATION_SERVICE);
+        LocationListener locationListener = new Localizacion() {
+
+            @Override
+            public void onLocationChanged(Location loc) {
+
+
+                logintudUbicacionActual = loc.getLongitude();
+                latitudUbicacionActual = loc.getLatitude();
+                Log.e("ubicacion actual coo: ", "LON: " + logintudUbicacionActual);
+                Log.e("ubicacion actual coo: ", " LAT: "+ latitudUbicacionActual);
+
+                Utilidades.coordenadas.setLatitudInicial(latitudUbicacionActual);
+                Utilidades.coordenadas.setLongitudInicial(logintudUbicacionActual);
+
+
+                double lat = Utilidades.coordenadas.getLatitudInicial();
+                double lot = Utilidades.coordenadas.getLongitudInicial();
+
+
+
+                Log.e("set LONG", "LON: " + lot);
+                Log.e("SET LAT  ", " LAT: "+ lat);
+
+
+            }
+/*
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+
+
+            }
+
+            public void onProviderEnabled(String provider) {
+
+
+            }
+
+            public void onProviderDisabled(String provider) {
+
+            }*/
+
+        };
+
+        int permisosCheck = ContextCompat.checkSelfPermission(RutaCompleta.this, Manifest.permission.ACCESS_FINE_LOCATION);
+
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+
+    }
+
+
     //------------------------------------------------------------------------------------------------------------
-   //------------------------------------------------------------------------------------------------------------
-   //OBTENER COORDENADAS DESTINO -> FIRE BASE RUTA -> RUTA
-    public void ObtenerCoordenadaD(){
+    //------------------------------------------------------------------------------------------------------------
+    //OBTENER COORDENADAS DESTINO -> FIRE BASE RUTA -> RUTA
+    public void ObtenerCoordenadaD() {
 
         myRefDestino = FirebaseDatabase.getInstance().getReference().child("Usuarios")
                 .child(currentUser.getUid()).child("rutas").child(idRutaPasar);
@@ -534,9 +632,9 @@ public class RutaCompleta extends AppCompatActivity {
                 finalDestinoRutaFB = direccionDestino;
                 Log.e("usuario RUTAAA DESTINO:", currentUser.getUid() + " direcion DESTINO FINAL: " + finalDestinoRutaFB);
                 try {
-                    obtenerCoordenadasDestino(RutaCompleta.this,finalDestinoRutaFB);
+                    obtenerCoordenadasDestino(RutaCompleta.this, finalDestinoRutaFB);
 
-                }catch (Exception e){
+                } catch (Exception e) {
                     Log.w(TAG, "------RUTA INVALIDA------");
                     mostrarAlertTipoAdrres();
                 }
@@ -589,8 +687,7 @@ public class RutaCompleta extends AppCompatActivity {
     }
 
 
-
-   //OBTENER COORDENADAS ORIGEN -> DIRECCION USUARIO
+    //OBTENER COORDENADAS ORIGEN -> DIRECCION USUARIO
     public void obtenerDirecionFB() {
 
         myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid());
@@ -603,9 +700,9 @@ public class RutaCompleta extends AppCompatActivity {
                 finalDireccionRuta = direccionU;
                 Log.e("usuario: ", currentUser.getUid() + " direcion: " + finalDireccionRuta);
                 try {
-                    obtenerCoordenadasFromAdrres(RutaCompleta.this,finalDireccionRuta);
+                    obtenerCoordenadasFromAdrres(RutaCompleta.this, finalDireccionRuta);
 
-                }catch (Exception e){
+                } catch (Exception e) {
                     Log.w(TAG, "------RUTA INVALIDA------");
                     mostrarAlertTipoAdrres();
                 }
@@ -627,7 +724,7 @@ public class RutaCompleta extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int i) {
                 if (i == 0) {
-                    //obtenerUbicacionActual();
+                    goToRutaUbicacionActual();
                 } else if (i == 1) {
                     goToRuta();
                 }
@@ -655,7 +752,7 @@ public class RutaCompleta extends AppCompatActivity {
 
             Address location = address.get(0);
             p1 = new LatLng(location.getLatitude(), location.getLongitude());
-            logintud= location.getLongitude();
+            logintud = location.getLongitude();
             latitud = location.getLatitude();
 
             //----------------------
@@ -673,7 +770,6 @@ public class RutaCompleta extends AppCompatActivity {
 
         return p1;
     }
-
 
 
     public void handleRegresarRutas(View view) {

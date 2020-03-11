@@ -144,7 +144,7 @@ public class MapaUbicacionActual extends AppCompatActivity implements OnMapReady
                 Usuarios usuarios = dataSnapshot.getValue(Usuarios.class);
                 final String direccionU = usuarios.getDireccion();
                 direccionMapa = direccionU;
-                Log.e("usuario: ", currentUser.getUid() + " DIRECCION: " + direccionMapa);
+                //Log.e("usuario: ", currentUser.getUid() + " DIRECCION: " + direccionMapa);
                 try {
                     obtenerCoordenadasDestino(MapaUbicacionActual.this,direccionMapa);
 
@@ -156,7 +156,7 @@ public class MapaUbicacionActual extends AppCompatActivity implements OnMapReady
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
+                //Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
     }

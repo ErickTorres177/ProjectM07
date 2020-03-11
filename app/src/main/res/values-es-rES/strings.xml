@@ -222,4 +222,5 @@
     <string name="errorConeccionRutaCompleta">Error de conección: </string> 
 
     <string name="aquiEstoy">Estoy aquí</string>
+    <string name="destino">Mi destino</string>
 </resources>
