@@ -221,8 +221,58 @@ public class RutaCompleta extends AppCompatActivity {
         //INICIALIZACION REQUEST VOLLEY
         request = Volley.newRequestQueue(getApplicationContext());
 
-    }
+        obtenerUbicacionActual();
 
+    }
+    public void obtenerUbicacionActual() {
+        LocationManager locationManager = (LocationManager) RutaCompleta.this.getSystemService(Context.LOCATION_SERVICE);
+        LocationListener locationListener = new Localizacion() {
+
+            @Override
+            public void onLocationChanged(Location loc) {
+
+
+                logintudUbicacionActual = loc.getLongitude();
+                latitudUbicacionActual = loc.getLatitude();
+                Log.e("ubicacion actual coo: ", "LON: " + logintudUbicacionActual);
+                Log.e("ubicacion actual coo: ", " LAT: "+ latitudUbicacionActual);
+
+                Utilidades.coordenadas.setLatitudInicial(latitudUbicacionActual);
+                Utilidades.coordenadas.setLongitudInicial(logintudUbicacionActual);
+
+
+                double lat = Utilidades.coordenadas.getLatitudInicial();
+                double lot = Utilidades.coordenadas.getLongitudInicial();
+
+
+
+                Log.e("set LONG", "LON: " + lot);
+                Log.e("SET LAT  ", " LAT: "+ lat);
+
+
+            }
+/*
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+
+
+            }
+
+            public void onProviderEnabled(String provider) {
+
+
+            }
+
+            public void onProviderDisabled(String provider) {
+
+            }*/
+
+        };
+
+        int permisosCheck = ContextCompat.checkSelfPermission(RutaCompleta.this, Manifest.permission.ACCESS_FINE_LOCATION);
+
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+
+    }
     /* public void obtenerUbicacionActual() {
          LocationManager locationManager = (LocationManager) RutaCompleta.this.getSystemService(Context.LOCATION_SERVICE);
          LocationListener locationListener = new Localizacion() {
@@ -298,20 +348,17 @@ public class RutaCompleta extends AppCompatActivity {
 
     public void goToRutaUbicacionActual() {
 
-        Log.e("ubicacion actual coo: ", "LON: " + logintudUbicacionActual);
-        Log.e("ubicacion actual coo: ", " LAT: "+ latitudUbicacionActual);
 
+        //obtenerUbicacionActual();
 
-        obtenerUbicacionActual();
+        //double latUbicacionA = Utilidades.coordenadas.getLatitudInicial();
+        //double longUbicacionA = Utilidades.coordenadas.getLongitudInicial();
 
-
-        Log.e("DESPUES ", "LONFFFFFF: ");
-        Log.e("ubicacion actual coo: ", "LON: " + logintudUbicacionActual);
-        Log.e("ubicacion actual coo: ", " LAT: "+ latitudUbicacionActual);
-
+        /*Log.e("DESPUES ", "LONFFFFFF: ");
+        Log.e("ubicacion actual coo: ", "LON: " + latUbicacionA);
+        Log.e("ubicacion actual coo: ", " LAT: "+ longUbicacionA);*/
 
         ObtenerCoordenadaD();
-
 
         String stringLatInicialUbicacionActual = String.valueOf(latitudUbicacionActual);
         String stringLongInicialUbicacionActual = String.valueOf(logintudUbicacionActual);
@@ -319,21 +366,15 @@ public class RutaCompleta extends AppCompatActivity {
         String stringLongDestino = String.valueOf(logintudDestino);
 
 
-        Log.e("FFF ", "LONFFFFFF: ");
-        Log.e("ubicacion actual coo: ", "LON: " + logintudUbicacionActual);
-        Log.e("ubicacion actual coo: ", " LAT: "+ latitudUbicacionActual);
-
-
-
-        //webServiceObtenerRuta(stringLatInicialUbicacionActual, stringLongInicialUbicacionActual, stringLatDestino, stringLongDestino);
+        webServiceObtenerRuta(stringLatInicialUbicacionActual, stringLongInicialUbicacionActual, stringLatDestino, stringLongDestino);
         // webServiceObtenerRuta(String.valueOf(latitud),String.valueOf(logintud),
         //String.valueOf(latitudDestino),String.valueOf(logintudDestino));
         //webServiceObtenerRuta(latitud.toString(),logintud.toString(),
         //latitudDestino.toString(),logintudDestino.toString());
 
 
-        //Intent miIntent = new Intent(RutaCompleta.this, MapsActivity.class);
-        //startActivity(miIntent);
+        Intent miIntent = new Intent(RutaCompleta.this, MapsActivity.class);
+        startActivity(miIntent);
     }
 
     public void goToRuta() {
@@ -560,55 +601,7 @@ public class RutaCompleta extends AppCompatActivity {
     //------------------------------------------------------------------------------------------------------------
     //------------------------------------------------------------------------------------------------------------
 
-    public void obtenerUbicacionActual() {
-        LocationManager locationManager = (LocationManager) RutaCompleta.this.getSystemService(Context.LOCATION_SERVICE);
-        LocationListener locationListener = new Localizacion() {
 
-            @Override
-            public void onLocationChanged(Location loc) {
-
-
-                logintudUbicacionActual = loc.getLongitude();
-                latitudUbicacionActual = loc.getLatitude();
-                Log.e("ubicacion actual coo: ", "LON: " + logintudUbicacionActual);
-                Log.e("ubicacion actual coo: ", " LAT: "+ latitudUbicacionActual);
-
-                Utilidades.coordenadas.setLatitudInicial(latitudUbicacionActual);
-                Utilidades.coordenadas.setLongitudInicial(logintudUbicacionActual);
-
-
-                double lat = Utilidades.coordenadas.getLatitudInicial();
-                double lot = Utilidades.coordenadas.getLongitudInicial();
-
-
-
-                Log.e("set LONG", "LON: " + lot);
-                Log.e("SET LAT  ", " LAT: "+ lat);
-
-
-            }
-/*
-            public void onStatusChanged(String provider, int status, Bundle extras) {
-
-
-            }
-
-            public void onProviderEnabled(String provider) {
-
-
-            }
-
-            public void onProviderDisabled(String provider) {
-
-            }*/
-
-        };
-
-        int permisosCheck = ContextCompat.checkSelfPermission(RutaCompleta.this, Manifest.permission.ACCESS_FINE_LOCATION);
-
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
-
-    }
 
 
     //------------------------------------------------------------------------------------------------------------
