@@ -73,7 +73,7 @@
     <string name="rv" translatable="false">RV</string>
     <string name="imgCancelar">cancelar</string>
 
-    <string name="perfil">Perfi</string>
+    <string name="perfil">Usuari</string>
 
     //Activity Añadir Rutas
     <string name="tvTituloFragmentRuta">CONFIGURACIÓ DE RUTAS</string>

@@ -107,12 +107,13 @@
                 android:id="@+id/tvConfiguracionRutaC_descripcion"
                 android:layout_width="334dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:contentDescription="@string/txtTituloNombre"
                 android:gravity="center_horizontal|center_vertical"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTituloDescRutaCompleta" />
 
@@ -121,7 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="132dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="44dp"
                 android:layout_marginEnd="47dp"
                 android:contentDescription="@string/txtTituloPasswd"
                 android:text="@string/tvTituloRutaCompleta"
@@ -137,25 +138,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="64dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="28dp"
                 android:text="@string/tvTituloPaisRutaCompleta"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.385"
+                app:layout_constraintHorizontal_bias="0.395"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvConfiguracionRutaC_ruta" />
 
             <TextView
                 android:id="@+id/tvConfiguracionRutaC_pais"
-                android:layout_width="189dp"
+                android:layout_width="334dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTituloPaisRutaCompleta" />
 
@@ -169,19 +169,20 @@
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.951"
+                app:layout_constraintHorizontal_bias="0.908"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvConfiguracionRutaC_pais" />
 
             <TextView
                 android:id="@+id/tvConfiguracionRutaC_ciudad"
-                android:layout_width="186dp"
+                android:layout_width="334dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTituloCiudadRutaCompleta" />
 
@@ -194,6 +195,7 @@
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvRuta_descripcion2" />
 
@@ -244,54 +246,54 @@
         app:layout_constraintTop_toTopOf="@+id/P80H">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layoutBotonAtras"
-            android:layout_width="383dp"
-            android:layout_height="53dp"
+            android:id="@+id/layoutbotonModificar"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
                 android:id="@+id/btnIrModificicarRuta"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@drawable/botones_azules"
                 android:contentDescription="@string/btnRegistrarseContent"
                 android:onClick="irModificarRuta"
                 android:text="@string/btnGuradarConfiguracionRuta"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.1"
-                app:layout_constraintStart_toEndOf="@+id/btnVolver_rutaCompleta"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                tools:layout_editor_absoluteX="32dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="205dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutBotonAtras"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <Button
                 android:id="@+id/btnVolver_rutaCompleta"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@drawable/botones"
                 android:contentDescription="@string/btnVolverContent"
                 android:onClick="volverRutasConfiguracion"
                 android:text="@string/btnVolver"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                tools:layout_editor_absoluteX="28dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/P50Hbotones"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.41" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

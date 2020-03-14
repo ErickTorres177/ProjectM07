@@ -232,7 +232,6 @@ public class LoginActivity extends AppCompatActivity {
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
-                            btnLogin.setEnabled(false);
                             Intent intent = new Intent(LoginActivity.this, NavegationDrawer.class);
                             startActivity(intent);
                         } else {

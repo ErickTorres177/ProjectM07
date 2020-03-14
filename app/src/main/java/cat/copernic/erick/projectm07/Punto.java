@@ -37,4 +37,8 @@ public class Punto {
     public void setLongitudFinal(Double longitudFinal) {
         this.longitudFinal = longitudFinal;
     }
+
+    public void vaciarLongituFinal(){
+        //if (longitudFinal)
+    }
 }

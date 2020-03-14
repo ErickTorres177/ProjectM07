@@ -89,7 +89,7 @@
         android:textCursorDrawable="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toEndOf="@+id/tvTituloCastellano"
         app:layout_constraintTop_toTopOf="@+id/tvTituloCastellano" />
 
@@ -97,7 +97,7 @@
         android:id="@+id/tvTituloCastellano"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="48dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/tvTituloCastellano"
         android:textColor="@color/white"

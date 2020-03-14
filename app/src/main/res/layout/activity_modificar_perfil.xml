@@ -60,7 +60,7 @@
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
-                app:layout_constraintHorizontal_bias="0.516"
+                app:layout_constraintHorizontal_bias="0.483"
                 app:layout_constraintStart_toStartOf="@id/P50VCampos"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -109,7 +109,7 @@
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtFondoNombre_perfil" />
 
@@ -167,18 +167,18 @@
                 android:id="@+id/spinerTipSexo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:text="@string/spinerTipSexo"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtFondo_edad_perfil" />
 
             <EditText
                 android:id="@+id/txtFondoDireccion_perfil"
-                android:layout_width="300dp"
+                android:layout_width="310dp"
                 android:layout_height="44dp"
                 android:background="@drawable/campos"
                 android:contentDescription="@string/txtPasswd"
@@ -191,7 +191,7 @@
 
             <EditText
                 android:id="@+id/txtDireccion_pefil"
-                android:layout_width="300dp"
+                android:layout_width="310dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:contentDescription="@string/txtPasswd"
@@ -219,45 +219,79 @@
                 android:id="@+id/spinnerTipSexo"
                 android:layout_width="170dp"
                 android:layout_height="27dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:scrollbarSize="6dp"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.547"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/spinerTipSexo" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <Button
-            android:id="@+id/btnAñadirNuevaRuta"
-            android:layout_width="153dp"
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutBotonoesModificarPerfil"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/P80H">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/botones_azules"
-            android:contentDescription="@string/btnRegistrarseContent"
-            android:text="@string/btnRegistrar_pefil"
-            android:textColor="@color/white"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="205dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutBtnmodificarMoficiarPerfil"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.566"
-            app:layout_constraintStart_toEndOf="@+id/btnVolverPerfil"
-            app:layout_constraintTop_toTopOf="@+id/btnVolverPerfil" />
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/btnVolverPerfil"
-            android:layout_width="152dp"
+            <Button
+                android:id="@+id/btnAñadirNuevaRuta"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/botones_azules"
+                android:contentDescription="@string/btnRegistrarseContent"
+                android:text="@string/btnRegistrar_pefil"
+                android:textColor="@color/white"
+                tools:layout_editor_absoluteX="-3dp"
+                tools:layout_editor_absoluteY="-1dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutBtnAtrasMoficiarPerfil"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="48dp"
-            android:background="@drawable/botones"
-            android:contentDescription="@string/btnVolverContent"
-            android:onClick="handleRegresarPerfil"
-            android:text="@string/btnVolver"
-            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contenedorCampos" />
+            app:layout_constraintTop_toTopOf="parent">
 
+            <Button
+                android:id="@+id/btnVolverPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/botones"
+                android:contentDescription="@string/btnVolverContent"
+                android:onClick="handleRegresarPerfil"
+                android:text="@string/btnVolver"
+                android:textColor="@color/white"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="0dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -291,18 +325,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/LayoutDatos"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/P80H"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/P15H">
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline

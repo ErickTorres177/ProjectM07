@@ -38,316 +38,336 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/imagen_fondo_login2" />
 
-        <Button
-            android:id="@+id/btnVolverNavegation"
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contenedorCampos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/P80H"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/P15H">
+
+        <EditText
+            android:id="@+id/txtFondo_pais"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:background="@drawable/campos"
+            android:contentDescription="@string/txtPasswd"
+            android:editable="false"
+            android:ems="10"
+            android:gravity="center_horizontal|center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            app:layout_constraintBottom_toBottomOf="@+id/etPaisRutaNueva"
+            app:layout_constraintEnd_toEndOf="@+id/etPaisRutaNueva"
+            app:layout_constraintStart_toStartOf="@+id/etPaisRutaNueva"
+            app:layout_constraintTop_toTopOf="@+id/etPaisRutaNueva" />
+
+        <EditText
+            android:id="@+id/txtFondo_ciudad"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:background="@drawable/campos"
+            android:contentDescription="@string/txtPasswd"
+            android:editable="false"
+            android:ems="10"
+            android:gravity="center_horizontal|center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            app:layout_constraintBottom_toBottomOf="@+id/etCiudadRutaNueva"
+            app:layout_constraintEnd_toEndOf="@+id/etCiudadRutaNueva"
+            app:layout_constraintStart_toStartOf="@+id/etCiudadRutaNueva"
+            app:layout_constraintTop_toTopOf="@+id/etCiudadRutaNueva"
+            tools:layout_editor_absoluteX="230dp"
+            tools:layout_editor_absoluteY="492dp" />
+
+        <EditText
+            android:id="@+id/etPaisRutaNueva"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/botones"
-            android:contentDescription="@string/btnRegistrarseContent"
-            android:onClick="btnVolverConfigRutas"
-            android:text="@string/btnCancelarRuta"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:gravity="center_horizontal|center_vertical"
+            android:hint="@string/etPaisRutaNueva"
+            android:importantForAutofill="no"
+            android:inputType="text"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contenedorCampos"
-            app:layout_constraintVertical_bias="0.909" />
+            app:layout_constraintTop_toBottomOf="@+id/tvPaisRutaNueva" />
 
-        <Button
-            android:id="@+id/btnAñadirNuevaRuta"
+        <TextView
+            android:id="@+id/tvPaisRutaNueva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/tvPaisRutaNueva"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvCiudadRutaNueva" />
+
+        <TextView
+            android:id="@+id/tvCiudadRutaNueva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/tvCiudadRutaNueva"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.702"
+            app:layout_constraintStart_toEndOf="@+id/tvPaisRutaNueva"
+            app:layout_constraintTop_toBottomOf="@+id/txtFondoDireccion_perfil" />
+
+        <TextView
+            android:id="@+id/tvNombreNuevaRuta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/txtTituloNombre"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/tvNombreNuevaRuta"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/txtFondoNombre_perfil"
+            android:layout_width="324dp"
+            android:layout_height="42dp"
+            android:background="@drawable/campos"
+            android:contentDescription="@string/txtNombre"
+            android:editable="false"
+            android:ems="10"
+            android:gravity="center_horizontal|center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            app:layout_constraintBottom_toBottomOf="@+id/etNombreNuevaRuta"
+            app:layout_constraintEnd_toEndOf="@+id/etNombreNuevaRuta"
+            app:layout_constraintHorizontal_bias="0.48"
+            app:layout_constraintStart_toStartOf="@+id/etNombreNuevaRuta"
+            app:layout_constraintTop_toTopOf="@+id/etNombreNuevaRuta"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <EditText
+            android:id="@+id/etNombreNuevaRuta"
+            android:layout_width="324dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/txtNombre"
+            android:ems="10"
+            android:gravity="center_horizontal|center_vertical"
+            android:hint="@string/etNombreNuevaRuta"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toEndOf="@id/P50VCampos"
+            app:layout_constraintTop_toBottomOf="@+id/tvNombreNuevaRuta" />
+
+        <TextView
+            android:id="@+id/tvRutaNuevaRuta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="132dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="47dp"
+            android:contentDescription="@string/txtTituloPasswd"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/tvRutaNuevaRuta"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+            app:layout_constraintHorizontal_bias="0.635"
+            app:layout_constraintStart_toStartOf="@id/P50VCampos"
+            app:layout_constraintTop_toBottomOf="@+id/txtFondoNombre_perfil" />
+
+        <EditText
+            android:id="@+id/txtFondo_edad_perfil"
+            android:layout_width="324dp"
+            android:layout_height="0dp"
+            android:background="@drawable/campos"
+            android:contentDescription="@string/txtPasswd"
+            android:editable="false"
+            android:ems="10"
+            android:gravity="center_horizontal|center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            app:layout_constraintBottom_toBottomOf="@+id/etRutaNuevaRuta"
+            app:layout_constraintEnd_toEndOf="@+id/etRutaNuevaRuta"
+            app:layout_constraintStart_toStartOf="@+id/etRutaNuevaRuta"
+            app:layout_constraintTop_toTopOf="@+id/etRutaNuevaRuta"
+            tools:layout_editor_absoluteY="189dp" />
+
+        <EditText
+            android:id="@+id/etRutaNuevaRuta"
+            android:layout_width="324dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/txtPasswd"
+            android:ems="10"
+            android:gravity="center_horizontal|center_vertical"
+            android:hint="@string/etRutaNuevaRuta"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+            app:layout_constraintStart_toEndOf="@id/P50VCampos"
+            app:layout_constraintTop_toBottomOf="@+id/tvRutaNuevaRuta" />
+
+        <TextView
+            android:id="@+id/tvDescripcionRuta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/tvDescripcionRutaNueva"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.526"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtFondo_edad_perfil" />
+
+        <EditText
+            android:id="@+id/txtFondoDireccion_perfil"
+            android:layout_width="324dp"
+            android:layout_height="0dp"
+            android:background="@drawable/campos"
+            android:contentDescription="@string/txtPasswd"
+            android:ems="10"
+            android:gravity="center_horizontal|center_vertical"
+            android:inputType="text"
+            app:layout_constraintBottom_toBottomOf="@+id/etDescripcionRutaNueva"
+            app:layout_constraintEnd_toEndOf="@+id/etDescripcionRutaNueva"
+            app:layout_constraintStart_toStartOf="@+id/etDescripcionRutaNueva"
+            app:layout_constraintTop_toTopOf="@+id/etDescripcionRutaNueva" />
+
+        <EditText
+            android:id="@+id/etDescripcionRutaNueva"
+            android:layout_width="324dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:contentDescription="@string/txtPasswd"
+            android:ems="10"
+            android:gravity="center_horizontal|center_vertical"
+            android:hint="@string/etDescripcionRutaNueva"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toEndOf="@id/P50VCampos"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescripcionRuta" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/P50VCampos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <EditText
+            android:id="@+id/etCiudadRutaNueva"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/botones_azules"
-            android:contentDescription="@string/btnRegistrarseContent"
-            android:onClick="nuevaRuta"
-            android:text="@string/btnAñadirNuevaRuta"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:gravity="center_horizontal|center_vertical"
+            android:hint="@string/etCiudadRutaNueva"
+            android:importantForAutofill="no"
+            android:inputType="text"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.346"
-            app:layout_constraintStart_toEndOf="@+id/btnVolverNavegation"
-            app:layout_constraintTop_toTopOf="@+id/btnVolverNavegation"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/contenedorCampos"
-            android:layout_width="match_parent"
-            android:layout_height="565dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <EditText
-                android:id="@+id/txtFondo_pais"
-                android:layout_width="150dp"
-                android:layout_height="0dp"
-                android:background="@drawable/campos"
-                android:contentDescription="@string/txtPasswd"
-                android:editable="false"
-                android:ems="10"
-                android:gravity="center_horizontal|center_vertical"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="@+id/etPaisRutaNueva"
-                app:layout_constraintEnd_toEndOf="@+id/etPaisRutaNueva"
-                app:layout_constraintStart_toStartOf="@+id/etPaisRutaNueva"
-                app:layout_constraintTop_toTopOf="@+id/etPaisRutaNueva" />
-
-            <EditText
-                android:id="@+id/txtFondo_ciudad"
-                android:layout_width="150dp"
-                android:layout_height="0dp"
-                android:background="@drawable/campos"
-                android:contentDescription="@string/txtPasswd"
-                android:editable="false"
-                android:ems="10"
-                android:gravity="center_horizontal|center_vertical"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                tools:layout_editor_absoluteX="230dp"
-                tools:layout_editor_absoluteY="492dp"
-                app:layout_constraintBottom_toBottomOf="@+id/etCiudadRutaNueva"
-                app:layout_constraintEnd_toEndOf="@+id/etCiudadRutaNueva"
-                app:layout_constraintStart_toStartOf="@+id/etCiudadRutaNueva"
-                app:layout_constraintTop_toTopOf="@+id/etCiudadRutaNueva"/>
-
-            <EditText
-                android:id="@+id/etPaisRutaNueva"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:ems="10"
-                android:gravity="center_horizontal|center_vertical"
-                android:hint="@string/etPaisRutaNueva"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:textColor="@color/white"
-                android:textColorHighlight="@color/white"
-                android:textColorHint="@color/white"
-                android:textColorLink="@color/white"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvPaisRutaNueva" />
-
-            <TextView
-                android:id="@+id/tvPaisRutaNueva"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="72dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/tvPaisRutaNueva"
-                android:textColor="@color/white"
-                android:textSize="25sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvCiudadRutaNueva" />
-
-            <TextView
-                android:id="@+id/tvCiudadRutaNueva"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/tvCiudadRutaNueva"
-                android:textColor="@color/white"
-                android:textSize="25sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.702"
-                app:layout_constraintStart_toEndOf="@+id/tvPaisRutaNueva"
-                app:layout_constraintTop_toBottomOf="@+id/txtFondoDireccion_perfil" />
-
-            <TextView
-                android:id="@+id/tvNombreNuevaRuta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:contentDescription="@string/txtTituloNombre"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/tvNombreNuevaRuta"
-                android:textColor="@color/white"
-                android:textSize="25sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/txtFondoNombre_perfil"
-                android:layout_width="324dp"
-                android:layout_height="42dp"
-                android:background="@drawable/campos"
-                android:contentDescription="@string/txtNombre"
-                android:editable="false"
-                android:ems="10"
-                android:gravity="center_horizontal|center_vertical"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="@+id/etNombreNuevaRuta"
-                app:layout_constraintEnd_toEndOf="@+id/etNombreNuevaRuta"
-                app:layout_constraintHorizontal_bias="0.48"
-                app:layout_constraintStart_toStartOf="@+id/etNombreNuevaRuta"
-                app:layout_constraintTop_toTopOf="@+id/etNombreNuevaRuta"
-                app:layout_constraintVertical_bias="1.0" />
-
-            <EditText
-                android:id="@+id/etNombreNuevaRuta"
-                android:layout_width="324dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:contentDescription="@string/txtNombre"
-                android:ems="10"
-                android:gravity="center_horizontal|center_vertical"
-                android:hint="@string/etNombreNuevaRuta"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:textColor="@color/white"
-                android:textColorHighlight="@color/white"
-                android:textColorHint="@color/white"
-                android:textColorLink="@color/white"
-                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
-                app:layout_constraintHorizontal_bias="0.502"
-                app:layout_constraintStart_toEndOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/tvNombreNuevaRuta" />
-
-            <TextView
-                android:id="@+id/tvRutaNuevaRuta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="132dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="47dp"
-                android:contentDescription="@string/txtTituloPasswd"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/tvRutaNuevaRuta"
-                android:textColor="@color/white"
-                android:textSize="25sp"
-                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
-                app:layout_constraintHorizontal_bias="0.635"
-                app:layout_constraintStart_toStartOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/txtFondoNombre_perfil" />
-
-            <EditText
-                android:id="@+id/txtFondo_edad_perfil"
-                android:layout_width="324dp"
-                android:layout_height="0dp"
-                android:background="@drawable/campos"
-                android:contentDescription="@string/txtPasswd"
-                android:editable="false"
-                android:ems="10"
-                android:gravity="center_horizontal|center_vertical"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="@+id/etRutaNuevaRuta"
-                app:layout_constraintEnd_toEndOf="@+id/etRutaNuevaRuta"
-                app:layout_constraintStart_toStartOf="@+id/etRutaNuevaRuta"
-                app:layout_constraintTop_toTopOf="@+id/etRutaNuevaRuta"
-                tools:layout_editor_absoluteY="189dp" />
-
-            <EditText
-                android:id="@+id/etRutaNuevaRuta"
-                android:layout_width="324dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:contentDescription="@string/txtPasswd"
-                android:ems="10"
-                android:gravity="center_horizontal|center_vertical"
-                android:hint="@string/etRutaNuevaRuta"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:textColor="@color/white"
-                android:textColorHighlight="@color/white"
-                android:textColorHint="@color/white"
-                android:textColorLink="@color/white"
-                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
-                app:layout_constraintStart_toEndOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/tvRutaNuevaRuta" />
-
-            <TextView
-                android:id="@+id/tvDescripcionRuta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="@string/tvDescripcionRutaNueva"
-                android:textColor="@color/white"
-                android:textSize="25sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.526"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtFondo_edad_perfil" />
-
-            <EditText
-                android:id="@+id/txtFondoDireccion_perfil"
-                android:layout_width="324dp"
-                android:layout_height="0dp"
-                android:background="@drawable/campos"
-                android:contentDescription="@string/txtPasswd"
-                android:ems="10"
-                android:gravity="center_horizontal|center_vertical"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="@+id/etDescripcionRutaNueva"
-                app:layout_constraintEnd_toEndOf="@+id/etDescripcionRutaNueva"
-                app:layout_constraintStart_toStartOf="@+id/etDescripcionRutaNueva"
-                app:layout_constraintTop_toTopOf="@+id/etDescripcionRutaNueva" />
-
-            <EditText
-                android:id="@+id/etDescripcionRutaNueva"
-                android:layout_width="324dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:contentDescription="@string/txtPasswd"
-                android:ems="10"
-                android:gravity="center_horizontal|center_vertical"
-                android:hint="@string/etDescripcionRutaNueva"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:textColor="@color/white"
-                android:textColorHighlight="@color/white"
-                android:textColorHint="@color/white"
-                android:textColorLink="@color/white"
-                app:layout_constraintEnd_toEndOf="@id/P50VCampos"
-                app:layout_constraintHorizontal_bias="0.502"
-                app:layout_constraintStart_toEndOf="@id/P50VCampos"
-                app:layout_constraintTop_toBottomOf="@+id/tvDescripcionRuta" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/P50VCampos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.5" />
-
-            <EditText
-                android:id="@+id/etCiudadRutaNueva"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:gravity="center_horizontal|center_vertical"
-                android:hint="@string/etCiudadRutaNueva"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:textColor="@color/white"
-                android:textColorHighlight="@color/white"
-                android:textColorHint="@color/white"
-                android:textColorLink="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvCiudadRutaNueva" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toBottomOf="@+id/tvCiudadRutaNueva" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/LayoutDatos"
+        android:id="@+id/constraindtBtnNuevaRuta"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/P80H"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/P15H">
+        app:layout_constraintTop_toTopOf="@+id/P80H">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layourBtnAtras"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.384">
+
+            <Button
+                android:id="@+id/btnVolverNavegation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/botones"
+                android:contentDescription="@string/btnRegistrarseContent"
+                android:onClick="btnVolverConfigRutas"
+                android:text="@string/btnCancelarRuta"
+                android:textColor="@color/white"
+                tools:layout_editor_absoluteX="31dp"
+                tools:layout_editor_absoluteY="0dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layourBtnAfegir"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.384">
+
+            <Button
+                android:id="@+id/btnAñadirNuevaRuta"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/botones_azules"
+                android:contentDescription="@string/btnRegistrarseContent"
+                android:onClick="nuevaRuta"
+                android:text="@string/btnAñadirNuevaRuta"
+                android:textColor="@color/white"
+                tools:layout_editor_absoluteX="-16dp"
+                tools:layout_editor_absoluteY="-1dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="206dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline

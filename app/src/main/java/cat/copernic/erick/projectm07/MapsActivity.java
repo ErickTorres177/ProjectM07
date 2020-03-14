@@ -116,7 +116,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         CameraPosition cameraPosition  = new CameraPosition.Builder()
                 .target(new LatLng(Utilidades.coordenadas.getLatitudInicial(),Utilidades.coordenadas.getLongitudInicial()))
                 .zoom(14)
-                .bearing(30)
+                .bearing(10)
                 .build();
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         mMap.getUiSettings().setZoomControlsEnabled(true);

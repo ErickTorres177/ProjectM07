@@ -100,14 +100,14 @@
                 android:id="@+id/tituloNuevaRuta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="68dp"
+                android:layout_marginTop="56dp"
                 android:contentDescription="@string/txtTituloNombre"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="@string/tvNuevaRuta"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

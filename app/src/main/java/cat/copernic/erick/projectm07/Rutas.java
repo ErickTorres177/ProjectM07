@@ -1,7 +1,6 @@
 package cat.copernic.erick.projectm07;
 
 public class Rutas {
-
     private String idRuta;
     private String usuarioRuta;
     private String nombreRuta;

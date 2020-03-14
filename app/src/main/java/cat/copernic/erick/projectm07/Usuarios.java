@@ -18,6 +18,9 @@ public class Usuarios {
     private String usuario;
     private String direccion;
     private String sexo;
+
+
+
     //private List<Rutas> rutas;
 
     public Usuarios() {

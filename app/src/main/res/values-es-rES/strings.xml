@@ -41,7 +41,7 @@
     <string name="correoContent">Correo electronico del usuario</string>
     <string name="nomUsuarioContentNavegationDrawer">Nombre de usuario</string>
     <string name="imgCancelar">cancelar</string>
-    <string name="perfil">Perfil</string>
+    <string name="perfil">Usuario</string>
 
     //Activity Añadir Rutas
     <string name="tvTituloFragmentRuta">CONFIGURACION DE RUTAS</string>

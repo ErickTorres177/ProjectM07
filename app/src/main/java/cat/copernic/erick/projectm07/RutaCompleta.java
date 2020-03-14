@@ -138,6 +138,8 @@ public class RutaCompleta extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                //Obtener la ubi actual
+                /*
                 LocationManager locationManager = (LocationManager) RutaCompleta.this.getSystemService(Context.LOCATION_SERVICE);
                 LocationListener locationListener = new Localizacion() {
 
@@ -210,9 +212,9 @@ public class RutaCompleta extends AppCompatActivity {
                                 new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
                     }
                 } else {
-                }
+                }*/
 
-
+                ObtenerCoordenadaDestinoFireBase();
                 mostrarAlertTipoAdrres();
             }
         });
@@ -224,6 +226,84 @@ public class RutaCompleta extends AppCompatActivity {
         obtenerUbicacionActual();
 
     }
+
+    //------------------------------------------------------------------------------------------------------------
+    //OBTENER COORDENADAS DESTINO -> FIRE BASE RUTA -> RUTA
+    public void ObtenerCoordenadaDestinoFireBase() {
+
+        myRefDestino = FirebaseDatabase.getInstance().getReference().child("Usuarios")
+                .child(currentUser.getUid()).child("rutas").child(idRutaPasar);
+
+        myRefDestino.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                Rutas rutas = dataSnapshot.getValue(Rutas.class);
+                final String direccionDestino = rutas.getRuta();
+                finalDestinoRutaFB = direccionDestino;
+                Log.e("usuario RUTAAA DESTINO:", currentUser.getUid() + " direcion DESTINO FINAL: " + finalDestinoRutaFB);
+                try {
+                    obtenerCoordenadasDestino(RutaCompleta.this, finalDestinoRutaFB);
+
+                } catch (Exception e) {
+                    Log.w(TAG, "------RUTA INVALIDA------");
+                    mostrarAlertTipoAdrres();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+    }
+
+    //OBTENER COORDENADAS DESTINO -> RUTA RUTA -> FIRE BASE
+    //public LatLng   obtenerCoordenadasDestino(Context context, String strAddress) {
+    public void obtenerCoordenadasDestino(Context context, String strAddress) {
+
+        Geocoder coder = new Geocoder(context);
+        List<Address> address;
+        LatLng p1 = null;
+
+        try {
+            address = coder.getFromLocationName(strAddress, 5);
+            if (address == null) {
+                //return null;
+            }
+
+            Address location = address.get(0);
+            p1 = new LatLng(location.getLatitude(), location.getLongitude());
+            logintudDestino = location.getLongitude();
+            latitudDestino = location.getLatitude();
+
+            //----------------------
+
+            //Utilidades.coordenadas.
+
+            Utilidades.coordenadas.setLatitudFinal(latitudDestino);
+            Utilidades.coordenadas.setLongitudFinal(logintudDestino);
+
+            //---------------------
+
+            //longitud y latitud ORIGEN
+            Log.e("usuario DESTINO: ", currentUser.getUid() + " lon:: " + logintudDestino);
+            Log.e("usuario DESTINO: ", currentUser.getUid() + " lat:: " + latitudDestino);
+
+        } catch (IOException ex) {
+
+            ex.printStackTrace();
+        }
+
+        //return p1;
+    }
+
+
+
+
+
+    //------------------------------------------------------------------------------------------------------------
     public void obtenerUbicacionActual() {
         LocationManager locationManager = (LocationManager) RutaCompleta.this.getSystemService(Context.LOCATION_SERVICE);
         LocationListener locationListener = new Localizacion() {
@@ -358,7 +438,7 @@ public class RutaCompleta extends AppCompatActivity {
         Log.e("ubicacion actual coo: ", "LON: " + latUbicacionA);
         Log.e("ubicacion actual coo: ", " LAT: "+ longUbicacionA);*/
 
-        ObtenerCoordenadaD();
+        ObtenerCoordenadaDestinoFireBase();
 
         String stringLatInicialUbicacionActual = String.valueOf(latitudUbicacionActual);
         String stringLongInicialUbicacionActual = String.valueOf(logintudUbicacionActual);
@@ -383,7 +463,7 @@ public class RutaCompleta extends AppCompatActivity {
         obtenerDirecionFB();
 
         //
-        ObtenerCoordenadaD();
+        ObtenerCoordenadaDestinoFireBase();
 
        /*String a ="41.5600112";
        String b ="2.0054576";
@@ -605,79 +685,7 @@ public class RutaCompleta extends AppCompatActivity {
 
 
     //------------------------------------------------------------------------------------------------------------
-    //------------------------------------------------------------------------------------------------------------
-    //OBTENER COORDENADAS DESTINO -> FIRE BASE RUTA -> RUTA
-    public void ObtenerCoordenadaD() {
 
-        myRefDestino = FirebaseDatabase.getInstance().getReference().child("Usuarios")
-                .child(currentUser.getUid()).child("rutas").child(idRutaPasar);
-
-        myRefDestino.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                //Usuarios usuarios = dataSnapshot.getValue(Usuarios.class);
-                //final String direccionU = usuarios.getDireccion();
-                //finalDireccionRuta = direccionU;
-                //Log.e("usuario: ", currentUser.getUid() + " direcion DESTINO FINAL: " + finalDireccionRuta);
-
-                Rutas rutas = dataSnapshot.getValue(Rutas.class);
-                final String direccionDestino = rutas.getRuta();
-                finalDestinoRutaFB = direccionDestino;
-                Log.e("usuario RUTAAA DESTINO:", currentUser.getUid() + " direcion DESTINO FINAL: " + finalDestinoRutaFB);
-                try {
-                    obtenerCoordenadasDestino(RutaCompleta.this, finalDestinoRutaFB);
-
-                } catch (Exception e) {
-                    Log.w(TAG, "------RUTA INVALIDA------");
-                    mostrarAlertTipoAdrres();
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });
-    }
-
-    //OBTENER COORDENADAS DESTINO -> RUTA RUTA -> FIRE BASE
-    public LatLng obtenerCoordenadasDestino(Context context, String strAddress) {
-
-        Geocoder coder = new Geocoder(context);
-        List<Address> address;
-        LatLng p1 = null;
-
-        try {
-            // May throw an IOException
-            address = coder.getFromLocationName(strAddress, 5);
-            if (address == null) {
-                return null;
-            }
-
-            Address location = address.get(0);
-            p1 = new LatLng(location.getLatitude(), location.getLongitude());
-            logintudDestino = location.getLongitude();
-            latitudDestino = location.getLatitude();
-
-            //----------------------
-
-            Utilidades.coordenadas.setLatitudFinal(latitudDestino);
-            Utilidades.coordenadas.setLongitudFinal(logintudDestino);
-
-            //---------------------
-
-            //longitud y latitud ORIGEN
-            Log.e("usuario DESTINO: ", currentUser.getUid() + " lon:: " + logintudDestino);
-            Log.e("usuario DESTINO: ", currentUser.getUid() + " lat:: " + latitudDestino);
-
-        } catch (IOException ex) {
-
-            ex.printStackTrace();
-        }
-
-        return p1;
-    }
 
 
     //OBTENER COORDENADAS ORIGEN -> DIRECCION USUARIO
