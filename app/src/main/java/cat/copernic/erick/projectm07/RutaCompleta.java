@@ -718,9 +718,22 @@ public class RutaCompleta extends AppCompatActivity {
     }
 
     public void mostrarAlertTipoAdrres() {
-        final String[] lista_item = {"Utilitza ubicació actual", "Utilitza la meva adreça"};
+        String opcion1 = RutaCompleta.this.getResources().getString(R.string.opcion1AlertRutaCompleta);
+        String opcion2 = RutaCompleta.this.getResources().getString(R.string.opcion2AlertRutaCompleta);
+
+        final String[] lista_item = {opcion1, opcion2};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(RutaCompleta.this);
-        mBuilder.setTitle("Tria l' adreça: ");
+        String toastEscogeTipoX = RutaCompleta.this.getResources().getString(R.string.alertEscogeRutaCompleta);
+        mBuilder.setTitle(toastEscogeTipoX);
+        mBuilder.setIcon(R.drawable.ic_location_searching_black_24dp);
+
+        String toastCancelar = RutaCompleta.this.getResources().getString(R.string.cacenlaGeneral);
+        mBuilder.setNeutralButton(toastCancelar, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
         mBuilder.setSingleChoiceItems(lista_item, -1, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int i) {

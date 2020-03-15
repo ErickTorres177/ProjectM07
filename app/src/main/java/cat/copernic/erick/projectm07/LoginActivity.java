@@ -155,7 +155,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void mostrarCambiarIdioma() {
-        final String[] lista_item = {"Catalán", "English", "Castellano "};
+
+        String opcion1 = LoginActivity.this.getResources().getString(R.string.opcion1Idioma);
+        String opcion2 = LoginActivity.this.getResources().getString(R.string.opcion2Idioma);
+        String opcion3 = LoginActivity.this.getResources().getString(R.string.opcion3Idioma);
+
+        final String[] lista_item = {opcion1, opcion2, opcion3};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(LoginActivity.this);
         mBuilder.setTitle(R.string.tituloEscogeIdioma);
         mBuilder.setIcon(R.drawable.ic_toc_black_24dp);

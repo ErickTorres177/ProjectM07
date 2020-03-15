@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:onClick="abrirRutaCompleta">
+    android:onClick="abrirRutaCompleta"
+    android:contentDescription="@string/cardViewRutas_list_item">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -54,7 +55,6 @@
                 android:layout_marginStart="132dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="47dp"
-                android:contentDescription="@string/txtTituloPasswd"
                 android:text="@string/titulo_edad_perfil"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -70,7 +70,6 @@
                 android:layout_marginStart="132dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="47dp"
-                android:contentDescription="@string/txtTituloPasswd"
                 android:text="@string/titulo_edad_perfil"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -128,7 +127,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="28dp"
-            android:contentDescription="@string/txtTituloPasswd"
             android:gravity="center_horizontal|center_vertical"
             android:text="@string/titulo_edad_perfil"
             android:textColor="@color/white"
@@ -154,7 +152,6 @@
             android:id="@+id/tvRuta_nombre"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:contentDescription="@string/tituloRegistroContent"
             android:gravity="center"
             android:minWidth="46dp"
             android:minHeight="289dp"

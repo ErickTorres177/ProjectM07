@@ -38,11 +38,15 @@ public class EliminarRuta extends AppCompatActivity {
                     Toast.makeText(EliminarRuta.this, toastSinRutas,
                             Toast.LENGTH_SHORT).show();
 
+
+
+
+
                 } else {*/
-                    //tvSinrutasEliminar.setVisibility(View.GONE);
+                    //tvSinrutasEliminar.setVisibility(View.INVISIBLE);
                     new RecyclerEliminarRuta_Config().setConfig(mRecyclerView, EliminarRuta.this, rutas, keys);
 
-                //}
+               // }
 
                 //--
                 //new RecyclerEliminarRuta_Config().setConfig(mRecyclerView, EliminarRuta.this, rutas, keys);

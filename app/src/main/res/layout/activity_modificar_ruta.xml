@@ -7,65 +7,6 @@
     tools:context=".ModificarRuta">
 
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contraintBotonoModificarRuta"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/P80H">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layoutModificarModificarRuta"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <Button
-                android:id="@+id/btnModificarRuta"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/botones_azules"
-                android:contentDescription="@string/btnRegistrarseContent"
-                android:text="@string/btnGuradarConfiguracionRuta"
-                android:textColor="@color/white" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layoutAtrarModificarRuta"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <Button
-                android:id="@+id/btnVolverPerfil"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/botones"
-                android:contentDescription="@string/btnVolverContent"
-                android:onClick="volverRutasConfiguracion"
-                android:text="@string/btnVolver"
-                android:textColor="@color/white" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="205dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/LayoutImagenesFondo"
         android:layout_width="match_parent"
@@ -108,24 +49,22 @@
 
             <EditText
                 android:id="@+id/txtFonfoCiudad"
-                android:layout_width="255dp"
+                android:layout_width="233dp"
                 android:layout_height="44dp"
                 android:background="@drawable/campos"
-                android:contentDescription="@string/txtPasswd"
+                android:clickable="false"
                 android:ems="10"
                 android:inputType="text"
-                tools:layout_editor_absoluteX="91dp"
-                tools:layout_editor_absoluteY="418dp"
                 app:layout_constraintBottom_toBottomOf="@+id/etModificarRuta_ciudad"
                 app:layout_constraintEnd_toEndOf="@+id/etModificarRuta_ciudad"
-                app:layout_constraintStart_toStartOf="@+id/etModificarRuta_ciudad"/>
+                app:layout_constraintStart_toStartOf="@+id/etModificarRuta_ciudad" />
 
             <EditText
                 android:id="@+id/txtFonfopais"
-                android:layout_width="255dp"
+                android:layout_width="237dp"
                 android:layout_height="44dp"
                 android:background="@drawable/campos"
-                android:contentDescription="@string/txtPasswd"
+                android:clickable="false"
                 android:ems="10"
                 android:inputType="text"
                 app:layout_constraintBottom_toBottomOf="@+id/etModificarRuta_pais"
@@ -137,7 +76,7 @@
                 android:layout_width="310dp"
                 android:layout_height="45dp"
                 android:background="@drawable/campos"
-                android:contentDescription="@string/txtPasswd"
+                android:clickable="false"
                 android:editable="false"
                 android:ems="10"
                 android:gravity="clip_vertical|center_vertical"
@@ -155,7 +94,7 @@
                 android:layout_width="310dp"
                 android:layout_height="44dp"
                 android:background="@drawable/campos"
-                android:contentDescription="@string/txtPasswd"
+                android:clickable="false"
                 android:editable="false"
                 android:ems="10"
                 android:gravity="clip_vertical|center_vertical"
@@ -168,9 +107,9 @@
             <EditText
                 android:id="@+id/etModificarRuta_ruta"
                 android:layout_width="310dp"
-                android:layout_height="wrap_content"
+                android:layout_height="49dp"
+                android:minHeight="49dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/txtPasswd"
                 android:ems="10"
                 android:gravity="center_horizontal|center_vertical"
                 android:hint="@string/hintEdad_perfil"
@@ -187,9 +126,9 @@
             <EditText
                 android:id="@+id/etModificarRuta_pais"
                 android:layout_width="237dp"
-                android:layout_height="wrap_content"
+                android:layout_height="49dp"
+                android:minHeight="49dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/txtPasswd"
                 android:ems="10"
                 android:gravity="center_horizontal|center_vertical"
                 android:hint="@string/hintEdad_perfil"
@@ -208,7 +147,6 @@
                 android:id="@+id/tvTituloModificar_nombreR"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/txtTituloNombre"
                 android:text="@string/tvTituloModificar_nombreR"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -221,8 +159,9 @@
                 android:id="@+id/txtFondoNombre_perfil"
                 android:layout_width="240dp"
                 android:layout_height="44dp"
+                android:minHeight="49dp"
                 android:background="@drawable/campos"
-                android:contentDescription="@string/txtNombre"
+                android:clickable="false"
                 android:editable="false"
                 android:ems="10"
                 android:importantForAutofill="no"
@@ -235,8 +174,8 @@
             <EditText
                 android:id="@+id/etModificarRuta_nombre"
                 android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/txtNombre"
+                android:layout_height="49dp"
+                android:minHeight="49dp"
                 android:ems="10"
                 android:gravity="center_horizontal|center_vertical"
                 android:hint="@string/etNombreUsuario_perfil"
@@ -255,21 +194,21 @@
                 android:id="@+id/tvTituloModificar_descripcionR"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:contentDescription="@string/txtTituloPasswd"
+                android:layout_marginTop="8dp"
                 android:text="@string/tvTituloModificar_descripcionR"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/etModificarRuta_nombre" />
 
             <EditText
                 android:id="@+id/etModificarRuta_descripcion"
                 android:layout_width="310dp"
-                android:layout_height="wrap_content"
+                android:layout_height="49dp"
+                android:minHeight="49dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/txtPasswd"
                 android:ems="10"
                 android:gravity="center_horizontal|center_vertical"
                 android:hint="@string/hintEdad_perfil"
@@ -299,21 +238,20 @@
                 android:id="@+id/tvTituloModificar_paisR"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:text="@string/tvTituloModificar_paisR"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintHorizontal_bias="0.507"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtFondo_desc2" />
 
             <EditText
                 android:id="@+id/etModificarRuta_ciudad"
                 android:layout_width="233dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:contentDescription="@string/txtPasswd"
+                android:layout_height="49dp"
+                android:minHeight="49dp"
                 android:ems="10"
                 android:gravity="center_horizontal|center_vertical"
                 android:hint="@string/hintDireccion_perfil"
@@ -324,6 +262,7 @@
                 android:textColorHint="@color/white"
                 android:textColorLink="@color/white"
                 app:layout_constraintEnd_toEndOf="@id/P50VCampos"
+                app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toEndOf="@id/P50VCampos"
                 app:layout_constraintTop_toBottomOf="@+id/tvTituloModificar_ciudadR" />
 
@@ -331,7 +270,7 @@
                 android:id="@+id/tvTituloModificar_rutaR"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/tvTituloModificar_rutaR"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -373,6 +312,64 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contraintBotonoModificarRuta"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/P80H">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutModificarModificarRuta"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/btnModificarRuta"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/botones_azules"
+                android:contentDescription="@string/btnModificarRutaModificarR"
+                android:text="@string/btnGuradarConfiguracionRuta"
+                android:textColor="@color/black" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutAtrarModificarRuta"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/btnVolverPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/botones"
+                android:contentDescription="@string/btnVolverAtrasModificarR"
+                android:onClick="volverRutasConfiguracion"
+                android:text="@string/btnVolver"
+                android:textColor="@color/black" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="205dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/LayoutTitulo"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -386,7 +383,6 @@
             android:id="@+id/tvTituloRutamodificar"
             android:layout_width="412dp"
             android:layout_height="74dp"
-            android:contentDescription="@string/tituloRegistroContent"
             android:gravity="center"
             android:minWidth="46dp"
             android:minHeight="289dp"

@@ -50,7 +50,9 @@
     <string name="btnRegistrar">Registrar-se</string>
     <string name="ImagenFondo">Imatge de fons de pantalla</string>
     <string name="btnRegistrarseContent">Crear compte</string>
+    <string name="imgRegistrarseContent">Crear compte.</string>
     <string name="btnVolverContent">cancel·lar creació del compte</string>
+    <string name="imgVolverContent">cancel·lar creació del compte</string>
     <string name="imgProyecto">Logo Find Your Way</string>
 
     <string name="menu_home">Les Meves Rutes</string>
@@ -137,6 +139,7 @@
     <string name="cuentaCreada">Compte registrada</string>
     <string name="registroFallido">Registre de compte fallit</string>
     <string name="emailInvalido">Email invàlid</string>
+    <string name="rutaELiminadaCorrectamente">Ruta eliminada correctament.</string>
 
 
     //PERFIL USUARIO
@@ -204,7 +207,9 @@
     //ESCOGE EL IDIOMA
     <string name="tituloEscogeIdioma">Tria l`idioma</string>
     //Alert eliminar ruta
-    <string name="eliminarRutaElert">Vols eliminar aquesta ruta?"</string>
+    <string name="eliminarRutaElert">Vols eliminar aquesta ruta?</string>
+    <string name="opcion1EliminarRuta">Si</string>
+    <string name="opcion2EliminarRuta">No</string>
 
 
     //TOAST DE LA APP
@@ -262,6 +267,72 @@
 
     <string name="aquiEstoy">Em trobo aquí</string>
     <string name="destino">La meva destinació</string>
+    <string name="alertEscogeRutaCompleta">Tria l` adreça: </string>
+    <string name="opcion1AlertRutaCompleta">Utilitzar ubicació actual</string>
+    <string name="opcion2AlertRutaCompleta">Utilitzar la meva adreça</string>
+
+
+
+    //ACCESIBILIDAD
+    //FragmentHome
+    <string name="contDBtnNuevaRuta">La meva destinació</string>
+    <string name="contDBtnListRutas">Ruta</string>
+    //Login
+    <string name="iniSesionImg">Iniciar Sessió.</string>
+    <string name="iniSesionbtn">Iniciar Sessió</string>
+    <string name="RegistrarseImg">Registrar-se.</string>
+    <string name="RegistrarseBtn">Registrar-se</string>
+    <string name="idiomarImg">Escollir idioma.</string>
+    <string name="idiomarBtn">Escollir idioma</string>
+    <string name="webImg">Anar a la web de Find Your Way</string>
+    <string name="MapUbicacionImg">Ubicació de Find Your Way</string>
+    <string name="instaImg">Instagram de Find Your Way</string>
+    <string name="gmailImg">Escriure un correu a Find Your Way</string>
+
+    <string name="opcion1Idioma">Catalá</string>
+    <string name="opcion2Idioma">Angles</string>
+    <string name="opcion3Idioma">Castella</string>
+
+
+    //Rutas_list_item
+    <string name="cardViewRutas_list_item">Prem per veure aquesta ruta</string>
+    //activity_ruta_completa
+    <string name="btnVolverListRutasItem">Tornar</string>
+    <string name="imgGotoRuta">Veure la ruta</string>
+    //nav_header_navegation_drawer.xml
+    <string name="imgUsuarioCurrent">Imatge de l usuari</string>
+    //fragment_configuration_rutas
+    <string name="btnNuevaRutaContentD">Afegir una nova ruta</string>
+    <string name="btnConfigurarRutaContentD">Configurar una ruta</string>
+    <string name="btnEliminarRutaContentD">Eliminar una ruta</string>
+    //activity_uneva_ruta
+    <string name="btnNuevaRutaNuevaRuta">Afegir ruta</string>
+    <string name="btnCalcerNuevaRutaNuevaRuta">Calcelar</string>
+    //configurar_ruta_list_item
+    <string name="configurar_ruta_list_item">Prem per configurar aquesta ruta</string>
+    //activity_configuraicon_completa
+    <string name="btnConfigurarRutaConfiguracionC">Configurar aqueta ruta</string>
+    //activity_modificar_ruta.xml
+    <string name="btnModificarRutaModificarR">Modificar ruta</string>
+    <string name="btnVolverAtrasModificarR">Tornar enrere</string>
+    //eliminar_ruta_list_item
+    <string name="eliminarRutaListItem">Eliminar aquesta ruta</string>
+    //mi_ubicacion_actual
+    <string name="btnMostrarGpsContentD">Veure la meva dirreció i las mevas coordenadas actuals</string>
+    <string name="btnGoToMiUbicacionActual">Veure el mapa amb meva ubicació actual</string>
+    //activity_modificar_perfil
+    <string name="btnModificarPerfilUsuario">Modificar el meu perfil</string>
+    <string name="btnVolverPerfilModificarPerfil">Tornar</string>
+    //fragment_configuracion_general
+    <string name="btnCambiarCatalan">Canviar l idioma a català</string>
+    <string name="btnCambiarCastellano">Canviar l idioma a castella</string>
+    <string name="btnCambiarIngles">Canviar l idioma a Angles</string>
+    //fragment perfil
+    <string name="btnModificarPerfilFragmentPerfil">Modificar el mue perfil</string>
+    //activity_configuracion_completa
+    <string name="btnCancelarConfiguracionCompleta">Tornar</string>
+    <string name="btnModificarRutaConfiguracionC">Modificar ruta</string>
+
 
 
 

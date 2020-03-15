@@ -31,10 +31,12 @@
     <string name="menu_home">Mis Rutas</string>
     <string name="menu_nuevaRuta">Nueva Ruta</string>
     <string name="iniSesion">Iniciar sesión</string>
-    <string name="hintNombre">Correo</string>
+    <string name="hintNombre">Escibre tu correo</string>
     <string name="hintPasswd">Escribe tu contraseña</string>
     <string name="btnRegistrarseContent">Crear cuenta</string>
+    <string name="imgRegistrarseContent">Crear cuenta.</string>
     <string name="btnVolverContent">cancelar creación de la cuenta</string>
+    <string name="imgVolverContent">cancelar creación de la cuenta</string>
     <string name="btnCambiarIdioma">Idioma</string>
 
     <string name="nav_header_desc" >FOTO DE USUARIO</string>
@@ -71,18 +73,18 @@
     <string name="tvRutaNuevaRuta">Escribe la ruta:</string>
     <string name="etRutaNuevaRuta">ejemplo: castelldefels</string>
     <string name="tvPaisRutaNueva">País:</string>
-    <string name="etPaisRutaNueva">Espanya</string>
+    <string name="etPaisRutaNueva">España</string>
     <string name="tvCiudadRutaNueva">Ciutat:</string>
     <string name="etCiudadRutaNueva">Barcelona</string>
 
     //CONFIGURACION RUTA
     <string name="btnGuradarConfiguracionRuta">Modificar</string>
     //MODIFICAR RUTA ACTIVITY
-    <string name="tvTituloModificar_nombreR">Nom:</string>
-    <string name="tvTituloModificar_descripcionR">Descripció:</string>
+    <string name="tvTituloModificar_nombreR">Nombre:</string>
+    <string name="tvTituloModificar_descripcionR">Descripción:</string>
     <string name="tvTituloModificar_rutaR">Ruta:</string>
     <string name="tvTituloModificar_paisR">País:</string>
-    <string name="tvTituloModificar_ciudadR">Ciutat:</string>
+    <string name="tvTituloModificar_ciudadR">Ciudad:</string>
     <string name="etModificarRuta_nombre">Ingresa el nombre</string>
     <string name="etModificarRuta_descripcion">Ingresa la descripción:</string>
     <string name="etModificarRuta_ruta">Ingresa la ruta:</string>
@@ -105,6 +107,7 @@
     <string name="txtTituloNombreReal">Nombre:</string>
     <string name="hintNombreReal">Escribe tu nombre</string>
     <string name="txtNombreReal">Nombre real del usuario</string>
+    <string name="rutaELiminadaCorrectamente">Ruta eliminada correctamente.</string>
 
     //PERFIL USUARIO
     <string name="titulo_perfil_usuario">MI PERFIL</string>
@@ -146,7 +149,7 @@
     <string name="menu_mi_ubicacion">Mi ubicación</string>
     <string name="tvTituloMiUbicacionActual">Mi ubicación</string>
     <string name="tvTituloMiDireccion">Mi dirección actual:</string>
-    <string name="tvTituloMisCoordenadas">Mis coordenades actuales:</string>
+    <string name="tvTituloMisCoordenadas">Mis coordenadas actuales:</string>
     <string name="tvTituloLongitud">Longitud:</string>
     <string name="tvTituloLatitud">Latitud:</string>
     <string name="btnMostrarGPS">GPS</string>
@@ -167,15 +170,17 @@
     //ESCOGE EL IDIOMA
     <string name="tituloEscogeIdioma">Escoge el idioma</string>
     //Alert eliminar ruta
-    <string name="eliminarRutaElert">Quieres eliminar esta ruta"</string>
+    <string name="eliminarRutaElert">¿Quieres eliminar esta ruta?</string>
+    <string name="opcion1EliminarRuta">Si</string>
+    <string name="opcion2EliminarRuta">No</string>
 
 
     //TOAST DE LA APP
     <string name="sinModificaciones">Sin modificaciónes.</string> 
     <string name="obligatorioRegister">El usuario, contraseña, nombre y la edad son obligatorios.</string> 
     <string name="passMenor">La contraseña tiene que ser mayor de 6 caracteres.</string> 
-    <string name="cacenlaGeneral">Cancel</string> 
-    <string name="sinRutas">no tienes rutas creadas, por favor añade una.</string> 
+    <string name="cacenlaGeneral">Cancelar</string> 
+    <string name="sinRutas">No tienes rutas creadas, por favor añade una.</string> 
 
     //MODIIFICAR PERFIL
     <string name="nomInvalidoModificarPerfil">Nombre inválido, introduzca solo letras: </string> 
@@ -223,4 +228,67 @@
 
     <string name="aquiEstoy">Estoy aquí</string>
     <string name="destino">Mi destino</string>
+    <string name="alertEscogeRutaCompleta">Elige la dirección: </string>
+    <string name="opcion1AlertRutaCompleta">Utilizar ubicación actual</string>
+    <string name="opcion2AlertRutaCompleta">Utilizar mi dirección</string>
+
+    //ACCESIBILIDAD
+    //FragmentHome
+    <string name="contDBtnNuevaRuta">Añadir una nueva ruta</string>
+    <string name="contDBtnListRutas">Ruta</string>
+    //Login
+    <string name="iniSesionImg">Iniciar Sesión.</string>
+    <string name="iniSesionbtn">Iniciar Sesión</string>
+    <string name="RegistrarseImg">Registrarse.</string>
+    <string name="RegistrarseBtn">Registrarse</string>
+    <string name="idiomarImg">Escoger idioma.</string>
+    <string name="idiomarBtn">Escoger idioma</string>
+    <string name="webImg">Ira a la web de Find Your Way</string>
+    <string name="MapUbicacionImg">Ubicación de Find Your Way</string>
+    <string name="instaImg">Instagram de Find Your Way</string>
+    <string name="gmailImg">Escribir un correo a Find Your Way</string>
+
+    <string name="opcion1Idioma">Catalán</string>
+    <string name="opcion2Idioma">Ingles</string>
+    <string name="opcion3Idioma">Castellano</string>
+
+    //Rutas_list_item
+    <string name="cardViewRutas_list_item">Ruta, presiona para ver esta ruta</string>
+    //activity_ruta_completa
+    <string name="btnVolverListRutasItem">Volver</string>
+    <string name="imgGotoRuta">Ver la ruta</string>
+    //nav_header_navegation_drawer.xml
+    <string name="imgUsuarioCurrent">Imagen del usuario</string>
+    //fragment_configuration_rutas
+    <string name="btnNuevaRutaContentD">Añadir una nueva ruta</string>
+    <string name="btnConfigurarRutaContentD">Configurar una ruta</string>
+    <string name="btnEliminarRutaContentD">Eliminar una ruta</string>
+    //activity_uneva_ruta
+    <string name="btnNuevaRutaNuevaRuta">Añadir ruta</string>
+    <string name="btnCalcerNuevaRutaNuevaRuta">Cancelar</string>
+    //configurar_ruta_list_item
+    <string name="configurar_ruta_list_item">Presiona para configurar esta ruta</string>
+    //activity_configuraicon_completa
+    <string name="btnConfigurarRutaConfiguracionC">Configurar esta ruta</string>
+    //activity_modificar_ruta.xml
+    <string name="btnModificarRutaModificarR">Modificar ruta</string>
+    <string name="btnVolverAtrasModificarR">Volver atrás</string>
+    //eliminar_ruta_list_item
+    <string name="eliminarRutaListItem">Eliminar esta ruta</string>
+    //btnModtrarGps
+    <string name="btnMostrarGpsContentD">Ver mi dirreción y mis coordenadas actuales</string>
+    <string name="btnGoToMiUbicacionActual">Ver el mapa con mi ubicación actual</string>
+    //activity_modificar_perfil
+    <string name="btnModificarPerfilUsuario">Modificar mi perfil</string>
+    <string name="btnVolverPerfilModificarPerfil">Volver</string>
+    //fragment_configuracion_general
+    <string name="btnCambiarCatalan">Cambiar el idioma a Catalán</string>
+    <string name="btnCambiarCastellano">Cambiar el idioma a Castellano</string>
+    <string name="btnCambiarIngles">Cambiar el idioma a Inglés</string>
+    //fragment perfil
+    <string name="btnModificarPerfilFragmentPerfil">Modificar mi perfil</string>
+    //activity_configuracion_completa
+    <string name="btnCancelarConfiguracionCompleta">Volver</string>
+    <string name="btnModificarRutaConfiguracionC">Modificar ruta</string>
+
 </resources>

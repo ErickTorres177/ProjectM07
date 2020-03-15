@@ -101,7 +101,7 @@ public class ModificarPerfil extends AppCompatActivity {
 
         //myRef = FirebaseDatabase.getInstance().getReference().child("Usuarios").child(currentUser.getUid());
 
-        btnModificarPerfil = findViewById(R.id.btnAñadirNuevaRuta);
+        btnModificarPerfil = findViewById(R.id.btnModicarPerfilUsuario);
 
         //MODIFICAR - PERFIL USUARIO ACTUAL
         btnModificarPerfil.setOnClickListener(new View.OnClickListener() {

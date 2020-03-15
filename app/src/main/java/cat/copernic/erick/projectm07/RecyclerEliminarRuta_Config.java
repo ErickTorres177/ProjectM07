@@ -66,15 +66,26 @@ public class RecyclerEliminarRuta_Config{
                 public void onClick(View v) {
 
 
+                    String opcion1 = RecyclerEliminarRuta_Config.this.mContext.getResources().getString(R.string.opcion1EliminarRuta);
+                    String opcion2 = RecyclerEliminarRuta_Config.this.mContext.getResources().getString(R.string.opcion2EliminarRuta);
 
-
-
-
-
-                    final String[] respuesta = {"Yes", "No"};
+                    final String[] respuesta = {opcion1, opcion2};
                     AlertDialog.Builder mBuilder = new AlertDialog.Builder(mContext);
-                    mBuilder.setTitle(R.string.eliminarRutaElert);
+                    String toastEliminaralert = RecyclerEliminarRuta_Config.this.mContext.getResources()
+                            .getString(R.string.eliminarRutaElert);
+                    String toastCancelar = RecyclerEliminarRuta_Config.this.mContext.getResources().getString(R.string.cacenlaGeneral);
+                    mBuilder.setTitle(toastEliminaralert);
                     mBuilder.setIcon(R.drawable.cerrar_ses);
+
+                    mBuilder.setNeutralButton(toastCancelar, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            String toastSinModificaciones = RecyclerEliminarRuta_Config.this.mContext.getResources().getString(R.string.sinModificaciones);
+                            Toast.makeText(RecyclerEliminarRuta_Config.this.mContext, toastSinModificaciones,
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
                     mBuilder.setSingleChoiceItems(respuesta, -1, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
@@ -107,7 +118,8 @@ public class RecyclerEliminarRuta_Config{
                                 });
                                 ///----
 
-                                Toast.makeText(mContext, "Ruta elimidad correctament." ,
+                                String toastRutaEliminadaC = RecyclerEliminarRuta_Config.this.mContext.getResources().getString(R.string.cacenlaGeneral);
+                                Toast.makeText(mContext, toastRutaEliminadaC,
                                         Toast.LENGTH_SHORT).show();
                             } else if (i == 1) {
                                 dialog.dismiss();

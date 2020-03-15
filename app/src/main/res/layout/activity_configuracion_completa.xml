@@ -52,7 +52,6 @@
             android:id="@+id/tvConfiguracionRutaC_nombre"
             android:layout_width="408dp"
             android:layout_height="94dp"
-            android:contentDescription="@string/tituloRegistroContent"
             android:gravity="center_horizontal|center_vertical"
             android:minWidth="46dp"
             android:minHeight="289dp"
@@ -94,7 +93,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:contentDescription="@string/txtTituloNombre"
                 android:text="@string/tvTituloDescRutaCompleta"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -108,7 +106,6 @@
                 android:layout_width="334dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:contentDescription="@string/txtTituloNombre"
                 android:gravity="center_horizontal|center_vertical"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -122,9 +119,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="132dp"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="47dp"
-                android:contentDescription="@string/txtTituloPasswd"
                 android:text="@string/tvTituloRutaCompleta"
                 android:textColor="@color/white"
                 android:textSize="25sp"
@@ -163,13 +159,11 @@
                 android:id="@+id/tvTituloCiudadRutaCompleta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="152dp"
+                android:layout_marginTop="24dp"
                 android:text="@string/tvTituloCiudadRutaCompleta"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.908"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvConfiguracionRutaC_pais" />
 
@@ -259,10 +253,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/botones_azules"
-                android:contentDescription="@string/btnRegistrarseContent"
+                android:contentDescription="@string/btnModificarRutaConfiguracionC"
                 android:onClick="irModificarRuta"
                 android:text="@string/btnGuradarConfiguracionRuta"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 tools:layout_editor_absoluteX="32dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -288,10 +282,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/botones"
-                android:contentDescription="@string/btnVolverContent"
+                android:contentDescription="@string/btnCancelarConfiguracionCompleta"
                 android:onClick="volverRutasConfiguracion"
                 android:text="@string/btnVolver"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 tools:layout_editor_absoluteX="28dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

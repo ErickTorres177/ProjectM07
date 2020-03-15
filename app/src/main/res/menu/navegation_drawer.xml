@@ -6,11 +6,13 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         android:onClick="irConfiguracionPerfil"
+        android:icon="@drawable/ic_person_black_24dp"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_logOut"
         android:orderInCategory="100"
         android:title="@string/bntLogOut"
+        android:icon="@drawable/ic_error_black_24dp"
         android:onClick="cerrarSesion"
         app:showAsAction="never" />
 </menu>

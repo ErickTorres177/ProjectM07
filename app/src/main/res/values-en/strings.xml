@@ -11,7 +11,7 @@
     <string name="edad">Age:</string>
     <string name="txtEdadContent">Enter your age</string>
     <string name="hindEdad">Age</string>
-    <string name="hintNombre">Mail</string>
+    <string name="hintNombre">Write your email</string>
     <string name="hintPasswd">Write your password</string>
     <string name="iniSesion">Log in</string>
     <string name="menu_nuevaRuta">New Routes</string>
@@ -34,7 +34,9 @@
     <string name="tituloRegistroContent">ACCOUNT CREATION</string>
     <string name="user">Email</string>
     <string name="btnRegistrarseContent">Create account</string>
+    <string name="imgRegistrarseContent">Create account.</string>
     <string name="btnVolverContent">cancel account creation</string>
+    <string name="imgVolverContent">cancel account creation</string>
     <string name="btnCambiarIdioma">Language</string>
 
     <string name="nav_header_desc" >USER PHOTO</string>
@@ -72,7 +74,7 @@
     <string name="tvRutaNuevaRuta">Write the route:</string>
     <string name="etRutaNuevaRuta">example: castelldefels</string>
     <string name="tvPaisRutaNueva">País:</string>
-    <string name="etPaisRutaNueva">Espanya</string>
+    <string name="etPaisRutaNueva">Spain</string>
     <string name="tvCiudadRutaNueva">Ciutat:</string>
     <string name="etCiudadRutaNueva">Barcelona</string>
 
@@ -80,11 +82,11 @@
     //CONFIGURACION RUTA
     <string name="btnGuradarConfiguracionRuta">Modify</string>
     //MODIFICAR RUTA ACTIVITY
-    <string name="tvTituloModificar_nombreR">Nom:</string>
-    <string name="tvTituloModificar_descripcionR">Descripció:</string>
-    <string name="tvTituloModificar_rutaR">Ruta:</string>
-    <string name="tvTituloModificar_paisR">País:</string>
-    <string name="tvTituloModificar_ciudadR">Ciutat:</string>
+    <string name="tvTituloModificar_nombreR">Name:</string>
+    <string name="tvTituloModificar_descripcionR">Description::</string>
+    <string name="tvTituloModificar_rutaR">Route:</string>
+    <string name="tvTituloModificar_paisR">Country:</string>
+    <string name="tvTituloModificar_ciudadR">City:</string>
 
     <string name="etModificarRuta_nombre">Enter the name</string>
     <string name="etModificarRuta_descripcion">Enter the description</string>
@@ -109,6 +111,7 @@
     <string name="txtTituloNombreReal">Name:</string>
     <string name="hintNombreReal">Write your name</string>
     <string name="txtNombreReal">Real username</string>
+    <string name="rutaELiminadaCorrectamente">Route successfully removed.</string>
 
     //PERFIL USUARIO
     <string name="titulo_perfil_usuario">MY PROFILE</string>
@@ -174,12 +177,14 @@
     <string name="tituloEscogeIdioma">Choose the language</string>
     //Alert eliminar ruta
     <string name="eliminarRutaElert">Do you ant to delete this route?</string>
+    <string name="opcion1EliminarRuta">Yes</string>
+    <string name="opcion2EliminarRuta">No</string>
 
     //TOAST DE LA APP
     <string name="sinModificaciones">No modifications.</string> 
     <string name="obligatorioRegister">The username, password, name and age are required.</string> 
     <string name="passMenor">Password must be longer than 6 characters.</string> 
-    <string name="cacenlaGeneral">Cancelar</string> 
+    <string name="cacenlaGeneral">Cancel</string> 
     <string name="sinRutas">You have no routes created, please add one.</string> 
 
     //MODIIFICAR PERFIL
@@ -229,4 +234,68 @@
 
     <string name="aquiEstoy">I am here</string>
     <string name="destino">My destiny</string>
+    <string name="alertEscogeRutaCompleta">Choose the adress: </string>
+    <string name="opcion1AlertRutaCompleta">Use my current location</string>
+    <string name="opcion2AlertRutaCompleta">Use my address</string>
+
+    //ACCESIBILIDAD
+    //FragmentHome
+    <string name="contDBtnNuevaRuta">Add a new route</string>
+    <string name="contDBtnListRutas">Route</string>
+    //Login
+    <string name="iniSesionImg">Log in.</string>
+    <string name="iniSesionbtn">Log in</string>
+    <string name="RegistrarseImg">Sing in.</string>
+    <string name="RegistrarseBtn">Sing in</string>
+    <string name="idiomarImg">Choose language.</string>
+    <string name="idiomarBtn">Choose language</string>
+    <string name="webImg">Go to Find Your Way website</string>
+    <string name="MapUbicacionImg">Find Your Way location</string>
+    <string name="instaImg">Find Your Way Instagram</string>
+    <string name="gmailImg">Write an email to Find Your Way</string>
+
+    <string name="opcion1Idioma">Catalan</string>
+    <string name="opcion2Idioma">English</string>
+    <string name="opcion3Idioma">Spanish</string>
+
+    //Rutas_list_item
+    <string name="cardViewRutas_list_item">Tap to see this route</string>
+    //activity_ruta_completa
+    <string name="btnVolverListRutasItem">Return</string>
+    <string name="imgGotoRuta">See the route</string>
+    //nav_header_navegation_drawer.xml
+    <string name="imgUsuarioCurrent">User Image</string>
+    //fragment_configuration_rutas
+    <string name="btnNuevaRutaContentD">Add new route</string>
+    <string name="btnConfigurarRutaContentD">Configure a route</string>
+    <string name="btnEliminarRutaContentD">Delete a route</string>
+    //activity_uneva_ruta
+    <string name="btnNuevaRutaNuevaRuta">Add route</string>
+    <string name="btnCalcerNuevaRutaNuevaRuta">Cancel</string>
+    //configurar_ruta_list_item
+    <string name="configurar_ruta_list_item">Tap to configure this route</string>
+    //activity_configuraicon_completa
+    <string name="btnConfigurarRutaConfiguracionC">Configue this route</string>
+    //activity_modificar_ruta.xml
+    <string name="btnModificarRutaModificarR">Modify route</string>
+    <string name="btnVolverAtrasModificarR">Go back</string>
+    //eliminar_ruta_list_item
+    <string name="eliminarRutaListItem">Delete this route</string>
+    //btnModtrarGps
+    <string name="btnMostrarGpsContentD">See my address and my current coordinates</string>
+    <string name="btnGoToMiUbicacionActual">See the map with my current location</string>
+    //activity_modificar_perfil
+    <string name="btnModificarPerfilUsuario">Modify my profile</string>
+    <string name="btnVolverPerfilModificarPerfil">Go back</string>
+    //fragment_configuracion_general
+    <string name="btnCambiarCatalan">Change the language to Catalan</string>
+    <string name="btnCambiarCastellano">Change the language to Spanish</string>
+    <string name="btnCambiarIngles">Change the language to English</string>
+    //fragment perfil
+    <string name="btnModificarPerfilFragmentPerfil">Modify my profile</string>
+    //activity_configuracion_completa
+    <string name="btnCancelarConfiguracionCompleta">Go back</string>
+    <string name="btnModificarRutaConfiguracionC">Modify route</string>
+
+
 </resources>
