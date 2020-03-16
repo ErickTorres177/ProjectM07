@@ -71,6 +71,9 @@ public class ModificarPerfil extends AppCompatActivity {
 
         //Spiner
         spinnerS = findViewById(R.id.spinnerTipSexo);
+
+        // String [] tipoArraySegunIdioma = ModificarPerfil.this.getResources().getStringArray(R.array.tipo_sexo);
+
         ArrayAdapter<CharSequence> adapterSpinner = ArrayAdapter.createFromResource(this, R.array.tipo_sexo,
                 android.R.layout.simple_spinner_item);
         spinnerS.setAdapter(adapterSpinner);

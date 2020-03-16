@@ -49,6 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
         etNombreUsuario = findViewById(R.id.tv_nom_user_register);
         etEdad = findViewById(R.id.txtEdad);
 
+        etUsuario.requestFocus();
 
         //Data fase
         database = FirebaseDatabase.getInstance();
@@ -60,7 +61,48 @@ public class RegisterActivity extends AppCompatActivity {
         iconoRegitrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                crearUsuario(etUsuario.getText().toString(), etPasswd.getText().toString());
+
+                String user = etUsuario.getText().toString().trim();
+                String contra = etPasswd.getText().toString();
+                String nom = etNombreUsuario.getText().toString();
+                String edad = etEdad.getText().toString();
+
+
+                if (!user.isEmpty() && !user.equals(" ")
+                        && !contra.isEmpty() && !contra.equals(" ")
+                        && !nom.isEmpty() && !nom.equals(" ")
+                        && !edad.isEmpty() && !edad.equals(" ")) {
+
+                    //com email
+                    if (!compEmail(user)) {
+                        String toastCredencialesIncorrectas = RegisterActivity.this.getResources().getString(R.string.credencialesIcorrectas);
+                        Toast.makeText(RegisterActivity.this, toastCredencialesIncorrectas,
+                                Toast.LENGTH_SHORT).show();
+
+                    }else if(contra.length()< 6){
+                        String toastpassMenor = RegisterActivity.this.getResources().getString(R.string.passMenor);
+                        Toast.makeText(RegisterActivity.this, toastpassMenor,
+                                Toast.LENGTH_SHORT).show();
+                    }else if(!compNombreIntroducido(nom)){
+                        String toastInvalidoNombre = RegisterActivity.this.getResources().getString(R.string.nombreIncorrectoRegisterActivity);
+                        Toast.makeText(RegisterActivity.this, toastInvalidoNombre + etNombreUsuario.getText().toString(),
+                                Toast.LENGTH_SHORT).show();
+                    }else if (!compIsNumericAndRango(Integer.valueOf(edad))){
+                        String toastInvalidoEdad = RegisterActivity.this.getResources().getString(R.string.edadIncorrectaRegisterActivity);
+                        Toast.makeText(RegisterActivity.this, toastInvalidoEdad + etEdad.getText().toString(),
+                                Toast.LENGTH_SHORT).show();
+
+                    }else {
+                        crearUsuario(user,contra);
+                    }
+
+                }else {
+                    String toastObligatorioRegister = RegisterActivity.this.getResources().getString(R.string.obligatorioRegister);
+                    Toast.makeText(RegisterActivity.this.getApplicationContext(), toastObligatorioRegister,
+                            Toast.LENGTH_SHORT).show();
+                }
+
+
             }
         });
 
@@ -78,7 +120,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String user = etUsuario.getText().toString();
+                String user = etUsuario.getText().toString().trim();
                 String contra = etPasswd.getText().toString();
                 String nom = etNombreUsuario.getText().toString();
                 String edad = etEdad.getText().toString();

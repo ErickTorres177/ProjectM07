@@ -2,8 +2,8 @@
 <resources>
     <string-array name="tipo_sexo">
         <item>Sexe</item>
-        <item>Home</item>
-        <item>Dona</item>
-        <item>Un altre</item>
+        <item>Home/Hombre/Men</item>
+        <item>Dona/Mujer/Woman</item>
+        <item>Un altre/Otro/Another</item>
     </string-array>
 </resources>

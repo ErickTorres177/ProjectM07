@@ -68,6 +68,8 @@ public class LoginActivity extends AppCompatActivity {
         user = findViewById(R.id.etUser);
         pass = findViewById(R.id.etPass);
 
+        user.requestFocus();
+
         //PONER DATOS DEL USER REGISTRADO
         useruarioLogin = getIntent().getStringExtra("usuer");
         passLogin = getIntent().getStringExtra("pass");
@@ -117,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
 
                 } else {
-                    loginUser(user.getText().toString(), pass.getText().toString());
+                    loginUser(user.getText().toString().trim(), pass.getText().toString());
                 }
             }
         });
@@ -223,6 +225,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void loginUser(final String email, final String password) {
 
+        //mAuth.signInWithEmailAndPassword(email, password)
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override

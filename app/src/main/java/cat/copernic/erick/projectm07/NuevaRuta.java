@@ -44,6 +44,8 @@ public class NuevaRuta extends AppCompatActivity {
         etPaisR = findViewById(R.id.etPaisRutaNueva);
         etCiudadR = findViewById(R.id.etCiudadRutaNueva);
 
+        etNombreR.requestFocus();
+
         //REAL TIME -> MODIFICACION PERFIL
         //FIRE BASE inicializaciones
         mAuth = FirebaseAuth.getInstance();

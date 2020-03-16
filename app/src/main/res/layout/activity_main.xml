@@ -84,6 +84,7 @@
                 android:layout_marginTop="10dp"
                 android:contentDescription="@string/nombreProyecto"
                 android:gravity="center"
+                android:labelFor="@id/etUser"
                 android:minWidth="40dp"
                 android:minHeight="40dp"
                 android:paddingLeft="4dp"
@@ -133,13 +134,18 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/Inputs"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <EditText
+
+
+
+
+
+           <!-- <EditText
                 android:id="@+id/etPass"
                 android:layout_width="250dp"
                 android:layout_height="49dp"
@@ -149,12 +155,16 @@
                 android:hint="@string/password"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
+                android:labelFor="@id/etUser"
                 android:minWidth="49dp"
                 android:minHeight="49dp"
                 android:paddingLeft="4dp"
                 android:paddingTop="8dp"
                 android:paddingRight="4dp"
                 android:paddingBottom="8dp"
+
+
+
                 android:textColor="@android:color/white"
                 android:textColorHighlight="@color/textColorHind"
                 android:textColorHint="@color/textColorHind"
@@ -171,8 +181,10 @@
                 android:hint="@string/user"
                 android:importantForAutofill="no"
                 android:inputType="text"
+                android:labelFor="@id/textInputPass"
                 android:minWidth="49dp"
                 android:minHeight="49dp"
+                android:nextFocusDown="@+id/etPass"
                 android:paddingLeft="4dp"
                 android:paddingTop="8dp"
                 android:paddingRight="4dp"
@@ -181,8 +193,92 @@
                 android:textColorHighlight="@color/textColorHind"
                 android:textColorHint="@color/textColorHind"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                 /> -->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputUser"
+                android:layout_width="250dp"
+                android:layout_height="49dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.124"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etUser"
+                    android:layout_width="250dp"
+                    android:layout_height="49dp"
+                    android:layout_gravity="clip_horizontal|center_horizontal|center_vertical"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/user"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:labelFor="@id/textInputPass"
+                    android:minWidth="49dp"
+                    android:minHeight="49dp"
+                    android:nextFocusDown="@+id/etPass"
+                    android:paddingLeft="4dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="8dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHighlight="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textColorLink="@android:color/white"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputPass"
+                android:layout_width="250dp"
+                android:layout_height="49dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputUser"
+                app:layout_constraintVertical_bias="0.375"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPass"
+                    android:layout_width="250dp"
+                    android:layout_height="49dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:hint="@string/password"
+                    android:importantForAutofill="no"
+                    android:inputType="textPassword"
+                    android:labelFor="@id/etUser"
+                    android:minWidth="49dp"
+                    android:minHeight="49dp"
+                    android:paddingLeft="4dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="8dp"
+                    android:textColor="@android:color/white"
+                    android:textColorHighlight="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textColorLink="@android:color/white"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etUser" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -314,7 +410,7 @@
                         android:paddingRight="4dp"
                         android:paddingBottom="8dp"
                         android:text="@string/btnCambiarIdioma"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/black"
                         android:textIsSelectable="false"
                         android:textSize="16sp" />
 
@@ -336,7 +432,7 @@
 
         <ImageButton
             android:id="@+id/imgBtn_Gmaps"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="60dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/MapUbicacionImg"
@@ -350,8 +446,8 @@
 
         <ImageButton
             android:id="@+id/imgBtn_web"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/webImg"
             android:onClick="abrirPagina"
@@ -364,7 +460,7 @@
 
         <ImageButton
             android:id="@+id/imgBtn_instagram"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="60dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/instaImg"
@@ -378,7 +474,7 @@
 
         <ImageButton
             android:id="@+id/imgBtn_gmail"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="60dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/gmailImg"
@@ -425,14 +521,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.53" />
+        app:layout_constraintGuide_percent="0.57" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/GuiaH.80"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
+        app:layout_constraintGuide_percent="0.88" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/GuiaV.5"

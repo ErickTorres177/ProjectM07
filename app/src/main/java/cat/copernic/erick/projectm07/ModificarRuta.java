@@ -70,6 +70,8 @@ public class ModificarRuta extends AppCompatActivity {
 
         modificarRutaRealTime = findViewById(R.id.btnModificarRuta);
 
+        etNombreRutaM.requestFocus();
+
 
         //REAL TIME -> MODIFICACION PERFIL
         //FIRE BASE inicializaciones
