@@ -134,9 +134,9 @@ public class NavegationDrawer extends AppCompatActivity {
                 Usuarios usuarios = dataSnapshot.getValue(Usuarios.class);
                 final String nombre = usuarios.getNombre();
                 final String user = usuarios.getUsuario();
-                Log.e("nombre: ", "" + nombre);
-                Log.e("Usuario actual: ", "" + currentUser.getUid());
-                Log.e("Usuario actual: ", "" + user);
+                //Log.e("nombre: ", "" + nombre);
+               // Log.e("Usuario actual: ", "" + currentUser.getUid());
+               // Log.e("Usuario actual: ", "" + user);
 
                 nombreU = nombre;
                 userU = user;
@@ -157,8 +157,8 @@ public class NavegationDrawer extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             Usuarios usuarios = ds.getValue(Usuarios.class);
                             String nombre = usuarios.getNombre();
-                            Log.e("Nombre: ", "" + nombre);
-                            Log.e("Datos: ", "" + ds.getValue());
+                            //Log.e("Nombre: ", "" + nombre);
+                            //Log.e("Datos: ", "" + ds.getValue());
                         }
                         @Override
                         public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -170,7 +170,7 @@ public class NavegationDrawer extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
+                //Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
     }

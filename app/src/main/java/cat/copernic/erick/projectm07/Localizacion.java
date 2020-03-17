@@ -32,13 +32,13 @@ public class Localizacion implements LocationListener {
     public void onStatusChanged(String provider, int status, Bundle extras) {
         switch (status) {
             case LocationProvider.AVAILABLE:
-                Log.d("debug", "LocationProvider.AVAILABLE");
+                //Log.d("debug", "LocationProvider.AVAILABLE");
                 break;
             case LocationProvider.OUT_OF_SERVICE:
-                Log.d("debug", "LocationProvider.OUT_OF_SERVICE");
+               // Log.d("debug", "LocationProvider.OUT_OF_SERVICE");
                 break;
             case LocationProvider.TEMPORARILY_UNAVAILABLE:
-                Log.d("debug", "LocationProvider.TEMPORARILY_UNAVAILABLE");
+               // Log.d("debug", "LocationProvider.TEMPORARILY_UNAVAILABLE");
                 break;
         }
     }

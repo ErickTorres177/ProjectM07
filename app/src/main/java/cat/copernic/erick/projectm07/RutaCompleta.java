@@ -170,12 +170,12 @@ public class RutaCompleta extends AppCompatActivity {
                 Rutas rutas = dataSnapshot.getValue(Rutas.class);
                 final String direccionDestino = rutas.getRuta();
                 finalDestinoRutaFB = direccionDestino;
-                Log.e("usuario RUTAAA DESTINO:", currentUser.getUid() + " direcion DESTINO FINAL: " + finalDestinoRutaFB);
+                //Log.e("usuario RUTAAA DESTINO:", currentUser.getUid() + " direcion DESTINO FINAL: " + finalDestinoRutaFB);
                 try {
                     obtenerCoordenadasDestino(RutaCompleta.this, finalDestinoRutaFB);
 
                 } catch (Exception e) {
-                    Log.w(TAG, "------RUTA INVALIDA------");
+                    //Log.w(TAG, "------RUTA INVALIDA------");
                     mostrarAlertTipoAdrres();
                 }
             }
@@ -183,7 +183,7 @@ public class RutaCompleta extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
+                //Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
     }
@@ -215,8 +215,8 @@ public class RutaCompleta extends AppCompatActivity {
             //---------------------
 
             //longitud y latitud ORIGEN
-            Log.e("usuario DESTINO: ", currentUser.getUid() + " lon:: " + logintudDestino);
-            Log.e("usuario DESTINO: ", currentUser.getUid() + " lat:: " + latitudDestino);
+           // Log.e("usuario DESTINO: ", currentUser.getUid() + " lon:: " + logintudDestino);
+           // Log.e("usuario DESTINO: ", currentUser.getUid() + " lat:: " + latitudDestino);
 
         } catch (IOException ex) {
 
@@ -286,8 +286,8 @@ public class RutaCompleta extends AppCompatActivity {
 
                 logintudUbicacionActual = loc.getLongitude();
                 latitudUbicacionActual = loc.getLatitude();
-                Log.e("ubicacion actual coo: ", "LON: " + logintudUbicacionActual);
-                Log.e("ubicacion actual coo: ", " LAT: "+ latitudUbicacionActual);
+                //Log.e("ubicacion actual coo: ", "LON: " + logintudUbicacionActual);
+                //Log.e("ubicacion actual coo: ", " LAT: "+ latitudUbicacionActual);
 
                 Utilidades.coordenadas.setLatitudInicial(latitudUbicacionActual);
                 Utilidades.coordenadas.setLongitudInicial(logintudUbicacionActual);
@@ -295,8 +295,8 @@ public class RutaCompleta extends AppCompatActivity {
                 double lat = Utilidades.coordenadas.getLatitudInicial();
                 double lot = Utilidades.coordenadas.getLongitudInicial();
 
-                Log.e("set LONG", "LON: " + lot);
-                Log.e("SET LAT  ", " LAT: "+ lat);
+                //Log.e("set LONG", "LON: " + lot);
+                //Log.e("SET LAT  ", " LAT: "+ lat);
             }
            /* public void onStatusChanged(String provider, int status, Bundle extras) {
             }
@@ -341,18 +341,18 @@ public class RutaCompleta extends AppCompatActivity {
                 Usuarios usuarios = dataSnapshot.getValue(Usuarios.class);
                 final String direccionU = usuarios.getDireccion();
                 finalDireccionRuta = direccionU;
-                Log.e("usuario: ", currentUser.getUid() + " direcion: " + finalDireccionRuta);
+                //Log.e("usuario: ", currentUser.getUid() + " direcion: " + finalDireccionRuta);
                 try {
                     obtenerCoordenadasFromAdrres(RutaCompleta.this, finalDireccionRuta);
                 } catch (Exception e) {
-                    Log.w(TAG, "------RUTA INVALIDA------");
+                    //Log.w(TAG, "------RUTA INVALIDA------");
                     mostrarAlertTipoAdrres();
                 }
             }
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
+                //Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
     }
@@ -379,8 +379,8 @@ public class RutaCompleta extends AppCompatActivity {
             Utilidades.coordenadas.setLongitudInicial(logintud);
             //------------------
             //longitud y latitud ORIGEN
-            Log.e("usuario: ", currentUser.getUid() + " lon:: " + logintud);
-            Log.e("usuario: ", currentUser.getUid() + " lat:: " + latitud);
+            //Log.e("usuario: ", currentUser.getUid() + " lon:: " + logintud);
+           // Log.e("usuario: ", currentUser.getUid() + " lat:: " + latitud);
 
         } catch (IOException ex) {
 
@@ -445,7 +445,7 @@ public class RutaCompleta extends AppCompatActivity {
                 String toastErrorConn = RutaCompleta.this.getResources().getString(R.string.errorConeccionRutaCompleta);
                 Toast.makeText(getApplicationContext(), toastErrorConn + error.toString(), Toast.LENGTH_LONG).show();
                 System.out.println();
-                Log.d("ERROR: ", error.toString());
+                //Log.d("ERROR: ", error.toString());
             }
         }
         );

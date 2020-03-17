@@ -332,10 +332,10 @@ public class MapaUbicacionActual extends AppCompatActivity implements OnMapReady
                             this, R.raw.map_style));
 
             if (!success) {
-                Log.e(TAG, "Error del Style Map.");
+               // Log.e(TAG, "Error del Style Map.");
             }
         } catch (Resources.NotFoundException e) {
-            Log.e(TAG, "No se Escuentra: Style Map -> ", e);
+            //Log.e(TAG, "No se Escuentra: Style Map -> ", e);
         }
     }
 

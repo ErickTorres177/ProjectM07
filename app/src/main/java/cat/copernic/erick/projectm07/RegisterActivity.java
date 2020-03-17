@@ -188,7 +188,7 @@ public class RegisterActivity extends AppCompatActivity {
                             if (compEmail(email) == true) {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
-                                    Log.d(TAG, "createUserWithEmail:success");
+                                    //Log.d(TAG, "createUserWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     updateUI(user);
 
@@ -202,7 +202,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     limpiarCampo();
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                   // Log.w(TAG, "createUserWithEmail:failure", task.getException());
 
                                     String toastRegistroFallido = RegisterActivity.this.getResources().getString(R.string.registroFallido);
                                     Toast.makeText(RegisterActivity.this, toastRegistroFallido + ": " + email,

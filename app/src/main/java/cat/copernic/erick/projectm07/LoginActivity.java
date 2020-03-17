@@ -237,14 +237,14 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
 
                             // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success");
+                            //Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
                             Intent intent = new Intent(LoginActivity.this, NavegationDrawer.class);
                             startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                           // Log.w(TAG, "signInWithEmail:failure", task.getException());
 
                             String toastIniSFallida = LoginActivity.this.getResources().getString(R.string.credencialesIcorrectas);
                             Toast.makeText(LoginActivity.this, toastIniSFallida,
