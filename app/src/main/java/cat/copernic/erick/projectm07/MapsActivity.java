@@ -50,6 +50,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+
+        /*
+        *
         // Add a marker in Sydney and move the camera
 
         //    mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
@@ -98,6 +101,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             googleMap.addPolyline(lineOptions);
             mMap.addPolyline(lineOptions);
         }
+         */
+
 
 
         //LatLng origen = new LatLng(Utilidades.coordenadas.getLatitudInicial(), Utilidades.coordenadas.getLongitudInicial());
@@ -109,7 +114,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         String toastDestino= MapsActivity.this.getResources().getString(R.string.destino);
         LatLng destino = new LatLng(Utilidades.coordenadas.getLatitudFinal(), Utilidades.coordenadas.getLongitudFinal());
-        mMap.addMarker(new MarkerOptions().position(destino).title(toastDestino));
+        mMap.addMarker(new MarkerOptions().position(destino).title(toastDestino)).setDraggable(true);
         //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(center, 15));
         //---
         mMap.setMyLocationEnabled(true);
@@ -121,8 +126,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         mMap.getUiSettings().setZoomControlsEnabled(true);
 
+        LatLng posOrigen, posDestino;
 
-        /////////////
+        posOrigen = new LatLng(Utilidades.coordenadas.getLatitudInicial(), Utilidades.coordenadas.getLongitudInicial());
+        posDestino = new LatLng(Utilidades.coordenadas.getLatitudFinal(), Utilidades.coordenadas.getLongitudFinal());
+
+        mMap.addPolyline(new PolylineOptions().add(posOrigen,posDestino).width(10).color(Color.RED));
 
     }
 }

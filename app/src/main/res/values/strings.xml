@@ -333,7 +333,11 @@
     <string name="btnCancelarConfiguracionCompleta">Tornar</string>
     <string name="btnModificarRutaConfiguracionC">Modificar ruta</string>
 
-
+    //miUbicacion
+    <string name="progress1">Calculant Coordenades</string>
+    <string name="progress2">Iniciant</string>
+    <string name="progress3">Calculant</string>
+    <string name="progress4">Acabant</string>
 
 
 </resources>

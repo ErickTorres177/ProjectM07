@@ -297,5 +297,9 @@
     <string name="btnCancelarConfiguracionCompleta">Go back</string>
     <string name="btnModificarRutaConfiguracionC">Modify route</string>
 
-
+    //miUbicacion
+    <string name="progress1">Calculating Coordinates</string>
+    <string name="progress2">Starting</string>
+    <string name="progress3">Calculated</string>
+    <string name="progress4">Ending</string>
 </resources>

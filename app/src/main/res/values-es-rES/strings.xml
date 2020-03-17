@@ -291,4 +291,11 @@
     <string name="btnCancelarConfiguracionCompleta">Volver</string>
     <string name="btnModificarRutaConfiguracionC">Modificar ruta</string>
 
+    //miUbicacion
+    <string name="progress1">Calculando Coordenadas</string>
+    <string name="progress2">Iniciando</string>
+    <string name="progress3">Calculando</string>
+    <string name="progress4">Terminando</string>
+
+
 </resources>

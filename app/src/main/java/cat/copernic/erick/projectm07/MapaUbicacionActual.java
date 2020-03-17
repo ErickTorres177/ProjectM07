@@ -223,7 +223,7 @@ public class MapaUbicacionActual extends AppCompatActivity implements OnMapReady
                     LatLng latLng = new LatLng(latitudI, longituI);
 
                     String toastAquiEstoy = MapaUbicacionActual.this.getResources().getString(R.string.aquiEstoy);
-                    mMap.addMarker(new MarkerOptions().position(latLng).title(toastAquiEstoy));
+                    mMap.addMarker(new MarkerOptions().position(latLng).title(toastAquiEstoy)).setDraggable(true);
 
 //41°33'49.1"N 2°00'23.5"E
                     CameraPosition cameraPosition  = new CameraPosition.Builder()
